@@ -11,18 +11,16 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-public class BaeldungPasswordEncoderSetup {
+public class TaketodayPasswordEncoderSetup {
 
-   private final static Logger LOG = LoggerFactory.getLogger(BaeldungPasswordEncoderSetup.class);
+   private final static Logger LOG = LoggerFactory.getLogger(TaketodayPasswordEncoderSetup.class);
 
    @Bean
    public ApplicationListener<AuthenticationSuccessEvent> authenticationSuccessListener(final PasswordEncoder encoder) {
-
       return (AuthenticationSuccessEvent event) -> {
          final Authentication auth = event.getAuthentication();
 
          if (auth instanceof UsernamePasswordAuthenticationToken && auth.getCredentials() != null) {
-
             final CharSequence clearTextPass = (CharSequence) auth.getCredentials(); // 1
             final String newPasswordHash = encoder.encode(clearTextPass); // 2
 

@@ -11,5 +11,4 @@ public class X509AuthenticationServer {
    public static void main(String[] args) {
       SpringApplication.run(X509AuthenticationServer.class, args);
    }
-
 }

@@ -24,12 +24,10 @@ public class AsyncServiceImpl implements AsyncService {
       Object before = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
       log.info("Before new thread: {}", before);
 
-      return new Callable<Boolean>() {
-         public Boolean call() throws Exception {
-            Object after = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            log.info("New thread: {}", after);
-            return before == after;
-         }
+      return () -> {
+         Object after = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         log.info("New thread: {}", after);
+         return before == after;
       };
    }
 }

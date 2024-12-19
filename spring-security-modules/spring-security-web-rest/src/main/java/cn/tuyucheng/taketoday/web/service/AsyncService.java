@@ -7,5 +7,4 @@ public interface AsyncService {
    void asyncCall();
 
    Callable<Boolean> checkIfPrincipalPropagated();
-
 }

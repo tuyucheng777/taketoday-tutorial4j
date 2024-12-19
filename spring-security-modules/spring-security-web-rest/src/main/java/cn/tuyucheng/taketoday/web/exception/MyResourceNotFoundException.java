@@ -17,5 +17,4 @@ public final class MyResourceNotFoundException extends RuntimeException {
    public MyResourceNotFoundException(final Throwable cause) {
       super(cause);
    }
-
 }

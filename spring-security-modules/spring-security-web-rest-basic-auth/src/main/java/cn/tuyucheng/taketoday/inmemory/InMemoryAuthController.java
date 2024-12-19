@@ -18,5 +18,4 @@ public class InMemoryAuthController {
    public List<String> privateHello() {
       return Arrays.asList("Hello", "World", "from", "Private");
    }
-
 }

@@ -58,5 +58,4 @@ public class Foo implements Serializable {
    public String toString() {
       return "Foo [name=" + name + "]";
    }
-
 }

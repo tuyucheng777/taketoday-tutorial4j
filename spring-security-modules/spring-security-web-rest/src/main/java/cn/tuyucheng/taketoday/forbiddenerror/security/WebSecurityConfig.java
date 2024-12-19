@@ -1,4 +1,4 @@
-package com.baeldung.forbiddenerror.security;
+package cn.tuyucheng.taketoday.forbiddenerror.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

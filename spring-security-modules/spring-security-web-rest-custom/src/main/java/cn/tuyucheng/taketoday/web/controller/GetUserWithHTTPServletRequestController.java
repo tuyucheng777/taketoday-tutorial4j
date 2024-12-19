@@ -1,25 +1,21 @@
 package cn.tuyucheng.taketoday.web.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
-@Controller
+@RestController
 public class GetUserWithHTTPServletRequestController {
 
-   public GetUserWithHTTPServletRequestController() {
-      super();
-   }
+    public GetUserWithHTTPServletRequestController() {
+        super();
+    }
 
-   @RequestMapping(value = "/username4", method = RequestMethod.GET)
-   @ResponseBody
-   public String currentUserNameSimple(final HttpServletRequest request) {
-      final Principal principal = request.getUserPrincipal();
-      return principal.getName();
-   }
-
+    @GetMapping(value = "/username4")
+    public String currentUserNameSimple(final HttpServletRequest request) {
+        final Principal principal = request.getUserPrincipal();
+        return principal.getName();
+    }
 }

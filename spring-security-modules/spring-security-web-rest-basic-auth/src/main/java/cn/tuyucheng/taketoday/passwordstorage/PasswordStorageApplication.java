@@ -9,5 +9,4 @@ public class PasswordStorageApplication {
    public static void main(String[] args) {
       SpringApplication.run(PasswordStorageApplication.class, args);
    }
-
 }

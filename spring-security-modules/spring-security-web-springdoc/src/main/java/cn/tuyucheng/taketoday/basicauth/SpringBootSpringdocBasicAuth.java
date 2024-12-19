@@ -9,5 +9,4 @@ public class SpringBootSpringdocBasicAuth {
    public static void main(String[] args) {
       SpringApplication.run(SpringBootSpringdocBasicAuth.class, args);
    }
-
 }

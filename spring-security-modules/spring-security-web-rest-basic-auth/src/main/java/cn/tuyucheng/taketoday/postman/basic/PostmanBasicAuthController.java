@@ -10,5 +10,4 @@ public class PostmanBasicAuthController {
    public String test() {
       return "request was authorized!";
    }
-
 }

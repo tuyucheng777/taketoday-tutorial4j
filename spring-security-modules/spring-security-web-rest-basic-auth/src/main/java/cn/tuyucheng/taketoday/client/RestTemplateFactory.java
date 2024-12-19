@@ -33,7 +33,7 @@ public class RestTemplateFactory implements FactoryBean<RestTemplate>, Initializ
 
    @Override
    public void afterPropertiesSet() {
-      HttpHost host = new HttpHost("localhost", 8082, "http");
+      HttpHost host = new HttpHost("http", "localhost", 8082);
       final ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactoryBasicAuth(host);
       restTemplate = new RestTemplate(requestFactory);
       restTemplate.getInterceptors().add(new BasicAuthenticationInterceptor("user1", "user1Pass"));

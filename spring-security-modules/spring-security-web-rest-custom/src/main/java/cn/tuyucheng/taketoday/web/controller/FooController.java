@@ -3,42 +3,37 @@ package cn.tuyucheng.taketoday.web.controller;
 import cn.tuyucheng.taketoday.service.IFooService;
 import cn.tuyucheng.taketoday.web.dto.Foo;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping(value = "/foos")
 public class FooController implements InitializingBean {
 
-   @Value("${foo1}")
-   private String foo1;
+    @Value("${foo1}")
+    private String foo1;
 
-   @Autowired
-   private Environment env;
+    private final Environment env;
+    private final IFooService service;
 
-   @Autowired
-   private IFooService service;
+    public FooController(Environment env, IFooService service) {
+        super();
+        this.env = env;
+        this.service = service;
+    }
 
-   public FooController() {
-      super();
-   }
+    @GetMapping(value = "/{id}")
+    public Foo findOne(@PathVariable(name = "id") final Long id) {
+        return service.findOne(id);
+    }
 
-   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-   @ResponseBody
-   public Foo findOne(@PathVariable("id") final Long id) {
-      return service.findOne(id);
-   }
-
-   @Override
-   public final void afterPropertiesSet() {
-      System.out.println("In Child Context, property via @Value = " + foo1);
-      System.out.println("In Child Context, property via env = " + env.getProperty("foo2"));
-   }
-
+    @Override
+    public final void afterPropertiesSet() {
+        System.out.println("In Child Context, property via @Value = " + foo1);
+        System.out.println("In Child Context, property via env = " + env.getProperty("foo2"));
+    }
 }

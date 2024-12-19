@@ -26,7 +26,7 @@ public class PostmanBasicAuthConfig {
    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
       auth.inMemoryAuthentication()
             .withUser("admin")
-            .password("{noop}baeldung2")
+            .password("{noop}taketoday2")
             .roles("USER");
    }
 }

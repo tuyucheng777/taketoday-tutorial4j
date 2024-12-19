@@ -36,5 +36,4 @@ public class WebConfig implements WebMvcConfigurer {
    public void addViewControllers(final ViewControllerRegistry registry) {
       registry.addViewController("/csrfAttacker.html");
    }
-
 }

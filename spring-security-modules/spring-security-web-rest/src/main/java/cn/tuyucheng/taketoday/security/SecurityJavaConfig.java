@@ -8,9 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,9 +21,11 @@ import org.springframework.security.task.DelegatingSecurityContextAsyncTaskExecu
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 @ComponentScan("cn.tuyucheng.taketoday.security")
 public class SecurityJavaConfig {
 
@@ -52,33 +55,14 @@ public class SecurityJavaConfig {
 
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-      http.csrf()
-            .disable()
-            .authorizeRequests()
-            .and()
-            .exceptionHandling()
-            .accessDeniedHandler(accessDeniedHandler)
-            .authenticationEntryPoint(restAuthenticationEntryPoint)
-            .and()
-            .authorizeRequests()
-            .antMatchers("/api/csrfAttacker*")
-            .permitAll()
-            .antMatchers("/api/customer/**")
-            .permitAll()
-            .antMatchers("/api/foos/**")
-            .authenticated()
-            .antMatchers("/api/async/**")
-            .permitAll()
-            .antMatchers("/api/admin/**")
-            .hasRole("ADMIN")
-            .and()
-            .formLogin()
-            .successHandler(mySuccessHandler)
-            .failureHandler(myFailureHandler)
-            .and()
-            .httpBasic()
-            .and()
-            .logout();
+      http.authorizeHttpRequests (authorizeRequests -> authorizeRequests.requestMatchers("/api/csrfAttacker*").permitAll()
+                  .requestMatchers("/api/customer/**").permitAll()
+                  .requestMatchers("/api/foos/**").authenticated()
+                  .requestMatchers("/api/async/**").permitAll()
+                  .requestMatchers("/api/admin/**").hasRole("ADMIN"))
+            .formLogin(formLogin -> formLogin.successHandler(mySuccessHandler).failureHandler(myFailureHandler))
+            .httpBasic(withDefaults())
+            .logout(LogoutConfigurer::permitAll);
       return http.build();
    }
 

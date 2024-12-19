@@ -44,5 +44,4 @@ public class InMemoryAuthControllerIntegrationTest {
             .getForEntity("/private/hello", String.class);
       assertEquals(HttpStatus.UNAUTHORIZED, result.getStatusCode());
    }
-
 }

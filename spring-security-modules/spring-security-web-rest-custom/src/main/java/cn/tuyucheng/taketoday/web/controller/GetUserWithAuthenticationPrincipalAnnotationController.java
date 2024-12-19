@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GetUserWithAuthenticationPrincipalAnnotationController {
 
-   @GetMapping("/user")
-   public String getUser(@AuthenticationPrincipal UserDetails userDetails) {
-      return "User Details: " + userDetails.getUsername();
-   }
+    @GetMapping("/user")
+    public String getUser(@AuthenticationPrincipal UserDetails userDetails) {
+        return "User Details: " + userDetails.getUsername();
+    }
 }

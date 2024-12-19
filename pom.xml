@@ -510,7 +510,7 @@
             <!-- <module>spring-cloud-modules</module> -->
             <!-- <module>spring-data-modules</module> -->
             <!-- <module>spring-reactive-modules</module> -->
-            <!-- <module>spring-security-modules</module> -->
+            <module>spring-security-modules</module>
             <!-- <module>spring-web-modules</module> -->
             <!-- <module>vavr-modules</module> -->
             <!-- <module>vertx-modules</module> -->

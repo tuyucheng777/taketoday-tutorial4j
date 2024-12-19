@@ -12,14 +12,10 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @PropertySource("classpath:foo.properties")
 public class ServiceConfig {
 
-   public ServiceConfig() {
-      super();
-   }
-
-   @Bean
-   public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-      final PropertySourcesPlaceholderConfigurer ppc = new PropertySourcesPlaceholderConfigurer();
-      ppc.setIgnoreUnresolvablePlaceholders(true);
-      return ppc;
-   }
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        final PropertySourcesPlaceholderConfigurer ppc = new PropertySourcesPlaceholderConfigurer();
+        ppc.setIgnoreUnresolvablePlaceholders(true);
+        return ppc;
+    }
 }

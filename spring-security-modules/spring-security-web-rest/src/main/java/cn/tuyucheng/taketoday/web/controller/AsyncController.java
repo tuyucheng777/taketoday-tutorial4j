@@ -34,5 +34,4 @@ public class AsyncController {
    public Callable<Boolean> springMVCAsyncTest() {
       return asyncService.checkIfPrincipalPropagated();
    }
-
 }

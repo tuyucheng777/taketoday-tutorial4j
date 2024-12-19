@@ -27,5 +27,4 @@ public class FooController {
    public Foo findOne(@PathVariable("id") final Long id) {
       return new Foo();
    }
-
 }

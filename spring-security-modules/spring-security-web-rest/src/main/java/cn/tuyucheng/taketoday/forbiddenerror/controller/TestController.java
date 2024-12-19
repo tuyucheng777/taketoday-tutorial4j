@@ -1,4 +1,4 @@
-package com.baeldung.forbiddenerror.controller;
+package cn.tuyucheng.taketoday.forbiddenerror.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

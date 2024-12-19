@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 @Controller
 @RequestMapping(value = "/bars")
@@ -34,7 +34,7 @@ public class BarController {
       return new HttpHeaders() {{
          String auth = username + ":" + password;
          byte[] encodedAuth = Base64.encodeBase64(
-               auth.getBytes(Charset.forName("US-ASCII")));
+               auth.getBytes(StandardCharsets.US_ASCII));
          String authHeader = "Basic " + new String(encodedAuth);
          set("Authorization", authHeader);
       }};

@@ -10,5 +10,4 @@ public class SecurityXmlConfig {
    public SecurityXmlConfig() {
       super();
    }
-
 }

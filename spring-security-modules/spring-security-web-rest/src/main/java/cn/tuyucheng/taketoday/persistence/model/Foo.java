@@ -22,8 +22,6 @@ public class Foo implements Serializable {
       this.name = name;
    }
 
-   // API
-
    public long getId() {
       return id;
    }
@@ -39,8 +37,6 @@ public class Foo implements Serializable {
    public void setName(final String name) {
       this.name = name;
    }
-
-   //
 
    @Override
    public int hashCode() {
@@ -60,18 +56,12 @@ public class Foo implements Serializable {
          return false;
       final Foo other = (Foo) obj;
       if (name == null) {
-         if (other.name != null)
-            return false;
-      } else if (!name.equals(other.name))
-         return false;
-      return true;
+         return other.name == null;
+      } else return name.equals(other.name);
    }
 
    @Override
    public String toString() {
-      final StringBuilder builder = new StringBuilder();
-      builder.append("Foo [name=").append(name).append("]");
-      return builder.toString();
+      return "Foo [name=" + name + "]";
    }
-
 }

@@ -23,5 +23,4 @@ public class SpringSecurityThymeleafApplicationIntegrationTest {
       assertNotNull(viewController);
       assertNotNull(wac);
    }
-
 }

@@ -20,11 +20,9 @@ public class RootController {
       return "Hello";
    }
 
-
    @RequestMapping(value = "/my-error-page", method = RequestMethod.GET)
    @ResponseBody
    public String sampleErrorPage() {
       return "Error Occurred";
    }
-
 }

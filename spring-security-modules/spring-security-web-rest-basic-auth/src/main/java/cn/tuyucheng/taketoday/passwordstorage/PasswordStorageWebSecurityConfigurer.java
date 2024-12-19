@@ -34,7 +34,7 @@ public class PasswordStorageWebSecurityConfigurer {
    @Bean
    public UserDetailsService getUserDefaultDetailsService() {
       return new InMemoryUserDetailsManager(User
-            .withUsername("baeldung")
+            .withUsername("taketoday")
             .password("{noop}SpringSecurity5")
             .authorities(Collections.emptyList())
             .build());

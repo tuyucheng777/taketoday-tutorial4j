@@ -9,15 +9,15 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd"
 >
 
-    <http use-expressions="true">
-        <intercept-url pattern="/**" access="isAuthenticated()"/>
+   <http use-expressions="true">
+      <intercept-url pattern="/**" access="isAuthenticated()"/>
 
-        <http-basic/>
+      <http-basic/>
 
-    </http>
+   </http>
 
-    <authentication-manager>
-        <authentication-provider ref="customAuthenticationProvider"/>
-    </authentication-manager>
+   <authentication-manager>
+      <authentication-provider ref="customAuthenticationProvider"/>
+   </authentication-manager>
 
 </beans:beans>

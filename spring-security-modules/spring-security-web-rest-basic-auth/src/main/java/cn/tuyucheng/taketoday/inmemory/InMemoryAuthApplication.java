@@ -9,6 +9,4 @@ public class InMemoryAuthApplication {
    public static void main(String[] args) {
       SpringApplication.run(InMemoryAuthApplication.class, args);
    }
-
-
 }

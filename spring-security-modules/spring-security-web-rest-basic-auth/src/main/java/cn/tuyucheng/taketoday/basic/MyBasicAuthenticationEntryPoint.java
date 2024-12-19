@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.basic;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,7 +22,7 @@ public class MyBasicAuthenticationEntryPoint extends BasicAuthenticationEntryPoi
 
    @Override
    public void afterPropertiesSet() {
-      setRealmName("Baeldung");
+      setRealmName("Taketoday");
       super.afterPropertiesSet();
    }
 }

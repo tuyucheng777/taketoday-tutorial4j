@@ -44,5 +44,4 @@ public class AsyncControllerIntegrationTest {
    public void testAsync() throws Exception {
       mockMvc.perform(MockMvcRequestBuilders.get("/async")).andExpect(status().is5xxServerError());
    }
-
 }

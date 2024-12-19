@@ -38,7 +38,6 @@ public class FooLiveTest {
       final Response response = givenAuth().get(URL_PREFIX + "/api/foos");
       assertEquals(200, response.statusCode());
       System.out.println(response.asString());
-
    }
 
    @Test
@@ -58,7 +57,6 @@ public class FooLiveTest {
       assertEquals(1, error.getErrors().size());
       assertTrue(error.getErrors().get(0).contains("No handler found"));
       System.out.println(response.asString());
-
    }
 
    @Test
@@ -69,7 +67,6 @@ public class FooLiveTest {
       assertEquals(1, error.getErrors().size());
       assertTrue(error.getErrors().get(0).contains("Supported methods are"));
       System.out.println(response.asString());
-
    }
 
    @Test
@@ -80,7 +77,5 @@ public class FooLiveTest {
       assertEquals(1, error.getErrors().size());
       assertTrue(error.getErrors().get(0).contains("media type is not supported"));
       System.out.println(response.asString());
-
    }
-
 }
