@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>spring-boot-testing-4</artifactId>
+   <name>spring-boot-testing-4</name>
+   <packaging>jar</packaging>
+   <description>This is simple boot application for demonstrating testing features.</description>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday.spring-boot-modules</groupId>
+      <artifactId>spring-boot-modules</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-core</artifactId>
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+         </plugin>
+         <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.8</version>
+            <configuration>
+               <excludes>
+                  <exclude>cn/tuyucheng/taketoday/Application*</exclude>
+               </excludes>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+   <properties>
+      <start-class>cn.tuyucheng.taketoday.Application</start-class>
+      <gson.version>2.11.0</gson.version>
+   </properties>
+</project>

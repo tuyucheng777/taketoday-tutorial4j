@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>spring-security-dynamic-registration</artifactId>
+   <packaging>pom</packaging>
+   <name>spring-security-dynamic-registration</name>
+   <description>Demo project for Spring Security Authorization Server Dynamic Client Registration</description>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>parent-boot-3</artifactId>
+      <relativePath>../../parent-boot-3</relativePath>
+      <version>1.0.0</version>
+   </parent>
+
+   <modules>
+      <module>server</module>
+      <module>client</module>
+   </modules>
+
+   <build>
+      <pluginManagement>
+         <plugins>
+            <plugin>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                  <source>23</source>
+                  <target>23</target>
+               </configuration>
+            </plugin>
+         </plugins>
+      </pluginManagement>
+   </build>
+</project>

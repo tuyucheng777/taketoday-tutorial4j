@@ -1,0 +1,27 @@
+package cn.tuyucheng.taketoday.properties.reloading.beans;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+import cn.tuyucheng.taketoday.properties.reloading.configs.ReloadablePropertySourceFactory;
+
+@Component
+@PropertySource(value = "file:extra2.properties", factory = ReloadablePropertySourceFactory.class)
+public class EnvironmentConfigBean {
+
+   private Environment environment;
+
+   public EnvironmentConfigBean(@Autowired Environment environment) {
+      this.environment = environment;
+   }
+
+   public String getColor() {
+      return environment.getProperty("application.theme.color");
+   }
+
+   public String getBackgroundColor() {
+      return environment.getProperty("application.theme.background");
+   }
+}

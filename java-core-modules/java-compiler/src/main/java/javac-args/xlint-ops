@@ -1,0 +1,3 @@
+-d javac-target
+-Xlint:rawtypes,unchecked,static,cast,serial,fallthrough
+cn/tuyucheng/taketoday/javac/Data.java

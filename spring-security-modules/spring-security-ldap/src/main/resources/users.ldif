@@ -1,0 +1,31 @@
+dn: ou=groups,dc=taketoday,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=taketoday,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=taketoday,ou=people,dc=taketoday,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Jim Beam
+sn: Beam
+uid: taketoday
+userPassword: password
+
+dn: cn=admin,ou=groups,dc=taketoday,dc=com
+objectclass: top
+objectclass: groupOfNames
+cn: admin
+member: uid=taketoday,ou=people,dc=taketoday,dc=com
+
+dn: cn=user,ou=groups,dc=taketoday,dc=com
+objectclass: top
+objectclass: groupOfNames
+cn: user
+member: uid=taketoday,ou=people,dc=taketoday,dc=com

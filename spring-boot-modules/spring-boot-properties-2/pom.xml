@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>spring-boot-properties-2</artifactId>
+   <version>1.0.0</version>
+   <name>spring-boot-properties-2</name>
+   <packaging>jar</packaging>
+   <description>Spring Boot Properties Module</description>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday.spring-boot-modules</groupId>
+      <artifactId>spring-boot-modules</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <dependencyManagement>
+      <dependencies>
+         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring-cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter</artifactId>
+         <version>${spring-boot.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+         <version>${spring-boot.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>commons-configuration</groupId>
+         <artifactId>commons-configuration</artifactId>
+         <version>${commons-configuration.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.cloud</groupId>
+         <artifactId>spring-cloud-starter</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-actuator</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-validation</artifactId>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <finalName>spring-boot-properties-2</finalName>
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+         </resource>
+      </resources>
+      <plugins>
+         <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>build-info</id>
+                  <goals>
+                     <goal>build-info</goal>
+                  </goals>
+                  <configuration>
+                     <additionalProperties>
+                        <java.version>${java.version}</java.version>
+                        <description>${project.description}</description>
+                        <custom.value>123</custom.value>
+                     </additionalProperties>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <configuration>
+               <delimiters>
+                  <delimiter>@</delimiter>
+               </delimiters>
+               <useDefaultDelimiters>false</useDefaultDelimiters>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+   <properties>
+      <start-class>cn.tuyucheng.taketoday.properties.yaml.YamlApplication</start-class>
+      <commons-configuration.version>1.10</commons-configuration.version>
+      <spring-cloud.version>2023.0.1</spring-cloud.version>
+   </properties>
+</project>

@@ -1,0 +1,1 @@
+<ResourceLink name="jdbc/TuyuchengDatabase" global="jdbc/TuyuchengDatabase" type="javax.sql.DataSource"/>

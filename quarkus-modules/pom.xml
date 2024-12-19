@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>quarkus-modules</artifactId>
+   <name>quarkus-modules</name>
+   <packaging>pom</packaging>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>taketoday-tutorial4j</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <modules>
+      <module>quarkus</module>
+      <module>quarkus-citrus</module>
+      <module>quarkus-clientbasicauth</module>
+      <module>quarkus-extension</module>
+      <module>quarkus-elasticsearch</module>
+      <module>quarkus-jandex</module>
+      <module>quarkus-vs-springboot</module>
+      <module>quarkus-funqy</module>
+      <module>quarkus-testcontainers</module>
+      <module>consume-rest-api</module>
+      <module>quarkus-virtual-threads</module>
+      <!-- <module>quarkus-hibernate-reactive</module> -->
+      <module>quarkus-langchain4j</module>
+      <module>quarkus-websockets-next</module>
+      <module>quarkus-rbac</module>
+      <module>mongo-db</module>
+   </modules>
+</project>

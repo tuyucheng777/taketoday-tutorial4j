@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>concordion</artifactId>
+   <version>1.0.0</version>
+   <name>concordion</name>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>software.test</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.concordion</groupId>
+         <artifactId>concordion</artifactId>
+         <version>${concordion.version}</version>
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin.version}</version>
+            <configuration>
+               <source>23</source>
+               <target>23</target>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven-surefire-plugin.version}</version>
+            <configuration>
+               <systemPropertyVariables>
+                  <concordion.output.dir>target/concordion</concordion.output.dir>
+               </systemPropertyVariables>
+               <includes>
+                  <include>**/*.java</include>
+               </includes>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+   <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <concordion.version>3.2.0</concordion.version>
+   </properties>
+</project>

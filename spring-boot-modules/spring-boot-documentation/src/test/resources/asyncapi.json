@@ -1,0 +1,252 @@
+{
+   "asyncapi": "3.0.0",
+   "info": {
+      "title": "Baeldung Tutorial Springwolf Application",
+      "version": "1.0.0",
+      "description": "Baeldung Tutorial Application to Demonstrate AsyncAPI Documentation using Springwolf",
+      "x-generator": "springwolf"
+   },
+   "defaultContentType": "application/json",
+   "servers": {
+      "kafka-server": {
+         "host": "127.0.0.1:9092",
+         "protocol": "kafka"
+      }
+   },
+   "channels": {
+      "incoming-topic": {
+         "address": "incoming-topic",
+         "messages": {
+            "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto": {
+               "$ref": "#/components/messages/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+            }
+         }
+      },
+      "outgoing-topic": {
+         "address": "outgoing-topic",
+         "messages": {
+            "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto": {
+               "$ref": "#/components/messages/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto"
+            }
+         }
+      }
+   },
+   "components": {
+      "schemas": {
+         "SpringKafkaDefaultHeaders-IncomingPayloadDto": {
+            "title": "SpringKafkaDefaultHeaders-IncomingPayloadDto",
+            "type": "object",
+            "properties": {
+               "__TypeId__": {
+                  "type": "string",
+                  "description": "Spring Type Id Header",
+                  "enum": [
+                     "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+                  ],
+                  "examples": [
+                     "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+                  ]
+               }
+            },
+            "examples": [
+               {
+                  "__TypeId__": "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+               }
+            ]
+         },
+         "SpringKafkaDefaultHeadersIncomingPayloadDto": {
+            "title": "SpringKafkaDefaultHeadersIncomingPayloadDto",
+            "type": "object",
+            "properties": {
+               "__TypeId__": {
+                  "type": "string",
+                  "description": "Spring Type Id Header",
+                  "enum": [
+                     "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+                  ],
+                  "examples": [
+                     "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+                  ]
+               }
+            },
+            "examples": [
+               {
+                  "__TypeId__": "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+               }
+            ]
+         },
+         "SpringKafkaDefaultHeadersOutgoingPayloadDto": {
+            "title": "SpringKafkaDefaultHeadersOutgoingPayloadDto",
+            "type": "object",
+            "properties": {
+               "__TypeId__": {
+                  "type": "string",
+                  "description": "Spring Type Id Header",
+                  "enum": [
+                     "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto"
+                  ],
+                  "examples": [
+                     "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto"
+                  ]
+               }
+            },
+            "examples": [
+               {
+                  "__TypeId__": "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto"
+               }
+            ]
+         },
+         "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto": {
+            "title": "IncomingPayloadDto",
+            "type": "object",
+            "properties": {
+               "someEnum": {
+                  "type": "string",
+                  "description": "Some enum field",
+                  "enum": [
+                     "FOO1",
+                     "FOO2",
+                     "FOO3"
+                  ],
+                  "examples": [
+                     "FOO2"
+                  ]
+               },
+               "someLong": {
+                  "type": "integer",
+                  "description": "Some long field",
+                  "format": "int64",
+                  "examples": [
+                     5
+                  ]
+               },
+               "someString": {
+                  "type": "string",
+                  "description": "Some string field",
+                  "examples": [
+                     "some string value"
+                  ]
+               }
+            },
+            "description": "Incoming payload model",
+            "examples": [
+               {
+                  "someEnum": "FOO2",
+                  "someLong": 5,
+                  "someString": "some string value"
+               }
+            ],
+            "required": [
+               "someEnum",
+               "someString"
+            ]
+         },
+         "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto": {
+            "title": "OutgoingPayloadDto",
+            "type": "object",
+            "properties": {
+               "foo": {
+                  "type": "string",
+                  "description": "Foo field",
+                  "examples": [
+                     "bar"
+                  ]
+               },
+               "incomingWrapped": {
+                  "$ref": "#/components/schemas/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+               }
+            },
+            "description": "Outgoing payload model",
+            "examples": [
+               {
+                  "foo": "bar",
+                  "incomingWrapped": {
+                     "someEnum": "FOO2",
+                     "someLong": 5,
+                     "someString": "some string value"
+                  }
+               }
+            ],
+            "required": [
+               "incomingWrapped"
+            ]
+         }
+      },
+      "messages": {
+         "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto": {
+            "headers": {
+               "$ref": "#/components/schemas/SpringKafkaDefaultHeadersIncomingPayloadDto"
+            },
+            "payload": {
+               "schemaFormat": "application/vnd.aai.asyncapi+json;version=3.0.0",
+               "schema": {
+                  "$ref": "#/components/schemas/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+               }
+            },
+            "name": "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto",
+            "title": "IncomingPayloadDto",
+            "bindings": {
+               "kafka": {
+                  "bindingVersion": "0.5.0"
+               }
+            }
+         },
+         "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto": {
+            "headers": {
+               "$ref": "#/components/schemas/SpringKafkaDefaultHeadersOutgoingPayloadDto"
+            },
+            "payload": {
+               "schemaFormat": "application/vnd.aai.asyncapi+json;version=3.0.0",
+               "schema": {
+                  "$ref": "#/components/schemas/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto"
+               }
+            },
+            "name": "cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto",
+            "title": "OutgoingPayloadDto",
+            "bindings": {
+               "kafka": {
+                  "bindingVersion": "0.5.0"
+               }
+            }
+         }
+      }
+   },
+   "operations": {
+      "incoming-topic_receive_consume": {
+         "action": "receive",
+         "channel": {
+            "$ref": "#/channels/incoming-topic"
+         },
+         "title": "incoming-topic_receive",
+         "description": "More details for the incoming topic",
+         "bindings": {
+            "kafka": {
+               "bindingVersion": "0.5.0"
+            }
+         },
+         "messages": [
+            {
+               "$ref": "#/channels/incoming-topic/messages/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.IncomingPayloadDto"
+            }
+         ]
+      },
+      "outgoing-topic_send_publish": {
+         "action": "send",
+         "channel": {
+            "$ref": "#/channels/outgoing-topic"
+         },
+         "title": "outgoing-topic_send",
+         "description": "More details for the outgoing topic",
+         "bindings": {
+            "kafka": {
+               "bindingVersion": "0.5.0"
+            }
+         },
+         "messages": [
+            {
+               "$ref": "#/channels/outgoing-topic/messages/cn.tuyucheng.taketoday.boot.documentation.springwolf.dto.OutgoingPayloadDto"
+            }
+         ]
+      }
+   }
+}

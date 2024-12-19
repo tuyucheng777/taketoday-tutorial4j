@@ -1,0 +1,13 @@
+spring:
+   security:
+      oauth2:
+         client:
+            provider:
+               taketoday:
+                  issuer-uri: http://localhost:8085
+            registration:
+               pkce:
+                  provider: taketoday
+                  client-id: pkce-client
+                  client-secret: obscura
+                  scope: openid,email

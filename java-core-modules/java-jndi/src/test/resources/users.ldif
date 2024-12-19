@@ -1,0 +1,20 @@
+version: 1
+dn: dc=tuyucheng,dc=com
+objectClass: domain
+objectClass: top
+dc: tuyucheng
+
+dn: ou=Users,dc=tuyucheng,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: cn=Joe Simms,ou=Users,dc=tuyucheng,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: Joe Simms
+sn: Simms
+uid: user1
+userPassword: 12345
