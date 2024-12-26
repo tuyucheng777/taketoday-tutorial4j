@@ -1,8 +1,7 @@
 package cn.tuyucheng.taketoday.persistence.model;
 
-import org.hibernate.envers.Audited;
-
 import jakarta.persistence.*;
+import org.hibernate.envers.Audited;
 
 import java.io.Serializable;
 
@@ -23,6 +22,7 @@ import java.io.Serializable;
             @StoredProcedureParameter(name = "fooName", type = String.class, mode = ParameterMode.IN)
       }
 )
+
 @Entity
 @Audited
 // @Proxy(lazy = false)

@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.spring.data.es.model;
 
-import static org.springframework.data.elasticsearch.annotations.FieldType.Text;
-
 import org.springframework.data.elasticsearch.annotations.Field;
+
+import static org.springframework.data.elasticsearch.annotations.FieldType.Text;
 
 public class Author {
 

@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.customrepository.repository;
 
 import cn.tuyucheng.taketoday.spring.data.persistence.customrepository.model.User;
+import jakarta.annotation.PostConstruct;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
-import javax.annotation.PostConstruct;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.Objects;
 
 public class CustomUserRepositoryImpl implements CustomUserRepository {

@@ -4,24 +4,20 @@ import cn.tuyucheng.taketoday.boot.domain.Item;
 import cn.tuyucheng.taketoday.boot.domain.ItemType;
 import cn.tuyucheng.taketoday.boot.domain.Location;
 import cn.tuyucheng.taketoday.boot.domain.Store;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static junit.framework.TestCase.*;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @DataJpaTest(properties = "spring.sql.init.data-locations=classpath:import_entities.sql", showSql = false)
-class JpaRepositoriesIntegrationTest {
+public class JpaRepositoriesIntegrationTest {
    @Autowired
    private LocationRepository locationRepository;
    @Autowired
@@ -32,7 +28,7 @@ class JpaRepositoriesIntegrationTest {
    private ReadOnlyLocationRepository readOnlyRepository;
 
    @Test
-   void whenSaveLocation_ThenGetSameLocation() {
+   public void whenSaveLocation_ThenGetSameLocation() {
       Location location = new Location();
       location.setId(100L);
       location.setCountry("Country H");
@@ -47,13 +43,13 @@ class JpaRepositoriesIntegrationTest {
    }
 
    @Test
-   void givenLocationId_whenFindStores_thenGetStores() {
+   public void givenLocationId_whenFindStores_thenGetStores() {
       List<Store> stores = storeRepository.findStoreByLocationId(1L);
       assertEquals(1, stores.size());
    }
 
    @Test
-   void givenItemTypeId_whenDeleted_ThenItemTypeDeleted() {
+   public void givenItemTypeId_whenDeleted_ThenItemTypeDeleted() {
       Optional<ItemType> itemType = compositeRepository.findById(1L);
       assertTrue(itemType.isPresent());
       compositeRepository.deleteCustom(itemType.get());
@@ -62,7 +58,7 @@ class JpaRepositoriesIntegrationTest {
    }
 
    @Test
-   void givenItemId_whenUsingCustomRepo_ThenDeleteAppropriateEntity() {
+   public void givenItemId_whenUsingCustomRepo_ThenDeleteAppropriateEntity() {
       Item item = compositeRepository.findItemById(1L);
       assertNotNull(item);
       compositeRepository.deleteCustom(item);
@@ -71,7 +67,7 @@ class JpaRepositoriesIntegrationTest {
    }
 
    @Test
-   void givenItemAndItemType_WhenAmbiguousDeleteCalled_ThenItemTypeDeletedAndNotItem() {
+   public void givenItemAndItemType_WhenAmbiguousDeleteCalled_ThenItemTypeDeletedAndNotItem() {
       Optional<ItemType> itemType = compositeRepository.findById(1L);
       assertTrue(itemType.isPresent());
       Item item = compositeRepository.findItemById(2L);
@@ -85,7 +81,7 @@ class JpaRepositoriesIntegrationTest {
    }
 
    @Test
-   void whenCreatingReadOnlyRepo_thenHaveOnlyReadOnlyOperationsAvailable() {
+   public void whenCreatingReadOnlyRepo_thenHaveOnlyReadOnlyOperationsAvailable() {
       Optional<Location> location = readOnlyRepository.findById(1L);
       assertNotNull(location);
    }

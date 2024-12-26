@@ -2,22 +2,20 @@ package cn.tuyucheng.taketoday.jpa;
 
 import cn.tuyucheng.taketoday.jpa.domain.Foo;
 import cn.tuyucheng.taketoday.jpa.service.IFooService;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {JpaApplication.class})
 @DirtiesContext
-class FooServiceIntegrationTest {
+public class FooServiceIntegrationTest {
 
    @Autowired
    private IFooService service;
@@ -25,8 +23,8 @@ class FooServiceIntegrationTest {
    @Autowired
    private DataSource dataSource;
 
-   @Test
-   void whenInvalidEntityIsCreated_thenDataException() {
-      assertThrows(DataIntegrityViolationException.class, () -> service.create(new Foo()));
+   @Test(expected = DataIntegrityViolationException.class)
+   public final void whenInvalidEntityIsCreated_thenDataException() {
+      service.create(new Foo());
    }
 }

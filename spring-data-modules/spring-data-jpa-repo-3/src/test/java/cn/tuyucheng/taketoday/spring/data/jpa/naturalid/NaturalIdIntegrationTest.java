@@ -1,17 +1,16 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.naturalid;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.Optional;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import cn.tuyucheng.taketoday.spring.data.jpa.naturalid.entity.ConferenceRoom;
 import cn.tuyucheng.taketoday.spring.data.jpa.naturalid.entity.GuestRoom;
 import cn.tuyucheng.taketoday.spring.data.jpa.naturalid.repository.ConferenceRoomRepository;
 import cn.tuyucheng.taketoday.spring.data.jpa.naturalid.repository.GuestRoomJpaRepository;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class NaturalIdIntegrationTest {

@@ -3,26 +3,25 @@ package cn.tuyucheng.taketoday.persistence.repository;
 import cn.tuyucheng.taketoday.config.StudentJpaConfig;
 import cn.tuyucheng.taketoday.inmemory.persistence.dao.StudentRepository;
 import cn.tuyucheng.taketoday.inmemory.persistence.model.Student;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import jakarta.annotation.Resource;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Resource;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {StudentJpaConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
 @DirtiesContext
-class InMemoryDBIntegrationTest {
+public class InMemoryDBIntegrationTest {
 
    @Resource
    private StudentRepository studentRepository;
@@ -31,29 +30,29 @@ class InMemoryDBIntegrationTest {
    private static final String NAME = "john";
 
    @Test
-   void givenStudent_whenSave_thenGetOk() {
+   public void givenStudent_whenSave_thenGetOk() {
       Student student = new Student(ID, NAME);
       studentRepository.save(student);
 
       Student student2 = studentRepository.findById(ID).get();
-      assertEquals(NAME, student2.getName(), "name incorrect");
+      assertEquals("name incorrect", NAME, student2.getName());
    }
 
    @Test
-   void givenStudentWithTags_whenSave_thenGetByTagOk() {
+   public void givenStudentWithTags_whenSave_thenGetByTagOk() {
       Student student = new Student(ID, NAME);
       student.setTags(Arrays.asList("full time", "computer science"));
       studentRepository.save(student);
 
       Student student2 = studentRepository.retrieveByTag("full time").get(0);
-      assertEquals(NAME, student2.getName(), "name incorrect");
+      assertEquals("name incorrect", NAME, student2.getName());
    }
 
    @Test
-   void givenMultipleStudentsWithTags_whenSave_thenGetByTagReturnsCorrectCount() {
-      Student student1 = new Student(0, "Larry");
-      student1.setTags(Arrays.asList("full time", "computer science"));
-      studentRepository.save(student1);
+   public void givenMultipleStudentsWithTags_whenSave_thenGetByTagReturnsCorrectCount() {
+      Student student = new Student(0, "Larry");
+      student.setTags(Arrays.asList("full time", "computer science"));
+      studentRepository.save(student);
 
       Student student2 = new Student(1, "Curly");
       student2.setTags(Arrays.asList("part time", "rocket science"));
@@ -68,16 +67,16 @@ class InMemoryDBIntegrationTest {
       studentRepository.save(student4);
 
       List<Student> students = studentRepository.retrieveByTag("full time");
-      assertEquals(2, students.size(), "size incorrect");
+      assertEquals("size incorrect", 2, students.size());
    }
 
    @Test
-   void givenStudentWithTags_whenSave_thenGetByNameAndTagOk() {
+   public void givenStudentWithTags_whenSave_thenGetByNameAndTagOk() {
       Student student = new Student(ID, NAME);
       student.setTags(Arrays.asList("full time", "computer science"));
       studentRepository.save(student);
 
       Student student2 = studentRepository.retrieveByNameFilterByTag("John", "full time").get(0);
-      assertEquals(NAME, student2.getName(), "name incorrect");
+      assertEquals("name incorrect", NAME, student2.getName());
    }
 }

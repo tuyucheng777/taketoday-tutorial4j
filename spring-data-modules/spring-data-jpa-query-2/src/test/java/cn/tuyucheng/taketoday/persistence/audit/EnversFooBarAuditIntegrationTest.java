@@ -7,28 +7,28 @@ import cn.tuyucheng.taketoday.persistence.service.IFooAuditableService;
 import cn.tuyucheng.taketoday.spring.config.PersistenceTestConfig;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceTestConfig.class}, loader = AnnotationConfigContextLoader.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_CLASS)
-class EnversFooBarAuditIntegrationTest {
+public class EnversFooBarAuditIntegrationTest {
 
    private static final Logger LOGGER = LoggerFactory.getLogger(EnversFooBarAuditIntegrationTest.class);
 
@@ -45,15 +45,15 @@ class EnversFooBarAuditIntegrationTest {
 
    private Session session;
 
-   @BeforeEach
-   void setUp() {
+   @Before
+   public void setUp() {
       LOGGER.info("setUp()");
       makeRevisions();
       session = sessionFactory.openSession();
    }
 
-   @AfterEach
-   void tearDown() {
+   @After
+   public void tearDown() {
       LOGGER.info("tearDown()");
       session.close();
    }
@@ -95,7 +95,7 @@ class EnversFooBarAuditIntegrationTest {
    }
 
    @Test
-   final void whenFooBarsModified_thenFooBarsAudited() {
+   public final void whenFooBarsModified_thenFooBarsAudited() {
       List<Bar> barRevisionList;
       List<Foo> fooRevisionList;
 

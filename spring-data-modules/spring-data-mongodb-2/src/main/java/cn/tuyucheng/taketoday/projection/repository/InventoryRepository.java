@@ -28,5 +28,4 @@ public interface InventoryRepository extends MongoRepository<Inventory, String> 
 
    @Query(value = "{ 'status' : ?0 }", fields = "{ 'item' : 1, 'status' : 1, 'inStock': { $slice: -1 } }")
    List<Inventory> findByStatusIncludeEmbeddedFieldsLastElementInArray(String status);
-
 }

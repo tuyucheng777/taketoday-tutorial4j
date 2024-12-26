@@ -1,14 +1,8 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.findvsget.entity;
 
+import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
 @Table(name = "group")

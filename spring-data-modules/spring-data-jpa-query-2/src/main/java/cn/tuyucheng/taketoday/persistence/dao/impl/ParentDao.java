@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.persistence.dao.impl;
 
 import cn.tuyucheng.taketoday.persistence.dao.IParentDao;
-import cn.tuyucheng.taketoday.persistence.model.Parent;
 import cn.tuyucheng.taketoday.persistence.dao.common.AbstractHibernateDao;
+import cn.tuyucheng.taketoday.persistence.model.Parent;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -10,6 +10,9 @@ public class ParentDao extends AbstractHibernateDao<Parent> implements IParentDa
 
    public ParentDao() {
       super();
+
       setClazz(Parent.class);
    }
+
+   // API
 }

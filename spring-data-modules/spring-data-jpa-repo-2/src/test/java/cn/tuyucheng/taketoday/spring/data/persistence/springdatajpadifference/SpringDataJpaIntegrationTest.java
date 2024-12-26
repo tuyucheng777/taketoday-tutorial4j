@@ -6,8 +6,8 @@ import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.sp
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.repository.EmployeeRepository;
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.repository.EmployeeRepositoryPagingAndSort;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,23 +15,24 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.TestUtils.employee;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ContextConfiguration(classes = SpringDataJpaConfig.class)
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
 @Rollback
-class SpringDataJpaIntegrationTest {
+public class SpringDataJpaIntegrationTest {
 
    @Autowired
    private EmployeeRepository employeeRepository;
@@ -43,7 +44,7 @@ class SpringDataJpaIntegrationTest {
    private JPAQueryFactory jpaQueryFactory;
 
    @Test
-   void givenPersistedEmployee_whenFindById_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindById_thenEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
 
       employeeRepository.save(employee);
@@ -52,7 +53,7 @@ class SpringDataJpaIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindByFirstName_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindByFirstName_thenEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
 
       employeeRepository.save(employee);
@@ -62,7 +63,7 @@ class SpringDataJpaIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenUpdateEmployeeEmail_thenEmployeeHasUpdatedEmail() {
+   public void givenPersistedEmployee_whenUpdateEmployeeEmail_thenEmployeeHasUpdatedEmail() {
       Employee employee = employee("John", "Doe");
 
       employeeRepository.save(employee);
@@ -83,7 +84,7 @@ class SpringDataJpaIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenRemoveEmployee_thenNoEmployeeIsFound() {
+   public void givenPersistedEmployee_whenRemoveEmployee_thenNoEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
 
       employeeRepository.save(employee);
@@ -100,7 +101,7 @@ class SpringDataJpaIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployees_whenFindSortedByFirstName_thenEmployeeAreFoundInOrder() {
+   public void givenPersistedEmployees_whenFindSortedByFirstName_thenEmployeeAreFoundInOrder() {
       Employee john = employee("John", "Doe");
       Employee bob = employee("Bob", "Smith");
       Employee frank = employee("Frank", "Brown");
@@ -116,7 +117,7 @@ class SpringDataJpaIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindByQueryDsl_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindByQueryDsl_thenEmployeeIsFound() {
       Employee john = employee("John", "Doe");
       Employee frank = employee("Frank", "Doe");
 
@@ -133,7 +134,7 @@ class SpringDataJpaIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindBySortAndPagingRepository_thenEmployeeAreFound() {
+   public void givenPersistedEmployee_whenFindBySortAndPagingRepository_thenEmployeeAreFound() {
       Employee john = employee("John", "Doe");
       Employee bob = employee("Bob", "Smith");
       Employee frank = employee("Frank", "Brown");
@@ -146,6 +147,6 @@ class SpringDataJpaIntegrationTest {
       Page<Employee> employees = employeeRepositoryPagingAndSort.findAll(pageable);
 
       assertEquals(Arrays.asList(bob, frank), employees.get()
-            .toList());
+            .collect(Collectors.toList()));
    }
 }

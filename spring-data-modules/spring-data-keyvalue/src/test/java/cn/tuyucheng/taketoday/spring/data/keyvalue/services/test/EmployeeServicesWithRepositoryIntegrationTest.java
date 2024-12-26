@@ -4,25 +4,25 @@ import cn.tuyucheng.taketoday.spring.data.keyvalue.SpringDataKeyValueApplication
 import cn.tuyucheng.taketoday.spring.data.keyvalue.repositories.EmployeeRepository;
 import cn.tuyucheng.taketoday.spring.data.keyvalue.services.EmployeeService;
 import cn.tuyucheng.taketoday.spring.data.keyvalue.vo.Employee;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = SpringDataKeyValueApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-class EmployeeServicesWithRepositoryIntegrationTest {
+public class EmployeeServicesWithRepositoryIntegrationTest {
 
    @Autowired
    @Qualifier("employeeServicesWithRepository")
@@ -33,41 +33,40 @@ class EmployeeServicesWithRepositoryIntegrationTest {
 
    static Employee employee1;
 
-   @BeforeAll
-   static void setUp() {
+   @BeforeClass
+   public static void setUp() {
       employee1 = new Employee(1, "Karan", "IT", "5000");
    }
 
    @Test
-   void test1_whenEmployeeSaved_thenEmployeeIsAddedToMap() {
+   public void test1_whenEmployeeSaved_thenEmployeeIsAddedToMap() {
       employeeService.save(employee1);
       assertEquals(employeeRepository.findById(1).get(), employee1);
    }
 
    @Test
-   void test2_whenEmployeeGet_thenEmployeeIsReturnedFromMap() {
+   public void test2_whenEmployeeGet_thenEmployeeIsReturnedFromMap() {
       Employee employeeFetched = employeeService.get(1).get();
       assertEquals(employeeFetched, employee1);
    }
 
    @Test
-   void test3_whenEmployeesFetched_thenEmployeesAreReturnedFromMap() {
+   public void test3_whenEmployeesFetched_thenEmployeesAreReturnedFromMap() {
       List<Employee> employees = (List<Employee>) employeeService.fetchAll();
-      assertEquals(employees.size(), 1);
+      assertEquals(1, employees.size());
       assertEquals(employees.get(0), employee1);
    }
 
    @Test
-   void test4_whenEmployeeUpdated_thenEmployeeIsUpdatedToMap() {
+   public void test4_whenEmployeeUpdated_thenEmployeeIsUpdatedToMap() {
       employee1.setName("Pawan");
       employeeService.update(employee1);
-      assertEquals(employeeRepository.findById(1).get().getName(), "Pawan");
+      assertEquals("Pawan", employeeRepository.findById(1).get().getName());
    }
 
    @Test
-   void test5_whenEmployeeDeleted_thenEmployeeIsRemovedMap() {
+   public void test5_whenEmployeeDeleted_thenEmployeeIsRemovedMap() {
       employeeService.delete(1);
       assertFalse(employeeRepository.findById(1).isPresent());
    }
-
 }

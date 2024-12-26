@@ -2,27 +2,27 @@ package cn.tuyucheng.taketoday.jpa;
 
 import cn.tuyucheng.taketoday.jpa.domain.Fruit;
 import cn.tuyucheng.taketoday.jpa.repository.FruitRepository;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = JpaApplication.class)
-class FruitPopulatorIntegrationTest {
+public class FruitPopulatorIntegrationTest {
 
    @Autowired
    private FruitRepository fruitRepository;
 
    @Test
-   void givenFruitJsonPopulatorThenShouldInsertRecordOnStart() {
+   public void givenFruitJsonPopulatorThenShouldInsertRecordOnStart() {
       List<Fruit> fruits = fruitRepository.findAll();
-      assertEquals(2, fruits.size(), "record count is not matching");
+      assertEquals("record count is not matching", 2, fruits.size());
 
       fruits.forEach(fruit -> {
          if (1 == fruit.getId()) {

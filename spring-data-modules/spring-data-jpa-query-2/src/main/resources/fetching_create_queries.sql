@@ -13,3 +13,4 @@ CREATE TABLE `user_order`
    KEY        `USER_ID` (`USER_ID`),
    CONSTRAINT `user_order_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `USER` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+

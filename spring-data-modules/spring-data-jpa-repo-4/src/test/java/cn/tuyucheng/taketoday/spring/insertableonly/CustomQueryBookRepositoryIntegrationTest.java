@@ -10,9 +10,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.Optional;
 
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.ID;
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.NEW_TITLE;
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.TITLE;
+import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertTrue;

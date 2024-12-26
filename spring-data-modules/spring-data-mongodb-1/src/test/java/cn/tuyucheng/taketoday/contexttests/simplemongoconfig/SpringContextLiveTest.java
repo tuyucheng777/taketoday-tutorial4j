@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.contexttests.simplemongoconfig;
 
 import cn.tuyucheng.taketoday.config.SimpleMongoConfig;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * This Live test requires:
@@ -12,12 +12,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * <p>
  * (e.g. `docker run -d -p 27017:27017 --name bael-mongo mongo`)
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SimpleMongoConfig.class)
-class SpringContextLiveTest {
+public class SpringContextLiveTest {
 
    @Test
-   void whenSpringContextIsBootstrapped_thenNoExceptions() {
+   public void whenSpringContextIsBootstrapped_thenNoExceptions() {
    }
-
 }

@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.query.datetime;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity

@@ -1,10 +1,9 @@
 package cn.tuyucheng.taketoday.books.validators;
 
+import cn.tuyucheng.taketoday.books.models.WebsiteUser;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-
-import cn.tuyucheng.taketoday.books.models.WebsiteUser;
 
 @Component("beforeCreateWebsiteUserValidator")
 public class WebsiteUserValidator implements Validator {

@@ -8,19 +8,24 @@
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>parent-boot-2</artifactId>
+      <artifactId>parent-boot-3</artifactId>
       <version>1.0.0</version>
-      <relativePath>../../parent-boot-2</relativePath>
+      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <dependencies>
+      <dependency>
+         <groupId>jakarta.persistence</groupId>
+         <artifactId>jakarta.persistence-api</artifactId>
+         <version>${jakarta.persistence-api.version}</version>
+      </dependency>
       <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-web</artifactId>
       </dependency>
       <dependency>
-         <groupId>javax.persistence</groupId>
-         <artifactId>javax.persistence-api</artifactId>
+         <groupId>jakarta.persistence</groupId>
+         <artifactId>jakarta.persistence-api</artifactId>
       </dependency>
       <dependency>
          <groupId>org.springframework.data</groupId>
@@ -55,6 +60,7 @@
       <dependency>
          <groupId>org.projectlombok</groupId>
          <artifactId>lombok</artifactId>
+         <version>${lombok.version}</version>
       </dependency>
       <dependency>
          <groupId>org.postgresql</groupId>
@@ -140,5 +146,9 @@
    <properties>
       <hypersistance-utils-hibernate-55.version>3.7.0</hypersistance-utils-hibernate-55.version>
       <postgresql.version>42.7.1</postgresql.version>
+      <db.util.version>1.0.7</db.util.version>
+      <hypersistence-utils.version>3.7.0</hypersistence-utils.version>
+      <jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
+      <lombok.version>1.18.34</lombok.version>
    </properties>
 </project>

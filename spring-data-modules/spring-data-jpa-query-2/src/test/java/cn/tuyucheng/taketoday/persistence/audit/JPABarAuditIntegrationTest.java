@@ -1,42 +1,36 @@
 package cn.tuyucheng.taketoday.persistence.audit;
 
 import cn.tuyucheng.taketoday.persistence.model.Bar;
+import cn.tuyucheng.taketoday.persistence.model.Bar.OPERATION;
 import cn.tuyucheng.taketoday.persistence.service.IBarService;
 import cn.tuyucheng.taketoday.spring.config.PersistenceTestConfig;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import org.junit.*;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceTestConfig.class}, loader = AnnotationConfigContextLoader.class)
-class JPABarAuditIntegrationTest {
+public class JPABarAuditIntegrationTest {
 
    private static final Logger logger = LoggerFactory.getLogger(JPABarAuditIntegrationTest.class);
 
-   @BeforeAll
-   static void setUpBeforeClass() throws Exception {
+   @BeforeClass
+   public static void setUpBeforeClass() {
       logger.info("setUpBeforeClass()");
    }
 
-   @AfterAll
-   static void tearDownAfterClass() throws Exception {
+   @AfterClass
+   public static void tearDownAfterClass() {
       logger.info("tearDownAfterClass()");
    }
 
@@ -50,20 +44,20 @@ class JPABarAuditIntegrationTest {
 
    private EntityManager em;
 
-   @BeforeEach
-   void setUp() throws Exception {
+   @Before
+   public void setUp() throws Exception {
       logger.info("setUp()");
       em = entityManagerFactory.createEntityManager();
    }
 
-   @AfterEach
-   void tearDown() throws Exception {
+   @After
+   public void tearDown() throws Exception {
       logger.info("tearDown()");
       em.close();
    }
 
    @Test
-   final void whenBarsModified_thenBarsAudited() {
+   public final void whenBarsModified_thenBarsAudited() {
       // insert BAR1
       Bar bar1 = new Bar("BAR1");
       barService.create(bar1);
@@ -89,8 +83,8 @@ class JPABarAuditIntegrationTest {
 
       assertNotNull(bar1);
       assertNotNull(bar2);
-      Assertions.assertEquals(Bar.OPERATION.UPDATE, bar1.getOperation());
-      Assertions.assertEquals(Bar.OPERATION.INSERT, bar2.getOperation());
+      assertEquals(OPERATION.UPDATE, bar1.getOperation());
+      assertEquals(OPERATION.INSERT, bar2.getOperation());
       assertTrue(bar1.getTimestamp() > bar2.getTimestamp());
 
       barService.deleteById(bar1.getId());

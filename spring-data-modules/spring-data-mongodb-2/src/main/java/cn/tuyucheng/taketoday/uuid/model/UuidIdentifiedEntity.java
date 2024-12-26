@@ -14,9 +14,7 @@ public abstract class UuidIdentifiedEntity {
    }
 
    public void setId(UUID id) {
-
       if (this.id != null) {
-
          throw new UnsupportedOperationException("ID is already defined");
       }
 

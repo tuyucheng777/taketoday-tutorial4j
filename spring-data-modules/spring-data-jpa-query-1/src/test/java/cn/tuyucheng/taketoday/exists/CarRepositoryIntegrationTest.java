@@ -1,15 +1,15 @@
 package cn.tuyucheng.taketoday.exists;
 
-import cn.tuyucheng.taketoday.QueryApplication;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import cn.tuyucheng.taketoday.Application;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,32 +17,32 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.ignoreCase;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = {QueryApplication.class})
-class CarRepositoryIntegrationTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {Application.class})
+public class CarRepositoryIntegrationTest {
 
    @Autowired
    private CarRepository repository;
    private int searchId;
 
-   @BeforeEach
-   void setup() {
+   @Before
+   public void setup() {
       List<Car> cars = repository.saveAll(Arrays.asList(new Car(200, "BMW"), new Car(300, "Audi")));
       searchId = cars.get(0).getId();
    }
 
-   @AfterEach
-   void teardown() {
+   @After
+   public void teardown() {
       repository.deleteAll();
    }
 
    @Test
-   void whenIdIsCorrect_thenExistsShouldReturnTrue() {
+   public void whenIdIsCorrect_thenExistsShouldReturnTrue() {
       assertThat(repository.existsById(searchId)).isTrue();
    }
 
    @Test
-   void givenExample_whenExists_thenIsTrue() {
+   public void givenExample_whenExists_thenIsTrue() {
       ExampleMatcher modelMatcher = ExampleMatcher.matching()
             .withIgnorePaths("id") // must explicitly ignore -> PK
             .withMatcher("model", ignoreCase());
@@ -55,13 +55,13 @@ class CarRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPower_whenExists_thenIsFalse() {
+   public void givenPower_whenExists_thenIsFalse() {
       assertThat(repository.existsCarByPower(200)).isTrue();
       assertThat(repository.existsCarByPower(800)).isFalse();
    }
 
    @Test
-   void existsByDerivedQuery_byModel() {
+   public void existsByDerivedQuery_byModel() {
       assertThat(repository.existsCarByModel("Audi")).isTrue();
       assertThat(repository.existsCarByModel("audi")).isFalse();
       assertThat(repository.existsCarByModel("AUDI")).isFalse();
@@ -69,7 +69,7 @@ class CarRepositoryIntegrationTest {
    }
 
    @Test
-   void givenModelName_whenExistsExact_thenIsTrue() {
+   public void givenModelName_whenExistsExact_thenIsTrue() {
       assertThat(repository.existsCarExactCustomQuery("BMW")).isTrue();
       assertThat(repository.existsCarExactCustomQuery("Bmw")).isFalse();
       assertThat(repository.existsCarExactCustomQuery("bmw")).isFalse();
@@ -77,7 +77,7 @@ class CarRepositoryIntegrationTest {
    }
 
    @Test
-   void givenModelName_whenExistsLike_thenIsTrue() {
+   public void givenModelName_whenExistsLike_thenIsTrue() {
       assertThat(repository.existsCarLikeCustomQuery("BMW")).isTrue();
       assertThat(repository.existsCarLikeCustomQuery("Bmw")).isTrue();
       assertThat(repository.existsCarLikeCustomQuery("bmw")).isTrue();

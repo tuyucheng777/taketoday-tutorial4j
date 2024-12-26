@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringJUnitConfig
 @SpringBootTest
 @TestPropertySource("classpath:application.properties")
-class YugabyteDBLiveTest {
+public class YugabyteDBLiveTest {
 
    @Autowired
    private UserRepository userRepository;

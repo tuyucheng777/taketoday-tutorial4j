@@ -32,5 +32,7 @@
       <property name="hbm2ddl.auto">update</property>
 
       <mapping class="cn.tuyucheng.taketoday.hibernate.immutable.entities.Event"/>
+
    </session-factory>
+
 </hibernate-configuration>

@@ -3,12 +3,7 @@ package cn.tuyucheng.taketoday.spring.data.jpa.flush;
 import cn.tuyucheng.taketoday.flush.AppConfig;
 import cn.tuyucheng.taketoday.flush.Customer;
 import cn.tuyucheng.taketoday.flush.CustomerAddress;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.FlushModeType;
-import jakarta.persistence.PersistenceUnit;
-import jakarta.persistence.TypedQuery;
+import jakarta.persistence.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {AppConfig.class})
-class FlushIntegrationTest {
+public class FlushIntegrationTest {
 
    private static final Customer EXPECTED_CUSTOMER = aCustomer();
 
@@ -38,7 +33,6 @@ class FlushIntegrationTest {
 
    @Test
    void givenANewCustomer_whenPersistAndNoFlush_thenDatabaseNotSynchronizedWithPersistentContextUsingCommitFlushMode() {
-
       entityManager.setFlushMode(FlushModeType.COMMIT);
 
       EntityTransaction transaction = getTransaction();
@@ -74,7 +68,7 @@ class FlushIntegrationTest {
    }
 
    @Test
-   void givenANewCustomer_whenPersistAndFlush_thenCustomerIdGeneratedToBeAddedInAddress() {
+   public void givenANewCustomer_whenPersistAndFlush_thenCustomerIdGeneratedToBeAddedInAddress() {
       entityManager.setFlushMode(FlushModeType.COMMIT);
       EntityTransaction transaction = getTransaction();
 
@@ -117,7 +111,7 @@ class FlushIntegrationTest {
    }
 
    @Test
-   void givenFlushModeAutoAndNewCustomer_whenPersistAndNoFlush_thenCustomerIdGeneratedToBeAddedInAddress() {
+   public void givenFlushModeAutoAndNewCustomer_whenPersistAndNoFlush_thenCustomerIdGeneratedToBeAddedInAddress() {
       entityManager.setFlushMode(FlushModeType.AUTO);
       EntityTransaction transaction = getTransaction();
 
@@ -140,7 +134,7 @@ class FlushIntegrationTest {
    }
 
    @Test
-   void givenFlushModeAutoAndNewCustomer_whenPersistAndFlush_thenCustomerIdGeneratedToBeAddedInAddress() {
+   public void givenFlushModeAutoAndNewCustomer_whenPersistAndFlush_thenCustomerIdGeneratedToBeAddedInAddress() {
       entityManager.setFlushMode(FlushModeType.AUTO);
       EntityTransaction transaction = getTransaction();
 
@@ -178,7 +172,7 @@ class FlushIntegrationTest {
    }
 
    @AfterEach
-   void cleanup() {
+   public void cleanup() {
       entityManager.clear();
    }
 

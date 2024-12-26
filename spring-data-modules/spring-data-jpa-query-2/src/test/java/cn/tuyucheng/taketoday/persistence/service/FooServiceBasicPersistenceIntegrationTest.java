@@ -4,18 +4,18 @@ import cn.tuyucheng.taketoday.persistence.model.Foo;
 import cn.tuyucheng.taketoday.spring.config.PersistenceTestConfig;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceTestConfig.class}, loader = AnnotationConfigContextLoader.class)
 public class FooServiceBasicPersistenceIntegrationTest {
 
@@ -27,23 +27,27 @@ public class FooServiceBasicPersistenceIntegrationTest {
 
    private Session session;
 
-   @BeforeEach
-   final void before() {
+   // tests
+
+   @Before
+   public final void before() {
       session = sessionFactory.openSession();
    }
 
-   @AfterEach
-   final void after() {
+   @After
+   public final void after() {
       session.close();
    }
 
+   // tests
+
    @Test
-   final void whenContextIsBootstrapped_thenNoExceptions() {
+   public final void whenContextIsBootstrapped_thenNoExceptions() {
       //
    }
 
    @Test
-   final void whenEntityIsCreated_thenNoExceptions() {
+   public final void whenEntityIsCreated_thenNoExceptions() {
       fooService.create(new Foo(randomAlphabetic(6)));
    }
 }

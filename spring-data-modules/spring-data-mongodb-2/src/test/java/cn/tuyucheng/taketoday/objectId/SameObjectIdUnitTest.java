@@ -8,10 +8,10 @@ import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class SameObjectIdUnitTest {
+public class SameObjectIdUnitTest {
 
    @Test
-   void givenSameDateAndCounter_whenComparingObjectIds_thenTheyAreNotEqual() {
+   public void givenSameDateAndCounter_whenComparingObjectIds_thenTheyAreNotEqual() {
       Date date = new Date();
       ObjectId objectIdDate = new ObjectId(date);
       ObjectId objectIdDateCounter1 = new ObjectId(date, 100);
@@ -24,7 +24,7 @@ class SameObjectIdUnitTest {
    }
 
    @Test
-   void givenSameArrayOfBytes_whenComparingObjectIdsCreatedViaDifferentMethods_thenTheObjectIdsAreEqual() {
+   public void givenSameArrayOfBytes_whenComparingObjectIdsCreatedViaDifferentMethods_thenTheObjectIdsAreEqual() {
       byte[] bytes = "123456789012".getBytes();
       ObjectId objectIdBytes = new ObjectId(bytes);
 

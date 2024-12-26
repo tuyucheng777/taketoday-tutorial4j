@@ -31,7 +31,6 @@ public class EventMongoConfig {
 
    @Bean
    public UuidIdentifiedEntityEventListener uuidIdentifiedEntityEventListener() {
-
       return new UuidIdentifiedEntityEventListener();
    }
 }

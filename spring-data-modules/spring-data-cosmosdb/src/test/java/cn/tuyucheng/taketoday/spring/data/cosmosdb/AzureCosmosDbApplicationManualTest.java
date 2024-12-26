@@ -9,13 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
 @SpringBootTest
-class AzureCosmosDbApplicationManualTest {
+public class AzureCosmosDbApplicationManualTest {
 
    @Autowired
    ProductRepository productRepository;
 
    @Test
-   void givenProductIsCreated_whenCallFindById_thenProductIsFound() {
+   public void givenProductIsCreated_whenCallFindById_thenProductIsFound() {
       Product product = new Product();
       product.setProductid("1001");
       product.setProductCategory("Shirt");

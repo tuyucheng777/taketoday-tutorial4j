@@ -51,5 +51,4 @@ public class EmployeeServicesWithKeyValueTemplate implements EmployeeService {
       query.setSort(Sort.by(Sort.Direction.DESC, "salary"));
       return keyValueTemplate.find(query, Employee.class);
    }
-
 }

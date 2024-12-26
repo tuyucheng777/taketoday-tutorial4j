@@ -1,7 +1,5 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.spel.controller;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.NewsApplication;
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.entity.Article;
 import org.junit.jupiter.api.Test;
@@ -11,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.web.reactive.server.WebTestClient;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(classes = NewsApplication.class,
       webEnvironment = WebEnvironment.RANDOM_PORT,

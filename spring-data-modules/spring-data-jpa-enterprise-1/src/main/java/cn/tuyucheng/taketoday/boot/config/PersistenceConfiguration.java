@@ -1,13 +1,12 @@
 package cn.tuyucheng.taketoday.boot.config;
 
+import cn.tuyucheng.taketoday.boot.services.IBarService;
+import cn.tuyucheng.taketoday.boot.services.impl.BarSpringDataJpaService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import cn.tuyucheng.taketoday.boot.services.BarService;
-import cn.tuyucheng.taketoday.boot.services.impl.BarSpringDataJpaService;
 
 @Configuration
 @Profile("!tc")
@@ -16,7 +15,7 @@ import cn.tuyucheng.taketoday.boot.services.impl.BarSpringDataJpaService;
 public class PersistenceConfiguration {
 
    @Bean
-   public BarService barSpringDataJpaService() {
+   public IBarService barSpringDataJpaService() {
       return new BarSpringDataJpaService();
    }
 }

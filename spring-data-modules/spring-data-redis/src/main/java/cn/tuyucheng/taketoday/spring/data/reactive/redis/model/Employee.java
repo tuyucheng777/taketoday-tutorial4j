@@ -1,10 +1,6 @@
 package cn.tuyucheng.taketoday.spring.data.reactive.redis.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 

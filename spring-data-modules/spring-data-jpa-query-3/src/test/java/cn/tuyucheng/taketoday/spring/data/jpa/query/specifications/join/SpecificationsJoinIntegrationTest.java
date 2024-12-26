@@ -1,63 +1,63 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join.AuthorSpecifications.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @DataJpaTest
-class SpecificationsJoinIntegrationTest {
+public class SpecificationsJoinIntegrationTest {
 
    @Autowired
    private AuthorsRepository repository;
 
-   @BeforeEach
-   void beforeEach() {
+   @Before
+   public void beforeEach() {
       saveTestData();
    }
 
    @Test
-   void whenSearchingByLastName_thenOneAuthorIsReturned() {
+   public void whenSearchingByLastName_thenOneAuthorIsReturned() {
       List<Author> authors = repository.findAll(hasLastName("Martin"));
 
-      Assertions.assertThat(authors).hasSize(1);
+      assertThat(authors).hasSize(1);
    }
 
    @Test
-   void whenSearchingByLastNameAndFirstNameLike_thenOneAuthorIsReturned() {
+   public void whenSearchingByLastNameAndFirstNameLike_thenOneAuthorIsReturned() {
       Specification<Author> specification = hasLastName("Martin").and(hasFirstNameLike("Robert"));
 
       List<Author> authors = repository.findAll(specification);
 
-      Assertions.assertThat(authors).hasSize(1);
+      assertThat(authors).hasSize(1);
    }
 
    @Test
-   void whenSearchingByBookTitle_thenOneAuthorIsReturned() {
+   public void whenSearchingByBookTitle_thenOneAuthorIsReturned() {
       Specification<Author> specification = hasBookWithTitle("Clean Code");
 
       List<Author> authors = repository.findAll(specification);
 
-      Assertions.assertThat(authors).hasSize(1);
+      assertThat(authors).hasSize(1);
    }
 
    @Test
-   void whenSearchingByBookTitleAndAuthorName_thenOneAuthorIsReturned() {
+   public void whenSearchingByBookTitleAndAuthorName_thenOneAuthorIsReturned() {
       Specification<Author> specification = hasLastName("Martin").and(hasBookWithTitle("Clean Code"));
 
       List<Author> authors = repository.findAll(specification);
 
-      Assertions.assertThat(authors).hasSize(1);
+      assertThat(authors).hasSize(1);
    }
 
    private void saveTestData() {

@@ -4,10 +4,10 @@ import cn.tuyucheng.taketoday.config.MongoConfig;
 import cn.tuyucheng.taketoday.model.QUser;
 import cn.tuyucheng.taketoday.model.User;
 import com.querydsl.core.types.Predicate;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
@@ -18,12 +18,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * This test requires:
  * * mongodb instance running on the environment
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = MongoConfig.class)
-class DSLQueryLiveTest extends BaseQueryLiveTest {
+public class DSLQueryLiveTest extends BaseQueryLiveTest {
 
    @Test
-   void givenUsersExist_whenFindingUsersByName_thenUserAreFound() {
+   public void givenUsersExist_whenFindingUsersByName_thenUserAreFound() {
       User user = new User();
       user.setName("Eric");
       user.setAge(45);
@@ -42,7 +42,7 @@ class DSLQueryLiveTest extends BaseQueryLiveTest {
    }
 
    @Test
-   void givenUsersExist_whenFindingUsersWithAgeCreaterThanAndLessThan_thenUsersAreFound() {
+   public void givenUsersExist_whenFindingUsersWithAgeCreaterThanAndLessThan_thenUsersAreFound() {
       User user = new User();
       user.setAge(20);
       user.setName("Jon");
@@ -67,7 +67,7 @@ class DSLQueryLiveTest extends BaseQueryLiveTest {
    }
 
    @Test
-   void givenUsersExist_whenFindingUserWithNameStartWithA_thenUsersAreFound() {
+   public void givenUsersExist_whenFindingUserWithNameStartWithA_thenUsersAreFound() {
       User user = new User();
       user.setName("Eric");
       user.setAge(45);
@@ -91,7 +91,7 @@ class DSLQueryLiveTest extends BaseQueryLiveTest {
    }
 
    @Test
-   void givenUsersExist_whenFindingUserWithNameEndWithC_thenUsersAreFound() {
+   public void givenUsersExist_whenFindingUserWithNameEndWithC_thenUsersAreFound() {
       User user = new User();
       user.setName("Eric");
       user.setAge(45);

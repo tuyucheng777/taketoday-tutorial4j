@@ -69,6 +69,6 @@ public class Possession {
 
    @Override
    public String toString() {
-      return "Possession [id=" + id + ", name=" + name + "]";
+      return "Possesion [id=" + id + ", name=" + name + "]";
    }
 }

@@ -1,19 +1,18 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.spel.repository;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.NewsApplication;
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.entity.Article;
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.entity.ArticleWrapper;
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.extension.LocaleContextHolderExtension;
-
-import java.util.List;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(classes = NewsApplication.class,
       properties = {

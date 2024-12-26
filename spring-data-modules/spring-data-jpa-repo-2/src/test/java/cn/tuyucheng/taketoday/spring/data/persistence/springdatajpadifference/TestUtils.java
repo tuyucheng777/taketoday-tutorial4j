@@ -8,7 +8,7 @@ public class TestUtils {
       Employee employee = new Employee();
       employee.setFirstName(firstName);
       employee.setLastName(lastname);
-      employee.setEmail(firstName + lastname + "@tuyucheng.com");
+      employee.setEmail(firstName + lastname + "@taketoday.com");
 
       return employee;
    }

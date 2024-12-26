@@ -35,11 +35,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(
-      basePackages = {"cn.tuyucheng.taketoday.persistence"},
-      transactionManagerRef = "jpaTransactionManager",
-      entityManagerFactoryRef = "jpaEntityManager"
-)
+@EnableJpaRepositories(basePackages = {"cn.tuyucheng.taketoday.persistence"}, transactionManagerRef = "jpaTransactionManager", entityManagerFactoryRef = "jpaEntityManager")
 @EnableJpaAuditing
 @PropertySource({"classpath:persistence-h2.properties"})
 @ComponentScan({"cn.tuyucheng.taketoday.persistence"})
@@ -56,7 +52,7 @@ public class PersistenceTestConfig {
    public LocalSessionFactoryBean sessionFactory() {
       final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
       sessionFactory.setDataSource(restDataSource());
-      sessionFactory.setPackagesToScan("cn.tuyucheng.taketoday.persistence.model");
+      sessionFactory.setPackagesToScan(new String[]{"cn.tuyucheng.taketoday.persistence.model"});
       sessionFactory.setHibernateProperties(hibernateProperties());
 
       return sessionFactory;
@@ -66,7 +62,7 @@ public class PersistenceTestConfig {
    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
       final LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
       emf.setDataSource(restDataSource());
-      emf.setPackagesToScan("cn.tuyucheng.taketoday.persistence.model");
+      emf.setPackagesToScan(new String[]{"cn.tuyucheng.taketoday.persistence.model"});
 
       final JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
       emf.setJpaVendorAdapter(vendorAdapter);

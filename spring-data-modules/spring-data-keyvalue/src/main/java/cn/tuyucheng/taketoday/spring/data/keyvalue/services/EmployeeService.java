@@ -17,5 +17,4 @@ public interface EmployeeService {
    void delete(Integer id);
 
    Iterable<Employee> getSortedListOfEmployeesBySalary();
-
 }

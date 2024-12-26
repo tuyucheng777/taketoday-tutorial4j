@@ -2,24 +2,21 @@ package cn.tuyucheng.taketoday.boot.daos;
 
 import cn.tuyucheng.taketoday.boot.BootApplication;
 import cn.tuyucheng.taketoday.boot.domain.MerchandiseEntity;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = BootApplication.class)
-class InventoryRepositoryIntegrationTest {
+public class InventoryRepositoryIntegrationTest {
 
    private static final String ORIGINAL_TITLE = "Pair of Pants";
    private static final String UPDATED_TITLE = "Branded Luxury Pants";
@@ -30,7 +27,7 @@ class InventoryRepositoryIntegrationTest {
    private InventoryRepository repository;
 
    @Test
-   void shouldCreateNewEntryInDB() {
+   public void shouldCreateNewEntryInDB() {
       MerchandiseEntity pants = new MerchandiseEntity(ORIGINAL_TITLE, BigDecimal.ONE);
       pants = repository.save(pants);
 
@@ -43,7 +40,7 @@ class InventoryRepositoryIntegrationTest {
    }
 
    @Test
-   void shouldUpdateExistingEntryInDB() {
+   public void shouldUpdateExistingEntryInDB() {
       MerchandiseEntity pants = new MerchandiseEntity(ORIGINAL_TITLE, BigDecimal.ONE);
       pants = repository.save(pants);
 
@@ -63,7 +60,7 @@ class InventoryRepositoryIntegrationTest {
 
    @Test
    @Transactional
-   void shouldUpdateExistingEntryInDBWithoutSave() {
+   public void shouldUpdateExistingEntryInDBWithoutSave() {
       MerchandiseEntity pants = new MerchandiseEntity(ORIGINAL_TITLE, BigDecimal.ONE);
       pants = repository.save(pants);
 

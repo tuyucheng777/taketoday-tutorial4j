@@ -15,7 +15,6 @@ import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.ElasticsearchTransport;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
 import lombok.extern.slf4j.Slf4j;
-
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,11 +34,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * docker run -d --name elastic-test -p 9200:9200 -e "discovery.type=single-node" -e "xpack.security.enabled=false" docker.elastic.co/elasticsearch/elasticsearch:8.9.0
  */
 @Slf4j
-class ElasticSearchManualTest {
+public class ElasticSearchManualTest {
    private ElasticsearchClient client = null;
 
    @BeforeEach
-   void setUp() throws IOException {
+   public void setUp() throws IOException {
       RestClient restClient = RestClient.builder(HttpHost.create("http://localhost:9200"))
             .build();
       ElasticsearchTransport transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
@@ -59,7 +58,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenJsonDocument_whenJavaObject_thenIndexDocument() throws Exception {
+   public void givenJsonDocument_whenJavaObject_thenIndexDocument() throws Exception {
       Person person = new Person(20, "Mark Doe", new Date(1471466076564L));
       IndexResponse response = client.index(i -> i.index("person")
             .id(person.getFullName())
@@ -72,7 +71,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenJsonString_whenJavaObject_thenIndexDocument() throws Exception {
+   public void givenJsonString_whenJavaObject_thenIndexDocument() throws Exception {
       String jsonString = "{\"age\":10,\"dateOfBirth\":1471466076564,\"fullName\":\"John Doe\"}";
       StringReader stringReader = new StringReader(jsonString);
       IndexResponse response = client.index(i -> i.index("person")
@@ -84,7 +83,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenDocumentId_whenJavaObject_thenDeleteDocument() throws Exception {
+   public void givenDocumentId_whenJavaObject_thenDeleteDocument() throws Exception {
       String documentId = "Mark Doe";
       DeleteResponse response = client.delete(i -> i.index("person")
             .id(documentId));
@@ -93,7 +92,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenSearchRequest_whenMatch_thenReturnAllResults() throws Exception {
+   public void givenSearchRequest_whenMatch_thenReturnAllResults() throws Exception {
       String searchText = "John";
       SearchResponse<Person> searchResponse = client.search(s -> s.index("person")
             .query(q -> q.match(t -> t.field("fullName")
@@ -108,7 +107,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenGetRequest_whenMatch_thenReturnAllResults() throws IOException {
+   public void givenGetRequest_whenMatch_thenReturnAllResults() throws IOException {
       String documentId = "John Doe";
       GetResponse<Person> getResponse = client.get(s -> s.index("person")
             .id(documentId), Person.class);
@@ -117,7 +116,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenSearchRequest_whenMatchAndRange_thenReturnAllResults() throws Exception {
+   public void givenSearchRequest_whenMatchAndRange_thenReturnAllResults() throws Exception {
       String searchText = "John";
       SearchResponse<Person> searchResponse = client.search(s -> s.index("person")
             .query(q -> q.match(t -> t.field("fullName")
@@ -135,7 +134,7 @@ class ElasticSearchManualTest {
    }
 
    @Test
-   void givenMultipleQueries_thenReturnResults() throws Exception {
+   public void givenMultipleQueries_thenReturnResults() throws Exception {
       Query ageQuery = RangeQuery.of(r -> r.field("age")
                   .from("5")
                   .to("15"))

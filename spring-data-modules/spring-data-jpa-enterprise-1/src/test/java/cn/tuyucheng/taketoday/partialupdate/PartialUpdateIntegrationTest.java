@@ -1,34 +1,33 @@
 package cn.tuyucheng.taketoday.partialupdate;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import cn.tuyucheng.taketoday.partialupdate.model.Customer;
 import cn.tuyucheng.taketoday.partialupdate.model.CustomerDto;
 import cn.tuyucheng.taketoday.partialupdate.model.CustomerStructured;
 import cn.tuyucheng.taketoday.partialupdate.service.CustomerService;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = PartialUpdateApplication.class)
-class PartialUpdateIntegrationTest {
+public class PartialUpdateIntegrationTest {
 
    @Autowired
    CustomerService service;
 
    @Test
-   void givenCustomer_whenUpdate_thenSuccess() {
+   public void givenCustomer_whenUpdate_thenSuccess() {
       Customer myCustomer = service.addCustomer("John");
       myCustomer = service.updateCustomer(myCustomer.id, "+00");
       assertEquals("+00", myCustomer.phone);
    }
 
    @Test
-   void givenCustomer_whenUpdateWithQuery_thenSuccess() {
+   public void givenCustomer_whenUpdateWithQuery_thenSuccess() {
       Customer myCustomer = service.addCustomer("John");
       service.updateCustomerWithCustomQuery(myCustomer.id, "+88");
       myCustomer = service.getCustomer(myCustomer.id);
@@ -36,7 +35,7 @@ class PartialUpdateIntegrationTest {
    }
 
    @Test
-   void givenCustomerDto_whenUpdateWithMapper_thenSuccess() {
+   public void givenCustomerDto_whenUpdateWithMapper_thenSuccess() {
       CustomerDto dto = new CustomerDto(new Customer());
       dto.name = "Johnny";
       Customer entity = service.addCustomer(dto);
@@ -49,7 +48,7 @@ class PartialUpdateIntegrationTest {
    }
 
    @Test
-   void givenCustomerStructured_whenUpdateCustomerPhone_thenSuccess() {
+   public void givenCustomerStructured_whenUpdateCustomerPhone_thenSuccess() {
       CustomerStructured myCustomer = service.addCustomerStructured("John");
       assertNull(myCustomer.contactPhones);
 

@@ -16,11 +16,7 @@ import java.util.HashMap;
 
 @Configuration
 @PropertySource({"classpath:persistence-multiple-db.properties"})
-@EnableJpaRepositories(
-      basePackages = "cn.tuyucheng.taketoday.multipledb.dao.user",
-      entityManagerFactoryRef = "userEntityManager",
-      transactionManagerRef = "userTransactionManager"
-)
+@EnableJpaRepositories(basePackages = "cn.tuyucheng.taketoday.multipledb.dao.user", entityManagerFactoryRef = "userEntityManager", transactionManagerRef = "userTransactionManager")
 @Profile("!tc")
 public class PersistenceUserConfiguration {
    @Autowired
@@ -40,7 +36,7 @@ public class PersistenceUserConfiguration {
 
       final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
       em.setJpaVendorAdapter(vendorAdapter);
-      final HashMap<String, Object> properties = new HashMap<>();
+      final HashMap<String, Object> properties = new HashMap<String, Object>();
       properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
       properties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
       em.setJpaPropertyMap(properties);

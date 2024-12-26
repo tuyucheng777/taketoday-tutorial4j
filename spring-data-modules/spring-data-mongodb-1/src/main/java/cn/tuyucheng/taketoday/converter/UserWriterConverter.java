@@ -22,5 +22,4 @@ public class UserWriterConverter implements Converter<User, DBObject> {
       dbObject.removeField("_class");
       return dbObject;
    }
-
 }

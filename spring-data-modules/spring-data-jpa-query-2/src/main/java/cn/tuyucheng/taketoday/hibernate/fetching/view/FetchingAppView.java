@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.hibernate.fetching.view;
 
-import cn.tuyucheng.taketoday.hibernate.fetching.util.HibernateUtil;
 import cn.tuyucheng.taketoday.hibernate.fetching.model.OrderDetail;
 import cn.tuyucheng.taketoday.hibernate.fetching.model.UserEager;
 import cn.tuyucheng.taketoday.hibernate.fetching.model.UserLazy;
+import cn.tuyucheng.taketoday.hibernate.fetching.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

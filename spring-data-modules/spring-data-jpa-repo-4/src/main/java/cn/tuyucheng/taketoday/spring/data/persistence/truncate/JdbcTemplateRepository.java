@@ -14,7 +14,7 @@ public class JdbcTemplateRepository {
 
    @Transactional
    public void truncateTable(String tableName) {
-      String sql = STR."TRUNCATE TABLE \{tableName}";
+      String sql = "TRUNCATE TABLE " + tableName;
       jdbcTemplate.execute(sql);
    }
 }

@@ -13,10 +13,12 @@ public class Customer {
    public long id;
    public String name;
    public String phone;
+   //...
    public String phone99;
 
    @Override
    public String toString() {
-      return String.format("Customer %s, Phone: %s", this.name, this.phone);
+      return String.format("Customer %s, Phone: %s",
+            this.name, this.phone);
    }
 }

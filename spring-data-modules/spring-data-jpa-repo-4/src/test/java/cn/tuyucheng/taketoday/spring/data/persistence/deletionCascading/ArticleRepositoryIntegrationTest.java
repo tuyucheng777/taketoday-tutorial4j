@@ -1,16 +1,11 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.deletionCascading;
 
-import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.Article;
-import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.ArticleRepository;
-import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.ArticleService;
-import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.CascadingDeleteApplication;
-import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.Comment;
-import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.CommentRepository;
+import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.transaction.Transactional;
+import jakarta.transaction.Transactional;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -22,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(classes = CascadingDeleteApplication.class)
 @Transactional
-class ArticleRepositoryIntegrationTest {
+public class ArticleRepositoryIntegrationTest {
 
    @Autowired
    private ArticleRepository articleRepository;
@@ -35,7 +30,7 @@ class ArticleRepositoryIntegrationTest {
 
    @Test
    @Transactional
-   void givenAnArticleAndItsComments_whenDeleteArticle_thenCommentsDeletedAutomatically() {
+   public void givenAnArticleAndItsComments_whenDeleteArticle_thenCommentsDeletedAutomatically() {
       Set<Comment> comments = new HashSet<>();
       Article article = new Article();
       article.setName("introduction to Spring");

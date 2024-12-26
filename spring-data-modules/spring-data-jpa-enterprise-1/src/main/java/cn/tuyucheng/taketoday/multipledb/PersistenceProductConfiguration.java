@@ -19,11 +19,7 @@ import java.util.HashMap;
 
 @Configuration
 @PropertySource({"classpath:persistence-multiple-db.properties"})
-@EnableJpaRepositories(
-      basePackages = "cn.tuyucheng.taketoday.multipledb.dao.product",
-      entityManagerFactoryRef = "productEntityManager",
-      transactionManagerRef = "productTransactionManager"
-)
+@EnableJpaRepositories(basePackages = "cn.tuyucheng.taketoday.multipledb.dao.product", entityManagerFactoryRef = "productEntityManager", transactionManagerRef = "productTransactionManager")
 @Profile("!tc")
 public class PersistenceProductConfiguration {
    @Autowired

@@ -3,11 +3,11 @@ package cn.tuyucheng.taketoday.tailablecursor.service;
 import cn.tuyucheng.taketoday.tailablecursor.domain.Log;
 import cn.tuyucheng.taketoday.tailablecursor.domain.LogLevel;
 import cn.tuyucheng.taketoday.tailablecursor.repository.LogsRepository;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 
-import javax.annotation.PreDestroy;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j

@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
@@ -29,7 +28,7 @@ public class StudentJpaConfig {
    @Bean
    public DataSource dataSource() {
       final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-      dataSource.setDriverClassName(Objects.requireNonNull(env.getProperty("jdbc.driverClassName")));
+      dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
       dataSource.setUrl(env.getProperty("jdbc.url"));
       dataSource.setUsername(env.getProperty("jdbc.user"));
       dataSource.setPassword(env.getProperty("jdbc.pass"));
@@ -41,7 +40,7 @@ public class StudentJpaConfig {
    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
       final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
       em.setDataSource(dataSource());
-      em.setPackagesToScan("cn.tuyucheng.taketoday.inmemory.persistence.model");
+      em.setPackagesToScan(new String[]{"cn.tuyucheng.taketoday.inmemory.persistence.model"});
       em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
       em.setJpaProperties(additionalProperties());
       return em;

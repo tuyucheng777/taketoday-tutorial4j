@@ -24,29 +24,19 @@
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-data-neo4j</artifactId>
          <version>${spring-boot.version}</version>
-         <exclusions>
-            <exclusion>
-               <groupId>org.springframework.boot</groupId>
-               <artifactId>spring-boot-starter-logging</artifactId>
-            </exclusion>
-         </exclusions>
       </dependency>
       <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-test</artifactId>
          <version>${spring-boot.version}</version>
          <scope>test</scope>
-         <exclusions>
-            <exclusion>
-               <groupId>org.springframework.boot</groupId>
-               <artifactId>spring-boot-starter-logging</artifactId>
-            </exclusion>
-         </exclusions>
       </dependency>
    </dependencies>
 
    <properties>
       <spring-boot.version>2.7.14</spring-boot.version>
       <neo4j-harness.version>5.10.0</neo4j-harness.version>
+      <org.slf4j.version>1.7.32</org.slf4j.version> <!-- Multiple clashing versions cannot remove -->
+      <logback.version>1.2.7</logback.version> <!-- Multiple clashing versions cannot remove -->
    </properties>
 </project>

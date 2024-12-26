@@ -45,5 +45,4 @@ abstract class AbstractTestProjection {
    abstract void whenIncludeEmbeddedFieldsInArray_thenEmbeddedFieldsInArrayAreNotNull();
 
    abstract void whenIncludeEmbeddedFieldsSliceInArray_thenArrayLengthEqualToSlice();
-
 }

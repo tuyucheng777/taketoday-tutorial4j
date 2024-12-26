@@ -34,14 +34,11 @@ public class EntityCallbackMongoConfig {
 
    @Bean
    public BeforeConvertCallback<UuidIdentifiedEntity> beforeSaveCallback() {
-
-      return (entity, collection) -> {
-
+      return (entity, _) -> {
          if (entity.getId() == null) {
             entity.setId(UUID.randomUUID());
          }
          return entity;
       };
    }
-
 }

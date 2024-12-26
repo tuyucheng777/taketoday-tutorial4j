@@ -21,7 +21,7 @@ class UserRepositoryUnitTest {
    private UserRepository userRepository;
 
    @BeforeEach
-   void setup() {
+   public void setup() {
       Faker faker = new Faker();
       List<User> people = IntStream.range(1, 100)
             .parallel()
@@ -34,12 +34,12 @@ class UserRepositoryUnitTest {
    }
 
    @AfterEach
-   void tearDown() {
+   public void tearDown() {
       userRepository.deleteAll();
    }
 
    @Test
-   void whenAgeIs20_thenItShouldReturnAllUsersWhoseAgeIsGreaterThan20InAList() {
+   public void whenAgeIs20_thenItShouldReturnAllUsersWhoseAgeIsGreaterThan20InAList() {
       List<User> users = userRepository.findByAgeGreaterThan(20);
       assertThat(users).isNotEmpty();
       assertThat(users.stream()
@@ -48,7 +48,7 @@ class UserRepositoryUnitTest {
    }
 
    @Test
-   void whenAgeIs20_thenItShouldReturnAllUsersWhoseAgeIsGreaterThan20InAStream() {
+   public void whenAgeIs20_thenItShouldReturnAllUsersWhoseAgeIsGreaterThan20InAStream() {
       Stream<User> users = userRepository.findAllByAgeGreaterThan(20);
       assertThat(users).isNotNull();
       assertThat(users.map(User::getAge)

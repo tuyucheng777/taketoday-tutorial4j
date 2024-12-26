@@ -5,32 +5,31 @@ import cn.tuyucheng.taketoday.tailablecursor.domain.Log;
 import cn.tuyucheng.taketoday.tailablecursor.domain.LogLevel;
 import cn.tuyucheng.taketoday.tailablecursor.repository.LogsRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.CollectionOptions;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import reactor.core.publisher.Flux;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = LogsCounterApplication.class)
 @Slf4j
-class WarnLogsCounterManualTest {
+public class WarnLogsCounterManualTest {
    @Autowired
    private LogsRepository repository;
 
    @Autowired
    private ReactiveMongoTemplate template;
 
-   @BeforeEach
-   void setUp() {
+   @Before
+   public void setUp() {
       createCappedCollectionUsingReactiveMongoTemplate(template);
 
       persistDocument(Log.builder()
@@ -53,7 +52,7 @@ class WarnLogsCounterManualTest {
    }
 
    @Test
-   void whenWarnLogsArePersisted_thenTheyAreReceivedByLogsCounter() throws Exception {
+   public void whenWarnLogsArePersisted_thenTheyAreReceivedByLogsCounter() throws Exception {
       WarnLogsCounter warnLogsCounter = new WarnLogsCounter(template);
 
       Thread.sleep(1000L); // wait for initialization

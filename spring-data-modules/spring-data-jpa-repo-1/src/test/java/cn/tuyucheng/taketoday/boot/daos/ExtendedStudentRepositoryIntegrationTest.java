@@ -1,9 +1,8 @@
 package cn.tuyucheng.taketoday.boot.daos;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.util.List;
-
+import cn.tuyucheng.taketoday.boot.BootApplication;
+import cn.tuyucheng.taketoday.boot.domain.Student;
+import jakarta.annotation.Resource;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +10,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import cn.tuyucheng.taketoday.boot.BootApplication;
-import cn.tuyucheng.taketoday.boot.domain.Student;
+import java.util.List;
 
-import jakarta.annotation.Resource;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {BootApplication.class})

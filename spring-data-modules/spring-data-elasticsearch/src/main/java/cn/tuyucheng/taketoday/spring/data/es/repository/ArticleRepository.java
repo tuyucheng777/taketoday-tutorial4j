@@ -1,12 +1,11 @@
 package cn.tuyucheng.taketoday.spring.data.es.repository;
 
+import cn.tuyucheng.taketoday.spring.data.es.model.Article;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
-
-import cn.tuyucheng.taketoday.spring.data.es.model.Article;
 
 @Repository
 public interface ArticleRepository extends ElasticsearchRepository<Article, String> {

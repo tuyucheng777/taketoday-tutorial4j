@@ -5,6 +5,7 @@ import cn.tuyucheng.taketoday.osiv.model.BasicUser;
 import java.util.Set;
 
 public class DetailedUserDto {
+
    private Long id;
    private String username;
    private Set<String> permissions;

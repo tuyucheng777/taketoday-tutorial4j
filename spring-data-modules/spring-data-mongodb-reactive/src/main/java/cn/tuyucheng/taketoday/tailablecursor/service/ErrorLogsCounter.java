@@ -2,6 +2,7 @@ package cn.tuyucheng.taketoday.tailablecursor.service;
 
 import cn.tuyucheng.taketoday.tailablecursor.domain.Log;
 import cn.tuyucheng.taketoday.tailablecursor.domain.LogLevel;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,7 +11,6 @@ import org.springframework.data.mongodb.core.messaging.MessageListener;
 import org.springframework.data.mongodb.core.messaging.MessageListenerContainer;
 import org.springframework.data.mongodb.core.messaging.TailableCursorRequest;
 
-import javax.annotation.PreDestroy;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;

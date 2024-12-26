@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.persistence.service.impl;
 
-import cn.tuyucheng.taketoday.persistence.model.Parent;
-import cn.tuyucheng.taketoday.persistence.service.IParentService;
 import cn.tuyucheng.taketoday.persistence.dao.IParentDao;
 import cn.tuyucheng.taketoday.persistence.dao.common.IOperations;
+import cn.tuyucheng.taketoday.persistence.model.Parent;
+import cn.tuyucheng.taketoday.persistence.service.IParentService;
 import cn.tuyucheng.taketoday.persistence.service.common.AbstractHibernateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +17,8 @@ public class ParentService extends AbstractHibernateService<Parent> implements I
    public ParentService() {
       super();
    }
+
+   // API
 
    @Override
    protected IOperations<Parent> getDao() {

@@ -8,6 +8,8 @@ public final class IDUtil {
       throw new AssertionError();
    }
 
+   // API
+
    public static String randomPositiveLongAsString() {
       return Long.toString(randomPositiveLong());
    }

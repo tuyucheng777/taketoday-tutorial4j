@@ -1,21 +1,20 @@
 package cn.tuyucheng.taketoday;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import cn.tuyucheng.taketoday.boot.Application;
 import cn.tuyucheng.taketoday.boot.config.PersistenceConfiguration;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @DataJpaTest(excludeAutoConfiguration = {
       PersistenceConfiguration.class})
 @ContextConfiguration(classes = Application.class)
-class SpringJpaContextIntegrationTest {
+public class SpringJpaContextIntegrationTest {
 
    @Test
-   void whenSpringContextIsBootstrapped_thenNoExceptions() {
+   public void whenSpringContextIsBootstrapped_thenNoExceptions() {
    }
 }

@@ -8,9 +8,9 @@
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>parent-boot-2</artifactId>
+      <artifactId>parent-boot-3</artifactId>
       <version>1.0.0</version>
-      <relativePath>../../parent-boot-2</relativePath>
+      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <dependencies>
@@ -21,10 +21,12 @@
       <dependency>
          <groupId>org.hibernate</groupId>
          <artifactId>hibernate-ehcache</artifactId>
+         <version>5.6.7.Final</version>
       </dependency>
       <dependency>
          <groupId>org.hibernate</groupId>
          <artifactId>hibernate-envers</artifactId>
+         <version>5.6.7.Final</version>
       </dependency>
       <dependency>
          <groupId>com.h2database</groupId>
@@ -65,7 +67,6 @@
 
    <properties>
       <start-class>cn.tuyucheng.taketoday.boot.Application</start-class>
-      <testcontainers.postgresql.version>1.17.3</testcontainers.postgresql.version>
-      <postgresql.version>42.2.5</postgresql.version>
+      <testcontainers.postgresql.version>1.19.6</testcontainers.postgresql.version>
    </properties>
 </project>

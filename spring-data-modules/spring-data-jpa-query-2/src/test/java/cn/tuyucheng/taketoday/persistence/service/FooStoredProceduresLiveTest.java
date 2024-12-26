@@ -9,28 +9,27 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.exception.SQLGrammarException;
 import org.hibernate.query.Query;
+import org.junit.After;
 import org.junit.Assume;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import java.util.List;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.Assert.assertEquals;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceConfig.class}, loader = AnnotationConfigContextLoader.class)
-class FooStoredProceduresLiveTest {
+public class FooStoredProceduresLiveTest {
 
    private static final Logger LOGGER = LoggerFactory.getLogger(FooStoredProceduresLiveTest.class);
 
@@ -48,12 +47,12 @@ class FooStoredProceduresLiveTest {
 
    private EntityManager entityManager;
 
-   @BeforeEach
-   final void before() {
+   @Before
+   public final void before() {
       entityManager = entityManagerFactory.createEntityManager();
       session = sessionFactory.openSession();
-      assumeTrue(getAllFoosExists());
-      assumeTrue(getFoosByNameExists());
+      Assume.assumeTrue(getAllFoosExists());
+      Assume.assumeTrue(getFoosByNameExists());
    }
 
    private boolean getFoosByNameExists() {
@@ -78,14 +77,14 @@ class FooStoredProceduresLiveTest {
       }
    }
 
-   @AfterEach
-   final void after() {
+   @After
+   public final void after() {
       session.close();
       entityManager.close();
    }
 
    @Test
-   final void getAllFoosUsingStoredProcedures() {
+   public final void getAllFoosUsingStoredProcedures() {
       fooService.create(new Foo(randomAlphabetic(6)));
 
       // Stored procedure getAllFoos using createQuery
@@ -117,7 +116,7 @@ class FooStoredProceduresLiveTest {
    }
 
    @Test
-   final void getFoosByNameUsingStoredProcedures() {
+   public final void getFoosByNameUsingStoredProcedures() {
       fooService.create(new Foo("NewFooName"));
 
       // Stored procedure getFoosByName using createSQLQuery()

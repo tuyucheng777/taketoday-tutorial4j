@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface ProductRepository extends PagingAndSortingRepository<Product, Integer> {
 
-
    List<Product> findAllByPrice(double price, Pageable pageable);
 }

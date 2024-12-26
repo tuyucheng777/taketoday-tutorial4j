@@ -17,7 +17,7 @@ import org.springframework.test.context.DynamicPropertySource;
 import java.util.List;
 
 @DataNeo4jTest
-class BookAndAuthorRepositoryIntegrationTest {
+public class BookAndAuthorRepositoryIntegrationTest {
 
    private static Neo4j newServer;
 

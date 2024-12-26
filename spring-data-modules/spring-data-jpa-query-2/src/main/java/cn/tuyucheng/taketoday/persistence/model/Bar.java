@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.persistence.model;
 
 import com.google.common.collect.Sets;
+import jakarta.persistence.*;
 import org.hibernate.annotations.OrderBy;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
@@ -8,20 +9,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreRemove;
-import jakarta.persistence.PreUpdate;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -103,6 +90,8 @@ public class Bar implements Serializable {
       super();
       this.name = name;
    }
+
+   // API
 
    public Set<Foo> getFooSet() {
       return fooSet;

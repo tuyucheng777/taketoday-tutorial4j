@@ -9,24 +9,18 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.aggregation.Aggregation;
-import org.springframework.data.mongodb.core.aggregation.AggregationResults;
-import org.springframework.data.mongodb.core.aggregation.GroupOperation;
-import org.springframework.data.mongodb.core.aggregation.LimitOperation;
-import org.springframework.data.mongodb.core.aggregation.MatchOperation;
-import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
-import org.springframework.data.mongodb.core.aggregation.SortOperation;
+import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -37,30 +31,25 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.group;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.limit;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.match;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.project;
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.sort;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 /**
  * This test requires:
  * * mongodb instance running on the environment
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = MongoConfig.class)
-class ZipsAggregationLiveTest {
+public class ZipsAggregationLiveTest {
 
    private static MongoClient client;
 
    @Autowired
    private MongoTemplate mongoTemplate;
 
-   @BeforeAll
-   static void setupTests() throws Exception {
+   @BeforeClass
+   public static void setupTests() throws Exception {
       client = mongoClient();
       MongoDatabase testDB = client.getDatabase("test");
       MongoCollection<Document> zipsCollection = testDB.getCollection("zips");
@@ -73,8 +62,8 @@ class ZipsAggregationLiveTest {
       reader.close();
    }
 
-   @AfterAll
-   static void tearDown() throws Exception {
+   @AfterClass
+   public static void tearDown() throws Exception {
       client = mongoClient();
       MongoDatabase testDB = client.getDatabase("test");
       MongoCollection<Document> zipsCollection = testDB.getCollection("zips");
@@ -89,8 +78,7 @@ class ZipsAggregationLiveTest {
    }
 
    @Test
-   void whenStatesHavePopGrtrThan10MillionAndSorted_thenSuccess() {
-
+   public void whenStatesHavePopGrtrThan10MillionAndSorted_thenSuccess() {
       GroupOperation groupByStateAndSumPop = group("state").sum("pop").as("statePop");
       MatchOperation filterStates = match(new Criteria("statePop").gt(10000000));
       SortOperation sortByPopDesc = sort(Sort.by(Direction.DESC, "statePop"));
@@ -117,12 +105,10 @@ class ZipsAggregationLiveTest {
       Collections.sort(expectedList, (sp1, sp2) -> sp2.getStatePop() - sp1.getStatePop());
 
       assertEquals(expectedList, actualList);
-
    }
 
    @Test
-   void whenStateWithLowestAvgCityPopIsME_theSuccess() {
-
+   public void whenStateWithLowestAvgCityPopIsME_theSuccess() {
       GroupOperation sumTotalCityPop = group("state", "city").sum("pop").as("cityPop");
       GroupOperation averageStatePop = group("_id.state").avg("cityPop").as("avgCityPop");
       SortOperation sortByAvgPopAsc = sort(Sort.by(Direction.ASC, "avgCityPop"));
@@ -140,8 +126,7 @@ class ZipsAggregationLiveTest {
    }
 
    @Test
-   void whenMaxMAAndMinRI_theSuccess() {
-
+   public void whenMaxMAAndMinRI_theSuccess() {
       GroupOperation sumZips = group("state").count().as("zipCount");
       SortOperation sortByCount = sort(Direction.ASC, "zipCount");
       GroupOperation groupFirstAndLast = group().first("_id").as("minZipState")
@@ -158,5 +143,4 @@ class ZipsAggregationLiveTest {
       assertEquals("MA", document.get("maxZipState"));
       assertEquals(474, document.get("maxZipCount"));
    }
-
 }

@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ActiveProfiles("tc-jdbc")
 @SpringBootTest(classes = Application.class)
-class UserRepositoryTCJdbcLiveTest {
+public class UserRepositoryTCJdbcLiveTest {
 
    final String USER_EMAIL = "email@example.com";
    final String USER_EMAIL2 = "email2@example.com";
@@ -29,7 +29,7 @@ class UserRepositoryTCJdbcLiveTest {
 
    @Test
    @Transactional
-   void givenUsersInDB_WhenUpdateStatusForNameModifyingQueryAnnotationNative_ThenModifyMatchingUsers() {
+   public void givenUsersInDB_WhenUpdateStatusForNameModifyingQueryAnnotationNative_ThenModifyMatchingUsers() {
       userRepository.save(new User("SAMPLE", LocalDate.now(), USER_EMAIL, ACTIVE_STATUS));
       userRepository.save(new User("SAMPLE1", LocalDate.now(), USER_EMAIL2, ACTIVE_STATUS));
       userRepository.save(new User("SAMPLE", LocalDate.now(), USER_EMAIL3, ACTIVE_STATUS));

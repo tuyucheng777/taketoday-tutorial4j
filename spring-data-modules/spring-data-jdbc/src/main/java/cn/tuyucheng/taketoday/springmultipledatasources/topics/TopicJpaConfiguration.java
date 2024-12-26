@@ -25,7 +25,8 @@ public class TopicJpaConfiguration {
    @Bean
    public LocalContainerEntityManagerFactoryBean topicsEntityManagerFactory(
          @Qualifier("topicsDataSource") DataSource dataSource,
-         EntityManagerFactoryBuilder builder) {
+         EntityManagerFactoryBuilder builder
+   ) {
       return builder
             .dataSource(dataSource)
             .packages(Topic.class)

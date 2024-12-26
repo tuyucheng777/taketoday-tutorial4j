@@ -15,6 +15,8 @@ public class AbstractJpaDao<T extends Serializable> extends AbstractDao<T> imple
    @PersistenceContext(unitName = "jpaEntityManager")
    private EntityManager em;
 
+   // API
+
    @Override
    public T findOne(final long id) {
       return em.find(clazz, Long.valueOf(id).intValue());

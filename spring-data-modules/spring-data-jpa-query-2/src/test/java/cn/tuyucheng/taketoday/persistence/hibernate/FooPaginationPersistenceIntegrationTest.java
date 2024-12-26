@@ -12,13 +12,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.hibernate.query.SelectionQuery;
 import org.hibernate.query.criteria.HibernateCriteriaBuilder;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import java.util.List;
@@ -28,7 +28,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.lessThan;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceTestConfig.class}, loader = AnnotationConfigContextLoader.class)
 public class FooPaginationPersistenceIntegrationTest {
 
@@ -40,8 +40,8 @@ public class FooPaginationPersistenceIntegrationTest {
 
    private Session session;
 
-   @BeforeEach
-   final void before() {
+   @Before
+   public final void before() {
       final int minimalNumberOfEntities = 25;
       if (fooService.findAll().size() <= minimalNumberOfEntities) {
          for (int i = 0; i < minimalNumberOfEntities; i++) {
@@ -52,18 +52,18 @@ public class FooPaginationPersistenceIntegrationTest {
       session = sessionFactory.openSession();
    }
 
-   @AfterEach
-   final void after() {
+   @After
+   public final void after() {
       session.close();
    }
 
    @Test
-   final void whenContextIsBootstrapped_thenNoExceptions() {
+   public final void whenContextIsBootstrapped_thenNoExceptions() {
       //
    }
 
    @Test
-   final void whenRetrievingPaginatedEntities_thenCorrectSize() {
+   public final void whenRetrievingPaginatedEntities_thenCorrectSize() {
       final int pageNumber = 1;
       final int pageSize = 10;
 
@@ -76,7 +76,7 @@ public class FooPaginationPersistenceIntegrationTest {
    }
 
    @Test
-   final void whenRetrievingAllPages_thenCorrect() {
+   public final void whenRetrievingAllPages_thenCorrect() {
       int pageNumber = 1;
       final int pageSize = 10;
 
@@ -97,7 +97,7 @@ public class FooPaginationPersistenceIntegrationTest {
    }
 
    @Test
-   final void whenRetrievingLastPage_thenCorrectSize() {
+   public final void whenRetrievingLastPage_thenCorrectSize() {
       final int pageSize = 10;
 
       final String countQ = "Select count (f.id) from Foo f";
@@ -116,7 +116,7 @@ public class FooPaginationPersistenceIntegrationTest {
    // testing - scrollable
 
    @Test
-   final void givenUsingTheScrollableApi_whenRetrievingPaginatedData_thenCorrect() {
+   public final void givenUsingTheScrollableApi_whenRetrievingPaginatedData_thenCorrect() {
       final int pageSize = 10;
       final String hql = "FROM Foo f order by f.name";
       final Query<Foo> query = session.createQuery(hql, Foo.class);
@@ -141,7 +141,7 @@ public class FooPaginationPersistenceIntegrationTest {
    }
 
    @Test
-   final void givenUsingTheCriteriaApi_whenRetrievingFirstPage_thenCorrect() {
+   public final void givenUsingTheCriteriaApi_whenRetrievingFirstPage_thenCorrect() {
       final int pageSize = 10;
 
       CriteriaQuery<Foo> selectQuery = session.getCriteriaBuilder().createQuery(Foo.class);
@@ -156,7 +156,7 @@ public class FooPaginationPersistenceIntegrationTest {
    }
 
    @Test
-   final void givenUsingTheCriteriaApi_whenRetrievingPaginatedData_thenCorrect() {
+   public final void givenUsingTheCriteriaApi_whenRetrievingPaginatedData_thenCorrect() {
       HibernateCriteriaBuilder qb = session.getCriteriaBuilder();
       CriteriaQuery<Long> cq = qb.createQuery(Long.class);
       cq.select(qb.count(cq.from(Foo.class)));

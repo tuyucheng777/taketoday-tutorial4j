@@ -8,7 +8,7 @@
 * [Spring Data JPA Query](spring-data-jpa-query-1/README.md)
 * [Spring Data JPA Repository](spring-data-jpa-repo-1/README.md)
 * [Spring Data JPA Enterprise](spring-data-jpa-enterprise-1/README.md)
-* [Spring Data JPA Annotations](spring-data-jpa-annotations/README.md)
+* [Spring Data JPA Annotations](spring-data-jpa-annotations-1/README.md)
 * [Spring Data JPA Filtering](spring-data-jpa-filtering/README.md)
 * [Spring Data JPA EclipseLink](spring-data-jpa-eclipselink/README.md)
 * [Spring Boot MySQL](spring-boot-mysql/README.md)

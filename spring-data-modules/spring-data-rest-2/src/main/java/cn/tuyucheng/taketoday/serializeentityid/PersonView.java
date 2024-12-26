@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.serializeentityid;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import org.springframework.data.rest.core.config.Projection;
 
 @JsonPropertyOrder({"id", "name"})
@@ -11,4 +10,5 @@ public interface PersonView {
    Long getId();
 
    String getName();
+
 }

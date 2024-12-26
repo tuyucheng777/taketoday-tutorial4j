@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.joins.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity

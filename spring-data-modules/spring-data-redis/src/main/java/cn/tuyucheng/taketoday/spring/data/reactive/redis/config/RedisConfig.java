@@ -2,6 +2,7 @@ package cn.tuyucheng.taketoday.spring.data.reactive.redis.config;
 
 
 import cn.tuyucheng.taketoday.spring.data.reactive.redis.model.Employee;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +14,6 @@ import org.springframework.data.redis.core.ReactiveRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-
-import javax.annotation.PreDestroy;
 
 @Configuration
 public class RedisConfig {
@@ -45,7 +44,7 @@ public class RedisConfig {
 
    @PreDestroy
    public void cleanRedis() {
-      factory.getConnection()
+      factory.getConnection().serverCommands()
             .flushDb();
    }
 }

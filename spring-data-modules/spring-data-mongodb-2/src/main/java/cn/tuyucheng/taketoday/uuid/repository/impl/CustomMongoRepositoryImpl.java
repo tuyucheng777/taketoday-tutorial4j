@@ -9,11 +9,9 @@ import org.springframework.data.mongodb.repository.support.SimpleMongoRepository
 import java.util.List;
 import java.util.UUID;
 
-
 public class CustomMongoRepositoryImpl<T extends UuidIdentifiedEntity> extends SimpleMongoRepository<T, UUID> implements CustomMongoRepository<T> {
 
    public CustomMongoRepositoryImpl(MongoEntityInformation<T, UUID> metadata, MongoOperations mongoOperations) {
-
       super(metadata, mongoOperations);
    }
 
@@ -42,10 +40,8 @@ public class CustomMongoRepositoryImpl<T extends UuidIdentifiedEntity> extends S
    }
 
    protected <S extends T> void generateId(S entity) {
-
       if (entity != null && entity.getId() == null) {
          entity.setId(UUID.randomUUID());
       }
    }
-
 }

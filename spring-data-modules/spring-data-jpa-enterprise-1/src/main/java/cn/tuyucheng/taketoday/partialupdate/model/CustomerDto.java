@@ -4,6 +4,7 @@ public class CustomerDto {
    private long id;
    public String name;
    public String phone;
+   //...
    private String phone99;
 
    public CustomerDto(long id) {

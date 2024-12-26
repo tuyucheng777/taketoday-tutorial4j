@@ -36,43 +36,48 @@
       <module>spring-data-cassandra-2</module>
       <module>spring-data-cassandra-reactive</module>
       <module>spring-data-cassandra-test</module>
-      <!-- <module>spring-data-cosmosdb</module> -->
-      <!-- <module>spring-data-couchbase</module> -->
-      <!-- <module>spring-data-dynamodb</module> -->
-      <!-- <module>spring-data-elasticsearch</module> -->
-      <!-- <module>spring-data-gemfire</module> -->
-      <!-- <module>spring-data-geode</module> -->
-      <!-- <module>spring-data-jdbc</module> -->
+      <module>spring-data-cosmosdb</module>
+      <module>spring-data-couchbase-2</module>
+      <module>spring-data-dynamodb</module>
+      <module>spring-data-eclipselink</module>
+      <module>spring-data-elasticsearch</module>
+      <module>spring-data-envers</module>
+      <module>spring-data-gemfire</module>
+      <module>spring-data-geode</module>
+      <module>spring-data-jdbc</module>
       <!-- <module>spring-data-jooq</module> -->
       <!-- <module>spring-data-jpa-1</module> -->
       <!-- <module>spring-data-jpa-2</module> -->
-      <!-- <module>spring-data-jpa-annotations</module> -->
-      <!-- <module>spring-data-jpa-crud-1</module> -->
-      <!-- <module>spring-data-jpa-crud-2</module> -->
+      <module>spring-data-jpa-annotations-1</module>
+      <module>spring-data-jpa-annotations-2</module>
+      <module>spring-data-jpa-crud</module>
       <!-- <module>spring-data-jpa-eclipselink</module> -->
-      <!-- <module>spring-data-jpa-enterprise-1</module> -->
-      <!-- <module>spring-data-jpa-enterprise-2</module> -->
-      <!-- <module>spring-data-jpa-filtering</module> -->
-      <!-- <module>spring-data-jpa-query-1</module> -->
-      <!-- <module>spring-data-jpa-query-2</module> -->
-      <!-- <module>spring-data-jpa-query-3</module> -->
-      <!-- <module>spring-data-jpa-repo-1</module> -->
-      <!-- <module>spring-data-jpa-repo-2</module> -->
-      <!-- <module>spring-data-jpa-repo-3</module> -->
-      <!-- <module>spring-data-jpa-repo-4</module> -->
-      <!-- <module>spring-data-keyvalue</module> -->
-      <!-- <module>spring-data-mongodb-1</module> -->
-      <!-- <module>spring-data-mongodb-2</module> -->
-      <!-- <module>spring-data-mongodb-reactive</module> -->
-      <!-- <module>spring-data-neo4j</module> -->
+      <module>spring-data-jpa-enterprise-1</module>
+      <module>spring-data-jpa-enterprise-2</module>
+      <module>spring-data-jpa-filtering</module>
+      <module>spring-data-jpa-query-1</module>
+      <module>spring-data-jpa-query-2</module>
+      <module>spring-data-jpa-query-3</module>
+      <module>spring-data-jpa-query-4</module>
+      <module>spring-data-jpa-query-5</module>
+      <module>spring-data-jpa-repo-1</module>
+      <module>spring-data-jpa-repo-2</module>
+      <module>spring-data-jpa-repo-3</module>
+      <module>spring-data-jpa-repo-4</module>
+      <module>spring-data-jpa-simple</module>
+      <module>spring-data-keyvalue</module>
+      <module>spring-data-mongodb-1</module>
+      <module>spring-data-mongodb-2</module>
+      <module>spring-data-mongodb-reactive</module>
+      <module>spring-data-neo4j</module>
       <!-- <module>spring-data-r2dbc</module> -->
-      <!-- <module>spring-data-redis</module> -->
-      <!-- <module>spring-data-rest-1</module> -->
-      <!-- <module>spring-data-rest-2</module> -->
-      <!-- <module>spring-data-rest-querydsl</module> -->
-      <!-- <module>spring-data-shardingsphere</module> -->
-      <!-- <module>spring-data-solr</module> -->
-      <!-- <module>spring-data-yugabytedb</module> -->
+      <module>spring-data-redis</module>
+      <module>spring-data-rest-1</module>
+      <module>spring-data-rest-2</module>
+      <module>spring-data-rest-querydsl</module>
+      <module>spring-data-shardingsphere</module>
+      <module>spring-data-solr</module>
+      <module>spring-data-yugabytedb</module>
    </modules>
 
    <properties>

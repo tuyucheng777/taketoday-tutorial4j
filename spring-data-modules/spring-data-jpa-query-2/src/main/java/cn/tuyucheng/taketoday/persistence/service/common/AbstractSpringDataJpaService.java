@@ -14,7 +14,7 @@ public abstract class AbstractSpringDataJpaService<T extends Serializable> imple
 
    @Override
    public T findOne(final long id) {
-      Optional<T> opt = getDao().findById(Long.valueOf(id));
+      Optional<T> opt = getDao().findById(id);
       return opt.get();
    }
 

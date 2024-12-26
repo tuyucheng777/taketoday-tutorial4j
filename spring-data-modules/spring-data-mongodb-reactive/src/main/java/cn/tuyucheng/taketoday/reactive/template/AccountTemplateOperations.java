@@ -29,5 +29,4 @@ public class AccountTemplateOperations {
    public ReactiveRemoveOperation.ReactiveRemove<Account> deleteAll() {
       return template.remove(Account.class);
    }
-
 }

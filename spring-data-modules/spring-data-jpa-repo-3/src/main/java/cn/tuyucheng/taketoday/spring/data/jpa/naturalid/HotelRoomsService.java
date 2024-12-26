@@ -2,10 +2,8 @@ package cn.tuyucheng.taketoday.spring.data.jpa.naturalid;
 
 import cn.tuyucheng.taketoday.spring.data.jpa.naturalid.entity.ConferenceRoom;
 import cn.tuyucheng.taketoday.spring.data.jpa.naturalid.entity.GuestRoom;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 

@@ -8,9 +8,9 @@
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>parent-boot-2</artifactId>
+      <artifactId>parent-boot-3</artifactId>
       <version>1.0.0</version>
-      <relativePath>../../parent-boot-2</relativePath>
+      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <dependencies>
@@ -27,9 +27,18 @@
          <artifactId>h2</artifactId>
       </dependency>
       <dependency>
+         <groupId>org.postgresql</groupId>
+         <artifactId>postgresql</artifactId>
+         <scope>runtime</scope>
+      </dependency>
+      <dependency>
          <groupId>com.google.guava</groupId>
          <artifactId>guava</artifactId>
          <version>${guava.version}</version>
       </dependency>
    </dependencies>
+
+   <properties>
+      <start-class>cn.tuyucheng.taketoday.Application</start-class>
+   </properties>
 </project>

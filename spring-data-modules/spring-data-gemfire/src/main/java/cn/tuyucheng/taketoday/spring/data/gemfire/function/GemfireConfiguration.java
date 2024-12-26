@@ -29,7 +29,6 @@ public class GemfireConfiguration {
    @Autowired
    FunctionExecution functionExecution;
 
-
    @Bean
    Properties gemfireProperties() {
       Properties gemfireProperties = new Properties();
@@ -47,7 +46,6 @@ public class GemfireConfiguration {
       gemfireCache.setProperties(gemfireProperties());
       return gemfireCache;
    }
-
 
    @Bean(name = "employee")
    @Autowired

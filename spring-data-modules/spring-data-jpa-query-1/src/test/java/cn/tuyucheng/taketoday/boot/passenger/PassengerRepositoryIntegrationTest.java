@@ -1,39 +1,35 @@
 package cn.tuyucheng.taketoday.boot.passenger;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.data.domain.*;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.core.IsNot.not;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @DataJpaTest(showSql = false)
-@ExtendWith(SpringExtension.class)
-class PassengerRepositoryIntegrationTest {
+@RunWith(SpringRunner.class)
+public class PassengerRepositoryIntegrationTest {
 
    @PersistenceContext
    private EntityManager entityManager;
    @Autowired
    private PassengerRepository repository;
 
-   @BeforeEach
-   void before() {
+   @Before
+   public void before() {
       entityManager.persist(Passenger.from("Jill", "Smith", 50));
       entityManager.persist(Passenger.from("Eve", "Jackson", 95));
       entityManager.persist(Passenger.from("Fred", "Bloggs", 22));
@@ -42,7 +38,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenSeveralPassengersWhenOrderedBySeatNumberLimitedToThenThePassengerInTheFirstFilledSeatIsReturned() {
+   public void givenSeveralPassengersWhenOrderedBySeatNumberLimitedToThenThePassengerInTheFirstFilledSeatIsReturned() {
       Passenger expected = Passenger.from("Fred", "Bloggs", 22);
 
       List<Passenger> passengers = repository.findOrderedBySeatNumberLimitedTo(1);
@@ -54,7 +50,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenSeveralPassengersWhenFindFirstByOrderBySeatNumberAscThenThePassengerInTheFirstFilledSeatIsReturned() {
+   public void givenSeveralPassengersWhenFindFirstByOrderBySeatNumberAscThenThePassengerInTheFirstFilledSeatIsReturned() {
       Passenger expected = Passenger.from("Fred", "Bloggs", 22);
 
       Passenger actual = repository.findFirstByOrderBySeatNumberAsc();
@@ -63,7 +59,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenSeveralPassengersWhenFindPageSortedByThenThePassengerInTheFirstFilledSeatIsReturned() {
+   public void givenSeveralPassengersWhenFindPageSortedByThenThePassengerInTheFirstFilledSeatIsReturned() {
       Passenger expected = Passenger.from("Fred", "Bloggs", 22);
 
       Page<Passenger> page = repository.findAll(PageRequest.of(0, 1,
@@ -76,7 +72,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenOrderedBySeatNumberAsc_thenCorrectOrder() {
+   public void givenPassengers_whenOrderedBySeatNumberAsc_thenCorrectOrder() {
       Passenger fred = Passenger.from("Fred", "Bloggs", 22);
       Passenger ricki = Passenger.from("Ricki", "Bobbie", 36);
       Passenger jill = Passenger.from("Jill", "Smith", 50);
@@ -89,7 +85,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenFindAllWithSortBySeatNumberAsc_thenCorrectOrder() {
+   public void givenPassengers_whenFindAllWithSortBySeatNumberAsc_thenCorrectOrder() {
       Passenger fred = Passenger.from("Fred", "Bloggs", 22);
       Passenger ricki = Passenger.from("Ricki", "Bobbie", 36);
       Passenger jill = Passenger.from("Jill", "Smith", 50);
@@ -102,7 +98,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenFindByExampleDefaultMatcher_thenExpectedReturned() {
+   public void givenPassengers_whenFindByExampleDefaultMatcher_thenExpectedReturned() {
       Example<Passenger> example = Example.of(Passenger.from("Fred", "Bloggs", null));
 
       Optional<Passenger> actual = repository.findOne(example);
@@ -112,7 +108,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenFindByExampleCaseInsensitiveMatcher_thenExpectedReturned() {
+   public void givenPassengers_whenFindByExampleCaseInsensitiveMatcher_thenExpectedReturned() {
       ExampleMatcher caseInsensitiveExampleMatcher = ExampleMatcher.matchingAll().withIgnoreCase();
       Example<Passenger> example = Example.of(Passenger.from("fred", "bloggs", null),
             caseInsensitiveExampleMatcher);
@@ -124,7 +120,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenFindByExampleCustomMatcher_thenExpectedReturned() {
+   public void givenPassengers_whenFindByExampleCustomMatcher_thenExpectedReturned() {
       Passenger jill = Passenger.from("Jill", "Smith", 50);
       Passenger eve = Passenger.from("Eve", "Jackson", 95);
       Passenger fred = Passenger.from("Fred", "Bloggs", 22);
@@ -145,7 +141,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenFindByIgnoringMatcher_thenExpectedReturned() {
+   public void givenPassengers_whenFindByIgnoringMatcher_thenExpectedReturned() {
       Passenger jill = Passenger.from("Jill", "Smith", 50);
       Passenger eve = Passenger.from("Eve", "Jackson", 95);
       Passenger fred = Passenger.from("Fred", "Bloggs", 22);
@@ -167,7 +163,7 @@ class PassengerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenPassengers_whenMatchingIgnoreCase_thenExpectedReturned() {
+   public void givenPassengers_whenMatchingIgnoreCase_thenExpectedReturned() {
       Passenger jill = Passenger.from("Jill", "Smith", 50);
       Passenger eve = Passenger.from("Eve", "Jackson", 95);
       Passenger fred = Passenger.from("Fred", "Bloggs", 22);

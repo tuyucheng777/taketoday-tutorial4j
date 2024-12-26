@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.boot.services.impl;
 
-import cn.tuyucheng.taketoday.boot.services.Operations;
+import cn.tuyucheng.taketoday.boot.services.IOperations;
 import com.google.common.collect.Lists;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -11,13 +11,17 @@ import java.io.Serializable;
 import java.util.List;
 
 @Transactional
-public abstract class AbstractService<T extends Serializable> implements Operations<T> {
+public abstract class AbstractService<T extends Serializable> implements IOperations<T> {
+
+   // read - one
 
    @Override
    @Transactional(readOnly = true)
    public T findOne(final long id) {
       return getDao().findById(id).orElse(null);
    }
+
+   // read - all
 
    @Override
    @Transactional(readOnly = true)
@@ -29,6 +33,8 @@ public abstract class AbstractService<T extends Serializable> implements Operati
    public Page<T> findPaginated(final int page, final int size) {
       return getDao().findAll(PageRequest.of(page, size));
    }
+
+   // write
 
    @Override
    public T create(final T entity) {

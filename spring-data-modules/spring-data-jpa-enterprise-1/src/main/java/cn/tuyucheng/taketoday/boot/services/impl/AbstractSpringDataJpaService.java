@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.boot.services.impl;
 
-import cn.tuyucheng.taketoday.boot.services.Operations;
+import cn.tuyucheng.taketoday.boot.services.IOperations;
 import com.google.common.collect.Lists;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Transactional(value = "transactionManager")
-public abstract class AbstractSpringDataJpaService<T extends Serializable> implements Operations<T> {
+public abstract class AbstractSpringDataJpaService<T extends Serializable> implements IOperations<T> {
 
    @Override
    public T findOne(final long id) {

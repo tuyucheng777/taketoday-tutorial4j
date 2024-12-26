@@ -16,6 +16,7 @@ public class CustomerStructured {
    @Override
    public String toString() {
       return String.format("Customer %s, Phone: %s",
-            this.name, this.contactPhones.stream().map(ContactPhone::toString).reduce("", String::concat));
+            this.name, this.contactPhones.stream()
+                  .map(ContactPhone::toString).reduce("", String::concat));
    }
 }

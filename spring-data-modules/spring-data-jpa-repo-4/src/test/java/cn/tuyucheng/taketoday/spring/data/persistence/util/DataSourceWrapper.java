@@ -1,9 +1,6 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.util;
 
 import io.hypersistence.utils.logging.InlineQueryLogEntryCreator;
-
-import javax.sql.DataSource;
-
 import net.ttddyy.dsproxy.listener.ChainListener;
 import net.ttddyy.dsproxy.listener.DataSourceQueryCountListener;
 import net.ttddyy.dsproxy.listener.logging.SLF4JQueryLoggingListener;
@@ -11,6 +8,8 @@ import net.ttddyy.dsproxy.support.ProxyDataSourceBuilder;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
+
+import javax.sql.DataSource;
 
 @Component
 public class DataSourceWrapper implements BeanPostProcessor {

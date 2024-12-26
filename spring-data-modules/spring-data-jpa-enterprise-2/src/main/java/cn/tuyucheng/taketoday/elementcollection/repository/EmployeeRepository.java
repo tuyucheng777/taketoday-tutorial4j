@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.elementcollection.repository;
 
 import cn.tuyucheng.taketoday.elementcollection.model.Employee;
+import jakarta.persistence.EntityGraph;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityGraph;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.HashMap;
 import java.util.Map;
 

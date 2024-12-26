@@ -39,7 +39,6 @@ public class EmployeeRepositoryIntegrationTest {
 
    @Test
    public void whenSalaryGreaterThan_ThenEmployeeFound() {
-
       Employee employee = new Employee("John Davidson", 4550.00);
       Employee employee1 = new Employee("Adam Davidson", 3500.00);
       Employee employee2 = new Employee("Chris Davidson", 5600.00);
@@ -51,12 +50,10 @@ public class EmployeeRepositoryIntegrationTest {
       List<Employee> employees = Lists.newArrayList(employeeRepository.findBySalaryGreaterThan(4000.00));
 
       assertEquals(2, employees.size());
-
    }
 
    @Test
    public void whenSalaryLessThan_ThenEmployeeFound() {
-
       Employee employee = new Employee("John Davidson", 4550.00);
       Employee employee1 = new Employee("Adam Davidson", 3500.00);
       Employee employee2 = new Employee("Chris Davidson", 5600.00);
@@ -68,12 +65,10 @@ public class EmployeeRepositoryIntegrationTest {
       List<Employee> employees = Lists.newArrayList(employeeRepository.findBySalaryLessThan(4000));
 
       assertEquals(1, employees.size());
-
    }
 
    @Test
    public void whenSalaryBetween_ThenEmployeeFound() {
-
       Employee employee = new Employee("John Davidson", 4550.00);
       Employee employee1 = new Employee("Adam Davidson", 3500.00);
       Employee employee2 = new Employee("Chris Davidson", 5600.00);
@@ -85,7 +80,6 @@ public class EmployeeRepositoryIntegrationTest {
       List<Employee> employees = Lists.newArrayList(employeeRepository.findBySalaryGreaterThanAndSalaryLessThan(3500, 5000));
 
       assertEquals(1, employees.size());
-
    }
 
    @Test

@@ -1,6 +1,8 @@
 package cn.tuyucheng.taketoday.namingstrategy;
 
-import org.assertj.core.api.Assertions;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import org.hibernate.exception.SQLGrammarException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,14 +13,11 @@ import org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfigur
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.TestPropertySource;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DataJpaTest(excludeAutoConfiguration = TestDatabaseAutoConfiguration.class)
@@ -50,7 +49,7 @@ class QuotedUpperCaseNamingStrategyH2IntegrationTest {
             .map(this::fromDatabase)
             .collect(Collectors.toList());
 
-      Assertions.assertThat(result).isNotEmpty();
+      assertThat(result).isNotEmpty();
    }
 
    @Test
@@ -62,7 +61,7 @@ class QuotedUpperCaseNamingStrategyH2IntegrationTest {
             .map(this::fromDatabase)
             .collect(Collectors.toList());
 
-      Assertions.assertThat(result).isNotEmpty();
+      assertThat(result).isNotEmpty();
    }
 
    @Test
@@ -76,8 +75,7 @@ class QuotedUpperCaseNamingStrategyH2IntegrationTest {
    public Person fromDatabase(Object databaseRow) {
       Object[] typedDatabaseRow = (Object[]) databaseRow;
 
-      return new Person(
-            ((BigInteger) typedDatabaseRow[0]).longValue(),
+      return new Person((Long) typedDatabaseRow[0],
             (String) typedDatabaseRow[1],
             (String) typedDatabaseRow[2]
       );

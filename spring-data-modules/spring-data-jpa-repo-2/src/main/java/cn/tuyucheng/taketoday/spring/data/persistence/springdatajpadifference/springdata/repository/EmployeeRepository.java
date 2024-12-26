@@ -1,13 +1,12 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.repository;
 
-import java.util.List;
-
+import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.Employee;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.Employee;
+import java.util.List;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {

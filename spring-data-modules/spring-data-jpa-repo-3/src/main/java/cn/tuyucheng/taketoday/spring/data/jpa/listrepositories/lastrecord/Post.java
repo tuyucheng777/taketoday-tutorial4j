@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.listrepositories.lastrecord;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
+import java.time.LocalDate;
 
 @Entity
 public class Post {

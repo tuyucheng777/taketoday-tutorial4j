@@ -6,8 +6,7 @@ import jakarta.persistence.Converter;
 import java.util.Arrays;
 import java.util.List;
 
-
-import static java.util.Collections.*;
+import static java.util.Collections.emptyList;
 
 @Converter
 public class StringListConverter implements AttributeConverter<List<String>, String> {

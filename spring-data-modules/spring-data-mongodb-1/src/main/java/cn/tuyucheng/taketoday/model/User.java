@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.model;
 
-import cn.tuyucheng.taketoday.annotation.CascadeSave;
 import com.querydsl.core.annotations.QueryEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
@@ -10,7 +9,6 @@ import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -26,9 +24,7 @@ public class User {
    @Indexed(direction = IndexDirection.ASCENDING)
    private Integer age;
 
-   @DBRef
    @Field("email")
-   @CascadeSave
    private EmailAddress emailAddress;
 
    @Transient
@@ -88,5 +84,4 @@ public class User {
    public void setYearOfBirth(final Integer yearOfBirth) {
       this.yearOfBirth = yearOfBirth;
    }
-
 }

@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.truncate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.Objects;
 
 @Entity
@@ -38,6 +38,8 @@ public class MyEntity {
 
    @Override
    public String toString() {
-      return STR."MyEntity{id=\{id}\{'}'}";
+      return "MyEntity{" +
+            "id=" + id +
+            '}';
    }
 }

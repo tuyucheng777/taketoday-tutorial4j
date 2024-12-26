@@ -52,5 +52,4 @@ public class Size {
    public int hashCode() {
       return Objects.hash(height, width, uom);
    }
-
 }

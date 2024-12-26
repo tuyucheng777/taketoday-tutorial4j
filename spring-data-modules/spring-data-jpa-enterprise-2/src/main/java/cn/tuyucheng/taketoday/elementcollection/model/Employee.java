@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.elementcollection.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -54,10 +55,9 @@ public class Employee {
       if (this == o) {
          return true;
       }
-      if (!(o instanceof Employee)) {
+      if (!(o instanceof Employee user)) {
          return false;
       }
-      Employee user = (Employee) o;
       return getId() == user.getId();
    }
 

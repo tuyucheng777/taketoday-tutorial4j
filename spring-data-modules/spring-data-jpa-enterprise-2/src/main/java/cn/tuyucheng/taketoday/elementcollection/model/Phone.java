@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.elementcollection.model;
 
-import javax.persistence.Embeddable;
+import jakarta.persistence.Embeddable;
+
 import java.util.Objects;
 
 @Embeddable
@@ -47,10 +48,9 @@ public class Phone {
       if (this == o) {
          return true;
       }
-      if (!(o instanceof Phone)) {
+      if (!(o instanceof Phone phone)) {
          return false;
       }
-      Phone phone = (Phone) o;
       return getType().equals(phone.getType()) && getAreaCode().equals(phone.getAreaCode())
             && getNumber().equals(phone.getNumber());
    }

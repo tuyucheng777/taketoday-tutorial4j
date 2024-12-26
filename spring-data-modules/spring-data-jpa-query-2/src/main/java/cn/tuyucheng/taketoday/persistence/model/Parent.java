@@ -25,6 +25,8 @@ public class Parent implements Serializable {
       this.child = child;
    }
 
+   // API
+
    public long getId() {
       return id;
    }

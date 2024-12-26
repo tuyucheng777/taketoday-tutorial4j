@@ -2,47 +2,46 @@ package cn.tuyucheng.taketoday.spring.data.redis.repo;
 
 import cn.tuyucheng.taketoday.spring.data.redis.config.RedisConfig;
 import cn.tuyucheng.taketoday.spring.data.redis.model.Student;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import redis.embedded.RedisServerBuilder;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = RedisConfig.class)
 @DirtiesContext(classMode = ClassMode.BEFORE_CLASS)
-class StudentRepositoryManualTest {
+public class StudentRepositoryManualTest {
 
    @Autowired
    private StudentRepository studentRepository;
 
    private static redis.embedded.RedisServer redisServer;
 
-   @BeforeAll
-   static void startRedisServer() throws IOException {
+   @BeforeClass
+   public static void startRedisServer() {
       redisServer = new RedisServerBuilder().port(6379).setting("maxmemory 128M").build();
       redisServer.start();
    }
 
-   @AfterAll
-   static void stopRedisServer() throws IOException {
+   @AfterClass
+   public static void stopRedisServer() {
       redisServer.stop();
    }
 
    @Test
-   void whenSavingStudent_thenAvailableOnRetrieval() throws Exception {
+   public void whenSavingStudent_thenAvailableOnRetrieval() {
       final Student student = new Student("Eng2015001", "John Doe", Student.Gender.MALE, 1);
       studentRepository.save(student);
       final Student retrievedStudent = studentRepository.findById(student.getId()).get();
@@ -50,7 +49,7 @@ class StudentRepositoryManualTest {
    }
 
    @Test
-   void whenUpdatingStudent_thenAvailableOnRetrieval() throws Exception {
+   public void whenUpdatingStudent_thenAvailableOnRetrieval() {
       final Student student = new Student("Eng2015001", "John Doe", Student.Gender.MALE, 1);
       studentRepository.save(student);
       student.setName("Richard Watson");
@@ -60,18 +59,18 @@ class StudentRepositoryManualTest {
    }
 
    @Test
-   void whenSavingStudents_thenAllShouldAvailableOnRetrieval() throws Exception {
+   public void whenSavingStudents_thenAllShouldAvailableOnRetrieval() {
       final Student engStudent = new Student("Eng2015001", "John Doe", Student.Gender.MALE, 1);
       final Student medStudent = new Student("Med2015001", "Gareth Houston", Student.Gender.MALE, 2);
       studentRepository.save(engStudent);
       studentRepository.save(medStudent);
       List<Student> students = new ArrayList<>();
       studentRepository.findAll().forEach(students::add);
-      assertEquals(students.size(), 2);
+      assertEquals(2, students.size());
    }
 
    @Test
-   void whenDeletingStudent_thenNotAvailableOnRetrieval() throws Exception {
+   public void whenDeletingStudent_thenNotAvailableOnRetrieval() {
       final Student student = new Student("Eng2015001", "John Doe", Student.Gender.MALE, 1);
       studentRepository.save(student);
       studentRepository.deleteById(student.getId());

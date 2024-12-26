@@ -14,6 +14,8 @@ public abstract class AbstractHibernateDao<T extends Serializable> extends Abstr
    @Autowired
    protected SessionFactory sessionFactory;
 
+   // API
+
    @Override
    public T findOne(final long id) {
       return (T) getCurrentSession().get(clazz, id);

@@ -14,7 +14,6 @@ public class EmployeeServicesWithRepository implements EmployeeService {
    @Autowired
    EmployeeRepository employeeRepository;
 
-
    @Override
    public void save(Employee employee) {
       employeeRepository.save(employee);
@@ -23,7 +22,6 @@ public class EmployeeServicesWithRepository implements EmployeeService {
    @Override
    public Iterable<Employee> fetchAll() {
       return employeeRepository.findAll();
-
    }
 
    @Override
@@ -34,7 +32,6 @@ public class EmployeeServicesWithRepository implements EmployeeService {
    @Override
    public void update(Employee employee) {
       employeeRepository.save(employee);
-
    }
 
    @Override
@@ -45,5 +42,4 @@ public class EmployeeServicesWithRepository implements EmployeeService {
    public Iterable<Employee> getSortedListOfEmployeesBySalary() {
       throw new RuntimeException("Method not supported by CRUDRepository");
    }
-
 }

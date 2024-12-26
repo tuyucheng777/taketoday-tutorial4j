@@ -16,14 +16,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = ProjectionConfig.class)
-class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
+public class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
    @Autowired
    private MongoTemplate mongoTemplate;
@@ -44,7 +41,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertFalse(inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getId());
@@ -65,7 +62,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertFalse(inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -85,7 +82,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertEquals(true, !inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -106,7 +103,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertEquals(true, !inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -131,7 +128,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertEquals(true, !inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -158,7 +155,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertEquals(true, !inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -196,7 +193,7 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       List<Inventory> inventoryList = mongoTemplate.find(query, Inventory.class);
 
-      assertTrue(inventoryList.size() > 0);
+      assertEquals(true, !inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -218,5 +215,4 @@ class MongoTemplateProjectionUnitTest extends AbstractTestProjection {
 
       assertEquals(lastInStock, stock);
    }
-
 }

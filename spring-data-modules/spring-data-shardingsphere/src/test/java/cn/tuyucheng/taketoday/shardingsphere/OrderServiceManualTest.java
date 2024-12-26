@@ -1,9 +1,5 @@
 package cn.tuyucheng.taketoday.shardingsphere;
 
-import cn.tuyucheng.taketoday.shardingsphere.Order;
-import cn.tuyucheng.taketoday.shardingsphere.OrderRepository;
-import cn.tuyucheng.taketoday.shardingsphere.OrderService;
-import cn.tuyucheng.taketoday.shardingsphere.Status;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +11,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.List;
 

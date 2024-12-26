@@ -1,10 +1,9 @@
 package cn.tuyucheng.taketoday.jpa.repository;
 
+import cn.tuyucheng.taketoday.jpa.domain.Foo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
-import cn.tuyucheng.taketoday.jpa.domain.Foo;
 
 public interface IFooDAO extends JpaRepository<Foo, Long> {
 

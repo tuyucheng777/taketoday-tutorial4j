@@ -20,9 +20,7 @@ public class DBLoader implements ApplicationRunner {
       this.bookRepository = bookRepository;
    }
 
-
    public void run(ApplicationArguments applicationArguments) throws Exception {
-
       String[] templates = {
             "Up and running with %s",
             "%s Basics",
@@ -31,7 +29,7 @@ public class DBLoader implements ApplicationRunner {
             "Under the hood: %s",
             "Discovering %s",
             "A short guide to %s",
-            "%s with Tuyucheng"
+            "%s with Taketoday"
       };
 
       String[] buzzWords = {

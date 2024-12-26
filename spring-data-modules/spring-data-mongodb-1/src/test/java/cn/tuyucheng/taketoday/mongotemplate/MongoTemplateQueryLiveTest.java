@@ -3,10 +3,10 @@ package cn.tuyucheng.taketoday.mongotemplate;
 import cn.tuyucheng.taketoday.config.MongoConfig;
 import cn.tuyucheng.taketoday.model.EmailAddress;
 import cn.tuyucheng.taketoday.model.User;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -18,33 +18,33 @@ import org.springframework.data.mongodb.core.index.IndexInfo;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.nullValue;
-import static org.junit.jupiter.api.Assertions.assertThat;
 
 /**
  * This test requires:
  * * mongodb instance running on the environment
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = MongoConfig.class)
 public class MongoTemplateQueryLiveTest {
 
    @Autowired
    private MongoTemplate mongoTemplate;
 
-   @BeforeEach
+   @Before
    public void testSetup() {
       if (!mongoTemplate.collectionExists(User.class)) {
          mongoTemplate.createCollection(User.class);
       }
    }
 
-   @AfterEach
+   @After
    public void tearDown() {
       mongoTemplate.dropCollection(User.class);
    }
@@ -152,18 +152,6 @@ public class MongoTemplateQueryLiveTest {
       List<IndexInfo> indexInfos = mongoTemplate.indexOps("user").getIndexInfo();
 
       assertThat(indexInfos.size(), is(1));
-   }
-
-   @Test
-   public void whenSavingUserWithEmailAddress_thenUserandEmailAddressSaved() {
-      final User user = new User();
-      user.setName("Brendan");
-      final EmailAddress emailAddress = new EmailAddress();
-      emailAddress.setValue("b@gmail.com");
-      user.setEmailAddress(emailAddress);
-      mongoTemplate.insert(user);
-
-      assertThat(mongoTemplate.findOne(Query.query(Criteria.where("name").is("Brendan")), User.class).getEmailAddress().getValue(), is("b@gmail.com"));
    }
 
    @Test

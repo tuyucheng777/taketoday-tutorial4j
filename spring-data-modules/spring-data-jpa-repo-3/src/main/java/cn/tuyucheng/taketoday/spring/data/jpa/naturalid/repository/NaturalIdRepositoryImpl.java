@@ -1,12 +1,9 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.naturalid.repository;
 
 import jakarta.persistence.EntityManager;
-
 import org.hibernate.Session;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
-import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.Optional;

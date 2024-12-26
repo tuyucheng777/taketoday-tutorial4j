@@ -1,18 +1,18 @@
 package cn.tuyucheng.taketoday;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * Note: In the IDE, remember to generate query type classes before running the Integration Test
+ * Note: In the IDE, remember to generate query type classes before running the Integration Test (e.g. in Eclipse right-click on the project > Run As > Maven generate sources)
  */
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = QueryDSLApplication.class)
-class SpringContextTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Application.class)
+public class SpringContextTest {
 
    @Test
-   void whenSpringContextIsBootstrapped_thenNoExceptions() {
+   public void whenSpringContextIsBootstrapped_thenNoExceptions() {
    }
 }

@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join;
 
-import javax.persistence.*;
-
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity

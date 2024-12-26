@@ -2,12 +2,12 @@ package cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join;
 
 import org.springframework.data.jpa.domain.Specification;
 
-import javax.persistence.criteria.*;
+import jakarta.persistence.criteria.*;
 
 public class AuthorSpecifications {
 
    public static Specification<Author> hasFirstNameLike(String name) {
-      return (root, query, criteriaBuilder) -> criteriaBuilder.like(root.get("firstName"), "%" + name + "%");
+      return (root, query, criteriaBuilder) -> criteriaBuilder.like(root.<String>get("firstName"), "%" + name + "%");
    }
 
    public static Specification<Author> hasLastName(String name) {

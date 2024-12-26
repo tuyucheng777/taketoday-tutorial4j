@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.multipledb.model.user;
 
 import javax.persistence.*;
-
 import java.util.List;
 
 @Entity

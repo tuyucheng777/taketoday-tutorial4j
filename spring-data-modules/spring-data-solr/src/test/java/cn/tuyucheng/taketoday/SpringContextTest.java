@@ -1,17 +1,16 @@
 package cn.tuyucheng.taketoday;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-
 import cn.tuyucheng.taketoday.spring.data.solr.config.SolrConfig;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SolrConfig.class)
-class SpringContextTest {
+public class SpringContextTest {
 
    @Test
-   void whenSpringContextIsBootstrapped_thenNoExceptions() {
+   public void whenSpringContextIsBootstrapped_thenNoExceptions() {
    }
 }

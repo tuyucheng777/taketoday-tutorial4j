@@ -2,37 +2,33 @@ package cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference;
 
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.Employee;
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.Employee_;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.CriteriaUpdate;
+import jakarta.persistence.criteria.Root;
+import org.junit.Before;
+import org.junit.Test;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.CriteriaUpdate;
-import javax.persistence.criteria.Root;
 import java.util.Arrays;
 import java.util.List;
 
 import static cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.TestUtils.employee;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
-class JpaDaoIntegrationTest {
+public class JpaDaoIntegrationTest {
 
    private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu-test");
    private final EntityManager entityManager = emf.createEntityManager();
 
-   @BeforeEach
-   void setup() {
+   @Before
+   public void setup() {
       deleteAllEmployees();
    }
 
    @Test
-   void givenPersistedEmployee_whenFindById_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindById_thenEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
       save(employee);
 
@@ -40,7 +36,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindByIdCriteriaQuery_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindByIdCriteriaQuery_thenEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
       save(employee);
 
@@ -56,7 +52,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindByIdJpql_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindByIdJpql_thenEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
       save(employee);
 
@@ -67,7 +63,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindByIdNamedQuery_thenEmployeeIsFound() {
+   public void givenPersistedEmployee_whenFindByIdNamedQuery_thenEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
       save(employee);
 
@@ -79,7 +75,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenFindWithPaginationAndSort_thenEmployeesAreFound() {
+   public void givenPersistedEmployee_whenFindWithPaginationAndSort_thenEmployeesAreFound() {
       Employee john = employee("John", "Doe");
       Employee bob = employee("Bob", "Smith");
       Employee frank = employee("Frank", "Brown");
@@ -106,7 +102,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenUpdateEmployeeEmail_thenEmployeeHasUpdatedEmail() {
+   public void givenPersistedEmployee_whenUpdateEmployeeEmail_thenEmployeeHasUpdatedEmail() {
       Employee employee = employee("John", "Doe");
       save(employee);
 
@@ -123,7 +119,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenUpdateEmployeeEmailWithCriteria_thenEmployeeHasUpdatedEmail() {
+   public void givenPersistedEmployee_whenUpdateEmployeeEmailWithCriteria_thenEmployeeHasUpdatedEmail() {
       Employee employee = employee("John", "Doe");
       save(employee);
 
@@ -143,7 +139,7 @@ class JpaDaoIntegrationTest {
    }
 
    @Test
-   void givenPersistedEmployee_whenRemoveEmployee_thenNoEmployeeIsFound() {
+   public void givenPersistedEmployee_whenRemoveEmployee_thenNoEmployeeIsFound() {
       Employee employee = employee("John", "Doe");
       save(employee);
 

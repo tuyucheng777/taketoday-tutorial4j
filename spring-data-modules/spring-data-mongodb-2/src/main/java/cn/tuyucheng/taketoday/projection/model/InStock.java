@@ -42,5 +42,4 @@ public class InStock {
    public int hashCode() {
       return Objects.hash(wareHouse, quantity);
    }
-
 }

@@ -6,24 +6,24 @@ import cn.tuyucheng.taketoday.multipledb.dao.user.UserRepository;
 import cn.tuyucheng.taketoday.multipledb.model.product.Product;
 import cn.tuyucheng.taketoday.multipledb.model.user.Possession;
 import cn.tuyucheng.taketoday.multipledb.model.user.User;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = MultipleDbApplication.class)
 @EnableTransactionManagement
-class JpaMultipleDBIntegrationTest {
+public class JpaMultipleDBIntegrationTest {
 
    @Autowired
    private UserRepository userRepository;
@@ -34,9 +34,11 @@ class JpaMultipleDBIntegrationTest {
    @Autowired
    private ProductRepository productRepository;
 
+   // tests
+
    @Test
    @Transactional("userTransactionManager")
-   void whenCreatingUser_thenCreated() {
+   public void whenCreatingUser_thenCreated() {
       User user = new User();
       user.setName("John");
       user.setEmail("john@test.com");
@@ -53,7 +55,7 @@ class JpaMultipleDBIntegrationTest {
 
    @Test
    @Transactional("userTransactionManager")
-   void whenCreatingUsersWithSameEmail_thenRollback() {
+   public void whenCreatingUsersWithSameEmail_thenRollback() {
       User user1 = new User();
       user1.setName("John");
       user1.setEmail("john@test.com");
@@ -78,7 +80,7 @@ class JpaMultipleDBIntegrationTest {
 
    @Test
    @Transactional("productTransactionManager")
-   void whenCreatingProduct_thenCreated() {
+   public void whenCreatingProduct_thenCreated() {
       Product product = new Product();
       product.setName("Book");
       product.setId(2);

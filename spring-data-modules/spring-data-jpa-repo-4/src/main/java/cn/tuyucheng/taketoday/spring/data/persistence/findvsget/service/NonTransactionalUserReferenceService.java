@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.findvsget.service;
 
-import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.repository.SimpleUserRepository;
 import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.entity.User;
+import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.repository.SimpleUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

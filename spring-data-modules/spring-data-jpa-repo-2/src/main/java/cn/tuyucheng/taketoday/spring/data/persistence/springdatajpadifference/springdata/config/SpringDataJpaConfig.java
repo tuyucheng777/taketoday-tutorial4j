@@ -3,6 +3,7 @@ package cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.s
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.Employee;
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.repository.EmployeeRepository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import jakarta.persistence.EntityManager;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 

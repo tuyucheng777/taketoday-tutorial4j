@@ -16,11 +16,11 @@ import de.flapdoodle.embed.mongo.config.Net;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import org.bson.Document;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.util.SocketUtils;
+import org.springframework.test.util.TestSocketUtils;
 
 import java.io.IOException;
 import java.util.stream.IntStream;
@@ -28,10 +28,10 @@ import java.util.stream.IntStream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-class ErrorLogsCounterManualTest {
+public class ErrorLogsCounterManualTest {
 
    private static final String SERVER = "localhost";
-   private static final int PORT = SocketUtils.findAvailableTcpPort(10000);
+   private static final int PORT = TestSocketUtils.findAvailableTcpPort();
    private static final String DB_NAME = "test";
    private static final String COLLECTION_NAME = Log.class.getName().toLowerCase();
 
@@ -45,8 +45,8 @@ class ErrorLogsCounterManualTest {
    private MongodProcess mongoDaemon;
    private MongoDatabase db;
 
-   @BeforeEach
-   void setup() throws Exception {
+   @Before
+   public void setup() throws Exception {
       MongoTemplate mongoTemplate = initMongoTemplate();
 
       MongoCollection<Document> collection = createCappedCollection();
@@ -58,8 +58,6 @@ class ErrorLogsCounterManualTest {
    }
 
    private MongoTemplate initMongoTemplate() throws IOException {
-
-
       final ImmutableMongodConfig mongodConfig = MongodConfig.builder()
             .version(Version.Main.PRODUCTION)
             .net(new Net(SERVER, PORT, Network.localhostIsIPv6()))
@@ -93,15 +91,15 @@ class ErrorLogsCounterManualTest {
       collection.insertOne(logMessage);
    }
 
-   @AfterEach
-   void tearDown() {
+   @After
+   public void tearDown() {
       errorLogsCounter.close();
       mongoDaemon.stop();
       mongodExecutable.stop();
    }
 
    @Test
-   void whenErrorLogsArePersisted_thenTheyAreReceivedByLogsCounter() throws Exception {
+   public void whenErrorLogsArePersisted_thenTheyAreReceivedByLogsCounter() throws Exception {
       MongoCollection<Document> collection = db.getCollection(COLLECTION_NAME);
 
       IntStream.range(1, 10)
@@ -117,5 +115,4 @@ class ErrorLogsCounterManualTest {
       assertThat(collection.countDocuments(), is((long) MAX_DOCUMENTS_IN_COLLECTION));
       assertThat(errorLogsCounter.count(), is(5));
    }
-
 }

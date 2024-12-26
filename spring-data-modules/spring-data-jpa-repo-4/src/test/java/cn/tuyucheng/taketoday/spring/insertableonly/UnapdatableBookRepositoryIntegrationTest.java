@@ -9,10 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.AUTHOR;
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.NEW_AUTHOR;
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.NEW_TITLE;
-import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.TITLE;
+import static cn.tuyucheng.taketoday.spring.insertableonly.ConstantHolder.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

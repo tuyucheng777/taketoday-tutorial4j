@@ -1,32 +1,32 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.search;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class StudentApplicationUnitTest {
+public class StudentApplicationUnitTest {
 
    @Autowired
    private StudentRepository studentRepo;
    private List<Student> students;
 
-   @BeforeEach
-   void fillData() {
+   @Before
+   public void fillData() {
       students = new ArrayList<>();
       int count = 10;
       Random r = new Random();
@@ -48,27 +48,27 @@ class StudentApplicationUnitTest {
       students.sort(c);
    }
 
-   @AfterEach
-   void clearData() {
+   @After
+   public void clearData() {
       studentRepo.deleteAll();
    }
 
    @Test
-   void givenStudentScores_whenMoreThanOne_thenFindFirst() {
+   public void givenStudentScores_whenMoreThanOne_thenFindFirst() {
       Student student = studentRepo.findFirstByOrderByScoreDesc();
       Student s = students.get(0);
       assertEquals(student, s);
    }
 
    @Test
-   void givenStudentScores_whenMoreThan3_thenFindFirstThree() {
+   public void givenStudentScores_whenMoreThan3_thenFindFirstThree() {
       List<Student> firstThree = studentRepo.findFirst3ByOrderByScoreDesc();
       List<Student> sList = students.subList(0, 3);
       assertArrayEquals(firstThree.toArray(), sList.toArray());
    }
 
    @Test
-   void givenStudentScores_whenNameMatches_thenFindFirstStudent() {
+   public void givenStudentScores_whenNameMatches_thenFindFirstStudent() {
       String matchString = "3";
       Student student = studentRepo.findFirstByNameLike("%" + matchString + "%", Sort.by("score")
             .descending());
@@ -81,7 +81,7 @@ class StudentApplicationUnitTest {
    }
 
    @Test
-   void givenStudentScores_whenBetweenRange_thenFindFirstTwoStudents() {
+   public void givenStudentScores_whenBetweenRange_thenFindFirstTwoStudents() {
       List<Student> topTwoBetweenRange = studentRepo.findFirst2ByScoreBetween(50, 60, Sort.by("score")
             .descending());
       List<Student> _students = students.stream()

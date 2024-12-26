@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.partialupdate.util;
 
-
 import cn.tuyucheng.taketoday.partialupdate.model.Customer;
 import cn.tuyucheng.taketoday.partialupdate.model.CustomerDto;
 import org.mapstruct.BeanMapping;

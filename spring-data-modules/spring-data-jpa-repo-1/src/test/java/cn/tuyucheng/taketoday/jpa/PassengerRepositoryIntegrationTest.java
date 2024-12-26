@@ -1,11 +1,10 @@
 package cn.tuyucheng.taketoday.jpa;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.core.IsNot.not;
-
-import java.util.List;
-
+import cn.tuyucheng.taketoday.jpa.domain.Passenger;
+import cn.tuyucheng.taketoday.jpa.repository.PassengerRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,12 +13,11 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import cn.tuyucheng.taketoday.jpa.domain.Passenger;
-import cn.tuyucheng.taketoday.jpa.repository.PassengerRepository;
+import java.util.List;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.core.IsNot.not;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {JpaApplication.class})

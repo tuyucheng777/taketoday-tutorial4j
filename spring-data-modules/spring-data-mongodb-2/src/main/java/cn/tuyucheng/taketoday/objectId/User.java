@@ -21,4 +21,3 @@ public class User {
       return name;
    }
 }
-

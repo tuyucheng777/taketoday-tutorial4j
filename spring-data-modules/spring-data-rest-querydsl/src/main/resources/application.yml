@@ -3,7 +3,7 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
       hikari:
          pool-name: hikari-pool
-      url: jdbc:mysql://localhost:3306/tuyucheng?verifyServerCertificate=false&useSSL=false&requireSSL=false
+      url: jdbc:mysql://localhost:3306/taketoday?verifyServerCertificate=false&useSSL=false&requireSSL=false
       username: root
 
    jpa:

@@ -26,12 +26,10 @@ public class StatePopulation {
 
    @Override
    public String toString() {
-      StringBuilder builder = new StringBuilder();
-      builder.append("StatePopulation [state=");
-      builder.append(state);
-      builder.append(", statePop=");
-      builder.append(statePop);
-      builder.append("]");
-      return builder.toString();
+      return "StatePopulation [state=" +
+            state +
+            ", statePop=" +
+            statePop +
+            "]";
    }
 }

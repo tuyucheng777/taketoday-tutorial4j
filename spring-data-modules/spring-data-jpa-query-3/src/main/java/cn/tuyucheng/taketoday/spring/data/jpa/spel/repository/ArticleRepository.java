@@ -2,13 +2,12 @@ package cn.tuyucheng.taketoday.spring.data.jpa.spel.repository;
 
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.entity.Article;
 import cn.tuyucheng.taketoday.spring.data.jpa.spel.entity.ArticleWrapper;
-
-import java.util.List;
-import javax.transaction.Transactional;
-
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
+import jakarta.transaction.Transactional;
+import java.util.List;
 
 public interface ArticleRepository extends BaseNewsApplicationRepository<Article, Long> {
 
@@ -18,6 +17,7 @@ public interface ArticleRepository extends BaseNewsApplicationRepository<Article
          + "VALUES (?1, ?2, ?3, ?4)",
          nativeQuery = true)
    void saveWithPositionalArguments(Long id, String title, String content, String language);
+
 
    @Modifying
    @Transactional
@@ -70,6 +70,7 @@ public interface ArticleRepository extends BaseNewsApplicationRepository<Article
          + "VALUES (:#{#wrapper.article.id}, :#{#wrapper.article.title}, :#{#wrapper.article.content}, :#{#wrapper.article.language})",
          nativeQuery = true)
    void saveWithSingleWrappedObjectSpELArgument(@Param("wrapper") ArticleWrapper articleWrapper);
+
 
    @Query(value = "SELECT * FROM articles WHERE language = :#{locale.language}",
          nativeQuery = true)

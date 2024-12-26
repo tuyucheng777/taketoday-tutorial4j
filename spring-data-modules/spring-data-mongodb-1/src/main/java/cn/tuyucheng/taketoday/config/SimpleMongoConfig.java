@@ -24,5 +24,4 @@ public class SimpleMongoConfig {
    public MongoTemplate mongoTemplate() throws Exception {
       return new MongoTemplate(mongo(), "test");
    }
-
 }

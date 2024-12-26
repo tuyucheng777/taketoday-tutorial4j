@@ -1,8 +1,6 @@
 package cn.tuyucheng.taketoday.config;
 
 import cn.tuyucheng.taketoday.converter.UserWriterConverter;
-import cn.tuyucheng.taketoday.event.CascadeSaveMongoEventListener;
-import cn.tuyucheng.taketoday.event.UserCascadeSaveMongoEventListener;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
@@ -44,16 +42,6 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
    @Override
    public Collection<String> getMappingBasePackages() {
       return Collections.singleton("cn.tuyucheng.taketoday");
-   }
-
-   @Bean
-   public UserCascadeSaveMongoEventListener userCascadingMongoEventListener() {
-      return new UserCascadeSaveMongoEventListener();
-   }
-
-   @Bean
-   public CascadeSaveMongoEventListener cascadingMongoEventListener() {
-      return new CascadeSaveMongoEventListener();
    }
 
    @Override

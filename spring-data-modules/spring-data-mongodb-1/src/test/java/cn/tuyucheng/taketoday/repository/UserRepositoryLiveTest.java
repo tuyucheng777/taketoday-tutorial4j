@@ -2,10 +2,10 @@ package cn.tuyucheng.taketoday.repository;
 
 import cn.tuyucheng.taketoday.config.MongoConfig;
 import cn.tuyucheng.taketoday.model.User;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
@@ -27,9 +27,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * This test requires:
  * * mongodb instance running on the environment
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = MongoConfig.class)
-class UserRepositoryLiveTest {
+public class UserRepositoryLiveTest {
 
    @Autowired
    private UserRepository userRepository;
@@ -37,20 +37,20 @@ class UserRepositoryLiveTest {
    @Autowired
    private MongoOperations mongoOps;
 
-   @BeforeEach
-   void testSetup() {
+   @Before
+   public void testSetup() {
       if (!mongoOps.collectionExists(User.class)) {
          mongoOps.createCollection(User.class);
       }
    }
 
-   @AfterEach
-   void tearDown() {
+   @After
+   public void tearDown() {
       mongoOps.dropCollection(User.class);
    }
 
    @Test
-   void whenInsertingUser_thenUserIsInserted() {
+   public void whenInsertingUser_thenUserIsInserted() {
       final User user = new User();
       user.setName("Jon");
       userRepository.insert(user);
@@ -59,7 +59,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void whenSavingNewUser_thenUserIsInserted() {
+   public void whenSavingNewUser_thenUserIsInserted() {
       final User user = new User();
       user.setName("Albert");
       userRepository.save(user);
@@ -68,7 +68,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void givenUserExists_whenSavingExistUser_thenUserIsUpdated() {
+   public void givenUserExists_whenSavingExistUser_thenUserIsUpdated() {
       User user = new User();
       user.setName("Jack");
       mongoOps.insert(user);
@@ -81,7 +81,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void givenUserExists_whenDeletingUser_thenUserIsDeleted() {
+   public void givenUserExists_whenDeletingUser_thenUserIsDeleted() {
       final User user = new User();
       user.setName("Benn");
       mongoOps.insert(user);
@@ -92,7 +92,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void givenUserExists_whenFindingUser_thenUserIsFound() {
+   public void givenUserExists_whenFindingUser_thenUserIsFound() {
       User user = new User();
       user.setName("Chris");
       mongoOps.insert(user);
@@ -104,7 +104,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void givenUserExists_whenCheckingDoesUserExist_thenUserIsExist() {
+   public void givenUserExists_whenCheckingDoesUserExist_thenUserIsExist() {
       User user = new User();
       user.setName("Harris");
       mongoOps.insert(user);
@@ -116,7 +116,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void givenUsersExist_whenFindingAllUsersWithSorting_thenUsersAreFoundAndSorted() {
+   public void givenUsersExist_whenFindingAllUsersWithSorting_thenUsersAreFoundAndSorted() {
       User user = new User();
       user.setName("Brendan");
       mongoOps.insert(user);
@@ -133,7 +133,7 @@ class UserRepositoryLiveTest {
    }
 
    @Test
-   void givenUsersExist_whenFindingAllUsersWithPagination_thenUsersAreFoundAndOrderedOnPage() {
+   public void givenUsersExist_whenFindingAllUsersWithPagination_thenUsersAreFoundAndOrderedOnPage() {
       User user = new User();
       user.setName("Brendan");
       mongoOps.insert(user);
@@ -150,5 +150,4 @@ class UserRepositoryLiveTest {
       assertThat(users.size(), is(1));
       assertThat(page.getTotalPages(), is(2));
    }
-
 }

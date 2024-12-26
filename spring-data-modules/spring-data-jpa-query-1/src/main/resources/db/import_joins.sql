@@ -6,7 +6,7 @@ INSERT INTO "department" ("id", "name")
 VALUES (3, 'Management');
 
 INSERT INTO "joins_employee" ("id", "name", "age", "department_id")
-VALUES (1, 'Tuyucheng', '35', 1);
+VALUES (1, 'Taketoday', '35', 1);
 INSERT INTO "joins_employee" ("id", "name", "age", "department_id")
 VALUES (2, 'John', '35', 2);
 INSERT INTO "joins_employee" ("id", "name", "age", "department_id")

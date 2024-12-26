@@ -31,6 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * "discovery.type=single-node" -e "xpack.security.enabled=false"
  * docker.elastic.co/elasticsearch/elasticsearch:8.9.0
  */
+
 @Slf4j
 class GeoQueriesManualTest {
 
@@ -39,7 +40,7 @@ class GeoQueriesManualTest {
    private ElasticsearchClient client;
 
    @BeforeEach
-   void setUp() throws Exception {
+   public void setUp() throws Exception {
       RestClient restClient = RestClient.builder(HttpHost.create("http://localhost:9200"))
             .build();
       ElasticsearchTransport transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
@@ -188,7 +189,7 @@ class GeoQueriesManualTest {
    }
 
    @AfterEach
-   void destroy() throws Exception {
+   public void destroy() throws Exception {
       client.indices()
             .delete(builder -> builder.index(WONDERS_OF_WORLD));
    }

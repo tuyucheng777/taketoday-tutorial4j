@@ -1,17 +1,15 @@
 package cn.tuyucheng.taketoday.spring.data.es.model;
 
-import static org.springframework.data.elasticsearch.annotations.FieldType.Keyword;
-import static org.springframework.data.elasticsearch.annotations.FieldType.Nested;
-import static org.springframework.data.elasticsearch.annotations.FieldType.Text;
-
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.InnerField;
 import org.springframework.data.elasticsearch.annotations.MultiField;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.springframework.data.elasticsearch.annotations.FieldType.*;
 
 @Document(indexName = "blog"/*, type = "article"*/)
 public class Article {

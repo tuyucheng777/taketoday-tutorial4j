@@ -24,9 +24,6 @@
 
    <mongo:repositories base-package="cn.tuyucheng.taketoday.repository" mongo-template-ref="mongoTemplate"/>
 
-   <bean class="cn.tuyucheng.taketoday.event.CascadeSaveMongoEventListener">
-   </bean>
-
    <mongo:mapping-converter id="mongoConverter" base-package="cn.tuyucheng.taketoday.converter">
       <mongo:custom-converters base-package="cn.tuyucheng.taketoday.converter"/>
    </mongo:mapping-converter>

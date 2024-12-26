@@ -17,7 +17,6 @@ public class Configurations {
    @Bean("keyValueTemplate")
    public KeyValueOperations keyValueTemplate() {
       return new KeyValueTemplate(keyValueAdapter());
-
    }
 
    @Bean

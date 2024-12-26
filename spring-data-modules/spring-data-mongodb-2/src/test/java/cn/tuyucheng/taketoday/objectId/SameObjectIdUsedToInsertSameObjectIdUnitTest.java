@@ -20,17 +20,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = MongoConfig.class)
-class SameObjectIdUsedToInsertSameObjectIdUnitTest {
+public class SameObjectIdUsedToInsertSameObjectIdUnitTest {
    @Autowired
    private MongoTemplate mongoTemplate;
 
    @BeforeEach
-   void setUp() {
+   public void setUp() {
       mongoTemplate.dropCollection(User.class);
    }
 
    @Test
-   void givenUserInDatabase_whenInsertingAnotherUserWithTheSameObjectId_DKEThrownAndInsertRetried() {
+   public void givenUserInDatabase_whenInsertingAnotherUserWithTheSameObjectId_DKEThrownAndInsertRetried() {
       // given
       String userName = "Kevin";
       User firstUser = new User(ObjectId.get(), userName);
@@ -55,5 +55,3 @@ class SameObjectIdUsedToInsertSameObjectIdUnitTest {
             .isEqualTo(Lists.newArrayList(firstUser, secondUser));
    }
 }
-
-

@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.json;
 
-import javax.persistence.*;
-
 import lombok.*;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student_str")

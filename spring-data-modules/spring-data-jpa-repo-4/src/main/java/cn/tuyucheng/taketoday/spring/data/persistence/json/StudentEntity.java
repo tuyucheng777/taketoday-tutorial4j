@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.json;
 
-import javax.persistence.*;
-
 import io.hypersistence.utils.hibernate.type.json.JsonBinaryType;
 import lombok.*;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "student")

@@ -1,13 +1,6 @@
 package cn.tuyucheng.taketoday.books.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import java.util.List;
@@ -69,4 +62,5 @@ public class Library {
    public void setBooks(List<Book> books) {
       this.books = books;
    }
+
 }

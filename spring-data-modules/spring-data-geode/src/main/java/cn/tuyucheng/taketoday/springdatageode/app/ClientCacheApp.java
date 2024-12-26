@@ -7,11 +7,7 @@ import cn.tuyucheng.taketoday.springdatageode.service.AuthorService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.gemfire.config.annotation.ClientCacheApplication;
-import org.springframework.data.gemfire.config.annotation.EnableClusterConfiguration;
-import org.springframework.data.gemfire.config.annotation.EnableContinuousQueries;
-import org.springframework.data.gemfire.config.annotation.EnableEntityDefinedRegions;
-import org.springframework.data.gemfire.config.annotation.EnableIndexing;
+import org.springframework.data.gemfire.config.annotation.*;
 import org.springframework.data.gemfire.repository.config.EnableGemfireRepositories;
 
 @SpringBootApplication

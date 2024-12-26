@@ -15,15 +15,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = ProjectionConfig.class)
-class RepositoryProjectionUnitTest extends AbstractTestProjection {
+public class RepositoryProjectionUnitTest extends AbstractTestProjection {
 
    @Autowired
    private InventoryRepository inventoryRepository;
@@ -80,7 +76,7 @@ class RepositoryProjectionUnitTest extends AbstractTestProjection {
    @Test
    void whenIncludeEmbeddedFields_thenEmbeddedFieldsAreNotNull() {
       List<Inventory> inventoryList = inventoryRepository.findByStatusIncludeEmbeddedFields("A");
-      assertTrue(inventoryList.size() > 0);
+      assertFalse(inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -100,7 +96,7 @@ class RepositoryProjectionUnitTest extends AbstractTestProjection {
    @Test
    void whenExcludeEmbeddedFields_thenEmbeddedFieldsAreNull() {
       List<Inventory> inventoryList = inventoryRepository.findByStatusExcludeEmbeddedFields("A");
-      assertTrue(inventoryList.size() > 0);
+      assertFalse(inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -120,7 +116,7 @@ class RepositoryProjectionUnitTest extends AbstractTestProjection {
    @Test
    void whenIncludeEmbeddedFieldsInArray_thenEmbeddedFieldsInArrayAreNotNull() {
       List<Inventory> inventoryList = inventoryRepository.findByStatusIncludeEmbeddedFieldsInArray("A");
-      assertTrue(inventoryList.size() > 0);
+      assertFalse(inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -151,7 +147,7 @@ class RepositoryProjectionUnitTest extends AbstractTestProjection {
       inventoryRepository.save(postcard);
 
       List<Inventory> inventoryList = inventoryRepository.findByStatusIncludeEmbeddedFieldsLastElementInArray("A");
-      assertTrue(inventoryList.size() > 0);
+      assertFalse(inventoryList.isEmpty());
 
       inventoryList.forEach(i -> {
          assertNotNull(i.getItem());
@@ -173,5 +169,4 @@ class RepositoryProjectionUnitTest extends AbstractTestProjection {
 
       assertEquals(lastInStock, stock);
    }
-
 }

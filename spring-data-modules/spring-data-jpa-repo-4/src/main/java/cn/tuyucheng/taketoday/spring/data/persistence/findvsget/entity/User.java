@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.findvsget.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.Objects;
 
 @Entity
@@ -81,6 +81,10 @@ public class User {
 
    @Override
    public String toString() {
-      return STR."User{id=\{id}, firstName='\{firstName}\{'\''}, secondName='\{secondName}\{'\''}\{'}'}";
+      return "User{" +
+            "id=" + id +
+            ", firstName='" + firstName + '\'' +
+            ", secondName='" + secondName + '\'' +
+            '}';
    }
 }

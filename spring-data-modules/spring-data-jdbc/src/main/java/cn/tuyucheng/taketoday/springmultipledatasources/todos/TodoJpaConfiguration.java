@@ -24,7 +24,8 @@ public class TodoJpaConfiguration {
 
    @Bean
    public LocalContainerEntityManagerFactoryBean todosEntityManagerFactory(
-         @Qualifier("todosDataSource") DataSource dataSource, EntityManagerFactoryBuilder builder) {
+         @Qualifier("todosDataSource") DataSource dataSource,
+         EntityManagerFactoryBuilder builder) {
       return builder
             .dataSource(dataSource)
             .packages(Todo.class)

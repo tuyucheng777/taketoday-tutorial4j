@@ -10,6 +10,9 @@ public class FooDao extends AbstractHibernateDao<Foo> implements IFooDao {
 
    public FooDao() {
       super();
+
       setClazz(Foo.class);
    }
+
+   // API
 }

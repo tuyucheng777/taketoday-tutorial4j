@@ -2,7 +2,7 @@ package cn.tuyucheng.taketoday.boot.daos;
 
 import cn.tuyucheng.taketoday.boot.Application;
 import cn.tuyucheng.taketoday.boot.domain.User;
-import cn.tuyucheng.taketoday.util.TuyuchengPostgresqlContainer;
+import cn.tuyucheng.taketoday.util.TaketodayPostgresqlContainer;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -18,14 +18,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Testcontainers
 @SpringBootTest(classes = Application.class)
 @ActiveProfiles({"tc", "tc-auto"})
-class UserRepositoryTCAutoLiveTest extends UserRepositoryCommon {
+public class UserRepositoryTCAutoLiveTest extends UserRepositoryCommonIntegrationTest {
 
    @Container
-   public static PostgreSQLContainer<TuyuchengPostgresqlContainer> postgreSQLContainer = TuyuchengPostgresqlContainer.getInstance();
+   public static PostgreSQLContainer<TaketodayPostgresqlContainer> postgreSQLContainer = TaketodayPostgresqlContainer.getInstance();
 
    @Test
    @Transactional
-   void givenUsersInDB_WhenUpdateStatusForNameModifyingQueryAnnotationNativePostgres_ThenModifyMatchingUsers() {
+   public void givenUsersInDB_WhenUpdateStatusForNameModifyingQueryAnnotationNativePostgres_ThenModifyMatchingUsers() {
       userRepository.save(new User("SAMPLE", LocalDate.now(), USER_EMAIL, ACTIVE_STATUS));
       userRepository.save(new User("SAMPLE1", LocalDate.now(), USER_EMAIL2, ACTIVE_STATUS));
       userRepository.save(new User("SAMPLE", LocalDate.now(), USER_EMAIL3, ACTIVE_STATUS));

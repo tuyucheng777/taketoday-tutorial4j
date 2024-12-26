@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.boot.domain;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+
+import java.math.BigDecimal;
 
 @Entity
 public class Item {

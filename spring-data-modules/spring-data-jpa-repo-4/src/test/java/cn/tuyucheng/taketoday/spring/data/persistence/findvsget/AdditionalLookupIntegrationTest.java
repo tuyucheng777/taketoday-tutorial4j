@@ -1,23 +1,22 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.findvsget;
 
-import static com.vladmihalcea.sql.SQLStatementCountValidator.assertInsertCount;
-import static com.vladmihalcea.sql.SQLStatementCountValidator.assertSelectCount;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
-import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-
 import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.entity.Group;
 import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.entity.User;
 import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.repository.GroupRepository;
 import cn.tuyucheng.taketoday.spring.data.persistence.findvsget.repository.SimpleUserRepository;
 import io.hypersistence.utils.jdbc.validator.SQLStatementCountValidator;
-
-import java.util.Optional;
-
 import org.hibernate.LazyInitializationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+
+import java.util.Optional;
+
+import static com.vladmihalcea.sql.SQLStatementCountValidator.assertInsertCount;
+import static com.vladmihalcea.sql.SQLStatementCountValidator.assertSelectCount;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 class AdditionalLookupIntegrationTest extends DatabaseConfigurationBaseIntegrationTest {
 
@@ -47,9 +46,7 @@ class AdditionalLookupIntegrationTest extends DatabaseConfigurationBaseIntegrati
       Group group = new Group();
       group.setAdministrator(user);
       assertThatExceptionOfType(DataIntegrityViolationException.class)
-            .isThrownBy(() -> {
-               groupRepository.save(group);
-            });
+            .isThrownBy(() -> groupRepository.save(group));
       assertSelectCount(0);
    }
 
@@ -70,9 +67,7 @@ class AdditionalLookupIntegrationTest extends DatabaseConfigurationBaseIntegrati
       User user = userRepository.getReferenceById(1L);
       Group group = new Group();
       assertThatExceptionOfType(LazyInitializationException.class)
-            .isThrownBy(() -> {
-               group.addUser(user);
-            });
+            .isThrownBy(() -> group.addUser(user));
    }
 
    @Test

@@ -4,7 +4,8 @@
              xmlns:beans="http://www.springframework.org/schema/beans"
              xsi:schemaLocation="
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+>
 
    <http use-expressions="true">
       <access-denied-handler error-page="/access-denied.html"/>
@@ -22,6 +23,7 @@
 
       <form-login login-page='/login.html' default-target-url="/" always-use-default-target="false"
                   authentication-failure-url="/login.html?error=true"/>
+
       <logout/>
 
       <anonymous/>
@@ -34,4 +36,5 @@
    <authentication-manager alias="authenticationManager" erase-credentials="false">
       <authentication-provider ref="restAuthenticationProvider"/>
    </authentication-manager>
+
 </beans:beans>

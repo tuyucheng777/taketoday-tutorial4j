@@ -21,7 +21,7 @@ import java.util.Set;
 @EntityListeners(AuditingEntityListener.class)
 public class Bar implements Serializable {
 
-   private static final Logger logger = Logger.getLogger(Bar.class);
+   private static Logger logger = Logger.getLogger(Bar.class);
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(name = "id")
@@ -63,6 +63,8 @@ public class Bar implements Serializable {
    public Set<Foo> getFooSet() {
       return fooSet;
    }
+
+   // API
 
    public void setFooSet(final Set<Foo> fooSet) {
       this.fooSet = fooSet;

@@ -2,39 +2,37 @@ package cn.tuyucheng.taketoday.mongotemplate;
 
 import cn.tuyucheng.taketoday.config.SimpleMongoConfig;
 import cn.tuyucheng.taketoday.model.User;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * This test requires:
  * * mongodb instance running on the environment
  */
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SimpleMongoConfig.class)
 public class MongoTemplateProjectionLiveTest {
 
    @Autowired
    private MongoTemplate mongoTemplate;
 
-   @BeforeEach
+   @Before
    public void testSetup() {
       if (!mongoTemplate.collectionExists(User.class)) {
          mongoTemplate.createCollection(User.class);
       }
    }
 
-   @AfterEach
+   @After
    public void tearDown() {
       mongoTemplate.dropCollection(User.class);
    }
@@ -51,8 +49,7 @@ public class MongoTemplateProjectionLiveTest {
       mongoTemplate.find(query, User.class)
             .forEach(user -> {
                assertNotNull(user.getName());
-               assertTrue(user.getAge()
-                     .equals(0));
+               assertEquals(0, (int) user.getAge());
             });
    }
 
@@ -70,7 +67,5 @@ public class MongoTemplateProjectionLiveTest {
                assertNull(user.getId());
                assertNotNull(user.getAge());
             });
-
    }
-
 }

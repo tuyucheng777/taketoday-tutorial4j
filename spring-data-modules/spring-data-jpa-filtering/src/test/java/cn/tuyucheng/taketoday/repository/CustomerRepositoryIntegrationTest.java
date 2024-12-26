@@ -1,25 +1,24 @@
 package cn.tuyucheng.taketoday.repository;
 
 import cn.tuyucheng.taketoday.entity.Customer;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.assertEquals;
 
 @DataJpaTest
-@ExtendWith(SpringExtension.class)
-class CustomerRepositoryIntegrationTest {
+@RunWith(SpringRunner.class)
+public class CustomerRepositoryIntegrationTest {
 
    @PersistenceContext
    private EntityManager entityManager;
@@ -27,8 +26,8 @@ class CustomerRepositoryIntegrationTest {
    @Autowired
    private CustomerRepository repository;
 
-   @BeforeEach
-   void before() {
+   @Before
+   public void before() {
       entityManager.persist(new Customer("A", "A@example.com"));
       entityManager.persist(new Customer("D", null));
       entityManager.persist(new Customer("D", "D@example.com"));
@@ -36,25 +35,25 @@ class CustomerRepositoryIntegrationTest {
    }
 
    @Test
-   void givenQueryMethod_whenEmailIsNull_thenFoundByNullEmail() {
+   public void givenQueryMethod_whenEmailIsNull_thenFoundByNullEmail() {
       List<Customer> customers = repository.findByNameAndEmail("D", null);
 
       assertEquals(1, customers.size());
       Customer actual = customers.get(0);
 
-      assertNull(actual.getEmail());
+      assertEquals(null, actual.getEmail());
       assertEquals("D", actual.getName());
    }
 
    @Test
-   void givenQueryMethod_whenEmailIsAbsent_thenIgnoreEmail() {
+   public void givenQueryMethod_whenEmailIsAbsent_thenIgnoreEmail() {
       List<Customer> customers = repository.findByName("D");
 
       assertEquals(2, customers.size());
    }
 
    @Test
-   void givenQueryAnnotation_whenEmailIsNull_thenIgnoreEmail() {
+   public void givenQueryAnnotation_whenEmailIsNull_thenIgnoreEmail() {
       List<Customer> customers = repository.findCustomerByNameAndEmail("D", null);
 
       assertEquals(2, customers.size());
@@ -74,8 +73,8 @@ class CustomerRepositoryIntegrationTest {
       assertEquals(3, customers.size());
    }
 
-   @AfterEach
-   void cleanUp() {
+   @After
+   public void cleanUp() {
       repository.deleteAll();
    }
 }
