@@ -453,7 +453,7 @@
             <!-- <module>vavr-modules</module> -->
             <!-- <module>vertx-modules</module> -->
             <!-- <module>web-framework</module> -->
-            <!-- <module>timefold-solver</module> -->
+            <module>timefold-solver</module>
          </modules>
       </profile>
 
