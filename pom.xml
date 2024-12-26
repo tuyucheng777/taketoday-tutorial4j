@@ -86,8 +86,8 @@
 
       <!-- sonarcloud -->
       <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-      <sonar.organization>tuyucheng</sonar.organization>
-      <sonar.projectKey>tu-yucheng_taketoday-tutorial4j</sonar.projectKey>
+      <sonar.organization>tuyucheng777</sonar.organization>
+      <sonar.projectKey>tuyucheng777_taketoday-tutorial4j</sonar.projectKey>
       <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
       <sonar.projectName>taketoday-tutorial4j</sonar.projectName>
       <sonar.coverage.jacoco.xmlReportPaths>
