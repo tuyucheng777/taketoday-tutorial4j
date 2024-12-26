@@ -44,7 +44,6 @@
       <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
       <maven-install-plugin.version>3.1.2</maven-install-plugin.version>
       <maven-jxr-plugin.version>3.4.0</maven-jxr-plugin.version>
-      <maven-pmd-plugin.version>3.23.0</maven-pmd-plugin.version>
       <build-helper-maven-plugin.version>3.1.0</build-helper-maven-plugin.version>
       <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
       <sonar-maven-plugin.version>3.10.0.2594</sonar-maven-plugin.version>
@@ -80,7 +79,6 @@
       <logback.configurationFileName>logback-config-global.xml</logback.configurationFileName>
 
       <!-- code analysis -->
-      <custom-pmd.version>1.0.0</custom-pmd.version>
       <gitflow-incremental-builder.version>3.12.2</gitflow-incremental-builder.version>
       <jacoco.version>0.8.11</jacoco.version>
 
@@ -247,41 +245,6 @@
             <version>3.12.1</version>
          </plugin>
          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-pmd-plugin</artifactId>
-            <version>${maven-pmd-plugin.version}</version>
-            <dependencies>
-               <dependency>
-                  <groupId>cn.tuyucheng.taketoday.pmd</groupId>
-                  <artifactId>custom-pmd</artifactId>
-                  <version>${custom-pmd.version}</version>
-               </dependency>
-            </dependencies>
-            <configuration>
-               <failurePriority>5</failurePriority>
-               <aggregate>false</aggregate>
-               <failOnViolation>true</failOnViolation>
-               <verbose>true</verbose>
-               <linkXRef>true</linkXRef>
-               <includeTests>true</includeTests>
-               <targetJdk>11</targetJdk>
-               <rulesets>
-                  <ruleset>${tutorialsproject.basedir}/tuyucheng-pmd-rules.xml</ruleset>
-               </rulesets>
-               <excludeRoots>
-                  <excludeRoot>target/generated-sources</excludeRoot>
-               </excludeRoots>
-            </configuration>
-            <executions>
-               <execution>
-                  <phase>compile</phase>
-                  <goals>
-                     <goal>check</goal>
-                  </goals>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
             <groupId>org.commonjava.maven.plugins</groupId>
             <artifactId>directory-maven-plugin</artifactId>
             <version>${directory-maven-plugin.version}</version>
@@ -299,28 +262,6 @@
                         <artifactId>taketoday-tutorial4j</artifactId>
                      </project>
                   </configuration>
-               </execution>
-            </executions>
-         </plugin>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-install-plugin</artifactId>
-            <version>${maven-install-plugin.version}</version>
-            <configuration>
-               <groupId>cn.tuyucheng.taketoday.pmd</groupId>
-               <artifactId>custom-pmd</artifactId>
-               <version>${custom-pmd.version}</version>
-               <packaging>jar</packaging>
-               <file>${tutorialsproject.basedir}/custom-pmd-${custom-pmd.version}.jar</file>
-               <generatePom>true</generatePom>
-            </configuration>
-            <executions>
-               <execution>
-                  <id>install-jar-lib</id>
-                  <goals>
-                     <goal>install-file</goal>
-                  </goals>
-                  <phase>validate</phase>
                </execution>
             </executions>
          </plugin>
@@ -380,7 +321,6 @@
          </build>
 
          <modules>
-            <module>custom-pmd</module>
             <module>jacoco-aggregate-report</module>
             <module>parent-spring-5</module>
             <module>parent-spring-6</module>
@@ -436,7 +376,6 @@
          </build>
 
          <modules>
-            <module>custom-pmd</module>
             <module>jacoco-aggregate-report</module>
             <module>parent-spring-5</module>
             <module>parent-spring-6</module>
@@ -469,7 +408,6 @@
          </properties>
 
          <modules>
-            <module>custom-pmd</module>
             <module>jacoco-aggregate-report</module>
             <!-- <module>parent-spring-5</module> -->
             <module>parent-spring-6</module>
