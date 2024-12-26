@@ -1,21 +1,21 @@
 Taketoday Tutorial4j
 ==============
 
-[![Java 21](https://img.shields.io/badge/java-21-green)](https://img.shields.io/badge/java-17-blue)
-![example workflow](https://github.com/tu-yucheng/taketoday-tutorial4j/actions/workflows/maven-ci.yml/badge.svg)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tu-yucheng_taketoday-tutorial4j&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tu-yucheng_taketoday-tutorial4j)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tu-yucheng_taketoday-tutorial4j&metric=coverage)](https://sonarcloud.io/dashboard?id=tu-yucheng_taketoday-tutorial4j)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=tu-yucheng_taketoday-tutorial4j&metric=ncloc)](https://sonarcloud.io/project/overview?id=tu-yucheng_taketoday-tutorial4j)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tu-yucheng_taketoday-tutorial4j&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tu-yucheng_taketoday-tutorial4j)
+[![Java 23](https://img.shields.io/badge/java-23-green)](https://img.shields.io/badge/java-23-blue)
+![example workflow](https://github.com/tuyucheng777/taketoday-tutorial4j/actions/workflows/maven-ci.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tuyucheng777_taketoday-tutorial4j&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tuyucheng777_taketoday-tutorial4j)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tuyucheng777_taketoday-tutorial4j&metric=coverage)](https://sonarcloud.io/dashboard?id=tuyucheng777_taketoday-tutorial4j)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=tuyucheng777_taketoday-tutorial4j&metric=ncloc)](https://sonarcloud.io/project/overview?id=tuyucheng777_taketoday-tutorial4j)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tuyucheng777_taketoday-tutorial4j&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tuyucheng777_taketoday-tutorial4j)
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 这个项目是**一个小型和重点教程的集合**，每个教程都涵盖了Java生态系统中一个明确定义的开发领域。当然，其中一个重点在于Spring框架、Spring Data、Spring Boot、Spring Cloud和Spring Security。除了Spring之外，这里的模块还涵盖了Java的许多方面。
 
-> **项目博客**：[tu-yucheng.github.io](https://tu-yucheng.github.io/)。
+> **项目博客**：[tuyucheng777.github.io](https://tuyucheng777.github.io/)。
 
 ## 多版本JDK构建
 
-就目前而言，大多数模块都是基于JDK 21(JAVA_HOME)才能正确构建和运行。此外，还有一些模块基于JDK 8，我们通过Maven工具链来保证这些模块能够使用单独的JDK构建。
+就目前而言，大多数模块都是基于JDK 23(JAVA_HOME)才能正确构建和运行。此外，还有一些模块基于JDK 8，我们通过Maven工具链来保证这些模块能够使用单独的JDK构建。
 
 首先，你需要同时下载这些版本的JDK，然后配置Maven工具链。在你用户目录下的.m2文件夹中创建一个toolchains.xml文件，在该文件中添加以下内容(务必将每个工具链的<jdkHome\>指向你本地该JDK版本的位置)：
 
@@ -36,11 +36,11 @@ Taketoday Tutorial4j
     <toolchain>
         <type>jdk</type>
         <provides>
-            <version>21</version>
+            <version>23</version>
             <vendor>adopt</vendor>
         </provides>
         <configuration>
-            <jdkHome>D:\\xxx\\jdk-21.0.1</jdkHome>
+            <jdkHome>D:\\xxx\\jdk-23.0.1</jdkHome>
         </configuration>
     </toolchain>
 </toolchains>
@@ -76,7 +76,7 @@ Taketoday Tutorial4j
 
 要构建特定模块，请在模块目录中运行命令：`mvn clean install`。
 
-你的模块可能是父模块的一部分，例如`parent-boot-2`，`parent-spring-5`等，然后你需要先构建父模块，这样才能构建你的模块。我们创建了一个`parents` profile，你可以使用它来构建父模块，只需按以下方式运行profile：`mvn clean install -Pparents`。
+你的模块可能是父模块的一部分，例如`parent-boot-3`，`parent-spring-6`等，然后你需要先构建父模块，这样才能构建你的模块。我们创建了一个`parents` profile，你可以使用它来构建父模块，只需按以下方式运行profile：`mvn clean install -Pparents`。
 
 ## 从仓库的根目录构建模块
 
