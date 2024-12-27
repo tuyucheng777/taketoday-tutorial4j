@@ -416,6 +416,8 @@
             <!-- <module>apache-modules</module> -->
             <!-- <module>ddd</module> -->
             <!-- <module>ddd-contexts</module> -->
+            <!-- <module>deeplearning4j</module> -->
+            <!-- <module>dubbo</module> -->
             <!-- <module>design-patterns-modules</module> -->
             <!-- <module>docker-modules</module> -->
             <!-- <module>graphql-modules</module> -->
