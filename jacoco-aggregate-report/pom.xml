@@ -12,6 +12,11 @@
    <artifactId>jacoco-aggregate-report</artifactId>
 
    <dependencies>
+      <dependency>
+         <groupId>cn.tuyucheng.taketoday</groupId>
+         <artifactId>timefold-solver</artifactId>
+         <version>1.0.0</version>
+      </dependency>
    </dependencies>
 
    <build>
