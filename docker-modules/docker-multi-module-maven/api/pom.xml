@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>api</artifactId>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday.docker-multi-module-maven</groupId>
+      <artifactId>docker-multi-module-maven</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>cn.tuyucheng.taketoday.docker-multi-module-maven</groupId>
+         <artifactId>domain</artifactId>
+         <version>1.0.0</version>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+         </plugin>
+         <plugin>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-maven-plugin</artifactId>
+            <version>3.4.0</version>
+            <configuration>
+               <from>
+                  <image>openjdk:17-slim</image>
+               </from>
+               <to>
+                  <image>taketoday-demo:from-jib</image>
+               </to>
+               <container>
+                  <mainClass>cn.tuyucheng.taketoday.api.Application</mainClass>
+                  <ports>
+                     <port>8080</port>
+                  </ports>
+               </container>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>

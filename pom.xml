@@ -110,6 +110,9 @@
             <configuration>
                <source>${java.version}</source>
                <target>${java.version}</target>
+               <compilerArgs>
+                  <compilerArg>--enable-preview</compilerArg>
+               </compilerArgs>
             </configuration>
          </plugin>
          <!-- 默认情况下，单元测试"mvn clean install"(可选：-P unit)跳过集成测试 -->
@@ -120,7 +123,7 @@
             <configuration>
                <forkCount>3</forkCount>
                <reuseForks>true</reuseForks>
-               <!-- <argLine>@{argLine} &#45;&#45;enable-preview</argLine> -->
+               <argLine>@{argLine} --enable-preview</argLine>
                <skipTests>${skip.unit.tests}</skipTests>
                <excludes>
                   <exclude>**/*IntegrationTest</exclude>
@@ -157,7 +160,7 @@
                      <goal>verify</goal>
                   </goals>
                   <configuration>
-                     <!-- <argLine>&#45;&#45;enable-preview</argLine> -->
+                     <argLine>@{argLine} --enable-preview</argLine>
                      <skipTests>${skip.integration.tests}</skipTests>
                      <excludes>
                         <exclude>**/*ManualTest</exclude>
@@ -417,12 +420,16 @@
             <!-- <module>ddd</module> -->
             <!-- <module>ddd-contexts</module> -->
             <!-- <module>deeplearning4j</module> -->
+            <!-- <module>di-modules</module> -->
+            <!-- <module>disruptor</module> -->
+            <!-- <module>docker-modules</module> -->
             <!-- <module>dubbo</module> -->
             <!-- <module>design-patterns-modules</module> -->
             <!-- <module>docker-modules</module> -->
             <!-- <module>graphql-modules</module> -->
             <!-- <module>grpc</module> -->
             <!-- <module>java-core-modules</module> -->
+            <!-- <module>libraries-modules</module> -->
             <!-- <module>javafx</module> -->
             <!-- <module>kotlin-modules</module> -->
             <!-- <module>logging-modules</module> -->

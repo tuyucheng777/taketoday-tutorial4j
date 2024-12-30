@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>libraries-modules</artifactId>
+   <name>libraries-modules</name>
+   <packaging>pom</packaging>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>taketoday-tutorial4j</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <modules>
+      <module>libraries-1</module>
+      <module>libraries-2</module>
+      <module>libraries-3</module>
+      <module>libraries-4</module>
+      <module>libraries-5</module>
+      <module>libraries-ai</module>
+      <module>libraries-apache-commons-1</module>
+      <module>libraries-apache-commons-2</module>
+      <module>libraries-apache-commons-collections</module>
+      <module>libraries-apache-commons-io</module>
+      <module>libraries-bytecode</module>
+      <module>libraries-cli</module>
+      <module>libraries-concurrency</module>
+      <module>libraries-data-1</module>
+      <module>libraries-data-2</module>
+      <module>libraries-data-3</module>
+      <module>libraries-data-db</module>
+      <module>libraries-data-io-1</module>
+      <module>libraries-data-io-2</module>
+      <module>libraries-data-mariadb4j</module>
+      <module>libraries-files</module>
+      <module>libraries-http-1</module>
+      <module>libraries-http-2</module>
+      <module>libraries-http-3</module>
+      <module>libraries-io</module>
+      <module>libraries-jdk8</module>
+      <module>libraries-llms</module>
+      <!-- <module>libraries-open-telemetry</module> -->
+      <module>libraries-primitive</module>
+      <module>libraries-reporting</module>
+      <module>libraries-rpc</module>
+      <module>libraries-security-1</module>
+      <module>libraries-security-2</module>
+      <module>libraries-server-1</module>
+      <module>libraries-server-2</module>
+      <module>libraries-stream</module>
+      <module>libraries-transform</module>
+   </modules>
+</project>
