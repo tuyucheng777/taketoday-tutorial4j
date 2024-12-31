@@ -1,0 +1,16 @@
+<configuration>
+   <property resource="logback.properties"/>
+
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+      <encoder>
+         <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      </encoder>
+   </appender>
+
+   <root level="${root.level}">
+      <appender-ref ref="STDOUT"/>
+   </root>
+
+   <logger name="cn.tuyucheng.taketoday.logback.services" level="${logger.cn.tuyucheng.taketoday.logback.services}"/>
+   <logger name="cn.tuyucheng.taketoday.logback" level="${logger.cn.tuyucheng.taketoday.logback}"/>
+</configuration>
