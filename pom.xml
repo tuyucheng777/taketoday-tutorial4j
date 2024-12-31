@@ -451,7 +451,7 @@
             <!-- <module>security-modules</module> -->
             <!-- <module>rsocket</module> -->
             <!-- <module>software.test</module> -->
-            <!-- <module>spring-boot-modules</module> -->
+            <module>spring-boot-modules</module>
             <!-- <module>spring-cloud-modules</module> -->
             <!-- <module>spring-data-modules</module> -->
             <!-- <module>spring-reactive-modules</module> -->

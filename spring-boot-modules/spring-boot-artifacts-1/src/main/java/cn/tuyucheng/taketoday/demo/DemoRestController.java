@@ -9,6 +9,6 @@ public class DemoRestController {
 
    @GetMapping(value = "/welcome")
    public ResponseEntity<String> welcomeEndpoint() {
-      return ResponseEntity.ok("Welcome to Tuyucheng Spring Boot Demo!");
+      return ResponseEntity.ok("Welcome to Taketoday Spring Boot Demo!");
    }
 }

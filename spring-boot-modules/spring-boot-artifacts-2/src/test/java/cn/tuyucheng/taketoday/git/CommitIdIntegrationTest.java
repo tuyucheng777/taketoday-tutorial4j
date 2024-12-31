@@ -1,20 +1,20 @@
 package cn.tuyucheng.taketoday.git;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = CommitIdApplication.class)
 @TestPropertySource(properties = {"spring.jmx.default-domain=test"})
-class CommitIdIntegrationTest {
+public class CommitIdIntegrationTest {
 
    private static final Logger LOG = LoggerFactory.getLogger(CommitIdIntegrationTest.class);
 
@@ -28,7 +28,7 @@ class CommitIdIntegrationTest {
    private String commitId;
 
    @Test
-   void whenInjecting_shouldDisplay() throws Exception {
+   public void whenInjecting_shouldDisplay() throws Exception {
       LOG.info(commitId);
       LOG.info(commitMessage);
       LOG.info(branch);

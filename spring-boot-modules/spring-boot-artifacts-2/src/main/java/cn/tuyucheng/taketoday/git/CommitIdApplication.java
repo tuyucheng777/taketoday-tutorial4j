@@ -8,7 +8,6 @@ import org.springframework.core.io.ClassPathResource;
 
 @SpringBootApplication(scanBasePackages = {"cn.tuyucheng.taketoday.git"})
 public class CommitIdApplication {
-
    public static void main(String[] args) {
       SpringApplication.run(CommitIdApplication.class, args);
    }
