@@ -27,8 +27,8 @@ public class ProductRepositoryImpl implements ProductRepository {
          product.setPrice((double) (i ^ 2));
          product.setStock(10);
          product.setAverageRating(0F);
-         product.setImageUrls(singletonList(String.format("www.baeldung.com/imageurl/%d", i)));
-         product.setVideoUrls(singletonList(String.format("www.baeldung.com/videourl/%d", i)));
+         product.setImageUrls(singletonList(String.format("www.taketoday.com/imageurl/%d", i)));
+         product.setVideoUrls(singletonList(String.format("www.taketoday.com/videourl/%d", i)));
 
          PRODUCT_LIST.add(product);
       }

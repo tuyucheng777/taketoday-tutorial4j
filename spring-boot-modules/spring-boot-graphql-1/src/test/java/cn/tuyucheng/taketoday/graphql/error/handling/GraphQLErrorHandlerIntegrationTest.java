@@ -66,9 +66,10 @@ class GraphQLErrorHandlerIntegrationTest {
                   && "Vehicle with vin: 123 not found.".equals(error.getMessage()))
             .verify()
             .path("$.data")
-            .matchesJson("{\n"
-                  + "        \"searchByVin\": null\n"
-                  + "    }");
+            .matchesJson("""
+                  {
+                          "searchByVin": null
+                      }""");
    }
 
    @Test

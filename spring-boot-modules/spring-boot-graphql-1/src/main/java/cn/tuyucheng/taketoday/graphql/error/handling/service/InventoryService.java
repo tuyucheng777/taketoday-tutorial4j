@@ -1,14 +1,5 @@
 package cn.tuyucheng.taketoday.graphql.error.handling.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
 import cn.tuyucheng.taketoday.graphql.error.handling.domain.Location;
 import cn.tuyucheng.taketoday.graphql.error.handling.domain.Vehicle;
 import cn.tuyucheng.taketoday.graphql.error.handling.exception.InvalidInputException;
@@ -16,8 +7,11 @@ import cn.tuyucheng.taketoday.graphql.error.handling.exception.VehicleAlreadyPre
 import cn.tuyucheng.taketoday.graphql.error.handling.exception.VehicleNotFoundException;
 import cn.tuyucheng.taketoday.graphql.error.handling.repository.InventoryRepository;
 import cn.tuyucheng.taketoday.graphql.error.handling.repository.LocationRepository;
-
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.*;
 
 @Service
 public class InventoryService {

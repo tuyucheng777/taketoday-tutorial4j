@@ -27,7 +27,6 @@ class PostControllerIntegrationTest {
             .execute()
             .path("createPostReturnCustomScalar")
             .valueIsNull();
-
    }
 
    @Test
@@ -42,6 +41,5 @@ class PostControllerIntegrationTest {
             .execute()
             .path("createPostReturnNullableType")
             .valueIsNull();
-
    }
 }

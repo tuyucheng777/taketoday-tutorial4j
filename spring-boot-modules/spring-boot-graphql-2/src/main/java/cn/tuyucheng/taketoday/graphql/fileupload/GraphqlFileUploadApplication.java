@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 public class GraphqlFileUploadApplication {
-
    public static void main(String[] args) {
       System.setProperty("spring.profiles.default", "file-upload");
       SpringApplication.run(GraphqlFileUploadApplication.class, args);

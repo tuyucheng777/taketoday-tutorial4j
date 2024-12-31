@@ -14,8 +14,8 @@ public class UploadCoercing implements Coercing<MultipartFile, Void> {
 
    @Override
    public MultipartFile parseValue(Object input) {
-      if (input instanceof MultipartFile inputFile) {
-         return inputFile;
+      if (input instanceof MultipartFile) {
+         return (MultipartFile) input;
       }
       throw new CoercingParseValueException("Expected type MultipartFile but was " + input.getClass().getName());
    }

@@ -1,9 +1,6 @@
 package cn.tuyucheng.taketoday.chooseapi.controllers;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
+import cn.tuyucheng.taketoday.chooseapi.ChooseApiApp;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.graphql.tester.AutoConfigureHttpGraphQlTester;
@@ -11,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.graphql.test.tester.HttpGraphQlTester;
 import org.springframework.test.context.ActiveProfiles;
 
-import cn.tuyucheng.taketoday.chooseapi.ChooseApiApp;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @SpringBootTest(classes = ChooseApiApp.class)
 @ActiveProfiles("chooseapi")
