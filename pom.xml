@@ -462,6 +462,7 @@
             <!-- <module>vertx-modules</module> -->
             <!-- <module>web-framework</module> -->
             <module>timefold-solver</module>
+            <module>vaadin</module>
          </modules>
       </profile>
 
