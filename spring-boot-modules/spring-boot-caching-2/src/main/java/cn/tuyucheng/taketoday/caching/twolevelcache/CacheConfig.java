@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.caching.twolevelcache;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
-
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.AnnotationCacheOperationSource;
 import org.springframework.cache.annotation.EnableCaching;
@@ -19,7 +18,7 @@ import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSeriali
 import org.springframework.data.redis.serializer.RedisSerializationContext;
 
 import java.time.Duration;
-import java.util.Arrays;
+import java.util.Collections;
 
 @Configuration
 @EnableCaching
@@ -29,7 +28,7 @@ public class CacheConfig {
    @Primary
    public CacheManager caffeineCacheManager(CaffeineCache caffeineCache) {
       SimpleCacheManager manager = new SimpleCacheManager();
-      manager.setCaches(Arrays.asList(caffeineCache));
+      manager.setCaches(Collections.singletonList(caffeineCache));
       return manager;
    }
 

@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.concurrent.atomic;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  * This test shows the behaviour of a thread-unsafe class in a multithreaded scenario. We are calling
@@ -18,16 +18,15 @@ import org.junit.Test;
  */
 public class ThreadUnsafeCounterManualTest {
 
-    @Test
-    public void givenMultiThread_whenUnsafeCounterIncrement() throws InterruptedException {
-        ExecutorService service = Executors.newFixedThreadPool(3);
-        UnsafeCounter unsafeCounter = new UnsafeCounter();
+   @Test
+   public void givenMultiThread_whenUnsafeCounterIncrement() throws InterruptedException {
+      ExecutorService service = Executors.newFixedThreadPool(3);
+      UnsafeCounter unsafeCounter = new UnsafeCounter();
 
-        IntStream.range(0, 1000)
-          .forEach(count -> service.submit(unsafeCounter::increment));
-        service.awaitTermination(100, TimeUnit.MILLISECONDS);
+      IntStream.range(0, 1000)
+            .forEach(count -> service.submit(unsafeCounter::increment));
+      service.awaitTermination(100, TimeUnit.MILLISECONDS);
 
-        assertEquals(1000, unsafeCounter.getValue());
-    }
-
+      assertEquals(1000, unsafeCounter.getValue());
+   }
 }

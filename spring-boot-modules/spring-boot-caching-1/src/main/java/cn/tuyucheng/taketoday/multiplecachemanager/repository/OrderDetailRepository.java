@@ -4,11 +4,7 @@ import cn.tuyucheng.taketoday.multiplecachemanager.entity.Item;
 import cn.tuyucheng.taketoday.multiplecachemanager.entity.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.stereotype.Repository;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 @Repository
 public class OrderDetailRepository {
@@ -19,13 +15,11 @@ public class OrderDetailRepository {
    public Order getOrderDetail(Integer orderId) {
       String orderDetailQuery = "select * from orderdetail where orderid = ? ";
       Order order = new Order();
-      jdbcTemplate.query(orderDetailQuery, new Object[]{orderId}, new RowCallbackHandler() {
-         public void processRow(ResultSet rs) throws SQLException {
-            order.setCustomerId(rs.getInt("customerid"));
-            order.setOrderId(rs.getInt("orderid"));
-            order.setItemId(rs.getInt("itemid"));
-            order.setQuantity(rs.getInt("quantity"));
-         }
+      jdbcTemplate.query(orderDetailQuery, new Object[]{orderId}, rs -> {
+         order.setCustomerId(rs.getInt("customerid"));
+         order.setOrderId(rs.getInt("orderid"));
+         order.setItemId(rs.getInt("itemid"));
+         order.setQuantity(rs.getInt("quantity"));
       });
       return order;
    }
@@ -36,16 +30,14 @@ public class OrderDetailRepository {
       Order order = new Order();
       Item item = new Item();
 
-      jdbcTemplate.query(orderItemJoinQuery, new Object[]{orderId}, new RowCallbackHandler() {
-         public void processRow(ResultSet rs) throws SQLException {
-            order.setCustomerId(rs.getInt("customerid"));
-            order.setOrderId(rs.getInt("orderid"));
-            order.setItemId(rs.getInt("itemid"));
-            order.setQuantity(rs.getInt("quantity"));
-            item.setItemDesc("itemdesc");
-            item.setItemId(rs.getInt("itemid"));
-            item.setItemPrice(rs.getDouble("price"));
-         }
+      jdbcTemplate.query(orderItemJoinQuery, new Object[]{orderId}, rs -> {
+         order.setCustomerId(rs.getInt("customerid"));
+         order.setOrderId(rs.getInt("orderid"));
+         order.setItemId(rs.getInt("itemid"));
+         order.setQuantity(rs.getInt("quantity"));
+         item.setItemDesc("itemdesc");
+         item.setItemId(rs.getInt("itemid"));
+         item.setItemPrice(rs.getDouble("price"));
       });
       return order.getQuantity() * item.getItemPrice();
    }

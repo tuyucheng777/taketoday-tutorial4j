@@ -1,7 +1,5 @@
 package cn.tuyucheng.taketoday.atomic;
 
-import cn.tuyucheng.taketoday.atomic.AtomicLoadBalancer;
-import cn.tuyucheng.taketoday.atomic.IncomingRequest;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,7 +10,6 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AtomicLoadBalancerUnitTest {
-
    @Test
    public void givenBalancer_whenDispatchingRequests_thenServersAreSelectedExactlyTwice() throws InterruptedException {
       List<String> serverList = List.of("Server 1", "Server 2", "Server 3", "Server 4", "Server 5");

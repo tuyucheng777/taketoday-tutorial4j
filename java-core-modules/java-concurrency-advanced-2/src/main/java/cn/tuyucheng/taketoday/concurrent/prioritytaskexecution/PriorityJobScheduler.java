@@ -8,49 +8,49 @@ import java.util.concurrent.TimeUnit;
 
 public class PriorityJobScheduler {
 
-    private ExecutorService priorityJobPoolExecutor;
-    private ExecutorService priorityJobScheduler =
-      Executors.newSingleThreadExecutor();
-    private PriorityBlockingQueue<Job> priorityQueue;
+   private ExecutorService priorityJobPoolExecutor;
+   private ExecutorService priorityJobScheduler =
+         Executors.newSingleThreadExecutor();
+   private PriorityBlockingQueue<Job> priorityQueue;
 
-    public PriorityJobScheduler(Integer poolSize, Integer queueSize) {
-        priorityJobPoolExecutor = Executors.newFixedThreadPool(poolSize);
-        priorityQueue = new PriorityBlockingQueue<Job>(queueSize,
-          Comparator.comparing(Job::getJobPriority));
+   public PriorityJobScheduler(Integer poolSize, Integer queueSize) {
+      priorityJobPoolExecutor = Executors.newFixedThreadPool(poolSize);
+      priorityQueue = new PriorityBlockingQueue<Job>(queueSize,
+            Comparator.comparing(Job::getJobPriority));
 
-        priorityJobScheduler.execute(()->{
-            while (true) {
-                try {
-                    priorityJobPoolExecutor.execute(priorityQueue.take());
-                } catch (InterruptedException e) {
-                    // exception needs special handling
-                    break;
-                }
+      priorityJobScheduler.execute(() -> {
+         while (true) {
+            try {
+               priorityJobPoolExecutor.execute(priorityQueue.take());
+            } catch (InterruptedException e) {
+               // exception needs special handling
+               break;
             }
-        });
-    }
+         }
+      });
+   }
 
-    public void scheduleJob(Job job) {
-        priorityQueue.add(job);
-    }
+   public void scheduleJob(Job job) {
+      priorityQueue.add(job);
+   }
 
-    public int getQueuedTaskCount() {
-        return priorityQueue.size();
-    }
+   public int getQueuedTaskCount() {
+      return priorityQueue.size();
+   }
 
-    protected void close(ExecutorService scheduler) {
-        scheduler.shutdown();
-        try {
-            if (!scheduler.awaitTermination(5, TimeUnit.SECONDS)) {
-                scheduler.shutdownNow();
-            }
-        } catch (InterruptedException e) {
+   protected void close(ExecutorService scheduler) {
+      scheduler.shutdown();
+      try {
+         if (!scheduler.awaitTermination(5, TimeUnit.SECONDS)) {
             scheduler.shutdownNow();
-        }
-    }
+         }
+      } catch (InterruptedException e) {
+         scheduler.shutdownNow();
+      }
+   }
 
-    public void closeScheduler() {
-        close(priorityJobPoolExecutor);
-        close(priorityJobScheduler);
-    }
+   public void closeScheduler() {
+      close(priorityJobPoolExecutor);
+      close(priorityJobScheduler);
+   }
 }

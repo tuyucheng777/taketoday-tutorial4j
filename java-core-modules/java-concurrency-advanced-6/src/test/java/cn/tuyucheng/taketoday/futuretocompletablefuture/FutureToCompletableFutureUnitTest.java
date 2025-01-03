@@ -1,19 +1,12 @@
 package cn.tuyucheng.taketoday.futuretocompletablefuture;
 
-import static cn.tuyucheng.taketoday.futuretocompletablefuture.FutureToCompletableFuture.allOfFutures;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
-import cn.tuyucheng.taketoday.futuretocompletablefuture.FutureToCompletableFuture;
-import org.junit.jupiter.api.Test;
+import static cn.tuyucheng.taketoday.futuretocompletablefuture.FutureToCompletableFuture.allOfFutures;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FutureToCompletableFutureUnitTest {
 
@@ -60,7 +53,7 @@ public class FutureToCompletableFutureUnitTest {
       CompletableFuture<String> completableFuture = FutureToCompletableFuture.toCompletableFuture(future, executor);
 
       completableFuture
-            .thenApply(String::toUpperCase) // Transform result
+            .thenApply(result -> result.toUpperCase()) // Transform result
             .thenAccept(transformedResult -> assertEquals("HELLO FROM FUTURE!", transformedResult));
 
       executor.shutdown();

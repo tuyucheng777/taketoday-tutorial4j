@@ -42,7 +42,6 @@ public class TransmittableThreadLocalUnitTest {
 
    @Test
    void givenTransmittableThreadLocal_whenTryingToGetValueFromAnotherThread_thenValueIsPresent() {
-
       TransmittableThreadLocal<String> transactionID = new TransmittableThreadLocal<>();
       transactionID.set(UUID.randomUUID().toString());
 

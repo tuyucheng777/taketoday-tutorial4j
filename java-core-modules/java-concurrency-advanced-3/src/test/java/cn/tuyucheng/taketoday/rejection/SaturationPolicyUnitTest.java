@@ -20,120 +20,120 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class SaturationPolicyUnitTest {
 
-    private ThreadPoolExecutor executor;
+   private ThreadPoolExecutor executor;
 
-    @After
-    public void shutdownExecutor() {
-        if (executor != null && !executor.isTerminated()) {
-            executor.shutdownNow();
-        }
-    }
+   @After
+   public void shutdownExecutor() {
+      if (executor != null && !executor.isTerminated()) {
+         executor.shutdownNow();
+      }
+   }
 
-    @Ignore
-    @Test
-    public void givenAbortPolicy_WhenSaturated_ThenShouldThrowRejectedExecutionException() {
-        executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new SynchronousQueue<>(), new AbortPolicy());
-        executor.execute(() -> waitFor(250));
+   @Ignore
+   @Test
+   public void givenAbortPolicy_WhenSaturated_ThenShouldThrowRejectedExecutionException() {
+      executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new SynchronousQueue<>(), new AbortPolicy());
+      executor.execute(() -> waitFor(250));
 
-        assertThatThrownBy(() -> executor.execute(() -> System.out.println("Will be rejected"))).isInstanceOf(RejectedExecutionException.class);
-    }
+      assertThatThrownBy(() -> executor.execute(() -> System.out.println("Will be rejected"))).isInstanceOf(RejectedExecutionException.class);
+   }
 
-    @Ignore
-    @Test
-    public void givenCallerRunsPolicy_WhenSaturated_ThenTheCallerThreadRunsTheTask() {
-        executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new SynchronousQueue<>(), new CallerRunsPolicy());
-        executor.execute(() -> waitFor(250));
+   @Ignore
+   @Test
+   public void givenCallerRunsPolicy_WhenSaturated_ThenTheCallerThreadRunsTheTask() {
+      executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new SynchronousQueue<>(), new CallerRunsPolicy());
+      executor.execute(() -> waitFor(250));
 
-        long startTime = System.currentTimeMillis();
-        executor.execute(() -> waitFor(500));
-        long blockedDuration = System.currentTimeMillis() - startTime;
+      long startTime = System.currentTimeMillis();
+      executor.execute(() -> waitFor(500));
+      long blockedDuration = System.currentTimeMillis() - startTime;
 
-        assertThat(blockedDuration).isGreaterThanOrEqualTo(500);
-    }
+      assertThat(blockedDuration).isGreaterThanOrEqualTo(500);
+   }
 
-    @Test
-    public void givenDiscardPolicy_WhenSaturated_ThenExecutorDiscardsTheNewTask() throws InterruptedException {
-        executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new SynchronousQueue<>(), new DiscardPolicy());
-        executor.execute(() -> waitFor(100));
+   @Test
+   public void givenDiscardPolicy_WhenSaturated_ThenExecutorDiscardsTheNewTask() throws InterruptedException {
+      executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new SynchronousQueue<>(), new DiscardPolicy());
+      executor.execute(() -> waitFor(100));
 
-        BlockingQueue<String> queue = new LinkedBlockingDeque<>();
-        executor.execute(() -> queue.offer("Result"));
+      BlockingQueue<String> queue = new LinkedBlockingDeque<>();
+      executor.execute(() -> queue.offer("Result"));
 
-        assertThat(queue.poll(200, MILLISECONDS)).isNull();
-    }
+      assertThat(queue.poll(200, MILLISECONDS)).isNull();
+   }
 
-    @Test
-    public void givenDiscardOldestPolicy_WhenSaturated_ThenExecutorDiscardsTheOldestTask() {
-        executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new ArrayBlockingQueue<>(2), new DiscardOldestPolicy());
-        executor.execute(() -> waitFor(100));
+   @Test
+   public void givenDiscardOldestPolicy_WhenSaturated_ThenExecutorDiscardsTheOldestTask() {
+      executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new ArrayBlockingQueue<>(2), new DiscardOldestPolicy());
+      executor.execute(() -> waitFor(100));
 
-        BlockingQueue<String> queue = new LinkedBlockingDeque<>();
-        executor.execute(() -> queue.offer("First"));
-        executor.execute(() -> queue.offer("Second"));
-        executor.execute(() -> queue.offer("Third"));
+      BlockingQueue<String> queue = new LinkedBlockingDeque<>();
+      executor.execute(() -> queue.offer("First"));
+      executor.execute(() -> queue.offer("Second"));
+      executor.execute(() -> queue.offer("Third"));
 
-        waitFor(150);
-        List<String> results = new ArrayList<>();
-        queue.drainTo(results);
-        assertThat(results).containsExactlyInAnyOrder("Second", "Third");
-    }
+      waitFor(150);
+      List<String> results = new ArrayList<>();
+      queue.drainTo(results);
+      assertThat(results).containsExactlyInAnyOrder("Second", "Third");
+   }
 
-    @Test
-    public void givenGrowPolicy_WhenSaturated_ThenExecutorIncreaseTheMaxPoolSize() {
-        executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new ArrayBlockingQueue<>(2), new GrowPolicy());
-        executor.execute(() -> waitFor(100));
+   @Test
+   public void givenGrowPolicy_WhenSaturated_ThenExecutorIncreaseTheMaxPoolSize() {
+      executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new ArrayBlockingQueue<>(2), new GrowPolicy());
+      executor.execute(() -> waitFor(100));
 
-        BlockingQueue<String> queue = new LinkedBlockingDeque<>();
-        executor.execute(() -> queue.offer("First"));
-        executor.execute(() -> queue.offer("Second"));
-        executor.execute(() -> queue.offer("Third"));
+      BlockingQueue<String> queue = new LinkedBlockingDeque<>();
+      executor.execute(() -> queue.offer("First"));
+      executor.execute(() -> queue.offer("Second"));
+      executor.execute(() -> queue.offer("Third"));
 
-        waitFor(150);
-        List<String> results = new ArrayList<>();
-        queue.drainTo(results);
-        assertThat(results).containsExactlyInAnyOrder("First", "Second", "Third");
-    }
+      waitFor(150);
+      List<String> results = new ArrayList<>();
+      queue.drainTo(results);
+      assertThat(results).containsExactlyInAnyOrder("First", "Second", "Third");
+   }
 
-    @Test
-    public void givenExecutorIsTerminated_WhenSubmittedNewTask_ThenTheSaturationPolicyApplies() {
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new LinkedBlockingQueue<>());
-        executor.shutdownNow();
+   @Test
+   public void givenExecutorIsTerminated_WhenSubmittedNewTask_ThenTheSaturationPolicyApplies() {
+      ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new LinkedBlockingQueue<>());
+      executor.shutdownNow();
 
-        assertThatThrownBy(() -> executor.execute(() -> {
-        })).isInstanceOf(RejectedExecutionException.class);
-    }
+      assertThatThrownBy(() -> executor.execute(() -> {
+      })).isInstanceOf(RejectedExecutionException.class);
+   }
 
-    @Test
-    public void givenExecutorIsTerminating_WhenSubmittedNewTask_ThenTheSaturationPolicyApplies() {
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new LinkedBlockingQueue<>());
-        executor.execute(() -> waitFor(100));
-        executor.shutdown();
+   @Test
+   public void givenExecutorIsTerminating_WhenSubmittedNewTask_ThenTheSaturationPolicyApplies() {
+      ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 0, MILLISECONDS, new LinkedBlockingQueue<>());
+      executor.execute(() -> waitFor(100));
+      executor.shutdown();
 
-        assertThatThrownBy(() -> executor.execute(() -> {
-        })).isInstanceOf(RejectedExecutionException.class);
-    }
+      assertThatThrownBy(() -> executor.execute(() -> {
+      })).isInstanceOf(RejectedExecutionException.class);
+   }
 
-    private static class GrowPolicy implements RejectedExecutionHandler {
+   private static class GrowPolicy implements RejectedExecutionHandler {
 
-        private final Lock lock = new ReentrantLock();
+      private final Lock lock = new ReentrantLock();
 
-        @Override
-        public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
-            lock.lock();
-            try {
-                executor.setMaximumPoolSize(executor.getMaximumPoolSize() + 1);
-            } finally {
-                lock.unlock();
-            }
+      @Override
+      public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+         lock.lock();
+         try {
+            executor.setMaximumPoolSize(executor.getMaximumPoolSize() + 1);
+         } finally {
+            lock.unlock();
+         }
 
-            executor.submit(r);
-        }
-    }
+         executor.submit(r);
+      }
+   }
 
-    private void waitFor(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException ignored) {
-        }
-    }
+   private void waitFor(int millis) {
+      try {
+         Thread.sleep(millis);
+      } catch (InterruptedException ignored) {
+      }
+   }
 }

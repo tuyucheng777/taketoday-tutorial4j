@@ -1,11 +1,10 @@
 package cn.tuyucheng.taketoday.multiplecachemanager.bo;
 
+import cn.tuyucheng.taketoday.multiplecachemanager.entity.Order;
+import cn.tuyucheng.taketoday.multiplecachemanager.repository.OrderDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
-
-import cn.tuyucheng.taketoday.multiplecachemanager.entity.Order;
-import cn.tuyucheng.taketoday.multiplecachemanager.repository.OrderDetailRepository;
 
 @Component
 public class OrderDetailBO {

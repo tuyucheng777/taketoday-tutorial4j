@@ -1,5 +1,8 @@
 package cn.tuyucheng.taketoday.multiplecachemanager;
 
+import cn.tuyucheng.taketoday.multiplecachemanager.bo.OrderDetailBO;
+import cn.tuyucheng.taketoday.multiplecachemanager.entity.Order;
+import cn.tuyucheng.taketoday.multiplecachemanager.repository.OrderDetailRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +13,6 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.caffeine.CaffeineCache;
 import org.springframework.util.Assert;
-
-import cn.tuyucheng.taketoday.multiplecachemanager.bo.OrderDetailBO;
-import cn.tuyucheng.taketoday.multiplecachemanager.entity.Order;
-import cn.tuyucheng.taketoday.multiplecachemanager.repository.OrderDetailRepository;
 
 @SpringBootApplication
 @SpringBootTest
