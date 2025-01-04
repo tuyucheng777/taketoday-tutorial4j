@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>apache-libraries-1</artifactId>
+   <version>1.0.0</version>
+   <name>apache-libraries-1</name>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>apache-modules</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <dependencies>
+      <!-- avro -->
+      <dependency>
+         <groupId>org.apache.avro</groupId>
+         <artifactId>avro</artifactId>
+         <version>${apache.avro.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.avro</groupId>
+         <artifactId>avro-compiler</artifactId>
+         <version>${apache.avro.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.avro</groupId>
+         <artifactId>avro-maven-plugin</artifactId>
+         <version>${apache.avro.version}</version>
+      </dependency>
+      <!-- bval -->
+      <dependency>
+         <groupId>org.apache.bval</groupId>
+         <artifactId>bval-jsr</artifactId>
+         <version>${bval.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>jakarta.validation</groupId>
+         <artifactId>jakarta.validation-api</artifactId>
+         <version>${jakarta.validation.validation-api.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.bval</groupId>
+         <artifactId>bval-extras</artifactId>
+         <version>${bval.version}</version>
+      </dependency>
+      <!-- opennlp -->
+      <dependency>
+         <groupId>org.apache.opennlp</groupId>
+         <artifactId>opennlp-tools</artifactId>
+         <version>${opennlp.opennlp-tools.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-core</artifactId>
+         <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-databind</artifactId>
+         <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.fasterxml.jackson.core</groupId>
+         <artifactId>jackson-annotations</artifactId>
+         <version>${jackson.version}</version>
+      </dependency>
+      <!-- solr -->
+      <dependency>
+         <groupId>org.apache.solr</groupId>
+         <artifactId>solr-solrj</artifactId>
+         <version>${solr.solr-solrj.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.mesos</groupId>
+         <artifactId>mesos</artifactId>
+         <version>${mesos.library.version}</version>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <plugins>
+         <!-- avro -->
+         <plugin>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-maven-plugin</artifactId>
+            <version>${apache.avro.version}</version>
+            <configuration>
+               <sourceDirectory>${project.basedir}/src/main/resources/schemas</sourceDirectory>
+               <outputDirectory>${project.build.directory}/generated-sources/avro/</outputDirectory>
+               <stringType>String</stringType>
+            </configuration>
+            <executions>
+               <execution>
+                  <phase>generate-sources</phase>
+                  <goals>
+                     <goal>schema</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>15</source>
+               <target>15</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+   <properties>
+      <bval.version>3.0.1</bval.version>
+      <jakarta.validation.validation-api.version>3.1.0</jakarta.validation.validation-api.version>
+      <opennlp.opennlp-tools.version>1.8.4</opennlp.opennlp-tools.version>
+      <solr.solr-solrj.version>6.4.0</solr.solr-solrj.version>
+      <apache.avro.version>1.12.0</apache.avro.version>
+      <mesos.library.version>1.11.0</mesos.library.version>
+   </properties>
+</project>
