@@ -1,24 +1,21 @@
 package cn.tuyucheng.taketoday;
 
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.propagation.TextMapPropagator;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import io.opentelemetry.context.propagation.TextMapPropagator;
-import io.opentelemetry.context.Context;
 
 class TriviaServiceUnitTest {
 

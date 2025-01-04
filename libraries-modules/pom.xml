@@ -41,7 +41,7 @@
       <module>libraries-io</module>
       <module>libraries-jdk8</module>
       <module>libraries-llms</module>
-      <!-- <module>libraries-open-telemetry</module> -->
+      <module>libraries-open-telemetry</module>
       <module>libraries-primitive</module>
       <module>libraries-reporting</module>
       <module>libraries-rpc</module>

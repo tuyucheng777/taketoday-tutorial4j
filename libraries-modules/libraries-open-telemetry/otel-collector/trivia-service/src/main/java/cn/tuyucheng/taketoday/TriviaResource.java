@@ -1,27 +1,25 @@
 package cn.tuyucheng.taketoday;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.LongCounter;
+import io.opentelemetry.api.metrics.Meter;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import okhttp3.OkHttpClient;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.time.Instant;
-
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.SpanKind;
-import io.opentelemetry.api.trace.StatusCode;
-import io.opentelemetry.api.trace.Tracer;
-import io.opentelemetry.api.metrics.Meter;
-import io.opentelemetry.context.Scope;
-import io.opentelemetry.context.Context;
-import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.LongCounter;
 
 @Path("/trivia")
 public class TriviaResource {
@@ -37,7 +35,7 @@ public class TriviaResource {
 
    public TriviaResource() {
       TelemetryConfig telemetryConfig = TelemetryConfig.getInstance();
-      this.tracer = telemetryConfig.getOpenTelemetry().getTracer(OTEL_SERVICE_NAME, "0.0.1-SNAPSHOT");
+      this.tracer = telemetryConfig.getOpenTelemetry().getTracer(OTEL_SERVICE_NAME, "1.0.0");
       this.meter = telemetryConfig.getOpenTelemetry().getMeter(OTEL_SERVICE_NAME);
       var textMapPropagator = telemetryConfig.getOpenTelemetry().getPropagators().getTextMapPropagator();
 
@@ -59,8 +57,7 @@ public class TriviaResource {
             .setAttribute("http.url", WORD_SERVICE_URL)
             .setSpanKind(SpanKind.CLIENT).startSpan();
 
-
-      try (Scope scope = span.makeCurrent()) {
+      try (Scope _ = span.makeCurrent()) {
          Instant start = Instant.now();
          span.addEvent("http.request.word-api", start);
 

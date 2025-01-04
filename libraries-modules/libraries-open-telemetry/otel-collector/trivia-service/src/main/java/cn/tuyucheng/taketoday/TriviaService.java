@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday;
 
-import java.io.IOException;
-
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.propagation.TextMapPropagator;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import io.opentelemetry.context.propagation.TextMapPropagator;
-import io.opentelemetry.context.Context;
+
+import java.io.IOException;
 
 public class TriviaService {
 
