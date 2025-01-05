@@ -12,68 +12,68 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.util.Lists.newArrayList;
 
 public class ConcurrentModificationUnitTest {
-    @Test(expected = ConcurrentModificationException.class)
-    public void givenIterating_whenRemoving_thenThrowException() throws InterruptedException {
 
-        List<Integer> integers = newArrayList(1, 2, 3);
+   @Test(expected = ConcurrentModificationException.class)
+   public void givenIterating_whenRemoving_thenThrowException() throws InterruptedException {
 
-        for (Integer integer : integers) {
-            integers.remove(1);
-        }
-    }
+      List<Integer> integers = newArrayList(1, 2, 3);
 
-    @Test
-    public void givenIterating_whenUsingIteratorRemove_thenNoError() throws InterruptedException {
+      for (Integer integer : integers) {
+         integers.remove(1);
+      }
+   }
 
-        List<Integer> integers = newArrayList(1, 2, 3);
+   @Test
+   public void givenIterating_whenUsingIteratorRemove_thenNoError() throws InterruptedException {
 
-        for (Iterator<Integer> iterator = integers.iterator(); iterator.hasNext(); ) {
-            Integer integer = iterator.next();
-            if (integer == 2) {
-                iterator.remove();
-            }
-        }
+      List<Integer> integers = newArrayList(1, 2, 3);
 
-        assertThat(integers).containsExactly(1, 3);
-    }
+      for (Iterator<Integer> iterator = integers.iterator(); iterator.hasNext(); ) {
+         Integer integer = iterator.next();
+         if (integer == 2) {
+            iterator.remove();
+         }
+      }
 
-    @Test
-    public void givenIterating_whenUsingRemovalList_thenNoError() throws InterruptedException {
+      assertThat(integers).containsExactly(1, 3);
+   }
 
-        List<Integer> integers = newArrayList(1, 2, 3);
-        List<Integer> toRemove = newArrayList();
+   @Test
+   public void givenIterating_whenUsingRemovalList_thenNoError() throws InterruptedException {
 
-        for (Integer integer : integers) {
-            if (integer == 2) {
-                toRemove.add(integer);
-            }
-        }
-        integers.removeAll(toRemove);
+      List<Integer> integers = newArrayList(1, 2, 3);
+      List<Integer> toRemove = newArrayList();
 
-        assertThat(integers).containsExactly(1, 3);
-    }
+      for (Integer integer : integers) {
+         if (integer == 2) {
+            toRemove.add(integer);
+         }
+      }
+      integers.removeAll(toRemove);
 
-    @Test
-    public void whenUsingRemoveIf_thenRemoveElements() throws InterruptedException {
+      assertThat(integers).containsExactly(1, 3);
+   }
 
-        Collection<Integer> integers = newArrayList(1, 2, 3);
+   @Test
+   public void whenUsingRemoveIf_thenRemoveElements() throws InterruptedException {
 
-        integers.removeIf(i -> i == 2);
+      Collection<Integer> integers = newArrayList(1, 2, 3);
 
-        assertThat(integers).containsExactly(1, 3);
-    }
+      integers.removeIf(i -> i == 2);
 
-    @Test
-    public void whenUsingStream_thenRemoveElements() {
-        Collection<Integer> integers = newArrayList(1, 2, 3);
+      assertThat(integers).containsExactly(1, 3);
+   }
 
-        List<String> collected = integers
-          .stream()
-          .filter(i -> i != 2)
-          .map(Object::toString)
-          .collect(toList());
+   @Test
+   public void whenUsingStream_thenRemoveElements() {
+      Collection<Integer> integers = newArrayList(1, 2, 3);
 
-        assertThat(collected).containsExactly("1", "3");
-    }
+      List<String> collected = integers
+            .stream()
+            .filter(i -> i != 2)
+            .map(Object::toString)
+            .collect(toList());
 
+      assertThat(collected).containsExactly("1", "3");
+   }
 }

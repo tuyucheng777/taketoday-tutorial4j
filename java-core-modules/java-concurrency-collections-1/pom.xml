@@ -5,7 +5,7 @@
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-concurrency-collections-1</artifactId>
    <packaging>jar</packaging>
-   <name>java-concurrency-collections-1</name>
+   <name>core-java-concurrency-collections</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
