@@ -25,6 +25,7 @@
       <module>spring-reactive-client-1</module>
       <module>spring-reactive-client-2</module>
       <module>spring-reactive-filters</module>
+      <module>spring-reactive-kafka-stream-binder</module>
       <module>spring-reactive-oauth</module>
       <module>spring-reactive-security</module>
       <module>spring-reactive-data-couchbase</module>
