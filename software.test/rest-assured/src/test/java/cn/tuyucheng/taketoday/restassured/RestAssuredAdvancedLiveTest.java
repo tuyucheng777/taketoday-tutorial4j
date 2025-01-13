@@ -3,8 +3,8 @@ package cn.tuyucheng.taketoday.restassured;
 import io.restassured.RestAssured;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 public class RestAssuredAdvancedLiveTest {
 
-   @Before
+   @BeforeEach
    public void setup() {
       RestAssured.baseURI = "https://api.github.com";
       RestAssured.port = 443;

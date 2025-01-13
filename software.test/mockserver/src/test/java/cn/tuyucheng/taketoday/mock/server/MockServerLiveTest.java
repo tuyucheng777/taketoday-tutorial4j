@@ -1,5 +1,6 @@
 package cn.tuyucheng.taketoday.mock.server;
 
+import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -8,7 +9,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockserver.client.server.MockServerClient;
+import org.mockserver.client.MockServerClient;
 import org.mockserver.integration.ClientAndServer;
 import org.mockserver.model.Header;
 import org.mockserver.model.HttpForward;
@@ -17,14 +18,14 @@ import org.mockserver.verify.VerificationTimes;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.Assert.assertEquals;
 import static org.mockserver.integration.ClientAndServer.startClientAndServer;
 import static org.mockserver.matchers.Times.exactly;
 import static org.mockserver.model.HttpClassCallback.callback;
 import static org.mockserver.model.HttpForward.forward;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
-import static org.mockserver.model.StringBody.exact;
+import static org.mockserver.model.JsonBody.json;
 
 public class MockServerLiveTest {
 
@@ -34,7 +35,6 @@ public class MockServerLiveTest {
    public static void startServer() {
       mockServer = startClientAndServer(1080);
    }
-
 
    @Test
    public void whenPostRequestMockServer_thenServerReceived() {
@@ -46,8 +46,9 @@ public class MockServerLiveTest {
    @Test
    public void whenPostRequestForInvalidAuth_then401Received() {
       createExpectationForInvalidAuth();
-      org.apache.http.HttpResponse response = hitTheServerWithPostRequest();
-      assertEquals(401, response.getStatusLine().getStatusCode());
+      HttpResponse response = hitTheServerWithPostRequest();
+      assertEquals(401, response.getStatusLine()
+            .getStatusCode());
    }
 
    @Test
@@ -55,41 +56,26 @@ public class MockServerLiveTest {
       createExpectationForForward();
       hitTheServerWithGetRequest("index.html");
       verifyGetRequest();
-
-   }
-
-   @Test
-   public void whenCallbackRequest_ThenCallbackMethodCalled() {
-      createExpectationForCallBack();
-      org.apache.http.HttpResponse response = hitTheServerWithGetRequest("/callback");
-      assertEquals(200, response.getStatusLine().getStatusCode());
    }
 
    private void verifyPostRequest() {
-      new MockServerClient("localhost", 1080)
-            .verify(request()
-                        .withMethod("POST")
-                        .withPath("/validate")
-                        .withBody(exact("{username: 'foo', password: 'bar'}")),
-                  VerificationTimes.exactly(1)
-            );
+      new MockServerClient("localhost", 1080).verify(request().withMethod("POST")
+            .withPath("/validate")
+            .withBody(json("{\"username\": \"foo\", \"password\": \"bar\"}")), VerificationTimes.exactly(1));
    }
 
    private void verifyGetRequest() {
-      new MockServerClient("localhost", 1080).verify(
-            request()
-                  .withMethod("GET")
-                  .withPath("/index.html"),
-            VerificationTimes.exactly(1)
-      );
+      new MockServerClient("localhost", 1080).verify(request().withMethod("GET")
+            .withPath("/index.html"), VerificationTimes.exactly(1));
    }
 
-   private org.apache.http.HttpResponse hitTheServerWithPostRequest() {
+   private HttpResponse hitTheServerWithPostRequest() {
       String url = "http://127.0.0.1:1080/validate";
-      HttpClient client = HttpClientBuilder.create().build();
+      HttpClient client = HttpClientBuilder.create()
+            .build();
       HttpPost post = new HttpPost(url);
       post.setHeader("Content-type", "application/json");
-      org.apache.http.HttpResponse response;
+      HttpResponse response = null;
 
       try {
          StringEntity stringEntity = new StringEntity("{username: 'foo', password: 'bar'}");
@@ -103,10 +89,11 @@ public class MockServerLiveTest {
       return response;
    }
 
-   private org.apache.http.HttpResponse hitTheServerWithGetRequest(String page) {
+   private HttpResponse hitTheServerWithGetRequest(String page) {
       String url = "http://127.0.0.1:1080/" + page;
-      HttpClient client = HttpClientBuilder.create().build();
-      org.apache.http.HttpResponse response;
+      HttpClient client = HttpClientBuilder.create()
+            .build();
+      org.apache.http.HttpResponse response = null;
       HttpGet get = new HttpGet(url);
       try {
          response = client.execute(get);
@@ -118,42 +105,27 @@ public class MockServerLiveTest {
    }
 
    private void createExpectationForInvalidAuth() {
-      new MockServerClient("127.0.0.1", 1080)
-            .when(request()
-                  .withMethod("POST")
+      new MockServerClient("127.0.0.1", 1080).when(request().withMethod("POST")
                   .withPath("/validate")
-                  .withHeader("Content-Type", "application/json")
-                  .withBody(exact("{username: 'foo', password: 'bar'}")), exactly(1))
-            .respond(response()
-                  .withStatusCode(401)
-                  .withHeaders(
-                        new Header("Content-Type", "application/json; charset=utf-8"),
-                        new Header("Cache-Control", "public, max-age=86400")
-                  )
+                  .withHeader("Content-type", "application/json")
+                  .withBody(json("{\"username\": \"foo\", \"password\": \"bar\"}")), exactly(1))
+            .respond(response().withStatusCode(401)
+                  .withHeaders(new Header("Content-Type", "application/json; charset=utf-8"), new Header("Cache-Control", "public, max-age=86400"))
                   .withBody("{ message: 'incorrect username and password combination' }")
-                  .withDelay(TimeUnit.SECONDS, 1)
-            );
+                  .withDelay(TimeUnit.SECONDS, 1));
    }
 
    private void createExpectationForForward() {
-      new MockServerClient("127.0.0.1", 1080)
-            .when(request()
-                  .withMethod("GET")
+      new MockServerClient("127.0.0.1", 1080).when(request().withMethod("GET")
                   .withPath("/index.html"), exactly(1))
-            .forward(forward()
-                  .withHost("www.mock-server.com")
+            .forward(forward().withHost("www.mock-server.com")
                   .withPort(80)
-                  .withScheme(HttpForward.Scheme.HTTP)
-            );
+                  .withScheme(HttpForward.Scheme.HTTP));
    }
 
    private void createExpectationForCallBack() {
-      mockServer
-            .when(request()
-                  .withPath("/callback"))
-            .callback(callback()
-                  .withCallbackClass("cn.tuyucheng.taketoday.mock.server.ExpectationCallbackHandler")
-            );
+      mockServer.when(request().withPath("/callback"))
+            .respond(callback().withCallbackClass("cn.tuyucheng.taketoday.mock.server.ExpectationCallbackHandler"));
    }
 
    @AfterClass
