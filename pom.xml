@@ -417,6 +417,7 @@
             <!-- <module>algorithms-modules</module> -->
             <!-- <module>annotations</module> -->
             <!-- <module>apache-modules</module> -->
+            <!-- <module>choco-solver</module> -->
             <!-- <module>ddd</module> -->
             <!-- <module>ddd-contexts</module> -->
             <!-- <module>deeplearning4j</module> -->
