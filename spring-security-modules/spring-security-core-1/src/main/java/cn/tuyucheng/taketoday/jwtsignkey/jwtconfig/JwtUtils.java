@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.jwtsignkey.jwtconfig;
 
 import cn.tuyucheng.taketoday.jwtsignkey.userservice.UserDetailsImpl;
-
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;

@@ -24,7 +24,6 @@ public class UserDetailsIntegrationTest {
    @Configuration
    @ComponentScan("cn.tuyucheng.taketoday.methodsecurity.*")
    public static class SpringConfig {
-
    }
 
    @Test

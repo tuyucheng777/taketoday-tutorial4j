@@ -68,7 +68,7 @@ public class CustomWebSecurityConfigurer {
    private AuthenticationFilter authenticationFilter() {
       AuthenticationFilter filter = new AuthenticationFilter(
             resolver(), authenticationConverter());
-      filter.setSuccessHandler((request, response, auth) -> {
+      filter.setSuccessHandler((_, _, _) -> {
       });
       return filter;
    }

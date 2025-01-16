@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.app;
 
-
-import jakarta.servlet.Filter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import jakarta.servlet.Filter;
 
 @SpringBootApplication
 public class App extends SpringBootServletInitializer {

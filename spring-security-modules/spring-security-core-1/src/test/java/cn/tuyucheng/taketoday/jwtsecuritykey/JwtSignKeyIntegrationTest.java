@@ -22,7 +22,7 @@ public class JwtSignKeyIntegrationTest {
    private MockMvc mvc;
 
    @BeforeEach
-   public void setup() {
+   private void setup() {
       mvc = MockMvcBuilders.webAppContextSetup(context)
             .apply(springSecurity())
             .build();

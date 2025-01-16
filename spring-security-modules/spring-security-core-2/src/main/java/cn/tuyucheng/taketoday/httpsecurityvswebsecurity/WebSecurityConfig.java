@@ -45,5 +45,6 @@ public class WebSecurityConfig {
    }
 
    protected void configure(HttpSecurity http) throws Exception {
+
    }
 }
