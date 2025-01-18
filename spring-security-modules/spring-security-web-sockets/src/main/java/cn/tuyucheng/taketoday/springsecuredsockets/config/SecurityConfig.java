@@ -74,17 +74,20 @@ public class SecurityConfig {
     */
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-      http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
-                  authorizationManagerRequestMatcherRegistry
-                        .requestMatchers("/", "/index", "/authenticate").permitAll()
-                        .requestMatchers("/secured/**/**", "/secured/**/**/**", "/secured/socket", "/secured/success").authenticated()
-                        .anyRequest().authenticated())
-            .formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.loginPage("/login").permitAll()
+      http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> authorizationManagerRequestMatcherRegistry.requestMatchers("/", "/index", "/authenticate")
+                  .permitAll()
+                  .requestMatchers("/secured/**/**", "/secured/**/**/**", "/secured/socket", "/secured/success")
+                  .authenticated()
+                  .anyRequest()
+                  .authenticated())
+            .formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.loginPage("/login")
+                  .permitAll()
                   .usernameParameter("username")
                   .passwordParameter("password")
                   .loginProcessingUrl("/authenticate")
                   .successHandler(loginSuccessHandler())
-                  .failureUrl("/denied").permitAll())
+                  .failureUrl("/denied")
+                  .permitAll())
             .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer.logoutSuccessHandler(logoutSuccessHandler()))
             /**
              * Applies to User Roles - not to login failures or unauthenticated access attempts.
@@ -96,7 +99,7 @@ public class SecurityConfig {
       http.csrf(AbstractHttpConfigurer::disable);
 
       /** This is solely required to support H2 console viewing in Spring MVC with Spring Security */
-      http.headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
+      http.headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()))
             .authorizeHttpRequests(Customizer.withDefaults());
       return http.build();
    }
