@@ -17,12 +17,12 @@
                pattern="%style{userId=%X{userId}:}{white} %style{%message}{green}%n"/>
       </Console>
       <Console name="ConsoleJSONAppender" target="SYSTEM_OUT">
-         <JsonLayout complete="false" compact="false">
-            <KeyValuePair key="myCustomField" value="myCustomValue"/>
-         </JsonLayout>
+         <JsonTemplateLayout eventTemplateUri="classpath:JsonLayout.json">
+            <EventTemplateAdditionalField key="myCustomField" value="myCustomValue"/>
+         </JsonTemplateLayout>
       </Console>
       <File name="JSONLogfileAppender" fileName="${sys:logging.folder.path}">
-         <JSONLayout compact="true" eventEol="true"/>
+         <JsonTemplateLayout eventTemplateUri="classpath:JsonLayout.json"/>
          <BurstFilter level="INFO" rate="2" maxBurst="10"/>
       </File>
       <Async name="AsyncAppender" bufferSize="80">
