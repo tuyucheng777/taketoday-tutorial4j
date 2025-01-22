@@ -17,13 +17,14 @@
    </parent>
 
    <modules>
-      <module>spring-reactive-data</module>
+      <module>spring-6-rsocket</module>
       <module>spring-reactive-1</module>
       <module>spring-reactive-2</module>
       <module>spring-reactive-3</module>
       <module>spring-reactive-4</module>
       <module>spring-reactive-client-1</module>
       <module>spring-reactive-client-2</module>
+      <module>spring-reactive-data</module>
       <module>spring-reactive-filters</module>
       <module>spring-reactive-kafka-stream-binder</module>
       <module>spring-reactive-oauth</module>
@@ -31,6 +32,8 @@
       <module>spring-reactive-data-couchbase</module>
       <module>spring-reactive-exceptions</module>
       <module>spring-reactor</module>
+      <module>spring-webflux-1</module>
+      <module>spring-webflux-2</module>
       <module>spring-webflux-amqp</module>
 
       <!-- the following submodules are commented out as a workaround in order to use java 19+ and SB 3.2.x -->

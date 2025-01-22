@@ -1,6 +1,6 @@
 package com.baeldung;
 
-import com.baeldung.spring.amqp.SpringWebfluxAmqpApplication;
+import cn.tuyucheng.taketoday.spring.amqp.SpringWebfluxAmqpApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
