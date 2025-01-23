@@ -17,6 +17,7 @@
    </parent>
 
    <modules>
+      <module>api-gateway</module>
       <module>spring-cloud-archaius</module>
       <module>spring-cloud-aws</module>
       <module>spring-cloud-aws-v3</module>
@@ -34,8 +35,10 @@
       <module>spring-cloud-eureka</module>
       <module>spring-cloud-eureka-self-preservation</module>
       <module>spring-cloud-functions</module>
+      <module>spring-cloud-functions-azure</module>
       <module>spring-cloud-gateway-1</module>
       <module>spring-cloud-gateway-2</module>
+      <module>spring-cloud-gateway-3</module>
       <module>spring-cloud-hystrix</module>
       <module>spring-cloud-kubernetes</module>
       <module>spring-cloud-loadbalancer</module>
