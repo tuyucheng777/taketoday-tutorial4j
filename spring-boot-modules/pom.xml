@@ -68,6 +68,7 @@
       <module>spring-boot-dubbo</module>
       <module>spring-boot-environment</module>
       <module>spring-boot-exceptions</module>
+      <module>spring-boot-featureflag-unleash</module>
       <module>spring-boot-flowable</module>
       <module>spring-boot-graalvm-docker</module>
       <module>spring-boot-gradle-1</module>
