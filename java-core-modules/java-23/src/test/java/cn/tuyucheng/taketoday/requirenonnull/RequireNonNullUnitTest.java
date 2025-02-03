@@ -30,11 +30,11 @@ class RequireNonNullUnitTest {
    }
 
    record User(String username, String password) {
-         User(String username, String password) {
-            this.username = Objects.requireNonNull(username, "Username is null!");
-            this.password = Objects.requireNonNull(password, "Password is null!");
-         }
+      User(String username, String password) {
+         this.username = Objects.requireNonNull(username, "Username is null!");
+         this.password = Objects.requireNonNull(password, "Password is null!");
       }
+   }
 
    @Test
    void givenValidInput_whenNewUser_thenNoException() {
