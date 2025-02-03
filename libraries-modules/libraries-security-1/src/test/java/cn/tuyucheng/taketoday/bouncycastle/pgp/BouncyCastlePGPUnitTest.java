@@ -1,9 +1,6 @@
 package cn.tuyucheng.taketoday.bouncycastle.pgp;
 
-import org.bouncycastle.cms.CMSException;
-import org.bouncycastle.openpgp.PGPException;
-import org.bouncycastle.operator.OperatorCreationException;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,11 +13,21 @@ import java.security.NoSuchProviderException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 
-import static org.junit.Assert.assertTrue;
+import org.bouncycastle.cms.CMSException;
+import org.bouncycastle.openpgp.PGPException;
+import org.bouncycastle.operator.OperatorCreationException;
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BouncyCastlePGPUnitTest {
 
+
    @Test
+   @Order(1)
    public void givenFileWithPlainText_whenPGPEncrypWithPubKey_thenPGPEncryptedFileCreated()
          throws CertificateException, NoSuchProviderException, NoSuchAlgorithmException, IOException, KeyStoreException, UnrecoverableKeyException, CMSException, OperatorCreationException, PGPException {
       Path resourcesPath = Paths.get("src", "main", "resources");
@@ -36,6 +43,7 @@ public class BouncyCastlePGPUnitTest {
    }
 
    @Test
+   @Order(2)
    public void givenPGPEncryptedFile_whenDecryptWithPrivateKey_thenFileWithPlainTextCreated()
          throws CertificateException, NoSuchProviderException, NoSuchAlgorithmException, IOException, KeyStoreException, UnrecoverableKeyException, CMSException, OperatorCreationException, PGPException {
       Path resourcesPath = Paths.get("src", "main", "resources");
