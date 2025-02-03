@@ -1,22 +1,23 @@
 package cn.tuyucheng.taketoday.jpa.projection;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.AFTER_TEST_METHOD;
+
+import java.util.Arrays;
+import java.util.List;
+
+import cn.tuyucheng.taketoday.jpa.projection.view.AddressDto;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.jdbc.Sql;
 import cn.tuyucheng.taketoday.jpa.projection.model.Person;
 import cn.tuyucheng.taketoday.jpa.projection.repository.AddressRepository;
 import cn.tuyucheng.taketoday.jpa.projection.repository.PersonRepository;
 import cn.tuyucheng.taketoday.jpa.projection.view.AddressView;
 import cn.tuyucheng.taketoday.jpa.projection.view.PersonDto;
 import cn.tuyucheng.taketoday.jpa.projection.view.PersonView;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.jdbc.Sql;
-
-import java.util.Arrays;
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.context.jdbc.Sql.ExecutionPhase.AFTER_TEST_METHOD;
 
 @DataJpaTest
 @Sql(scripts = "/projection-insert-data.sql")
@@ -78,5 +79,16 @@ class JpaProjectionIntegrationTest {
       assertThat(person.getFirstName()).isEqualTo("John");
       assertThat(personView.getFirstName()).isEqualTo("John");
       assertThat(personDto.firstName()).isEqualTo("John");
+   }
+
+   @Test
+   void whenUsingDTOProjection_thenCorrectResultIsReturned() {
+      List<AddressDto> addresses = addressRepository.findAddressByState("CA");
+      AddressDto address = addresses.get(0);
+      assertThat(address.getZipCode()).isEqualTo("90001");
+
+      PersonDto person = address.getPerson();
+      assertThat(person.firstName()).isEqualTo("John");
+      assertThat(person.lastName()).isEqualTo("Doe");
    }
 }
