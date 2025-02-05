@@ -50,6 +50,7 @@
       <module>junit-5-basics-1</module>
       <module>junit-5-basics-2</module>
       <module>junit-5-migration</module>
+      <module>k6</module>
       <module>load-testing-comparison</module>
       <module>microshed</module>
       <module>mockito-1</module>
