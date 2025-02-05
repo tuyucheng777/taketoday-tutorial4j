@@ -1,16 +1,24 @@
 package cn.tuyucheng.taketoday.restdocopenapi;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+
+import java.util.List;
+import java.util.Optional;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.List;
-import java.util.Optional;
-
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/foo")
@@ -21,7 +29,7 @@ public class FooController {
 
    @GetMapping
    public ResponseEntity<List<Foo>> getAllFoos() {
-      List<Foo> fooList = (List<Foo>) repository.findAll();
+      List<Foo> fooList = repository.findAll();
       if (fooList.isEmpty()) {
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
       }
@@ -30,6 +38,7 @@ public class FooController {
 
    @GetMapping(value = "{id}")
    public ResponseEntity<Foo> getFooById(@PathVariable("id") Long id) {
+
       Optional<Foo> foo = repository.findById(id);
       return foo.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
             .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -63,9 +72,11 @@ public class FooController {
    @PutMapping("/{id}")
    public ResponseEntity<Foo> updateFoo(@PathVariable("id") long id, @RequestBody Foo foo) {
       boolean isFooPresent = repository.existsById(id);
+
       if (!isFooPresent) {
          return new ResponseEntity<>(HttpStatus.NOT_FOUND);
       }
+
       Foo updatedFoo = repository.save(foo);
 
       return new ResponseEntity<>(updatedFoo, HttpStatus.OK);

@@ -3,9 +3,10 @@ package cn.tuyucheng.taketoday.defaultglobalsecurityscheme.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
+import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.Valid;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
@@ -30,7 +31,7 @@ public class PingResponseDto {
     * @return pong
     */
    @Valid
-   @Schema(name = "pong", required = false)
+   @Schema(name = "pong", requiredMode = RequiredMode.REQUIRED)
    public OffsetDateTime getPong() {
       return pong;
    }
@@ -58,7 +59,11 @@ public class PingResponseDto {
 
    @Override
    public String toString() {
-      return STR."class PingResponseDto {\n    pong: \{toIndentedString(pong)}\n}";
+      return "class PingResponseDto {\n" +
+            "    pong: " +
+            toIndentedString(pong) +
+            "\n" +
+            "}";
    }
 
    /**
@@ -69,6 +74,7 @@ public class PingResponseDto {
       if (o == null) {
          return "null";
       }
-      return o.toString().replace("\n", "\n    ");
+      return o.toString()
+            .replace("\n", "\n    ");
    }
 }

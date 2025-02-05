@@ -29,9 +29,16 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
-import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
-import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
-import static org.springframework.restdocs.payload.PayloadDocumentation.*;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.delete;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.put;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessRequest;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.preprocessResponse;
+import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
+import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.requestFields;
+import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
 import static org.springframework.restdocs.request.RequestDocumentation.pathParameters;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -79,7 +86,7 @@ class SpringRestDocsUnitTest {
             .andExpect(status().isOk())
             .andDo(document("getAFoo", preprocessRequest(prettyPrint()), preprocessResponse(prettyPrint()),
                   pathParameters(parameterWithName("id").description("id of foo to be searched")),
-                  responseFields(fieldWithPath("id").description(STR."The id of the foo\{collectionToDelimitedString(desc.descriptionsForProperty("id"), ". ")}"),
+                  responseFields(fieldWithPath("id").description("The id of the foo" + collectionToDelimitedString(desc.descriptionsForProperty("id"), ". ")),
                         fieldWithPath("title").description("The title of the foo"), fieldWithPath("body").description("The body of the foo"))));
    }
 
@@ -120,7 +127,7 @@ class SpringRestDocsUnitTest {
                   .content(this.objectMapper.writeValueAsString(foo)))
             .andExpect(status().isOk())
             .andDo(document("updateFoo", pathParameters(parameterWithName("id").description("The id of the foo to update")),
-                  responseFields(fieldWithPath("id").description(STR."The id of the updated foo\{collectionToDelimitedString(desc.descriptionsForProperty("id"), ". ")}"),
+                  responseFields(fieldWithPath("id").description("The id of the updated foo" + collectionToDelimitedString(desc.descriptionsForProperty("id"), ". ")),
                         fieldWithPath("title").description("The title of the updated foo"), fieldWithPath("body").description("The body of the updated foo"))));
    }
 }

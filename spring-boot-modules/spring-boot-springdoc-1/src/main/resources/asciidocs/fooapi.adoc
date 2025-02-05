@@ -1,5 +1,5 @@
 = RESTful Notes API Guide
-Baeldung;
+Taketoday;
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
@@ -13,7 +13,8 @@ Baeldung;
 [[overview-http-verbs]]
 == HTTP verbs
 
-RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP verbs.
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
 
 |===
 | Verb | Usage
@@ -31,7 +32,8 @@ RESTful notes tries to adhere as closely as possible to standard HTTP and REST c
 | Used to delete an existing resource
 |===
 
-RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its use of HTTP status codes.
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
 
 |===
 | Status code | Usage
@@ -56,12 +58,11 @@ RESTful notes tries to adhere as closely as possible to standard HTTP and REST c
 [[overview-hypermedia]]
 == Hypermedia
 
-RESTful Notes uses hypermedia and resources include links to other resources in their responses.
-Responses are in http://stateless.co/hal_specification.html[Hypertext Application
+RESTful Notes uses hypermedia and resources include links to other resources in their
+responses. Responses are in http://stateless.co/hal_specification.html[Hypertext Application
 from resource to resource.
-Language (HAL)] format.
-Links can be found beneath the `_links` key.
-Users of the API should not create URIs themselves, instead they should use the above-described links to navigate
+Language (HAL)] format. Links can be found beneath the `_links` key. Users of the API should
+not create URIs themselves, instead they should use the above-described links to navigate
 
 [[resources]]
 = Resources
@@ -81,7 +82,6 @@ A `GET` request is used to access the foo read.
 include::{snippets}/getAFoo/http-request.adoc[]
 
 ==== Path Parameters
-
 include::{snippets}/getAFoo/path-parameters.adoc[]
 
 ==== Example response
@@ -119,7 +119,6 @@ A `DELETE` request is used to access the foo delete.
 include::{snippets}/deleteFoo/http-request.adoc[]
 
 ==== Path Parameters
-
 include::{snippets}/deleteFoo/path-parameters.adoc[]
 
 ==== Example response
@@ -140,7 +139,6 @@ A `PUT` request is used to access the foo update.
 include::{snippets}/updateFoo/http-request.adoc[]
 
 ==== Path Parameters
-
 include::{snippets}/updateFoo/path-parameters.adoc[]
 
 ==== Example response

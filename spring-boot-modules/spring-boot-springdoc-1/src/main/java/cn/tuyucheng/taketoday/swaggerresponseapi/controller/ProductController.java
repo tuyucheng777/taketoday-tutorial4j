@@ -27,12 +27,8 @@ public class ProductController {
       return productService.addProducts(product);
    }
 
-   @ApiResponses(value = {
-         @ApiResponse(
-               content = {@Content(mediaType = "application/json",
-                     array = @ArraySchema(schema = @Schema(implementation = Product.class))
-               )})
-   })
+   @ApiResponses(value = {@ApiResponse(content = {@Content(mediaType = "application/json",
+         array = @ArraySchema(schema = @Schema(implementation = Product.class)))})})
    @GetMapping("/products")
    public List<Product> getProductsList() {
       return productService.getProductsList();

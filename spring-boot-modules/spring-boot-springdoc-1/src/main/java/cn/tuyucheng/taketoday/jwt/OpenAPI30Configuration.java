@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(
       info = @Info(title = "User API", version = "${api.version}",
-            contact = @Contact(name = "Tuyucheng", email = "user-apis@tuyucheng.com", url = "https://www.tuyucheng.com"),
+            contact = @Contact(name = "Taketoday", email = "user-apis@taketoday.com", url = "https://www.taketoday.com"),
             license = @License(name = "Apache 2.0", url = "https://www.apache.org/licenses/LICENSE-2.0"), termsOfService = "${tos.uri}",
             description = "${api.description}"),
       servers = {
@@ -40,7 +40,8 @@ public class OpenAPI30Configuration {
                         .name(securitySchemeName)
                         .type(SecurityScheme.Type.HTTP)
                         .scheme("bearer")
-                        .description("Provide the JWT token. JWT token can be obtained from the Login API. For testing, use the credentials <strong>john/password</strong>")
+                        .description(
+                              "Provide the JWT token. JWT token can be obtained from the Login API. For testing, use the credentials <strong>john/password</strong>")
                         .bearerFormat("JWT")));
    }
 }

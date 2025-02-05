@@ -97,7 +97,7 @@
 + [Spring Boot SendGrid](spring-boot-sendgrid/README.md)
 + [Spring Boot Shell](spring-boot-shell/README.md)
 + [Spring Boot SOAP](spring-boot-soap/README.md)
-+ [Spring Boot SpringDoc](spring-boot-springdoc/README.md)
++ [Spring Boot SpringDoc](spring-boot-springdoc-1/README.md)
 + [Spring Boot State Machine](spring-boot-state-machine/README.md)
 + [Spring Boot Swagger](spring-boot-swagger-1/README.md)
 + [Spring Boot Swagger Codegen](spring-boot-swagger-codegen/README.md)

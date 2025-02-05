@@ -1,6 +1,10 @@
 package cn.tuyucheng.taketoday.restdocopenapi;
 
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Foo {
@@ -74,12 +78,15 @@ public class Foo {
       } else if (!id.equals(other.id))
          return false;
       if (title == null) {
-         return other.title == null;
-      } else return title.equals(other.title);
+         if (other.title != null)
+            return false;
+      } else if (!title.equals(other.title))
+         return false;
+      return true;
    }
 
    @Override
    public String toString() {
-      return STR."Foo [id=\{id}, title=\{title}]";
+      return "Foo [id=" + id + ", title=" + title + "]";
    }
 }

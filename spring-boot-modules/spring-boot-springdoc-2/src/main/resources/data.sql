@@ -4,3 +4,4 @@ INSERT INTO Foo(id, title, body)
 VALUES (2, 'Foo 2', 'Foo body 2');
 INSERT INTO Foo(id, title, body)
 VALUES (3, 'Foo 3', 'Foo body 3');
+

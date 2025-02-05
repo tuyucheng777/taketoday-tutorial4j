@@ -3,6 +3,7 @@ package cn.tuyucheng.taketoday.defaultglobalsecurityscheme.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.RequiredMode;
 
 import java.util.Objects;
 
@@ -28,8 +29,7 @@ public class LoginDto {
     *
     * @return user
     */
-
-   @Schema(name = "user", required = true)
+   @Schema(name = "user", requiredMode = RequiredMode.REQUIRED)
    public String getUser() {
       return user;
    }
@@ -48,7 +48,6 @@ public class LoginDto {
     *
     * @return pass
     */
-
    @Schema(name = "pass", required = true)
    public String getPass() {
       return pass;
@@ -77,7 +76,14 @@ public class LoginDto {
 
    @Override
    public String toString() {
-      return STR."class LoginDto {\n    user: \{toIndentedString(user)}\n    pass: \{toIndentedString(pass)}\n}";
+      return "class LoginDto {\n" +
+            "    user: " +
+            toIndentedString(user) +
+            "\n" +
+            "    pass: " +
+            toIndentedString(pass) +
+            "\n" +
+            "}";
    }
 
    /**
@@ -88,6 +94,7 @@ public class LoginDto {
       if (o == null) {
          return "null";
       }
-      return o.toString().replace("\n", "\n    ");
+      return o.toString()
+            .replace("\n", "\n    ");
    }
 }

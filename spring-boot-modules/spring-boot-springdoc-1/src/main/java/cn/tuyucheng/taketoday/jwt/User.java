@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.jwt;
 
-
 import java.io.Serializable;
 
 public class User implements Serializable {
@@ -10,9 +9,6 @@ public class User implements Serializable {
    private String password;
    private String role;
    private String email;
-
-   public User() {
-   }
 
    public User(String username, String password, String role) {
       this.username = username;
@@ -54,6 +50,6 @@ public class User implements Serializable {
 
    @Override
    public String toString() {
-      return STR."User [username=\{username}, password=\{password}, role=\{role}]";
+      return "User [username=" + username + ", password=" + password + ", role=" + role + "]";
    }
 }
