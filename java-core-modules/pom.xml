@@ -41,6 +41,7 @@
       <module>java-21</module>
       <module>java-22</module>
       <module>java-23</module>
+      <module>java-24</module>
       <module>java-annotations</module>
       <module>java-arrays-convert</module>
       <module>java-arrays-guides</module>
