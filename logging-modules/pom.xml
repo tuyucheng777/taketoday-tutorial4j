@@ -18,6 +18,7 @@
       <module>jul-to-slf4j</module>
       <module>log4j</module>
       <module>log4j2</module>
+      <module>log-all-requests</module>
       <module>logback</module>
       <module>log-mdc</module>
       <module>tinylog2</module>
