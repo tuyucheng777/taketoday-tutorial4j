@@ -1,19 +1,19 @@
 package cn.tuyucheng.taketoday.socket;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.Executors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class SocketEchoMultiIntegrationTest {
 
    private static int port;
 
-   @BeforeAll
+   @BeforeClass
    public static void start() throws InterruptedException, IOException {
 
       // Take an available port

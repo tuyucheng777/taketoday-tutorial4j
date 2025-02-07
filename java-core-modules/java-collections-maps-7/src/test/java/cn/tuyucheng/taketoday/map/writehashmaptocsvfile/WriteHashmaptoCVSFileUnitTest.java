@@ -2,8 +2,8 @@ package cn.tuyucheng.taketoday.map.writehashmaptocsvfile;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileWriter;

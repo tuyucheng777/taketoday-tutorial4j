@@ -1,20 +1,12 @@
 package cn.tuyucheng.taketoday.collections.hashmapvshashtable;
 
 import com.google.common.collect.Lists;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.util.Collections;
-import java.util.ConcurrentModificationException;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class HashmapVsHashtableDifferenceUnitTest {
 

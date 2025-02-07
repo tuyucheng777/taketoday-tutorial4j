@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.vectors;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class VectorOperationsUnitTest {
 
@@ -79,7 +79,7 @@ public class VectorOperationsUnitTest {
    public void givenAVector_whenAddElementFromACollection_thenAllElementsGetAdeddToTheVector() {
       Vector<String> vector = getVector();
       assertEquals(5, vector.size());
-      ArrayList<String> words = new ArrayList<>(Arrays.asList("Tuyucheng", "is", "cool!"));
+      ArrayList<String> words = new ArrayList<>(Arrays.asList("Taketoday", "is", "cool!"));
       vector.addAll(words);
       assertEquals(8, vector.size());
       assertEquals("cool!", vector.get(7));

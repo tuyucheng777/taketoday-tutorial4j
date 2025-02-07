@@ -18,15 +18,15 @@ public class HashingUnitTest {
    @Test
    void givenPrimitiveByteArrayKey_whenRetrievingFromMap_shouldRetrieveDifferentObjects() {
       // bad hashing example is prohibitively slow for bigger samples
-//        Duration[] badHashing = testDuration(MemberWithBadHashing::new);
+      //        Duration[] badHashing = testDuration(MemberWithBadHashing::new);
       Duration[] withId = testDuration(MemberWithId::new);
       Duration[] withObjects = testDuration(MemberWithObjects::new);
       Duration[] withIdAndName = testDuration(MemberWithIdAndName::new);
 
-//        System.out.println("Inserting with bad hashing:");
-//        System.out.println(badHashing[0]);
-//        System.out.println("Getting with bad hashing:");
-//        System.out.println(badHashing[1]);
+      //        System.out.println("Inserting with bad hashing:");
+      //        System.out.println(badHashing[0]);
+      //        System.out.println("Getting with bad hashing:");
+      //        System.out.println(badHashing[1]);
 
       System.out.println("Inserting with id hashing:");
       System.out.println(withId[0]);

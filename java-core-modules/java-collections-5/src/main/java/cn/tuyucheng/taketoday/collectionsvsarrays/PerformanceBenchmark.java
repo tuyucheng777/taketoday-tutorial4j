@@ -2,12 +2,7 @@ package cn.tuyucheng.taketoday.collectionsvsarrays;
 
 import cn.tuyucheng.taketoday.collectionsvsarrays.sorting.MergeSort;
 import cn.tuyucheng.taketoday.collectionsvsarrays.sorting.Quicksort;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Measurement;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.annotations.*;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

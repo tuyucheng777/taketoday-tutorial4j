@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-collections-array-list-1</artifactId>
-   <name>java-collections-array-list-1</name>
    <packaging>jar</packaging>
+   <name>java-collections-array-list-1</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -14,6 +14,13 @@
    </parent>
 
    <dependencies>
+      <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
+      <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter</artifactId>
+         <version>5.11.3</version>
+         <scope>test</scope>
+      </dependency>
       <dependency>
          <groupId>org.apache.commons</groupId>
          <artifactId>commons-collections4</artifactId>
@@ -34,7 +41,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>${surefire.plugin.version}</version>
+            <version>${maven-surefire-plugin.version}</version>
             <configuration>
                <argLine>
                   --add-opens java.base/java.util=ALL-UNNAMED
@@ -45,8 +52,7 @@
    </build>
 
    <properties>
-      <maven-compiler-plugin.source>16</maven-compiler-plugin.source>
-      <maven-compiler-plugin.target>16</maven-compiler-plugin.target>
-      <surefire.plugin.version>3.0.0-M3</surefire.plugin.version>
+      <maven-compiler-plugin.source>23</maven-compiler-plugin.source>
+      <maven-compiler-plugin.target>23</maven-compiler-plugin.target>
    </properties>
 </project>

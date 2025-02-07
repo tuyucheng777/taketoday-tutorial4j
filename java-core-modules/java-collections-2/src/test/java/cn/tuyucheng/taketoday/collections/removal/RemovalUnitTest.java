@@ -1,17 +1,13 @@
 package cn.tuyucheng.taketoday.collections.removal;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 public class RemovalUnitTest {
 
@@ -19,7 +15,7 @@ public class RemovalUnitTest {
    Collection<String> expected;
    Collection<String> removed;
 
-   @BeforeEach
+   @Before
    public void setupTestData() {
       names = new ArrayList<>();
       expected = new ArrayList<>();

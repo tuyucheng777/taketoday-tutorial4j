@@ -1,19 +1,12 @@
 package cn.tuyucheng.taketoday.collections.shufflingcollections;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ShufflingCollectionsUnitTest {
 
@@ -74,5 +67,15 @@ public class ShufflingCollectionsUnitTest {
       Collections.shuffle(students_2, new Random(5));
 
       assertThat(students_1).isEqualTo(students_2);
+   }
+
+   @Test
+   public void whenShufflingListWithStream_thenListIsShuffled() {
+      List<String> originalList = Arrays.asList("Foo", "Bar", "Baz", "Qux");
+      List<String> shuffledList = ShufflingCollections.shuffleList(originalList);
+
+      // Ensure the shuffled list contains the same elements as the original list
+      assertTrue(shuffledList.containsAll(originalList), "The shuffled list should contain all elements of the original list");
+      assertTrue(originalList.containsAll(shuffledList), "The original list should contain all elements of the shuffled list");
    }
 }

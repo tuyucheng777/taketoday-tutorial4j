@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-networking-3</artifactId>
-   <name>java-networking-3</name>
    <packaging>jar</packaging>
+   <name>java-networking-3</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -75,8 +75,8 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
-               <source>16</source>
-               <target>16</target>
+               <source>23</source>
+               <target>23</target>
             </configuration>
          </plugin>
       </plugins>
@@ -92,5 +92,4 @@
       <angus.mail.version>2.0.1</angus.mail.version>
       <apache.commons-validator.version>1.7</apache.commons-validator.version>
    </properties>
-
 </project>

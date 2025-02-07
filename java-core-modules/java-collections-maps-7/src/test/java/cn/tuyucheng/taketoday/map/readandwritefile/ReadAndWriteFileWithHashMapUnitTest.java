@@ -4,20 +4,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.util.HashMap;
@@ -38,12 +29,12 @@ public class ReadAndWriteFileWithHashMapUnitTest {
 
    private File file;
 
-   @BeforeEach
+   @Before
    public void createFile() throws IOException {
       file = File.createTempFile("student", ".data");
    }
 
-   @AfterEach
+   @After
    public void deleteFile() {
       file.delete();
    }

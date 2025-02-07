@@ -1,25 +1,19 @@
 package cn.tuyucheng.taketoday.list.listoflist;
 
 import cn.tuyucheng.taketoday.java.list.Flower;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.*;
 
 public class AddElementsToListUnitTest {
 
    List<Flower> flowers;
 
-   @BeforeEach
+   @Before
    public void init() {
       this.flowers = new ArrayList<>(Arrays.asList(
             new Flower("Poppy", 12),
@@ -32,7 +26,7 @@ public class AddElementsToListUnitTest {
       List<Flower> anotherList = new ArrayList<>();
       anotherList.addAll(flowers);
       assertEquals(anotherList.size(), flowers.size());
-      Assertions.assertTrue(anotherList.containsAll(flowers));
+      Assert.assertTrue(anotherList.containsAll(flowers));
    }
 
    @Test
@@ -42,7 +36,7 @@ public class AddElementsToListUnitTest {
       Flower flower = anotherList.get(0);
       flower.setPetals(flowers.get(0).getPetals() * 3);
       assertEquals(anotherList.size(), flowers.size());
-      Assertions.assertTrue(anotherList.containsAll(flowers));
+      Assert.assertTrue(anotherList.containsAll(flowers));
    }
 
    @Test

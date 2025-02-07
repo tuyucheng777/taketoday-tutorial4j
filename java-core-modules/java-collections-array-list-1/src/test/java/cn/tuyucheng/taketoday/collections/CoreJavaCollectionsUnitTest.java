@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.collections;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

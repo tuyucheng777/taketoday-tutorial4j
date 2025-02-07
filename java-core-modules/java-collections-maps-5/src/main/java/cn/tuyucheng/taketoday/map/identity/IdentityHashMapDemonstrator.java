@@ -1,14 +1,9 @@
 package cn.tuyucheng.taketoday.map.identity;
 
-import java.util.Collections;
-import java.util.ConcurrentModificationException;
-import java.util.HashMap;
-import java.util.IdentityHashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class IdentityHashMapDemonstrator {
    public static void main(String[] args) {

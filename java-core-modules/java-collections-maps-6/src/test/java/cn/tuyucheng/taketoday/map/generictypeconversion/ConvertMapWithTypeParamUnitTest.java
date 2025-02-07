@@ -8,9 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static java.util.stream.Collectors.toMap;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ConvertMapWithTypeParamUnitTest {
    private static final Map<String, Object> MAP1 = Maps.newHashMap();

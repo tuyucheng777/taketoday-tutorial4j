@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.macaddress;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class MacAddressUnitTest {
 

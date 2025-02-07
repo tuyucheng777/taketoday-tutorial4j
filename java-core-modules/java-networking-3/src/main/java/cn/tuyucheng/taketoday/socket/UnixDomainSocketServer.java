@@ -18,7 +18,7 @@ class UnixDomainSocketServer {
 
    void runServer() throws IOException, InterruptedException {
       Path socketPath = Path.of(System.getProperty("user.home"))
-            .resolve("tuyucheng.socket");
+            .resolve("taketoday.socket");
       Files.deleteIfExists(socketPath);
       UnixDomainSocketAddress socketAddress = getAddress(socketPath);
 

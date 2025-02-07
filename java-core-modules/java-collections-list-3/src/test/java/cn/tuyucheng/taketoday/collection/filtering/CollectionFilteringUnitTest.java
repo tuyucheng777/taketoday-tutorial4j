@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.collection.filtering;
 
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +40,7 @@ public class CollectionFilteringUnitTest {
          }
       }
 
-      Assertions.assertThat(filteredList.size(), Matchers.is(nameFilter.size()));
+      Assert.assertThat(filteredList.size(), Matchers.is(nameFilter.size()));
    }
 
    @Test
@@ -53,7 +53,7 @@ public class CollectionFilteringUnitTest {
             .filter(employee -> nameFilter.contains(employee.getName()))
             .collect(Collectors.toList());
 
-      Assertions.assertThat(filteredList.size(), Matchers.is(nameFilter.size()));
+      Assert.assertThat(filteredList.size(), Matchers.is(nameFilter.size()));
    }
 
    @Test
@@ -67,7 +67,7 @@ public class CollectionFilteringUnitTest {
             .filter(employee -> nameFilterSet.contains(employee.getName()))
             .collect(Collectors.toList());
 
-      Assertions.assertThat(filteredList.size(), Matchers.is(nameFilterSet.size()));
+      Assert.assertThat(filteredList.size(), Matchers.is(nameFilterSet.size()));
    }
 
 }

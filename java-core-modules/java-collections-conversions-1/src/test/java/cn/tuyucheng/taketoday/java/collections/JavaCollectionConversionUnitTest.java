@@ -5,17 +5,9 @@ import com.google.common.collect.Sets;
 import com.google.common.primitives.Ints;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @SuppressWarnings("unused")
 public class JavaCollectionConversionUnitTest {

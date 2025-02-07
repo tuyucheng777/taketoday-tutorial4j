@@ -18,7 +18,6 @@ public class IterableSize {
     * @return the size of the iterable
     */
    public static int sizeUsingJava7(final Iterable data) {
-
       if (data instanceof Collection) {
          return ((Collection<?>) data).size();
       }
@@ -36,7 +35,6 @@ public class IterableSize {
     * @return the size of the iterable
     */
    public static long sizeUsingJava8(final Iterable data) {
-
       return StreamSupport.stream(data.spliterator(), false).count();
    }
 
@@ -47,7 +45,6 @@ public class IterableSize {
     * @return the size of the iterable
     */
    public static int sizeUsingApacheCollections(final Iterable data) {
-
       return IterableUtils.size(data);
    }
 
@@ -58,7 +55,6 @@ public class IterableSize {
     * @return the size of the iterable
     */
    public static int sizeUsingGoogleGuava(final Iterable data) {
-
       return Iterables.size(data);
    }
 }

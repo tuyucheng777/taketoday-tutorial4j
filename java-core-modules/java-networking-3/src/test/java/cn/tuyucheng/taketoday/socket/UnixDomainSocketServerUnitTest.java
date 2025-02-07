@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.socket;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.nio.file.Path;
 
 import static java.nio.file.Files.deleteIfExists;
 import static org.assertj.core.util.Files.newTemporaryFile;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class UnixDomainSocketServerUnitTest {
 

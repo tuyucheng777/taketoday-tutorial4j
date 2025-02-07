@@ -10,10 +10,9 @@ public class EclipseCollectionsCollectionFilter {
 
    static public Collection<Integer> findEvenNumbers(Collection<Integer> baseCollection) {
       Predicate<Integer> eclipsePredicate = item -> item % 2 == 0;
-      Collection<Integer> filteredList = Lists.mutable.ofAll(baseCollection)
-            .select(eclipsePredicate);
 
-      return filteredList;
+      return Lists.mutable.ofAll(baseCollection)
+            .select(eclipsePredicate);
    }
 
    static public Collection<Integer> findEvenNumbersUsingIterate(Collection<Integer> baseCollection) {
@@ -25,8 +24,7 @@ public class EclipseCollectionsCollectionFilter {
             return arg0 % 2 == 0;
          }
       };
-      Collection<Integer> filteredList = Iterate.select(baseCollection, eclipsePredicate);
 
-      return filteredList;
+      return Iterate.select(baseCollection, eclipsePredicate);
    }
 }

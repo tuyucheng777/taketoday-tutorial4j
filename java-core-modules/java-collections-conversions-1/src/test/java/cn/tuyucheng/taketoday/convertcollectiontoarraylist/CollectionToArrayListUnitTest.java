@@ -1,15 +1,12 @@
 package cn.tuyucheng.taketoday.convertcollectiontoarraylist;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 import static java.util.stream.Collectors.toCollection;
+import static org.junit.Assert.*;
 
 /**
  * @author chris
@@ -20,7 +17,7 @@ public class CollectionToArrayListUnitTest {
    public CollectionToArrayListUnitTest() {
    }
 
-   @BeforeAll
+   @BeforeClass
    public static void setUpClass() {
       int i = 0;
       Foo john = new Foo(i++, "John", null);

@@ -1,7 +1,5 @@
 package cn.tuyucheng.taketoday.collections.stackreversal;
 
-import cn.tuyucheng.taketoday.collections.sorting.Employee;
-
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;

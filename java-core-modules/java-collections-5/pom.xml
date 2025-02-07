@@ -4,20 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-collections-5</artifactId>
-   <name>java-collections-5</name>
-   <build>
-      <plugins>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-               <source>9</source>
-               <target>9</target>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
    <packaging>jar</packaging>
+   <name>java-collections-5</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -61,10 +49,22 @@
       </dependency>
    </dependencies>
 
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>23</source>
+               <target>23</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
    <properties>
       <junit.version>5.9.2</junit.version>
       <roaringbitmap.version>0.9.38</roaringbitmap.version>
       <jmh.version>1.36</jmh.version>
    </properties>
-
 </project>

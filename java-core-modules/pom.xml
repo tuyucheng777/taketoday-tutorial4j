@@ -53,11 +53,14 @@
       <module>java-arrays-sorting</module>
       <module>java-booleans</module>
       <module>java-char</module>
+      <module>java-classloader</module>
       <module>java-collections-1</module>
       <module>java-collections-2</module>
       <module>java-collections-3</module>
       <module>java-collections-4</module>
       <module>java-collections-5</module>
+      <module>java-collections-6</module>
+      <module>java-collections-7</module>
       <module>java-collections-array-list-1</module>
       <module>java-collections-array-list-2</module>
       <module>java-collections-conversions-1</module>
@@ -69,6 +72,7 @@
       <module>java-collections-list-4</module>
       <module>java-collections-list-5</module>
       <module>java-collections-list-6</module>
+      <module>java-collections-list-7</module>
       <module>java-collections-maps-1</module>
       <module>java-collections-maps-2</module>
       <module>java-collections-maps-3</module>
@@ -77,6 +81,8 @@
       <module>java-collections-maps-5</module>
       <module>java-collections-maps-6</module>
       <module>java-collections-maps-7</module>
+      <module>java-collections-maps-8</module>
+      <module>java-collections-maps-9</module>
       <module>java-collections-set-1</module>
       <module>java-collections-set-2</module>
       <module>java-compiler</module>
@@ -163,8 +169,10 @@
       <module>java-networking-2</module>
       <module>java-networking-3</module>
       <module>java-networking-4</module>
+      <module>java-networking-5</module>
       <module>java-nio-1</module>
       <module>java-nio-2</module>
+      <module>java-nio-3</module>
       <module>java-numbers-1</module>
       <module>java-numbers-2</module>
       <module>java-numbers-3</module>

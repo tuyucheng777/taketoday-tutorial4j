@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.collections.stack;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,9 +9,7 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 public class StackUnitTest {
 

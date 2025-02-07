@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-collections-conversions-3</artifactId>
-   <name>java-collections-conversions-3</name>
    <packaging>jar</packaging>
+   <name>java-collections-conversions-3</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -13,8 +13,26 @@
       <version>1.0.0</version>
    </parent>
 
+   <dependencies>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${apache.commons.version}</version>
+      </dependency>
+   </dependencies>
+
    <build>
       <finalName>java-collections-conversions-3</finalName>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>23</source>
+               <target>23</target>
+            </configuration>
+         </plugin>
+      </plugins>
       <resources>
          <resource>
             <directory>src/main/resources</directory>
@@ -23,4 +41,7 @@
       </resources>
    </build>
 
+   <properties>
+      <apache.commons.version>3.14.0</apache.commons.version>
+   </properties>
 </project>

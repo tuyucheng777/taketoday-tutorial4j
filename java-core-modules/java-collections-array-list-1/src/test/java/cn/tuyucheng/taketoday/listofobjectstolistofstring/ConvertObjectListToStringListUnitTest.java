@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.listofobjectstolistofstring;
 
 import com.google.common.collect.Lists;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class ConvertObjectListToStringListUnitTest {
       for (Object obj : objectListWithNull()) {
          outputList.add(Objects.toString(obj, null));
       }
-      Assertions.assertEquals(expectedStringListWithNull(), outputList);
+      Assert.assertEquals(expectedStringListWithNull(), outputList);
    }
 
    @Test
@@ -26,7 +26,7 @@ public class ConvertObjectListToStringListUnitTest {
       outputList = objectListWithNull().stream()
             .map((obj) -> Objects.toString(obj, null))
             .collect(Collectors.toList());
-      Assertions.assertEquals(expectedStringListWithNull(), outputList);
+      Assert.assertEquals(expectedStringListWithNull(), outputList);
 
    }
 
@@ -37,7 +37,7 @@ public class ConvertObjectListToStringListUnitTest {
             .filter(Objects::nonNull)
             .map((obj) -> Objects.toString(obj, null))
             .collect(Collectors.toUnmodifiableList());
-      Assertions.assertEquals(expectedStringListWithoutNull(), outputList);
+      Assert.assertEquals(expectedStringListWithoutNull(), outputList);
 
    }
 
@@ -45,7 +45,7 @@ public class ConvertObjectListToStringListUnitTest {
    public void givenObjectList_whenUsingGuavaTransform_thenReturnSuccess() {
       List<String> outputList;
       outputList = Lists.transform(objectListWithNull(), obj -> Objects.toString(obj, null));
-      Assertions.assertEquals(expectedStringListWithNull(), outputList);
+      Assert.assertEquals(expectedStringListWithNull(), outputList);
    }
 
    @Test
@@ -54,7 +54,7 @@ public class ConvertObjectListToStringListUnitTest {
       outputList = objectListWithoutNull().stream()
             .map((obj) -> Objects.toString(obj, null))
             .toList();
-      Assertions.assertEquals(expectedStringListWithoutNull(), outputList);
+      Assert.assertEquals(expectedStringListWithoutNull(), outputList);
    }
 
    private List<String> expectedStringListWithNull() {

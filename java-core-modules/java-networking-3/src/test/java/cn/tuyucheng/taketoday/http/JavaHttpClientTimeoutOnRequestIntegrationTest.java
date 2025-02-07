@@ -13,9 +13,7 @@ import java.time.LocalTime;
 
 import static cn.tuyucheng.taketoday.http.JavaHttpClientTimeout.getHttpClientWithTimeout;
 import static java.time.LocalTime.now;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JavaHttpClientTimeoutOnRequestIntegrationTest {
 

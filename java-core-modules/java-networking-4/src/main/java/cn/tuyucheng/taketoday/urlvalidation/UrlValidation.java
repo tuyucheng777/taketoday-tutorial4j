@@ -3,16 +3,14 @@ package cn.tuyucheng.taketoday.urlvalidation;
 import org.apache.commons.validator.routines.UrlValidator;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 
 public class UrlValidation {
    public boolean isValidURLJavaNet(String url) throws MalformedURLException, URISyntaxException {
       try {
-         new URL(url).toURI();
+         new URI(url);
          return true;
-      } catch (MalformedURLException e) {
-         return false;
       } catch (URISyntaxException e) {
          return false;
 
@@ -21,9 +19,9 @@ public class UrlValidation {
 
    public boolean invalidUrlAsValidJavaNet(String url) throws MalformedURLException {
       try {
-         new URL(url);
+         new URI(url).toURL();
          return true;
-      } catch (MalformedURLException e) {
+      } catch (URISyntaxException e) {
          return false;
       }
    }

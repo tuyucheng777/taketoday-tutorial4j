@@ -1,13 +1,6 @@
 package cn.tuyucheng.taketoday.mail.mailwithattachment;
 
-import jakarta.mail.Authenticator;
-import jakarta.mail.BodyPart;
-import jakarta.mail.Message;
-import jakarta.mail.MessagingException;
-import jakarta.mail.Multipart;
-import jakarta.mail.PasswordAuthentication;
-import jakarta.mail.Session;
-import jakarta.mail.Transport;
+import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;

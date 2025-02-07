@@ -8,11 +8,11 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.Session;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
+import org.junit.Before;
 import org.junit.Rule;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class MailWithAttachmentServiceLiveTest {
 
@@ -29,7 +29,7 @@ public class MailWithAttachmentServiceLiveTest {
 
    private MailWithAttachmentService emailService;
 
-   @BeforeEach
+   @Before
    public void setup() {
       emailService = new MailWithAttachmentService(
             USERNAME, PASSWORD, HOSTNAME, greenMail.getSmtp().getPort()

@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.hashmaptoarraylist;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ public class HashMapToArrayListConverterUtilsUnitTest {
 
    private HashMap<Integer, String> hashMap;
 
-   @BeforeEach
+   @Before
    public void beforeEach() {
       hashMap = new HashMap<>();
       hashMap.put(1, "AAA");

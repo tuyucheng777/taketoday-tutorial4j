@@ -1,19 +1,19 @@
 package cn.tuyucheng.taketoday.convertlisttoarray;
 
 import com.google.common.primitives.Longs;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class LongListToLongArrayConversionUnitTest {
 
    private List<Long> list;
 
-   @BeforeEach
+   @Before
    public void setUp() {
       list = Arrays.asList(1L, 2L, 3L, 4L, 5L);
    }

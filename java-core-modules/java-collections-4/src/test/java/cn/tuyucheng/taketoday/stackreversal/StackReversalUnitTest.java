@@ -1,16 +1,11 @@
 package cn.tuyucheng.taketoday.stackreversal;
 
-import cn.tuyucheng.taketoday.collections.sorting.Employee;
+import cn.tuyucheng.taketoday.collections.stackreversal.Employee;
 import cn.tuyucheng.taketoday.collections.stackreversal.ReverseStackUsingQueue;
 import cn.tuyucheng.taketoday.collections.stackreversal.ReverseStackUsingRecursion;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,15 +1,6 @@
 package cn.tuyucheng.taketoday.listandset.benchmark;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Level;
-import org.openjdk.jmh.annotations.Measurement;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.Param;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -28,50 +19,52 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3, time = 10, timeUnit = TimeUnit.MILLISECONDS)
 public class ListAndSetContainsBenchmark {
 
-   public static void main(String[] args) throws IOException, RunnerException {
-      Options opt = new OptionsBuilder()
-            .include(ListAndSetContainsBenchmark.class.getSimpleName())
-            .forks(1)
-            .addProfiler("gc")
-            .build();
-      new Runner(opt).run();
+    public static void main(String[] args) throws IOException, RunnerException {
+        Options opt = new OptionsBuilder()
+          .include(ListAndSetContainsBenchmark.class.getSimpleName())
+          .forks(1)
+          .addProfiler("gc")
+          .build();
+        new Runner(opt).run();
 
-   }
+    }
 
 
-   @Benchmark
-   public void searchElementInArrayList(Params param, Blackhole blackhole) {
 
-      blackhole.consume(param.arrayList.contains(param.searchElement));
-   }
 
-   @Benchmark
-   public void searchElementInHashSet(Params param, Blackhole blackhole) {
+    @Benchmark
+    public void searchElementInArrayList(Params param, Blackhole blackhole) {
 
-      blackhole.consume(param.hashSet.contains(param.searchElement));
+        blackhole.consume(param.arrayList.contains(param.searchElement));
+    }
 
-   }
+    @Benchmark
+    public void searchElementInHashSet(Params param, Blackhole blackhole) {
 
-   @State(Scope.Benchmark)
-   public static class Params {
-      @Param({"5000000"})
-      public int searchElement;
+        blackhole.consume(param.hashSet.contains(param.searchElement));
 
-      @Param({"10000000"})
-      public int collectionSize;
+    }
 
-      public List<Integer> arrayList;
-      public Set<Integer> hashSet;
+    @State(Scope.Benchmark)
+    public static class Params {
+        @Param({"5000000"})
+        public int searchElement;
 
-      @Setup(Level.Iteration)
-      public void setup() {
-         arrayList = new ArrayList<>();
-         hashSet = new HashSet<>();
-         for (int i = 0; i < collectionSize; i++) {
-            arrayList.add(i);
-            hashSet.add(i);
-         }
-      }
-   }
+        @Param({"10000000"})
+        public int collectionSize;
+
+        public List<Integer> arrayList;
+        public Set<Integer> hashSet;
+
+        @Setup(Level.Iteration)
+        public void setup() {
+            arrayList = new ArrayList<>();
+            hashSet = new HashSet<>();
+            for (int i = 0; i < collectionSize; i++) {
+                arrayList.add(i);
+                hashSet.add(i);
+            }
+        }
+    }
 
 }

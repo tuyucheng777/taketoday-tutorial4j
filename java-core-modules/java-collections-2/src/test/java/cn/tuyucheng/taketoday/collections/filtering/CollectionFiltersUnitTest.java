@@ -18,7 +18,7 @@ public class CollectionFiltersUnitTest {
 
    @Test
    public void givenAStringCollection_whenFilteringFourLetterWords_thenObtainTheFilteredCollection() {
-      final Collection<String> baseStrings = Arrays.asList("java", "tuyucheng", "type", "example", "other");
+      final Collection<String> baseStrings = Arrays.asList("java", "taketoday", "type", "example", "other");
 
       Collection<String> filtered = StreamsCollectionFilter.filterCollectionHelperMethod(baseStrings, item -> item.length() == 4);
 
@@ -40,5 +40,4 @@ public class CollectionFiltersUnitTest {
             .hasSameElementsAs(filteredWithGuava)
             .hasSameElementsAs(EXPECTED_EVEN_FILTERED_COLLECTION);
    }
-
 }

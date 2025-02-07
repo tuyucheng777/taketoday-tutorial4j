@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.map.incrementmapkey;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,7 +17,7 @@ public class IncrementMapValueUnitTest {
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, Integer> actualMap = ic.charFrequencyUsingContainsKey(string);
       Map<Character, Integer> expectedMap = getExpectedMap();
-      Assertions.assertEquals(expectedMap, actualMap);
+      Assert.assertEquals(expectedMap, actualMap);
    }
 
    @Test
@@ -26,7 +26,7 @@ public class IncrementMapValueUnitTest {
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, Integer> actualMap = ic.charFrequencyUsingGetOrDefault(string);
       Map<Character, Integer> expectedMap = getExpectedMap();
-      Assertions.assertEquals(expectedMap, actualMap);
+      Assert.assertEquals(expectedMap, actualMap);
    }
 
    @Test
@@ -35,7 +35,7 @@ public class IncrementMapValueUnitTest {
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, Integer> actualMap = ic.charFrequencyUsingMerge(string);
       Map<Character, Integer> expectedMap = getExpectedMap();
-      Assertions.assertEquals(expectedMap, actualMap);
+      Assert.assertEquals(expectedMap, actualMap);
    }
 
    @Test
@@ -44,7 +44,7 @@ public class IncrementMapValueUnitTest {
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, Integer> actualMap = ic.charFrequencyUsingCompute(string);
       Map<Character, Integer> expectedMap = getExpectedMap();
-      Assertions.assertEquals(expectedMap, actualMap);
+      Assert.assertEquals(expectedMap, actualMap);
    }
 
    @Test
@@ -53,7 +53,7 @@ public class IncrementMapValueUnitTest {
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, Long> actualMap = ic.charFrequencyUsingAtomicMap(string);
       Map<Character, Integer> expectedMap = getExpectedMap();
-      Assertions.assertEquals(expectedMap.keySet(), actualMap.keySet());
+      Assert.assertEquals(expectedMap.keySet(), actualMap.keySet());
    }
 
    @Test
@@ -61,7 +61,7 @@ public class IncrementMapValueUnitTest {
       String string = "the quick brown fox jumps over the lazy dog";
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, AtomicInteger> actualMap = ic.charFrequencyWithGetAndIncrement(string);
-      Assertions.assertEquals(getExpectedMap().keySet(), actualMap.keySet());
+      Assert.assertEquals(getExpectedMap().keySet(), actualMap.keySet());
    }
 
    @Test
@@ -69,7 +69,7 @@ public class IncrementMapValueUnitTest {
       String string = "the quick brown fox jumps over the lazy dog";
       IncrementMapValueWays ic = new IncrementMapValueWays();
       Map<Character, AtomicInteger> actualMap = ic.charFrequencyWithGetAndIncrementComputeIfAbsent(string);
-      Assertions.assertEquals(getExpectedMap().keySet(), actualMap.keySet());
+      Assert.assertEquals(getExpectedMap().keySet(), actualMap.keySet());
    }
 
    @Test
@@ -91,7 +91,7 @@ public class IncrementMapValueUnitTest {
       thread2.join();
 
       Map<Character, Integer> expectedMap = getExpectedMap();
-      Assertions.assertEquals(expectedMap, charMap);
+      Assert.assertEquals(expectedMap, charMap);
    }
 
    private Map<Character, Integer> getExpectedMap() {

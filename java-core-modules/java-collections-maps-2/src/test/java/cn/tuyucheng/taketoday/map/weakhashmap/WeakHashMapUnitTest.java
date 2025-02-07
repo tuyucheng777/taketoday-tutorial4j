@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.map.weakhashmap;
 
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.WeakHashMap;
 import java.util.concurrent.TimeUnit;
 
 import static com.jayway.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class WeakHashMapUnitTest {
 

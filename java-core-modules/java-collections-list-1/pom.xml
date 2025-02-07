@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-collections-list-1</artifactId>
-   <name>java-collections-list-1</name>
    <packaging>jar</packaging>
+   <name>java-collections-list-1</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -23,6 +23,12 @@
          <groupId>org.apache.commons</groupId>
          <artifactId>commons-lang3</artifactId>
          <version>${commons-lang3.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>${lombok.version}</version>
+         <scope>provided</scope>
       </dependency>
    </dependencies>
 </project>

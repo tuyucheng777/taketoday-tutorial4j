@@ -15,12 +15,12 @@ class UnixDomainSocketClient {
 
    void runClient() throws IOException {
       Path socketPath = Path.of(System.getProperty("user.home"))
-            .resolve("tuyucheng.socket");
+            .resolve("taketoday.socket");
       UnixDomainSocketAddress socketAddress = getAddress(socketPath);
 
       SocketChannel channel = openSocketChannel(socketAddress);
 
-      String message = "Hello from Tuyucheng Unix domain socket article";
+      String message = "Hello from Taketoday Unix domain socket article";
       writeMessage(channel, message);
    }
 

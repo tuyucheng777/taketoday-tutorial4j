@@ -1,19 +1,19 @@
 package cn.tuyucheng.taketoday.customiterators;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class IteratorsUnitTest {
    @Test
    public void givenListOfStrings_whenIteratedWithDefaultIterator() {
       List<String> listOfStrings = List.of("hello", "world", "this", "is", "a", "test");
       Iterator<String> iterator = listOfStrings.iterator();
-      Assertions.assertTrue(iterator.hasNext());
+      Assert.assertTrue(iterator.hasNext());
       assertEquals(iterator.next(), "hello");
    }
 

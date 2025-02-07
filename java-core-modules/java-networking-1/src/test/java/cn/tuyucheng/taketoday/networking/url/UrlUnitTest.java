@@ -3,8 +3,8 @@ package cn.tuyucheng.taketoday.networking.url;
 import com.google.common.collect.ImmutableMap;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.message.BasicNameValuePair;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
@@ -17,65 +17,65 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class UrlUnitTest {
 
    @Test
    public void givenUrl_whenCanIdentifyProtocol_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com").toURL();
+      final URL url = new URI("http://taketoday.com").toURL();
       assertEquals("http", url.getProtocol());
    }
 
    @Test
    public void givenUrl_whenCanGetHost_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com").toURL();
-      assertEquals("tuyucheng.com", url.getHost());
+      final URL url = new URI("http://taketoday.com").toURL();
+      assertEquals("taketoday.com", url.getHost());
    }
 
    @Test
    public void givenUrl_whenCanGetFileName_thenCorrect2() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com/articles?topic=java&version=8").toURL();
+      final URL url = new URI("http://taketoday.com/articles?topic=java&version=8").toURL();
       assertEquals("/articles?topic=java&version=8", url.getFile());
    }
 
    @Test
    public void givenUrl_whenCanGetFileName_thenCorrect1() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com/guidelines.txt").toURL();
+      final URL url = new URI("http://taketoday.com/guidelines.txt").toURL();
       assertEquals("/guidelines.txt", url.getFile());
    }
 
    @Test
    public void givenUrl_whenCanGetPathParams_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com/articles?topic=java&version=8").toURL();
+      final URL url = new URI("http://taketoday.com/articles?topic=java&version=8").toURL();
       assertEquals("/articles", url.getPath());
    }
 
    @Test
    public void givenUrl_whenCanGetQueryParams_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com/articles?topic=java&amp;version=8").toURL();
+      final URL url = new URI("http://taketoday.com/articles?topic=java&amp;version=8").toURL();
       assertEquals("topic=java&amp;version=8", url.getQuery());
    }
 
    @Test
    public void givenUrl_whenGetsDefaultPort_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com").toURL();
+      final URL url = new URI("http://taketoday.com").toURL();
       assertEquals(-1, url.getPort());
       assertEquals(80, url.getDefaultPort());
    }
 
    @Test
    public void givenUrl_whenGetsPort_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URL url = new URI("http://tuyucheng.com:8090").toURL();
+      final URL url = new URI("http://taketoday.com:8090").toURL();
       assertEquals(8090, url.getPort());
       assertEquals(80, url.getDefaultPort());
    }
 
    @Test
    public void givenHomeUrlAndFullUrl_whenRelativize_thenCorrect() throws MalformedURLException, URISyntaxException {
-      final URI homeUri = new URI("http://tuyucheng.com");
-      final URI fullUri = new URI("http://tuyucheng.com" + "/a-guide-to-java-sockets");
+      final URI homeUri = new URI("http://taketoday.com");
+      final URI fullUri = new URI("http://taketoday.com" + "/a-guide-to-java-sockets");
       final URI relativeUri = homeUri.relativize(fullUri);
       assertEquals("a-guide-to-java-sockets", relativeUri.toString());
    }
@@ -83,58 +83,58 @@ public class UrlUnitTest {
    @Test
    public void givenUrlComponents_whenConstructsCompleteUrl_thenCorrect() throws MalformedURLException, URISyntaxException {
       final String protocol = "http";
-      final String host = "tuyucheng.com";
+      final String host = "taketoday.com";
       final String file = "/guidelines.txt";
       final String fragment = "myImage";
       final URL url = new URI(protocol, host, file, fragment).toURL();
-      assertEquals("http://tuyucheng.com/guidelines.txt#myImage", url.toString());
+      assertEquals("http://taketoday.com/guidelines.txt#myImage", url.toString());
    }
 
    @Test
    public void givenUrlComponents_whenConstructsCompleteUrl_thenCorrect2() throws MalformedURLException, URISyntaxException {
       final String protocol = "http";
       final String username = "admin";
-      final String host = "tuyucheng.com";
+      final String host = "taketoday.com";
       final String file = "/articles";
       final String query = "topic=java&version=8";
       final String fragment = "myImage";
       final URL url = new URI(protocol, username, host, -1, file, query, fragment).toURL();
-      assertEquals("http://admin@tuyucheng.com/articles?topic=java&version=8#myImage", url.toString());
+      assertEquals("http://admin@taketoday.com/articles?topic=java&version=8#myImage", url.toString());
    }
 
    @Test
    public void givenRelativeUrl_whenCreatesRelativeUrl_thenThrows() throws URISyntaxException, MalformedURLException {
       final URI uri = new URI("/a-guide-to-java-sockets");
-      Assertions.assertThrows(IllegalArgumentException.class, () -> uri.toURL());
+      Assert.assertThrows(IllegalArgumentException.class, () -> uri.toURL());
    }
 
    @Test
    public void givenUrlComponentsWithPort_whenConstructsCompleteUrl_thenCorrect() throws MalformedURLException, URISyntaxException {
       final String protocol = "http";
       final String username = "admin";
-      final String host = "tuyucheng.com";
+      final String host = "taketoday.com";
       final int port = 9000;
       final String file = "/guidelines.txt";
       final String fragment = "myImage";
       final URL url = new URI(protocol, username, host, port, file, null, fragment).toURL();
-      assertEquals("http://admin@tuyucheng.com:9000/guidelines.txt#myImage", url.toString());
+      assertEquals("http://admin@taketoday.com:9000/guidelines.txt#myImage", url.toString());
    }
 
    @Test
    public void givenUrlParameters_whenBuildUrlWithURIBuilder_thenSuccess() throws URISyntaxException, MalformedURLException {
-      URIBuilder uriBuilder = new URIBuilder("http://tuyucheng.com/articles");
+      URIBuilder uriBuilder = new URIBuilder("http://taketoday.com/articles");
       uriBuilder.setPort(9090);
       uriBuilder.addParameter("topic", "java");
       uriBuilder.addParameter("version", "8");
       URL url = uriBuilder.build()
             .toURL();
-      assertEquals("http://tuyucheng.com:9090/articles?topic=java&version=8", url.toString());
+      assertEquals("http://taketoday.com:9090/articles?topic=java&version=8", url.toString());
    }
 
    @Test
    public void givenUrlParametersInMap_whenBuildUrlWithURIBuilder_thenSuccess() throws URISyntaxException, MalformedURLException {
       Map<String, String> paramMap = ImmutableMap.of("topic", "java", "version", "8");
-      URIBuilder uriBuilder = new URIBuilder("http://tuyucheng.com/articles");
+      URIBuilder uriBuilder = new URIBuilder("http://taketoday.com/articles");
       uriBuilder.setPort(9090);
       uriBuilder.addParameters(paramMap.entrySet()
             .stream()
@@ -143,14 +143,14 @@ public class UrlUnitTest {
 
       URL url = uriBuilder.build()
             .toURL();
-      assertEquals("http://tuyucheng.com:9090/articles?topic=java&version=8", url.toString());
+      assertEquals("http://taketoday.com:9090/articles?topic=java&version=8", url.toString());
    }
 
    @Test
    public void givenUrlParameters_whenBuildUrlWithSpringUriComponentsBuilder_thenSuccess() throws MalformedURLException {
       URL url = UriComponentsBuilder.newInstance()
             .scheme("http")
-            .host("tuyucheng.com")
+            .host("taketoday.com")
             .port(9090)
             .path("articles")
             .queryParam("topic", "java")
@@ -159,12 +159,12 @@ public class UrlUnitTest {
             .toUri()
             .toURL();
 
-      assertEquals("http://tuyucheng.com:9090/articles?topic=java&version=8", url.toString());
+      assertEquals("http://taketoday.com:9090/articles?topic=java&version=8", url.toString());
    }
 
    @Test
    public void givenURI_whenConvertingToURL_thenCorrect() throws IOException, URISyntaxException {
-      String aURIString = "http://courses.tuyucheng.com";
+      String aURIString = "http://courses.taketoday.com";
       URI uri = new URI(aURIString);
       URL url = uri.toURL();
       assertNotNull(url);
@@ -173,8 +173,8 @@ public class UrlUnitTest {
 
    @Test
    public void givenPath_whenConvertingToURIAndThenURL_thenCorrect() throws IOException, URISyntaxException {
-      String finalPath = "file:/D:/tuyucheng/java-url";
-      Path path = Paths.get("/tuyucheng/java-url");
+      String finalPath = "file:/D:/taketoday/java-url";
+      Path path = Paths.get("/taketoday/java-url");
       URI uri = path.toUri();
       URL url = uri.toURL();
       assertNotNull(url);

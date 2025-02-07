@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.*;
 
 /**
  * This class has test methods of mapping Integer to Character list,
@@ -37,9 +35,9 @@ class UsersListMappingUnitTest {
             .map(UserList::getUsers, UserListDTO::setUsernames));
 
       users = new ArrayList<>();
-      users.add(new User("b100", "user1", "user1@tuyucheng.com", "111-222", "USER"));
-      users.add(new User("b101", "user2", "user2@tuyucheng.com", "111-333", "USER"));
-      users.add(new User("b102", "user3", "user3@tuyucheng.com", "111-444", "ADMIN"));
+      users.add(new User("b100", "user1", "user1@taketoday.com", "111-222", "USER"));
+      users.add(new User("b101", "user2", "user2@taketoday.com", "111-333", "USER"));
+      users.add(new User("b102", "user3", "user3@taketoday.com", "111-444", "ADMIN"));
    }
 
    @Test
@@ -62,7 +60,7 @@ class UsersListMappingUnitTest {
       List<UserDTO> userDtoList = MapperUtil.mapList(users, UserDTO.class);
 
       assertThat(userDtoList, Matchers.<UserDTO>hasItem(Matchers.both(hasProperty("userId", equalTo("b100")))
-            .and(hasProperty("email", equalTo("user1@tuyucheng.com")))
+            .and(hasProperty("email", equalTo("user1@taketoday.com")))
             .and(hasProperty("username", equalTo("user1")))));
    }
 

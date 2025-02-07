@@ -3,7 +3,7 @@ package cn.tuyucheng.taketoday.set;
 import com.google.common.collect.Sets;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.SetUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;

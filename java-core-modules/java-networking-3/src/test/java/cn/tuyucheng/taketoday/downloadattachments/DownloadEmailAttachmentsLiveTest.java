@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.downloadattachments;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.Assert.fail;
 
 public class DownloadEmailAttachmentsLiveTest {
    @Test

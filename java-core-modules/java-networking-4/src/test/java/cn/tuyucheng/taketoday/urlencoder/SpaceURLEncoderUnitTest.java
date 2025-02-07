@@ -2,6 +2,7 @@ package cn.tuyucheng.taketoday.urlencoder;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
@@ -11,31 +12,31 @@ public class SpaceURLEncoderUnitTest {
 
    @Test
    void givenSpaceInString_whenUsingDefaultEncoding_thenReturnPlusSign() {
-      String originalString = "Welcome to the Tuyucheng Website!";
+      String originalString = "Welcome to the Taketoday Website!";
       String encodedString = URLEncoder.encode(originalString);
-      assertEquals("Welcome+to+the+Tuyucheng+Website%21", encodedString);
+      assertEquals("Welcome+to+the+Taketoday+Website%21", encodedString);
    }
 
    @Test
-   void givenSpaceInString_whenUsingUTF8Encoding_thenReturnPlusSign() {
-      String originalString = "Welcome to the Tuyucheng Website!";
-      String encodedString = URLEncoder.encode(originalString, StandardCharsets.UTF_8);
-      assertEquals("Welcome+to+the+Tuyucheng+Website%21", encodedString);
+   void givenSpaceInString_whenUsingUTF8Encoding_thenReturnPlusSign() throws UnsupportedEncodingException {
+      String originalString = "Welcome to the Taketoday Website!";
+      String encodedString = URLEncoder.encode(originalString, StandardCharsets.UTF_8.toString());
+      assertEquals("Welcome+to+the+Taketoday+Website%21", encodedString);
    }
 
    @Test
-   void givenSpaceInString_whenUsingDefaultEncodingAndReplace_thenReturnPct20() {
-      String originalString = "Welcome to the Tuyucheng Website!";
+   void givenSpaceInString_whenUsingDefaultEncodingAndReplace_thenReturnPct20() throws UnsupportedEncodingException {
+      String originalString = "Welcome to the Taketoday Website!";
       String encodedString = URLEncoder.encode(originalString)
             .replace("+", "%20");
-      assertEquals("Welcome%20to%20the%20Tuyucheng%20Website%21", encodedString);
+      assertEquals("Welcome%20to%20the%20Taketoday%20Website%21", encodedString);
    }
 
    @Test
-   void givenSpaceInString_whenUsingDefaultEncodingAndReplaceAll_thenReturnPct20() {
-      String originalString = "Welcome to the Tuyucheng Website!";
+   void givenSpaceInString_whenUsingDefaultEncodingAndReplaceAll_thenReturnPct20() throws UnsupportedEncodingException {
+      String originalString = "Welcome to the Taketoday Website!";
       String encodedString = URLEncoder.encode(originalString)
             .replaceAll("\\+", "%20");
-      assertEquals("Welcome%20to%20the%20Tuyucheng%20Website%21", encodedString);
+      assertEquals("Welcome%20to%20the%20Taketoday%20Website%21", encodedString);
    }
 }

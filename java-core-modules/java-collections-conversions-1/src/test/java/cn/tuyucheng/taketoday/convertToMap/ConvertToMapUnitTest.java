@@ -1,15 +1,15 @@
 package cn.tuyucheng.taketoday.convertToMap;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class ConvertToMapUnitTest {
@@ -17,7 +17,7 @@ public class ConvertToMapUnitTest {
    private List<Book> bookList;
    private ConvertToMap convertToMap = new ConvertToMap();
 
-   @BeforeEach
+   @Before
    public void init() {
       bookList = new ArrayList<>();
       bookList.add(new Book("The Fellowship of the Ring", 1954, "0395489318"));

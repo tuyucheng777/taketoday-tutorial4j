@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-networking-1</artifactId>
-   <name>java-networking-1</name>
    <packaging>jar</packaging>
+   <name>java-networking-1</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -24,6 +24,31 @@
          <artifactId>httpclient</artifactId>
          <version>${apache.httpclient.version}</version>
       </dependency>
+      <dependency>
+         <groupId>com.icegreen</groupId>
+         <artifactId>greenmail</artifactId>
+         <version>${greenmail.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.httpcomponents.client5</groupId>
+         <artifactId>httpclient5</artifactId>
+         <version>${apache.httpclient5.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.asynchttpclient</groupId>
+         <artifactId>async-http-client</artifactId>
+         <version>${async-http-client.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons-lang3.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>jakarta.xml.bind</groupId>
+         <artifactId>jakarta.xml.bind-api</artifactId>
+         <version>${jakarta.bind.version}</version>
+      </dependency>
    </dependencies>
 
    <build>
@@ -33,5 +58,9 @@
    <properties>
       <springframework.spring-web.version>4.3.4.RELEASE</springframework.spring-web.version>
       <apache.httpclient.version>4.5.14</apache.httpclient.version>
+      <greenmail.version>2.0.0-alpha-3</greenmail.version>
+      <apache.httpclient5.version>5.3.1</apache.httpclient5.version>
+      <async-http-client.version>2.4.5</async-http-client.version>
+      <jakarta.bind.version>2.3.3</jakarta.bind.version>
    </properties>
 </project>

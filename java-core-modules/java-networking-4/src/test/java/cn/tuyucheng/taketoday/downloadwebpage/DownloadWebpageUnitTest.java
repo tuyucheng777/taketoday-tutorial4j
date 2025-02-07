@@ -8,6 +8,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -16,8 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class DownloadWebpageUnitTest {
 
    @Test
-   public void givenURLConnection_whenRetrieveWebpage_thenWebpageIsNotNullAndContainsHtmlTag() throws IOException {
-      URL url = new URL("https://example.com");
+   public void givenURLConnection_whenRetrieveWebpage_thenWebpageIsNotNullAndContainsHtmlTag() throws IOException, URISyntaxException {
+      URL url = new URI("https://example.com").toURL();
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
       connection.setRequestMethod("GET");
 

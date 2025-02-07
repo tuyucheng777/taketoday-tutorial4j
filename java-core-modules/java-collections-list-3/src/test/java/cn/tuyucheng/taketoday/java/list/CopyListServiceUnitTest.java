@@ -1,17 +1,13 @@
 package cn.tuyucheng.taketoday.java.list;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 public class CopyListServiceUnitTest {
 
@@ -19,7 +15,7 @@ public class CopyListServiceUnitTest {
 
    private CopyListService copyListService;
 
-   @BeforeEach
+   @Before
    public void init() {
       this.copyListService = new CopyListService();
       this.flowers = new ArrayList<>();

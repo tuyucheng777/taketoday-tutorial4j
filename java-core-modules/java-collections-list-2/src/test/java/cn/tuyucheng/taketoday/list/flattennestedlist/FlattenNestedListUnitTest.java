@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.list.flattennestedlist;
 
 import org.hamcrest.collection.IsIterableContainingInOrder;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 public class FlattenNestedListUnitTest {
    private List<List<String>> lol = asList(asList("one:one"), asList("two:one", "two:two", "two:three"), asList("three:one", "three:two", "three:three", "three:four"));

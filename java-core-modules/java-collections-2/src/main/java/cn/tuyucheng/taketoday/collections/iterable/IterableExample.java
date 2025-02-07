@@ -6,9 +6,8 @@ import java.util.List;
 public class IterableExample {
 
    public void iterateUsingIterator(List<Integer> numbers) {
-      Iterator<Integer> iterator = numbers.iterator();
-      while (iterator.hasNext()) {
-         System.out.println(iterator.next());
+      for (Integer number : numbers) {
+         System.out.println(number);
       }
    }
 

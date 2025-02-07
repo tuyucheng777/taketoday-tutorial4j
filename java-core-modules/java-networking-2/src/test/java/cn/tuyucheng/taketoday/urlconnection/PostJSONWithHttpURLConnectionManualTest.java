@@ -1,12 +1,14 @@
 package cn.tuyucheng.taketoday.urlconnection;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -15,9 +17,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PostJSONWithHttpURLConnectionManualTest {
 
    @Test
-   public void givenValidURLAndPayload_whenPost_ThenSuccess() throws IOException {
+   public void givenValidURLAndPayload_whenPost_ThenSuccess() throws IOException, URISyntaxException {
       // Change the URL with any other publicly accessible POST resource, which accepts JSON request body
-      URL url = new URL("https://reqres.in/api/users");
+      URL url = new URI("https://reqres.in/api/users").toURL();
 
       HttpURLConnection con = (HttpURLConnection) url.openConnection();
       con.setRequestMethod("POST");

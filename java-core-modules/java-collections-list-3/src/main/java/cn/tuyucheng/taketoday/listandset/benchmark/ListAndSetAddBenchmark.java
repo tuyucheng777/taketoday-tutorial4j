@@ -1,12 +1,6 @@
 package cn.tuyucheng.taketoday.listandset.benchmark;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Measurement;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -25,38 +19,38 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3, time = 10, timeUnit = TimeUnit.MILLISECONDS)
 public class ListAndSetAddBenchmark {
 
-   public static void main(String[] args) throws IOException, RunnerException {
-      Options opt = new OptionsBuilder()
-            .include(ListAndSetAddBenchmark.class.getSimpleName())
-            .forks(1)
-            .addProfiler("gc")
-            .build();
-      new Runner(opt).run();
+    public static void main(String[] args) throws IOException, RunnerException {
+        Options opt = new OptionsBuilder()
+          .include(ListAndSetAddBenchmark.class.getSimpleName())
+          .forks(1)
+          .addProfiler("gc")
+          .build();
+        new Runner(opt).run();
 
-   }
+    }
 
-   @Benchmark
-   public void addElementToArrayList(Params param, Blackhole blackhole) {
-      param.arrayList.clear();
-      for (int i = 0; i < param.addNumber; i++) {
-         blackhole.consume(param.arrayList.add(i));
-      }
-   }
+    @Benchmark
+    public void addElementToArrayList(Params param, Blackhole blackhole) {
+        param.arrayList.clear();
+        for (int i = 0; i < param.addNumber; i++) {
+            blackhole.consume(param.arrayList.add(i));
+        }
+    }
 
-   @Benchmark
-   public void addElementToHashSet(Params param, Blackhole blackhole) {
-      param.hashSet.clear();
-      for (int i = 0; i < param.addNumber; i++) {
-         blackhole.consume(param.hashSet.add(i));
-      }
-   }
+    @Benchmark
+    public void addElementToHashSet(Params param, Blackhole blackhole) {
+        param.hashSet.clear();
+        for (int i = 0; i < param.addNumber; i++) {
+            blackhole.consume(param.hashSet.add(i));
+        }
+    }
 
-   @State(Scope.Benchmark)
-   public static class Params {
-      public int addNumber = 10000000;
+    @State(Scope.Benchmark)
+    public static class Params {
+        public int addNumber = 10000000;
 
-      public List<Integer> arrayList = new ArrayList<>();
-      public Set<Integer> hashSet = new HashSet<>();
-   }
+        public List<Integer> arrayList = new ArrayList<>();
+        public Set<Integer> hashSet = new HashSet<>();
+    }
 
 }

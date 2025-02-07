@@ -1,20 +1,20 @@
 package cn.tuyucheng.taketoday.socket;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.Executors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class EchoIntegrationTest {
    private static int port;
 
-   @BeforeAll
+   @BeforeClass
    public static void start() throws InterruptedException, IOException {
 
       // Take an available port
@@ -29,12 +29,12 @@ public class EchoIntegrationTest {
 
    private EchoClient client = new EchoClient();
 
-   @BeforeEach
+   @Before
    public void init() {
       client.startConnection("127.0.0.1", port);
    }
 
-   @AfterEach
+   @After
    public void tearDown() {
       client.stopConnection();
    }

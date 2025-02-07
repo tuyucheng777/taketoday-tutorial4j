@@ -15,8 +15,8 @@ public class Main {
 
       HashMapPrinter hashMapPrinter = new HashMapPrinter();
       hashMapPrinter.printMap(hashMap);
-//        hashMapPrinter.printMap(treeMap); Compile time error
-//        hashMapPrinter.printMap(map); Compile time error
+      //        hashMapPrinter.printMap(treeMap); Compile time error
+      //        hashMapPrinter.printMap(map); Compile time error
 
       MapPrinter mapPrinter = new MapPrinter();
       mapPrinter.printMap(hashMap);

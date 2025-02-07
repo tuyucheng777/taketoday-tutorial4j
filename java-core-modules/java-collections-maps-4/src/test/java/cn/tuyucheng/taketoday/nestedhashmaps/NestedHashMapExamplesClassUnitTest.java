@@ -1,24 +1,15 @@
 package cn.tuyucheng.taketoday.nestedhashmaps;
 
 import org.hamcrest.collection.IsMapContaining;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
 
 public class NestedHashMapExamplesClassUnitTest {
    private MapsUtil mUtil = new MapsUtil();
@@ -31,8 +22,8 @@ public class NestedHashMapExamplesClassUnitTest {
    @Test
    public void whenCreateNestedHashMap_thenNestedMap() {
       assertThat(mUtil.buildInnerMap(batterList), is(notNullValue()));
-      Assertions.assertEquals(actualBakedGoodsMap.keySet().size(), 2);
-      assertThat(actualBakedGoodsMap, IsMapContaining.hasValue(equalTo(mUtil.buildInnerMap(batterList))));
+      Assert.assertEquals(actualBakedGoodsMap.keySet().size(), 2);
+      Assert.assertThat(actualBakedGoodsMap, IsMapContaining.hasValue(equalTo(mUtil.buildInnerMap(batterList))));
    }
 
    private Map<Integer, Map<String, String>> setup() {
@@ -184,7 +175,7 @@ public class NestedHashMapExamplesClassUnitTest {
       assertThat(flattenedEmployeeAddressMap, IsMapContaining.hasKey("200.Bag End"));
    }
 
-   @BeforeEach
+   @Before
    public void buildMaps() {
 
       batterList = Arrays.asList("Mulberry", "Cranberry", "Blackberry", "Mixed fruit", "Orange");

@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.map.caseinsensitivekeys;
 
 import org.apache.commons.collections4.map.CaseInsensitiveMap;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.util.LinkedCaseInsensitiveMap;
 
 import java.util.Map;
 import java.util.TreeMap;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class CaseInsensitiveMapUnitTest {
    @Test

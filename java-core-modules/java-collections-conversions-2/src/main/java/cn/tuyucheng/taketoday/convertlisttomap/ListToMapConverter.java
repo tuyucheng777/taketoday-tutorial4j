@@ -10,9 +10,9 @@ import java.util.stream.Collectors;
 
 /**
  * Convert a string list to a map whose key is the string's length and value is the collection with same length.
- * Give a list {"Tuyucheng", "is", "very", "cool"}.
+ * Give a list {"Taketoday", "is", "very", "cool"}.
  * After conversion we'll get a map like:
- * {8 : ["Tuyucheng"], 2 : ["is"], 4 : ["very", "cool"]}.
+ * {8 : ["Taketoday"], 2 : ["is"], 4 : ["very", "cool"]}.
  *
  * @author leasy.zhang
  */
