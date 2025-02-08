@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.emptiness;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,7 +34,7 @@ public class DirectoryEmptinessUnitTest {
 
    @Test
    public void givenPath_whenIsEmpty_thenReturnsTrue() throws Exception {
-      Path path = Files.createTempDirectory("tuyucheng-empty");
+      Path path = Files.createTempDirectory("taketoday-empty");
       assertThat(isEmpty(path)).isTrue();
    }
 

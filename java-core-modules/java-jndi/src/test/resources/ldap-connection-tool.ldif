@@ -1,19 +1,19 @@
 version: 1
-dn: dc=tuyucheng,dc=com
+dn: dc=taketoday,dc=com
 objectClass: top
 objectClass: dcObject
 objectClass: organization
-dc: tuyucheng
-o: tuyucheng.com
+dc: taketoday
+o: taketoday.com
 
-dn: cn=admin,dc=tuyucheng,dc=com
+dn: cn=admin,dc=taketoday,dc=com
 objectClass: simpleSecurityObject
 objectClass: organizationalRole
 cn: admin
 description: LDAP administrator
 userPassword: password
 
-dn: uid=newton,dc=tuyucheng,dc=com
+dn: uid=newton,dc=taketoday,dc=com
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person
@@ -23,7 +23,7 @@ sn: Newton
 uid: newton
 userPassword: password
 
-dn: uid=gauss,dc=tuyucheng,dc=com
+dn: uid=gauss,dc=taketoday,dc=com
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
 objectClass: person

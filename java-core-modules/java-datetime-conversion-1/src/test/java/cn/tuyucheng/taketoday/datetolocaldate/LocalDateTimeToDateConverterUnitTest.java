@@ -3,13 +3,13 @@
  */
 package cn.tuyucheng.taketoday.datetolocaldate;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * JUnits for {@link LocalDateTimeToDateConverter} class.

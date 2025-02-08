@@ -2,25 +2,18 @@ package cn.tuyucheng.taketoday.date;
 
 import org.joda.time.Days;
 import org.joda.time.Minutes;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.Period;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.Assert.*;
 
 public class DateDiffUnitTest {
 
@@ -30,8 +23,8 @@ public class DateDiffUnitTest {
       Date firstDate = sdf.parse("06/24/2017");
       Date secondDate = sdf.parse("06/30/2017");
 
-      long diffInMillies = Math.abs(secondDate.getTime() - firstDate.getTime());
-      long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+      long diffInMillis = Math.abs(secondDate.getTime() - firstDate.getTime());
+      long diff = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
 
       assertEquals(6, diff);
    }

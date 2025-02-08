@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-io-1</artifactId>
-   <name>java-io-1</name>
    <packaging>jar</packaging>
+   <name>java-io-1</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -43,6 +43,11 @@
          <version>${angus-activation.version}</version>
          <scope>test</scope>
       </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-web</artifactId>
+         <version>${spring.version}</version>
+      </dependency>
    </dependencies>
 
    <build>
@@ -56,10 +61,6 @@
       <plugins>
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-               <source>11</source>
-               <target>11</target>
-            </configuration>
          </plugin>
          <plugin>
             <groupId>org.codehaus.mojo</groupId>
@@ -93,6 +94,17 @@
                      <mainClass>cn.tuyucheng.taketoday.resource.MyResourceLoader</mainClass>
                   </manifest>
                </archive>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>${maven-resources-plugin.version}</version>
+            <configuration>
+               <encoding>UTF-8</encoding>
+               <nonFilteredFileExtensions>
+                  <nonFilteredFileExtension>zip</nonFilteredFileExtension>
+               </nonFilteredFileExtensions>
             </configuration>
          </plugin>
       </plugins>
@@ -140,7 +152,8 @@
       <tika.version>2.8.0</tika.version>
       <jmime-magic.version>0.1.5</jmime-magic.version>
       <fscontext.version>4.4.2</fscontext.version>
-      <jakarta-activation-api.version>2.1.2</jakarta-activation-api.version>
       <angus-activation.version>2.0.1</angus-activation.version>
+      <spring.version>6.1.6</spring.version>
+      <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
    </properties>
 </project>

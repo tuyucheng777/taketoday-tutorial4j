@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.stringdatetoxmlgregoriancalendar;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-import java.text.ParseException;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.ParseException;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringDateToXMLGregorianCalendarConverterUnitTest {
    private static final String dateAsString = "2014-04-24";

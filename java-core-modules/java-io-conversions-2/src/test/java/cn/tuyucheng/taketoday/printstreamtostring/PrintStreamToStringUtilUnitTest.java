@@ -1,18 +1,17 @@
 package cn.tuyucheng.taketoday.printstreamtostring;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class PrintStreamToStringUtilUnitTest {
 
    @Test
    public void whenUsingByteArrayOutputStreamClass_thenConvert() throws IOException {
-      Assertions.assertEquals("test", PrintStreamToStringUtil.usingByteArrayOutputStreamClass("test"));
+      assertEquals("test", PrintStreamToStringUtil.usingByteArrayOutputStreamClass("test"));
       assertEquals("", PrintStreamToStringUtil.usingByteArrayOutputStreamClass(""));
       assertNull(PrintStreamToStringUtil.usingByteArrayOutputStreamClass(null));
    }

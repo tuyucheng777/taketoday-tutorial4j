@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.lazylambda;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 import org.mockito.stubbing.Answer;
 

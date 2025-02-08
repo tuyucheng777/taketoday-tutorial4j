@@ -9,8 +9,8 @@ class StringUtilsUnitTest {
 
    @Test
    void givenSimpleString_whenCapitalizeStaticMethodIsCalled_thenCapitalizedStringIsReturned() {
-      String str = StringUtils.capitalize("tuyucheng");
-      assertThat(str).isEqualTo("Tuyucheng");
+      String str = StringUtils.capitalize("taketoday");
+      assertThat(str).isEqualTo("Taketoday");
    }
 
 }

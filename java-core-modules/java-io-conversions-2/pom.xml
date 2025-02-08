@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-io-conversions-2</artifactId>
-   <name>java-io-conversions-2</name>
    <packaging>jar</packaging>
+   <name>java-io-conversions-2</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -24,12 +24,6 @@
          <artifactId>json</artifactId>
          <version>${org.json.version}</version>
       </dependency>
-      <dependency>
-         <groupId>com.opencsv</groupId>
-         <artifactId>opencsv</artifactId>
-         <version>${opencsv.version}</version>
-         <scope>test</scope>
-      </dependency>
    </dependencies>
 
    <build>
@@ -38,10 +32,6 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-               <source>${source.version}</source>
-               <target>${target.version}</target>
-            </configuration>
          </plugin>
       </plugins>
       <resources>
@@ -51,10 +41,4 @@
          </resource>
       </resources>
    </build>
-
-   <properties>
-      <source.version>11</source.version>
-      <target.version>11</target.version>
-      <opencsv.version>5.8</opencsv.version>
-   </properties>
 </project>

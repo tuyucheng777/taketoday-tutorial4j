@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.java8.lambda.exceptions;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,13 +9,15 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import static cn.tuyucheng.taketoday.java8.lambda.exceptions.LambdaExceptionWrappers.*;
+
 public class LambdaExceptionWrappersUnitTest {
 
    private static final Logger LOG = LoggerFactory.getLogger(LambdaExceptionWrappersUnitTest.class);
 
    private List<Integer> integers;
 
-   @BeforeEach
+   @Before
    public void init() {
       integers = Arrays.asList(3, 9, 7, 0, 10, 20);
    }

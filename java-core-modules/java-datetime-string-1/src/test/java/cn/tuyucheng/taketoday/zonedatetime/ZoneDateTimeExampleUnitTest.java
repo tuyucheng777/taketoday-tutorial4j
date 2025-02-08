@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.zonedatetime;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class ZoneDateTimeExampleUnitTest {
 

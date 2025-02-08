@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.subtractdays;
 
 import org.joda.time.DateTime;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.util.Calendar;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class SubtractDaysFromDateUnitTest {
 

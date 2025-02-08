@@ -5,9 +5,8 @@ import cn.tuyucheng.taketoday.servicemodule.external.TextServiceFactory;
 
 public class Application {
 
-   public static void main(String args[]) {
+   public static void main(String[] args) {
       TextService textService = TextServiceFactory.getTextService("lowercase");
-      System.out.println(textService.processText("Hello from Tuyucheng!"));
+      System.out.println(textService.processText("Hello from Taketoday!"));
    }
-
 }

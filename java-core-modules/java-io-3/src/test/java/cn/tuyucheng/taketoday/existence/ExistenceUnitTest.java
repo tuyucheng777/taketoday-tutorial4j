@@ -1,18 +1,14 @@
 package cn.tuyucheng.taketoday.existence;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystemException;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ExistenceUnitTest {
 
@@ -26,11 +22,11 @@ public class ExistenceUnitTest {
 
    @Test
    public void givenFile_whenExists_thenFilesShouldReturnTrue() throws IOException {
-      Path tempFile = Files.createTempFile("tuyucheng", "exist-nio");
+      Path tempFile = Files.createTempFile("taketoday", "exist-nio");
       assertTrue(Files.exists(tempFile));
       assertFalse(Files.notExists(tempFile));
 
-      Path tempDirectory = Files.createTempDirectory("tuyucheng-exists");
+      Path tempDirectory = Files.createTempDirectory("taketoday-exists");
       assertTrue(Files.exists(tempDirectory));
       assertFalse(Files.notExists(tempDirectory));
 
@@ -46,7 +42,7 @@ public class ExistenceUnitTest {
 
    @Test
    public void givenSymbolicLink_whenTargetDoesNotExists_thenFollowOrNotBasedOnTheOptions() throws IOException {
-      Path target = Files.createTempFile("tuyucheng", "target");
+      Path target = Files.createTempFile("taketoday", "target");
       Path symbol = Paths.get("test-link-" + ThreadLocalRandom.current().nextInt());
       Path symbolicLink = null;
 
@@ -79,8 +75,8 @@ public class ExistenceUnitTest {
 
    @Test
    public void givenFile_whenExist_thenShouldReturnTrue() throws IOException {
-      Path tempFilePath = Files.createTempFile("tuyucheng", "exist-io");
-      Path tempDirectoryPath = Files.createTempDirectory("tuyucheng-exists-io");
+      Path tempFilePath = Files.createTempFile("taketoday", "exist-io");
+      Path tempDirectoryPath = Files.createTempDirectory("taketoday-exists-io");
 
       File tempFile = new File(tempFilePath.toString());
       File tempDirectory = new File(tempDirectoryPath.toString());

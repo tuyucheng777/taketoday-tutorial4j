@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.datetime.sql;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.text.ParseException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class TimeUtilsUnitTest {
 

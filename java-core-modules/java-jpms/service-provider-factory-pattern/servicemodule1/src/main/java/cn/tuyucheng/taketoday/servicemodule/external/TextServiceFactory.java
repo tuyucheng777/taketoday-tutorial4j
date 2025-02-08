@@ -11,5 +11,4 @@ public class TextServiceFactory {
    public static TextService getTextService(String name) {
       return name.equalsIgnoreCase("lowercase") ? new LowercaseTextService() : new UppercaseTextService();
    }
-
 }

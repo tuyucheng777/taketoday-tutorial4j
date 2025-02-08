@@ -1,17 +1,10 @@
 package cn.tuyucheng.taketoday.copyfiles;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -22,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class FileCopierIntegrationTest {
    File original = new File("src/test/resources/original.txt");
 
-   @BeforeEach
+   @Before
    public void init() throws IOException {
       if (!original.exists())
          Files.createFile(original.toPath());

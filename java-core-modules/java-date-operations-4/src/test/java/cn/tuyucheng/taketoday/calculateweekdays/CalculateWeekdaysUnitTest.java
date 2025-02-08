@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.calculateweekdays;
 
-import static junit.framework.TestCase.assertEquals;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import org.junit.jupiter.api.Test;
+import static junit.framework.TestCase.assertEquals;
 
 public class CalculateWeekdaysUnitTest {
 
@@ -79,4 +79,5 @@ public class CalculateWeekdaysUnitTest {
       long result = c.getWorkingDaysWithoutStream(startThreeWeeks2, endThreeWeeks2);
       assertEquals(40, result);
    }
+
 }

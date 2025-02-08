@@ -1,23 +1,17 @@
 package cn.tuyucheng.taketoday.openoptions;
 
 import org.hamcrest.CoreMatchers;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 public class OpenOptionsUnitTest {
 
@@ -28,7 +22,7 @@ public class OpenOptionsUnitTest {
    private static final String DUMMY_TEXT = "This is a sample text.";
    private static final String ANOTHER_DUMMY_TEXT = "This is a another text.";
 
-   @BeforeAll
+   @BeforeClass
    public static void beforeAll() throws IOException {
       Path path = Paths.get(HOME, DUMMY_FILE_NAME);
 
@@ -39,7 +33,7 @@ public class OpenOptionsUnitTest {
       Files.createFile(Paths.get(HOME, EXISTING_FILE_NAME));
    }
 
-   @AfterAll
+   @AfterClass
    public static void afterAll() throws IOException {
       Files.delete(Paths.get(HOME, "newfile.txt"));
       Files.delete(Paths.get(HOME, "sparse.txt"));

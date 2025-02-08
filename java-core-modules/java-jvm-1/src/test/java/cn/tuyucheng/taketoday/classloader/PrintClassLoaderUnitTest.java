@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.classloader;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class PrintClassLoaderUnitTest {
    @Test(expected = ClassNotFoundException.class)

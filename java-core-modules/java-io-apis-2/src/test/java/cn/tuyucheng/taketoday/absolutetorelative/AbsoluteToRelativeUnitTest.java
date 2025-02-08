@@ -9,9 +9,9 @@ import java.nio.file.Paths;
 public class AbsoluteToRelativeUnitTest {
 
    // given - until using Paths, no need to create physical files
-   private final Path pathOne = Paths.get("/tuyucheng/bar/one.txt");
-   private final Path pathTwo = Paths.get("/tuyucheng/bar/two.txt");
-   private final Path pathThree = Paths.get("/tuyucheng/foo/three.txt");
+   private final Path pathOne = Paths.get("/taketoday/bar/one.txt");
+   private final Path pathTwo = Paths.get("/taketoday/bar/two.txt");
+   private final Path pathThree = Paths.get("/taketoday/foo/three.txt");
 
    private final URI uriOne = pathOne.toUri();
    private final URI uriTwo = pathTwo.toUri();
@@ -68,7 +68,7 @@ public class AbsoluteToRelativeUnitTest {
 
       org.assertj.core.api.Assertions.assertThat(result)
             .asString()
-            .contains("/tuyucheng/bar/two.txt");
+            .contains("/taketoday/bar/two.txt");
    }
 
    @Test
@@ -86,7 +86,7 @@ public class AbsoluteToRelativeUnitTest {
 
       org.assertj.core.api.Assertions.assertThat(result)
             .asString()
-            .contains("/tuyucheng/foo/three.txt");
+            .contains("/taketoday/foo/three.txt");
    }
 
 }

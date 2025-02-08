@@ -1,26 +1,13 @@
 package cn.tuyucheng.taketoday.jodatime;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeFieldType;
-import org.joda.time.DateTimeUtils;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
-import org.joda.time.Instant;
-import org.joda.time.Interval;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.joda.time.LocalTime;
-import org.joda.time.Period;
+import org.joda.time.*;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 public class JodaTimeUnitTest {
 
@@ -67,9 +54,9 @@ public class JodaTimeUnitTest {
       Instant oneMinuteAgoInstant = new Instant(oneMinuteAgoDate);
 
       // epochMilli and epochSecond
-      long milliesFromEpochTime = System.currentTimeMillis();
-      long secondsFromEpochTime = milliesFromEpochTime / 1000;
-      Instant instantFromEpochMilli = Instant.ofEpochMilli(milliesFromEpochTime);
+      long millisFromEpochTime = System.currentTimeMillis();
+      long secondsFromEpochTime = millisFromEpochTime / 1000;
+      Instant instantFromEpochMilli = Instant.ofEpochMilli(millisFromEpochTime);
       Instant instantFromEpocSeconds = Instant.ofEpochSecond(secondsFromEpochTime);
 
       // convert Instants

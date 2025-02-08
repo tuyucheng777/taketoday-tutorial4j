@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.nullmethodparameter;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class NullParameterExampleUnitTest {
    @Test(expected = IllegalArgumentException.class)

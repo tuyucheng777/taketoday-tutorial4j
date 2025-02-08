@@ -2,7 +2,7 @@ package cn.tuyucheng.taketoday.exceptions.illegalaccesserror;
 
 public class IllegalAccessErrorExample {
 
-   interface Tuyucheng {
+   interface Taketoday {
       public default void foobar() {
          System.out.println("This is a default method.");
       }
@@ -14,7 +14,7 @@ public class IllegalAccessErrorExample {
       }
    }
 
-   class MySubClass extends Super implements Tuyucheng {
+   class MySubClass extends Super implements Taketoday {
 
    }
 }

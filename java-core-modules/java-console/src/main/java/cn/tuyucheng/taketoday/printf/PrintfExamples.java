@@ -16,14 +16,14 @@ public class PrintfExamples {
    }
 
    private static void printfNewLine() {
-      System.out.printf("tuyucheng%nline%nterminator");
+      System.out.printf("taketoday%nline%nterminator");
    }
 
    private static void printfString() {
-      System.out.printf("'%s' %n", "tuyucheng");
-      System.out.printf("'%S' %n", "tuyucheng");
-      System.out.printf("'%15s' %n", "tuyucheng");
-      System.out.printf("'%-10s' %n", "tuyucheng");
+      System.out.printf("'%s' %n", "taketoday");
+      System.out.printf("'%S' %n", "taketoday");
+      System.out.printf("'%15s' %n", "taketoday");
+      System.out.printf("'%-10s' %n", "taketoday");
    }
 
    private static void printfChar() {

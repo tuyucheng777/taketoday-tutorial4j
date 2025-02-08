@@ -6,18 +6,18 @@ package cn.tuyucheng.taketoday.generictype;
  */
 
 public class Pair<T, S> {
-   public T first;
-   public S second;
+    public T first;
+    public S second;
 
-   /**
-    * Constructs a new Pair object with the specified values.
-    *
-    * @param a The first value.
-    * @param b The second value.
-    */
+    /**
+     * Constructs a new Pair object with the specified values.
+     *
+     * @param a The first value.
+     * @param b The second value.
+     */
 
-   public Pair(T a, S b) {
-      first = a;
-      second = b;
-   }
+    public Pair(T a, S b) {
+        first = a;
+        second = b;
+    }
 }

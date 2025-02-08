@@ -21,7 +21,7 @@ public class JmxLiveTest {
     */
    @Test
    public void consumer() throws Exception {
-      ObjectName objectName = new ObjectName("cn.tuyucheng.taketoday.ipc:type=basic,name=test");
+      ObjectName objectName = new ObjectName("com.baeldung.ipc:type=basic,name=test");
       MBeanServer server = ManagementFactory.getPlatformMBeanServer();
       server.registerMBean(new IPCTest(), objectName);
 
@@ -32,7 +32,7 @@ public class JmxLiveTest {
    public void producer() throws Exception {
       JMXServiceURL url = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://localhost:1234/jmxrmi");
       try (JMXConnector jmxc = JMXConnectorFactory.connect(url, null)) {
-         ObjectName objectName = new ObjectName("cn.tuyucheng.taketoday.ipc:type=basic,name=test");
+         ObjectName objectName = new ObjectName("com.baeldung.ipc:type=basic,name=test");
 
          IPCTestMBean mbeanProxy = JMX.newMBeanProxy(jmxc.getMBeanServerConnection(), objectName, IPCTestMBean.class, true);
          mbeanProxy.sendMessage("Hello");

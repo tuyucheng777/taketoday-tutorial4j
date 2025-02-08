@@ -106,8 +106,11 @@
       <module>java-date-operations-2</module>
       <module>java-date-operations-3</module>
       <module>java-date-operations-4</module>
+      <module>java-date-operations-5</module>
       <module>java-datetime-conversion-1</module>
       <module>java-datetime-conversion-2</module>
+      <module>java-datetime-conversion-3</module>
+      <module>java-datetime-conversion-4</module>
       <module>java-datetime-string-1</module>
       <module>java-datetime-string-2</module>
       <module>java-documentation</module>
@@ -115,22 +118,28 @@
       <module>java-exceptions-2</module>
       <module>java-exceptions-3</module>
       <module>java-exceptions-4</module>
+      <module>java-exceptions-5</module>
       <module>java-function</module>
       <module>java-functional</module>
       <module>java-hex</module>
       <module>java-httpclient</module>
+      <module>java-interface</module>
       <module>java-io-1</module>
       <module>java-io-2</module>
       <module>java-io-3</module>
       <module>java-io-4</module>
       <module>java-io-5</module>
+      <module>java-io-6</module>
+      <module>java-io-7</module>
       <module>java-io-apis-1</module>
       <module>java-io-apis-2</module>
       <module>java-io-conversions-1</module>
       <module>java-io-conversions-2</module>
+      <module>java-io-conversions-3</module>
       <module>java-ipc</module>
-      <module>java-jar</module>
-      <module>java-jdi</module>
+      <module>java-jar-1</module>
+      <module>java-jar-2</module>
+      <!-- <module>java-jdi</module> -->
       <module>java-jndi</module>
       <module>java-jpms</module>
       <module>java-jvm-1</module>

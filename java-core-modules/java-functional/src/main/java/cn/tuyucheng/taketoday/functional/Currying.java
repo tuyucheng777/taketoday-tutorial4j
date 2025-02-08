@@ -22,4 +22,5 @@ public class Currying {
       final double gravity = 9.81;
       return mass -> mass * gravity;
    }
+
 }

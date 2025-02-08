@@ -61,4 +61,5 @@ class DateToUnixTimeStampUnitTest {
 
       assertEquals(1599653800L, givenDate.getMillis() / 1000);
    }
+
 }

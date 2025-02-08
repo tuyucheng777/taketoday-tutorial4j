@@ -3,7 +3,7 @@ package cn.tuyucheng.taketoday.date;
 import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateTime;
 import org.junit.Rule;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.text.ParseException;
@@ -20,6 +20,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 public class StringToDateUnitTest {
 

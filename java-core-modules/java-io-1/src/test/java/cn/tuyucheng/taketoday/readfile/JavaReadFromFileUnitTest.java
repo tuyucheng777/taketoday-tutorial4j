@@ -4,18 +4,10 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.RandomAccessFile;
-import java.io.StreamTokenizer;
+import java.io.*;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -30,8 +22,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class JavaReadFromFileUnitTest {
 
@@ -81,10 +73,10 @@ public class JavaReadFromFileUnitTest {
    }
 
    @Test
-   public void givenURLName_whenUsingURL_thenFileData() throws IOException {
+   public void givenURLName_whenUsingURL_thenFileData() throws IOException, URISyntaxException {
       String expectedData = "Example Domain";
 
-      URL urlObject = new URL("http://www.example.com/");
+      URL urlObject = new URI("http://www.example.com/").toURL();
 
       URLConnection urlConnection = urlObject.openConnection();
 

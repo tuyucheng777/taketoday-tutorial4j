@@ -1,11 +1,7 @@
 package cn.tuyucheng.taketoday.inmemorycompilation;
 
-import javax.tools.FileObject;
-import javax.tools.ForwardingJavaFileManager;
-import javax.tools.JavaFileManager;
-import javax.tools.JavaFileObject;
+import javax.tools.*;
 import javax.tools.JavaFileObject.Kind;
-import javax.tools.StandardJavaFileManager;
 import java.util.Hashtable;
 import java.util.Map;
 

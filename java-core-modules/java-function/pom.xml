@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-function</artifactId>
-   <name>java-function</name>
    <packaging>jar</packaging>
+   <name>java-function</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -50,8 +50,6 @@
 
    <properties>
       <mockito-inline.version>3.8.0</mockito-inline.version>
-      <assertj.version>3.22.0</assertj.version>
       <vavr.version>0.10.4</vavr.version>
    </properties>
-
 </project>

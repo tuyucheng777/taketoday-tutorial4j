@@ -2,7 +2,7 @@ package cn.tuyucheng.taketoday.callbackfunctions;
 
 import cn.tuyucheng.taketoday.callbackfunctions.asynchronous.AsynchronousEventConsumer;
 import cn.tuyucheng.taketoday.callbackfunctions.asynchronous.AsynchronousEventListenerImpl;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 
 import static org.mockito.Mockito.timeout;

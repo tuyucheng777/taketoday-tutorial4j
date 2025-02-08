@@ -41,4 +41,6 @@ public class CalculateWeekdays {
       // Add on days that did not make up a full week
       return (weeks * 5) + (end.getDayOfWeek().getValue() - start.getDayOfWeek().getValue()) + addValue;
    }
+
+
 }

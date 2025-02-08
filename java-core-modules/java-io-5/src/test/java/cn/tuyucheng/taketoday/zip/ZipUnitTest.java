@@ -1,16 +1,10 @@
 package cn.tuyucheng.taketoday.zip;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -27,7 +21,7 @@ public class ZipUnitTest {
    private static File compressedFile;
    private static List<String> dataList = new ArrayList<>();
 
-   @BeforeAll
+   @BeforeClass
    public static void prepareData() throws IOException {
       ZipSampleFileStore sampleFileStore = new ZipSampleFileStore(ZipBenchmark.NUM_OF_FILES, ZipBenchmark.DATA_SIZE);
       compressedFile = sampleFileStore.getFile();
@@ -86,7 +80,7 @@ public class ZipUnitTest {
       }
    }
 
-   @AfterAll
+   @AfterClass
    public static void cleanup() {
       if (compressedFile.exists()) {
          compressedFile.delete();

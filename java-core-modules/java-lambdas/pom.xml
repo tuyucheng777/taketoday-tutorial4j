@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-lambdas</artifactId>
-   <name>java-lambdas</name>
    <packaging>jar</packaging>
+   <name>java-lambdas</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -20,5 +20,4 @@
          <version>${commons-lang3.version}</version>
       </dependency>
    </dependencies>
-
 </project>

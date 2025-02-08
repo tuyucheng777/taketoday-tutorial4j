@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TriFunctionExampleUnitTest {
 
-   private static final String BAELDUNG = "tuyucheng";
+   private static final String BAELDUNG = "taketoday";
 
    @Test
    void whenMultiplyThenAdd_ThenReturnsCorrectResult() {

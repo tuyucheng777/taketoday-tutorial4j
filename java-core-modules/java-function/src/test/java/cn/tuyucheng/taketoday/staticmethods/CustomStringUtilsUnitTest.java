@@ -8,7 +8,7 @@ class CustomStringUtilsUnitTest {
 
    @Test
    void givenNonEmptyString_whenIsEmptyMethodIsCalled_thenFalseIsReturned() {
-      boolean empty = CustomStringUtils.isEmpty("tuyucheng");
+      boolean empty = CustomStringUtils.isEmpty("taketoday");
       assertThat(empty).isFalse();
    }
 

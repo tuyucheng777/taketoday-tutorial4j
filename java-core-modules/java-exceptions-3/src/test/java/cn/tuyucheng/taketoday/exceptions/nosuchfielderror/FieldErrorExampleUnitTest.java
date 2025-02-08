@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.exceptions.nosuchfielderror;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class FieldErrorExampleUnitTest {
 
@@ -10,7 +10,7 @@ public class FieldErrorExampleUnitTest {
    public void whenDependentMessage_returnMessage() {
 
       String dependentMessage = FieldErrorExample.getDependentMessage();
-      assertTrue("Hello Tuyucheng!!".equals(dependentMessage));
+      assertTrue("Hello Taketoday!!".equals(dependentMessage));
    }
 
 }

@@ -1,10 +1,6 @@
 package cn.tuyucheng.taketoday.readwritethread;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -28,6 +24,7 @@ public class ReadWriteBlockingQueue {
       } catch (InterruptedException e) {
          e.printStackTrace();
       }
+
    }
 }
 

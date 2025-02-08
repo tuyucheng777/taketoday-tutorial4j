@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-jvm-2</artifactId>
-   <name>java-jvm-2</name>
    <packaging>jar</packaging>
+   <name>java-jvm-2</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -15,14 +15,14 @@
 
    <dependencies>
       <dependency>
-         <groupId>org.openjdk.jol</groupId>
-         <artifactId>jol-core</artifactId>
-         <version>${jol-core.version}</version>
-      </dependency>
-      <dependency>
          <groupId>org.reflections</groupId>
          <artifactId>reflections</artifactId>
          <version>${reflections.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openjdk.jol</groupId>
+         <artifactId>jol-core</artifactId>
+         <version>${jol-core.version}</version>
       </dependency>
    </dependencies>
 
@@ -41,8 +41,7 @@
    </build>
 
    <properties>
-      <jol-core.version>0.10</jol-core.version>
       <reflections.version>0.10.2</reflections.version>
+      <jol-core.version>0.10</jol-core.version>
    </properties>
-
 </project>

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-jvm-3</artifactId>
-   <name>java-jvm-3</name>
    <packaging>jar</packaging>
+   <name>java-jvm-3</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -13,4 +13,44 @@
       <version>1.0.0</version>
    </parent>
 
+   <dependencies>
+      <dependency>
+         <groupId>org.owasp.esapi</groupId>
+         <artifactId>esapi</artifactId>
+         <version>${esapi.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.javassist</groupId>
+         <artifactId>javassist</artifactId>
+         <version>${javaassist.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.ow2.asm</groupId>
+         <artifactId>asm</artifactId>
+         <version>${asm.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.ow2.asm</groupId>
+         <artifactId>asm-util</artifactId>
+         <version>${asm.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.bcel</groupId>
+         <artifactId>bcel</artifactId>
+         <version>${bcel.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.openjdk.jol</groupId>
+         <artifactId>jol-core</artifactId>
+         <version>${jol-core.version}</version>
+      </dependency>
+   </dependencies>
+
+   <properties>
+      <esapi.version>2.5.2.0</esapi.version>
+      <javaassist.version>3.30.2-GA</javaassist.version>
+      <asm.version>9.7.1</asm.version>
+      <bcel.version>6.5.0</bcel.version>
+      <jol-core.version>0.10</jol-core.version>
+   </properties>
 </project>

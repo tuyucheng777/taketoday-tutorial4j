@@ -3,14 +3,14 @@ package cn.tuyucheng.taketoday.timestamptolocaldatetime;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class TimeToLocalDateTimeUnitTest {
    private static final long timestampInMillis = 1700010123000L;

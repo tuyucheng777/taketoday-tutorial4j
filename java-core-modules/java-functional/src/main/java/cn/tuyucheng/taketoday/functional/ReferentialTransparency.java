@@ -9,12 +9,12 @@ public class ReferentialTransparency {
 
    public void main() {
 
-      String data = new SimpleData().setData("Tuyucheng")
+      String data = new SimpleData().setData("Taketoday")
             .getData();
-      logger.log(Level.INFO, new SimpleData().setData("Tuyucheng")
+      logger.log(Level.INFO, new SimpleData().setData("Taketoday")
             .getData());
       logger.log(Level.INFO, data);
-      logger.log(Level.INFO, "Tuyucheng");
+      logger.log(Level.INFO, "Taketoday");
    }
 
    public class SimpleData {

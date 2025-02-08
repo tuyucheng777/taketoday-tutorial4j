@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.filereader;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FileReader;
@@ -19,7 +19,7 @@ public class FileReaderExampleUnitTest {
       File file = new File(FILE_PATH);
       try (FileReader fileReader = new FileReader(file)) {
          String content = FileReaderExample.readAllCharactersOneByOne(fileReader);
-         Assertions.assertEquals(expectedText, content);
+         Assert.assertEquals(expectedText, content);
       }
    }
 
@@ -29,7 +29,7 @@ public class FileReaderExampleUnitTest {
       File file = new File(FILE_PATH);
       try (FileReader fileReader = new FileReader(file)) {
          String content = FileReaderExample.readMultipleCharacters(fileReader, 5);
-         Assertions.assertEquals(expectedText, content);
+         Assert.assertEquals(expectedText, content);
       }
    }
 
@@ -37,14 +37,14 @@ public class FileReaderExampleUnitTest {
    public void whenReadFile_thenReturnsContent() {
       String expectedText = "Hello, World!";
       String content = FileReaderExample.readFile(FILE_PATH);
-      Assertions.assertEquals(expectedText, content);
+      Assert.assertEquals(expectedText, content);
    }
 
    @Test
    public void whenReadFileUsingTryWithResources_thenReturnsContent() {
       String expectedText = "Hello, World!";
       String content = FileReaderExample.readFileUsingTryWithResources(FILE_PATH);
-      Assertions.assertEquals(expectedText, content);
+      Assert.assertEquals(expectedText, content);
    }
 
 }

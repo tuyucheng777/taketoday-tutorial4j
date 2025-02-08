@@ -4,14 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-date-operations-4</artifactId>
-   <name>java-date-operations-4</name>
    <packaging>jar</packaging>
+   <name>java-date-operations-4</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
       <artifactId>java-core-modules</artifactId>
       <version>1.0.0</version>
    </parent>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>23</source>
+               <target>23</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
    <dependencies>
       <dependency>

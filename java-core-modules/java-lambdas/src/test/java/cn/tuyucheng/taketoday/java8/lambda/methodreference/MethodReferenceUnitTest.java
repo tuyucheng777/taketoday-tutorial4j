@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.java8.lambda.methodreference;
 
 import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +19,7 @@ public class MethodReferenceUnitTest {
 
    @Test
    public void referenceToStaticMethod() {
-      List<String> messages = Arrays.asList("Hello", "Tuyucheng", "readers!");
+      List<String> messages = Arrays.asList("Hello", "Taketoday", "readers!");
       messages.forEach(word -> StringUtils.capitalize(word));
       messages.forEach(StringUtils::capitalize);
    }

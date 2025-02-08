@@ -3,8 +3,8 @@ package cn.tuyucheng.taketoday.java8;
 import cn.tuyucheng.taketoday.java8.entity.Human;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -28,7 +28,7 @@ public class Java8SortUnitTest {
          }
       });
 
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -37,7 +37,7 @@ public class Java8SortUnitTest {
 
       humans.sort((final Human h1, final Human h2) -> h1.getName().compareTo(h2.getName()));
 
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -46,7 +46,7 @@ public class Java8SortUnitTest {
 
       humans.sort((h1, h2) -> h1.getName().compareTo(h2.getName()));
 
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -59,7 +59,7 @@ public class Java8SortUnitTest {
             return lhs.getName().compareTo(rhs.getName());
          }
       });
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test
@@ -69,7 +69,7 @@ public class Java8SortUnitTest {
       final Comparator<Human> byAge = (h1, h2) -> Ints.compare(h1.getAge(), h2.getAge());
 
       humans.sort(byName.thenComparing(byAge));
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test
@@ -77,7 +77,7 @@ public class Java8SortUnitTest {
       final List<Human> humans = Lists.newArrayList(new Human("Sarah", 12), new Human("Sarah", 10), new Human("Zack", 12));
 
       humans.sort(Comparator.comparing(Human::getName).thenComparing(Human::getAge));
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test
@@ -85,7 +85,7 @@ public class Java8SortUnitTest {
       final List<Human> humans = Lists.newArrayList(new Human("Sarah", 10), new Human("Jack", 12));
 
       humans.sort((h1, h2) -> Ints.compare(h1.getAge(), h2.getAge()));
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test
@@ -94,7 +94,7 @@ public class Java8SortUnitTest {
       final Comparator<Human> comparator = (h1, h2) -> h1.getName().compareTo(h2.getName());
 
       humans.sort(comparator.reversed());
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test
@@ -102,7 +102,7 @@ public class Java8SortUnitTest {
       final List<Human> humans = Lists.newArrayList(new Human("Sarah", 10), new Human("Jack", 12));
 
       humans.sort(Human::compareByNameThenAge);
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -110,7 +110,7 @@ public class Java8SortUnitTest {
       final List<Human> humans = Lists.newArrayList(new Human("Sarah", 10), new Human("Jack", 12));
 
       humans.sort(Comparator.comparing(Human::getName));
-      Assertions.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(humans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -118,7 +118,7 @@ public class Java8SortUnitTest {
       final List<String> letters = Lists.newArrayList("B", "A", "C");
 
       final List<String> sortedLetters = letters.stream().sorted().collect(Collectors.toList());
-      Assertions.assertThat(sortedLetters.get(0), equalTo("A"));
+      Assert.assertThat(sortedLetters.get(0), equalTo("A"));
    }
 
    @Test
@@ -127,7 +127,7 @@ public class Java8SortUnitTest {
       final Comparator<Human> nameComparator = (h1, h2) -> h1.getName().compareTo(h2.getName());
 
       final List<Human> sortedHumans = humans.stream().sorted(nameComparator).collect(Collectors.toList());
-      Assertions.assertThat(sortedHumans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(sortedHumans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -135,7 +135,7 @@ public class Java8SortUnitTest {
       final List<Human> humans = Lists.newArrayList(new Human("Sarah", 10), new Human("Jack", 12));
 
       final List<Human> sortedHumans = humans.stream().sorted(Comparator.comparing(Human::getName)).collect(Collectors.toList());
-      Assertions.assertThat(sortedHumans.get(0), equalTo(new Human("Jack", 12)));
+      Assert.assertThat(sortedHumans.get(0), equalTo(new Human("Jack", 12)));
    }
 
    @Test
@@ -143,7 +143,7 @@ public class Java8SortUnitTest {
       final List<String> letters = Lists.newArrayList("B", "A", "C");
 
       final List<String> reverseSortedLetters = letters.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
-      Assertions.assertThat(reverseSortedLetters.get(0), equalTo("C"));
+      Assert.assertThat(reverseSortedLetters.get(0), equalTo("C"));
    }
 
    @Test
@@ -152,7 +152,7 @@ public class Java8SortUnitTest {
       final Comparator<Human> reverseNameComparator = (h1, h2) -> h2.getName().compareTo(h1.getName());
 
       final List<Human> reverseSortedHumans = humans.stream().sorted(reverseNameComparator).collect(Collectors.toList());
-      Assertions.assertThat(reverseSortedHumans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(reverseSortedHumans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test
@@ -160,7 +160,7 @@ public class Java8SortUnitTest {
       final List<Human> humans = Lists.newArrayList(new Human("Sarah", 10), new Human("Jack", 12));
 
       final List<Human> reverseSortedHumans = humans.stream().sorted(Comparator.comparing(Human::getName, Comparator.reverseOrder())).collect(Collectors.toList());
-      Assertions.assertThat(reverseSortedHumans.get(0), equalTo(new Human("Sarah", 10)));
+      Assert.assertThat(reverseSortedHumans.get(0), equalTo(new Human("Sarah", 10)));
    }
 
    @Test(expected = NullPointerException.class)
@@ -181,9 +181,9 @@ public class Java8SortUnitTest {
          return h1.getName().compareTo(h2.getName());
       });
 
-      Assertions.assertNotNull(humans.get(0));
-      Assertions.assertNull(humans.get(1));
-      Assertions.assertNull(humans.get(2));
+      Assert.assertNotNull(humans.get(0));
+      Assert.assertNull(humans.get(1));
+      Assert.assertNull(humans.get(2));
    }
 
    @Test
@@ -192,9 +192,9 @@ public class Java8SortUnitTest {
 
       humans.sort(Comparator.nullsLast(Comparator.comparing(Human::getName)));
 
-      Assertions.assertNotNull(humans.get(0));
-      Assertions.assertNull(humans.get(1));
-      Assertions.assertNull(humans.get(2));
+      Assert.assertNotNull(humans.get(0));
+      Assert.assertNull(humans.get(1));
+      Assert.assertNull(humans.get(2));
    }
 
    @Test
@@ -203,8 +203,8 @@ public class Java8SortUnitTest {
 
       humans.sort(Comparator.nullsFirst(Comparator.comparing(Human::getName)));
 
-      Assertions.assertNull(humans.get(0));
-      Assertions.assertNull(humans.get(1));
-      Assertions.assertNotNull(humans.get(2));
+      Assert.assertNull(humans.get(0));
+      Assert.assertNull(humans.get(1));
+      Assert.assertNotNull(humans.get(2));
    }
 }

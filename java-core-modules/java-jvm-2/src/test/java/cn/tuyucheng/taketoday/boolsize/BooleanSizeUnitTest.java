@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.boolsize;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.vm.VM;
 

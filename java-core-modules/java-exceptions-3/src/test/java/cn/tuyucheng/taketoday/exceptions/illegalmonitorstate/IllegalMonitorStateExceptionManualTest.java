@@ -2,10 +2,7 @@ package cn.tuyucheng.taketoday.exceptions.illegalmonitorstate;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Needs to be run manually in order to demonstrate the IllegalMonitorStateException scenarios.

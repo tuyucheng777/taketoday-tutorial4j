@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.formatinstant;
 
 import org.joda.time.format.DateTimeFormat;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;

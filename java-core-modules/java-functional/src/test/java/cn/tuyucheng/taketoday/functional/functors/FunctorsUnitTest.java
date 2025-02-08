@@ -18,7 +18,7 @@ class FunctorsUnitTest {
 
    @Test
    public void whenApplyAnIdentityToAFunctor_thenResultIsEqualsToInitialValue() {
-      String value = "tuyucheng";
+      String value = "taketoday";
       // Identity
       Functor<String> identity = new Functor<>(value).map(Function.identity());
       assertTrue(identity.eq(value));

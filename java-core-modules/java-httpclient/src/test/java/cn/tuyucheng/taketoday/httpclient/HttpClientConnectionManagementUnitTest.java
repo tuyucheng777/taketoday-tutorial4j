@@ -4,9 +4,9 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.stubbing.ServeEvent;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.http.HttpClient;
@@ -36,7 +36,7 @@ public class HttpClientConnectionManagementUnitTest {
    private HttpRequest getRequest;
    private HttpRequest secondGet;
 
-   @BeforeEach
+   @Before
    public void setup() {
       firstServer.start();
       secondServer.start();
@@ -69,7 +69,7 @@ public class HttpClientConnectionManagementUnitTest {
             .build();
    }
 
-   @AfterEach
+   @After
    public void tearDown() {
       // display all the requests that the WireMock servers handled
       List<ServeEvent> firstWiremockAllServeEvents = firstServer.getAllServeEvents();

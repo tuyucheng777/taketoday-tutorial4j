@@ -5,17 +5,14 @@
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-documentation</artifactId>
    <version>1.0.0</version>
-   <name>java-documentation</name>
    <packaging>jar</packaging>
+   <name>java-documentation</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
       <artifactId>java-core-modules</artifactId>
       <version>1.0.0</version>
    </parent>
-
-   <dependencies>
-   </dependencies>
 
    <build>
       <plugins>
@@ -37,5 +34,4 @@
       <source.version>1.8</source.version>
       <target.version>1.8</target.version>
    </properties>
-
 </project>

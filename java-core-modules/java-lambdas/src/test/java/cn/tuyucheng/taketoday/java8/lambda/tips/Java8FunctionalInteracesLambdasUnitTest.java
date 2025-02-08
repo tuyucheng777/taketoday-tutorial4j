@@ -1,18 +1,18 @@
 package cn.tuyucheng.taketoday.java8.lambda.tips;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.function.Function;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class Java8FunctionalInteracesLambdasUnitTest {
 
    private UseFoo useFoo;
 
-   @BeforeEach
+   @Before
    public void init() {
       useFoo = new UseFoo();
    }

@@ -7,8 +7,8 @@ import org.apache.directory.server.core.annotations.CreateDS;
 import org.apache.directory.server.core.annotations.CreatePartition;
 import org.apache.directory.server.core.integ.AbstractLdapTestUnit;
 import org.apache.directory.server.core.integ.FrameworkRunner;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.naming.NamingException;
@@ -18,11 +18,11 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 @RunWith(FrameworkRunner.class)
 @CreateLdapServer(allowAnonymousAccess = true, transports = {@CreateTransport(protocol = "LDAP", address = "localhost", port = 10389)})
-@CreateDS(allowAnonAccess = true, partitions = {@CreatePartition(name = "ldap-connection-tool", suffix = "dc=tuyucheng,dc=com")})
+@CreateDS(allowAnonAccess = true, partitions = {@CreatePartition(name = "ldap-connection-tool", suffix = "dc=taketoday,dc=com")})
 @ApplyLdifFiles({"ldap-connection-tool.ldif"})
 // class marked as manual test, as it has to run independently of other unit tests in the module
 public class LdapConnectionToolManualTest extends AbstractLdapTestUnit {
-   @BeforeEach
+   @Before
    public void init() {
       System.setProperty("debug.mode", "true");
       System.clearProperty("url");
@@ -53,7 +53,7 @@ public class LdapConnectionToolManualTest extends AbstractLdapTestUnit {
    @Test
    public void givenUserProvided_whenCorrectPassword_thenConnectionSucceeds() throws Exception {
       System.setProperty("url", "ldap://localhost:10389");
-      System.setProperty("user", "uid=gauss,dc=tuyucheng,dc=com");
+      System.setProperty("user", "uid=gauss,dc=taketoday,dc=com");
       System.setProperty("password", "password");
 
       assertThatCode(() -> LdapConnectionTool.execute()).doesNotThrowAnyException();
@@ -62,7 +62,7 @@ public class LdapConnectionToolManualTest extends AbstractLdapTestUnit {
    @Test
    public void givenUserProvided_whenPasswordIsNull_thenConnectionFails() throws Exception {
       System.setProperty("url", "ldap://localhost:10389");
-      System.setProperty("user", "uid=gauss,dc=tuyucheng,dc=com");
+      System.setProperty("user", "uid=gauss,dc=taketoday,dc=com");
 
       assertThatExceptionOfType(IllegalArgumentException.class).isThrownBy(() -> LdapConnectionTool.execute());
    }
@@ -70,7 +70,7 @@ public class LdapConnectionToolManualTest extends AbstractLdapTestUnit {
    @Test
    public void whenOnlyValidQueryProvided_thenConnectionSucceeds() throws Exception {
       System.setProperty("url", "ldap://localhost:10389");
-      System.setProperty("query", "uid=gauss,dc=tuyucheng,dc=com");
+      System.setProperty("query", "uid=gauss,dc=taketoday,dc=com");
 
       assertThatCode(() -> LdapConnectionTool.execute()).doesNotThrowAnyException();
    }
@@ -78,9 +78,9 @@ public class LdapConnectionToolManualTest extends AbstractLdapTestUnit {
    @Test
    public void givenUserProvided_whenQueryProvided_thenConnectionSucceeds() throws Exception {
       System.setProperty("url", "ldap://localhost:10389");
-      System.setProperty("user", "uid=gauss,dc=tuyucheng,dc=com");
+      System.setProperty("user", "uid=gauss,dc=taketoday,dc=com");
       System.setProperty("password", "password");
-      System.setProperty("query", "uid=newton,dc=tuyucheng,dc=com");
+      System.setProperty("query", "uid=newton,dc=taketoday,dc=com");
 
       assertThatCode(() -> LdapConnectionTool.execute()).doesNotThrowAnyException();
    }

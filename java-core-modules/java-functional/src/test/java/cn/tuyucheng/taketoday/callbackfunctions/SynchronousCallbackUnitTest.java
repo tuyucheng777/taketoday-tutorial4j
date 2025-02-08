@@ -1,6 +1,5 @@
-package callbackFunctions;
+package cn.tuyucheng.taketoday.callbackfunctions;
 
-import cn.tuyucheng.taketoday.callbackfunctions.EventListener;
 import cn.tuyucheng.taketoday.callbackfunctions.synchronous.SynchronousEventConsumer;
 import cn.tuyucheng.taketoday.callbackfunctions.synchronous.SynchronousEventListenerImpl;
 import org.junit.jupiter.api.Test;

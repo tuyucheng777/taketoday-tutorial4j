@@ -4,11 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
-import java.io.FilterOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
@@ -18,7 +14,7 @@ public class OutputStreamToByteArrayUnitTest {
 
    @Test
    public void givenFileOutputStream_whenUsingFileUtilsToReadTheFile_thenReturnByteArray(@TempDir Path tempDir) throws IOException {
-      String data = "Welcome to Tuyucheng!";
+      String data = "Welcome to Taketoday!";
       String fileName = "file.txt";
       Path filePath = tempDir.resolve(fileName);
 
@@ -34,7 +30,7 @@ public class OutputStreamToByteArrayUnitTest {
 
    @Test
    public void givenSystemOut_whenUsingDrainableOutputStream_thenReturnByteArray() throws IOException {
-      String data = "Welcome to Tuyucheng!\n";
+      String data = "Welcome to Taketoday!\n";
 
       DrainableOutputStream drainableOutputStream = new DrainableOutputStream(System.out);
       try (drainableOutputStream) {

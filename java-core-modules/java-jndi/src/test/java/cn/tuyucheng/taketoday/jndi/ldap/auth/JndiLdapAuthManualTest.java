@@ -7,27 +7,21 @@ import org.apache.directory.server.core.annotations.CreateDS;
 import org.apache.directory.server.core.annotations.CreatePartition;
 import org.apache.directory.server.core.integ.AbstractLdapTestUnit;
 import org.apache.directory.server.core.integ.FrameworkRunner;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.naming.AuthenticationException;
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;
-import javax.naming.directory.Attributes;
-import javax.naming.directory.DirContext;
-import javax.naming.directory.InitialDirContext;
-import javax.naming.directory.SearchControls;
-import javax.naming.directory.SearchResult;
+import javax.naming.directory.*;
 import java.util.Hashtable;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatCode;
-import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(FrameworkRunner.class)
 @CreateLdapServer(transports = {@CreateTransport(protocol = "LDAP", address = "localhost", port = 10390)})
 @CreateDS(
-      allowAnonAccess = false, partitions = {@CreatePartition(name = "TestPartition", suffix = "dc=tuyucheng,dc=com")})
+      allowAnonAccess = false, partitions = {@CreatePartition(name = "TestPartition", suffix = "dc=taketoday,dc=com")})
 @ApplyLdifFiles({"users.ldif"})
 // class marked as manual test, as it has to run independently from the other unit tests in the module
 public class JndiLdapAuthManualTest extends AbstractLdapTestUnit {
@@ -45,7 +39,7 @@ public class JndiLdapAuthManualTest extends AbstractLdapTestUnit {
       environment.put(Context.PROVIDER_URL, "ldap://localhost:10390");
       environment.put(Context.SECURITY_AUTHENTICATION, "simple");
 
-      environment.put(Context.SECURITY_PRINCIPAL, "cn=Joe Simms,ou=Users,dc=tuyucheng,dc=com");
+      environment.put(Context.SECURITY_PRINCIPAL, "cn=Joe Simms,ou=Users,dc=taketoday,dc=com");
       environment.put(Context.SECURITY_CREDENTIALS, "12345");
 
       assertThatCode(() -> authenticateUser(environment)).doesNotThrowAnyException();
@@ -59,7 +53,7 @@ public class JndiLdapAuthManualTest extends AbstractLdapTestUnit {
       environment.put(Context.PROVIDER_URL, "ldap://localhost:10390");
       environment.put(Context.SECURITY_AUTHENTICATION, "simple");
 
-      environment.put(Context.SECURITY_PRINCIPAL, "cn=Joe Simms,ou=Users,dc=tuyucheng,dc=com");
+      environment.put(Context.SECURITY_PRINCIPAL, "cn=Joe Simms,ou=Users,dc=taketoday,dc=com");
       environment.put(Context.SECURITY_CREDENTIALS, "wronguserpw");
 
       assertThatExceptionOfType(AuthenticationException.class).isThrownBy(() -> authenticateUser(environment));
@@ -91,14 +85,14 @@ public class JndiLdapAuthManualTest extends AbstractLdapTestUnit {
       searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
 
       // search for User with filter cn=Joe Simms
-      NamingEnumeration<SearchResult> searchResults = adminContext.search("dc=tuyucheng,dc=com", filter, searchControls);
+      NamingEnumeration<SearchResult> searchResults = adminContext.search("dc=taketoday,dc=com", filter, searchControls);
       if (searchResults.hasMore()) {
 
          SearchResult result = (SearchResult) searchResults.next();
          Attributes attrs = result.getAttributes();
 
          String distinguishedName = result.getNameInNamespace();
-         assertThat(distinguishedName).isEqualTo("cn=Joe Simms,ou=Users,dc=tuyucheng,dc=com");
+         assertThat(distinguishedName).isEqualTo("cn=Joe Simms,ou=Users,dc=taketoday,dc=com");
 
          String commonName = attrs.get("cn").toString();
          assertThat(commonName).isEqualTo("cn: Joe Simms");
@@ -139,14 +133,14 @@ public class JndiLdapAuthManualTest extends AbstractLdapTestUnit {
       searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
 
       // search for User with filter cn=Joe Simms
-      NamingEnumeration<SearchResult> searchResults = adminContext.search("dc=tuyucheng,dc=com", filter, searchControls);
+      NamingEnumeration<SearchResult> searchResults = adminContext.search("dc=taketoday,dc=com", filter, searchControls);
       if (searchResults.hasMore()) {
 
          SearchResult result = (SearchResult) searchResults.next();
          Attributes attrs = result.getAttributes();
 
          String distinguishedName = result.getNameInNamespace();
-         assertThat(distinguishedName).isEqualTo("cn=Joe Simms,ou=Users,dc=tuyucheng,dc=com");
+         assertThat(distinguishedName).isEqualTo("cn=Joe Simms,ou=Users,dc=taketoday,dc=com");
 
          String commonName = attrs.get("cn").toString();
          assertThat(commonName).isEqualTo("cn: Joe Simms");

@@ -8,25 +8,31 @@ import java.io.IOException;
 public class ReadWriteThread {
 
    public static void readFile(String filePath) {
-      Thread thread = new Thread(() -> {
-         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-               System.out.println(line);
+      Thread thread = new Thread(new Runnable() {
+         @Override
+         public void run() {
+            try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+               String line;
+               while ((line = bufferedReader.readLine()) != null) {
+                  System.out.println(line);
+               }
+            } catch (IOException e) {
+               e.printStackTrace();
             }
-         } catch (IOException e) {
-            e.printStackTrace();
          }
       });
       thread.start();
    }
 
    public static void writeFile(String filePath, String content) {
-      Thread thread = new Thread(() -> {
-         try (FileWriter fileWriter = new FileWriter(filePath)) {
-            fileWriter.write("Hello, world!");
-         } catch (IOException e) {
-            e.printStackTrace();
+      Thread thread = new Thread(new Runnable() {
+         @Override
+         public void run() {
+            try (FileWriter fileWriter = new FileWriter(filePath)) {
+               fileWriter.write("Hello, world!");
+            } catch (IOException e) {
+               e.printStackTrace();
+            }
          }
       });
       thread.start();

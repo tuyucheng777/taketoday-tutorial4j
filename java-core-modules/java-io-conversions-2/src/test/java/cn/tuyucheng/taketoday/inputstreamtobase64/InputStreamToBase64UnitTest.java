@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.inputstreamtobase64;
 
 import org.apache.commons.io.IOUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.io.InputStream;
 import java.util.Base64;

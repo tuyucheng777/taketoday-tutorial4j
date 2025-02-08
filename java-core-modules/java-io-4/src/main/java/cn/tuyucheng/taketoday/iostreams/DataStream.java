@@ -1,10 +1,6 @@
 package cn.tuyucheng.taketoday.iostreams;
 
-import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class DataStream {
    public static void textDataProcessingByteStream(String fileName, String content) throws IOException {

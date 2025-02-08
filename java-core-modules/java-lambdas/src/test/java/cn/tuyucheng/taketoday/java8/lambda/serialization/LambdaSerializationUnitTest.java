@@ -1,20 +1,13 @@
 package cn.tuyucheng.taketoday.java8.lambda.serialization;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.NotSerializableException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class LambdaSerializationUnitTest {
    @Test(expected = NotSerializableException.class)

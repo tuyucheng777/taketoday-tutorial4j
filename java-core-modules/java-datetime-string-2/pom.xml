@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-datetime-string-2</artifactId>
-   <name>java-datetime-string-2</name>
    <packaging>jar</packaging>
+   <name>java-datetime-string-2</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -18,6 +18,11 @@
          <groupId>joda-time</groupId>
          <artifactId>joda-time</artifactId>
          <version>${joda-time.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons-lang3.version}</version>
       </dependency>
    </dependencies>
 

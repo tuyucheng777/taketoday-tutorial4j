@@ -4,17 +4,11 @@ import com.google.common.base.Charsets;
 import com.google.common.io.CharSink;
 import com.google.common.io.FileWriteMode;
 import org.apache.commons.io.FileUtils;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,8 +20,8 @@ public class AppendToFileManualTest {
 
    public static final String fileName = "src/main/resources/countries.properties";
 
-   @BeforeEach
-   @AfterEach
+   @Before
+   @After
    public void setup() throws Exception {
       PrintWriter writer = new PrintWriter(fileName);
       writer.print("UK\r\n" + "US\r\n" + "Germany\r\n");

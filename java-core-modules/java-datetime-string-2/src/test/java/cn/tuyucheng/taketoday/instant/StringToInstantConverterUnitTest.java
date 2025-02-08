@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.instant;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

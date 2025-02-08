@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.splitlargefile;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +10,7 @@ import java.nio.file.Paths;
 
 public class SplitLargeFileUnitTest {
 
-   @BeforeAll
+   @BeforeClass
    public static void prepareData() throws IOException {
       Files.createDirectories(Paths.get("target/split"));
    }
@@ -25,14 +24,14 @@ public class SplitLargeFileUnitTest {
    }
 
 
-   @Test
+   @org.junit.Test
    public void givenLargeFile_whenSplitLargeFile_thenSplitBySize() throws Exception {
       File input = largeFilePath().toFile();
       SplitLargeFile slf = new SplitLargeFile();
       slf.splitByFileSize(input, 1024_000, splitedFileDirPath());
    }
 
-   @Test
+   @org.junit.Test
    public void givenLargeFile_whenSplitLargeFile_thenSplitByNumberOfFiles() throws Exception {
       File input = largeFilePath().toFile();
       SplitLargeFile slf = new SplitLargeFile();

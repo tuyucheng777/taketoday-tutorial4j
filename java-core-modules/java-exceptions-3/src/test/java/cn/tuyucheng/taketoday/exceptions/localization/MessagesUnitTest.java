@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.exceptions.localization;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Locale;
 
