@@ -106,6 +106,7 @@
       <module>spring-boot-openapi</module>
       <module>spring-boot-parent</module>
       <module>spring-boot-performance</module>
+      <module>spring-boot-pkl</module>
       <module>spring-boot-process-automation</module>
       <module>spring-boot-properties-1</module>
       <module>spring-boot-properties-2</module>
