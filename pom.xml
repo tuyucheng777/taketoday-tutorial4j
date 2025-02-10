@@ -434,7 +434,8 @@
             <!-- <module>javafx</module> -->
             <!-- <module>kotlin-modules</module> -->
             <!-- <module>logging-modules</module> -->
-            <!-- <module>mapstruct</module> -->
+            <module>mapstruct-1</module>
+            <module>mapstruct-2</module>
             <!-- <module>maven.modules</module> -->
             <!-- <module>messaging-modules</module> -->
             <!-- <module>metrics</module> -->
