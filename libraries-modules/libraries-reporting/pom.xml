@@ -66,7 +66,7 @@
 
    <properties>
       <spring-boot-starter.version>2.7.8</spring-boot-starter.version>
-      <spring.version>5.3.25</spring.version>
+      <spring.version>6.2.2</spring.version>
       <javax.servlet.version>2.5</javax.servlet.version>
       <jasperreports.version>6.20.0</jasperreports.version>
       <yarg.version>2.0.12</yarg.version>

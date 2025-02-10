@@ -181,7 +181,7 @@
    <properties>
       <jetcache.version>2.7.6</jetcache.version>
       <spring-boot.version>3.4.2</spring-boot.version>
-      <spring.version>6.1.8</spring.version>
+      <spring.version>6.2.2</spring.version>
       <lanterna.version>3.1.2</lanterna.version>
       <manifold.version>2024.1.20</manifold.version>
       <armeria.version>1.29.2</armeria.version>
