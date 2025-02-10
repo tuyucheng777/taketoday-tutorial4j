@@ -440,6 +440,7 @@
             <!-- <module>messaging-modules</module> -->
             <!-- <module>metrics</module> -->
             <!-- <module>microservices</module> -->
+            <!-- <module>netflix-modules</module> -->
             <!-- <module>opensource-libraries</module> -->
             <!-- <module>pdf-1</module> -->
             <!-- <module>pdf-2</module> -->
