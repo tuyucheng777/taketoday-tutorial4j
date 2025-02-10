@@ -184,6 +184,6 @@
       <jandex-maven-plugin.version>1.2.3</jandex-maven-plugin.version>
       <springdoc.version>1.7.0</springdoc.version>
       <start-class>cn.tuyucheng.taketoday.openapi.OpenApiApplication</start-class>
-      <spring-boot.version>3.4.0</spring-boot.version>
+      <spring-boot.version>3.4.2</spring-boot.version>
    </properties>
 </project>
