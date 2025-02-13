@@ -1,6 +1,8 @@
 package cn.tuyucheng.taketoday.java11.httpclient.test;
 
-import org.junit.jupiter.api.Test;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -10,9 +12,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import org.junit.Test;
 
 public class HttpResponseUnitTest {
 
@@ -34,7 +34,7 @@ public class HttpResponseUnitTest {
    }
 
    @Test
-   public void shouldResponseURIDifferentThanRequestUIRWhenRedirect() throws IOException, InterruptedException, URISyntaxException {
+   public void shouldResponseURIDifferentThanRequestURIWhenRedirect() throws IOException, InterruptedException, URISyntaxException {
       HttpRequest request = HttpRequest.newBuilder()
             .uri(new URI("http://stackoverflow.com"))
             .version(HttpClient.Version.HTTP_2)
@@ -48,7 +48,6 @@ public class HttpResponseUnitTest {
       assertThat(request.uri()
             .toString(), equalTo("http://stackoverflow.com"));
       assertThat(response.uri()
-            .toString(), equalTo("https://stackoverflow.com/"));
+            .toString(), equalTo("https://stackoverflow.com/questions"));
    }
-
 }

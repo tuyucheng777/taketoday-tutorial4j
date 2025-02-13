@@ -1,7 +1,9 @@
 package cn.tuyucheng.taketoday.java11.httpclient.test;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import static java.time.temporal.ChronoUnit.SECONDS;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertThat;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -15,10 +17,8 @@ import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 import java.time.Duration;
 
-import static java.time.temporal.ChronoUnit.SECONDS;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.Ignore;
+import org.junit.Test;
 
 public class HttpRequestUnitTest {
 
@@ -38,7 +38,7 @@ public class HttpRequestUnitTest {
    @Test
    public void shouldUseHttp2WhenWebsiteUsesHttp2() throws IOException, InterruptedException, URISyntaxException {
       HttpRequest request = HttpRequest.newBuilder()
-            .uri(new URI("https://stackoverflow.com"))
+            .uri(new URI("https://stackoverflow.com/questions"))
             .version(HttpClient.Version.HTTP_2)
             .GET()
             .build();
@@ -54,7 +54,7 @@ public class HttpRequestUnitTest {
     * Therefore, let's leave it ignored.
     * */
    @Test
-   @Disabled
+   @Ignore
    public void shouldFallbackToHttp1_1WhenWebsiteDoesNotUseHttp2() throws IOException, InterruptedException, URISyntaxException, NoSuchAlgorithmException {
       HttpRequest request = HttpRequest.newBuilder()
             .uri(new URI("https://postman-echo.com/get"))
@@ -170,5 +170,4 @@ public class HttpRequestUnitTest {
       assertThat(response.statusCode(), equalTo(HttpURLConnection.HTTP_OK));
       assertThat(response.body(), containsString("Sample file content"));
    }
-
 }

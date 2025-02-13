@@ -1,6 +1,11 @@
 package cn.tuyucheng.taketoday.java11.httpclient.test;
 
-import org.junit.jupiter.api.Test;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.net.Authenticator;
@@ -14,6 +19,7 @@ import java.net.URISyntaxException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -24,12 +30,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 public class HttpClientUnitTest {
 
@@ -81,7 +82,7 @@ public class HttpClientUnitTest {
       assertThat(response.statusCode(), equalTo(HttpURLConnection.HTTP_OK));
       assertThat(response.request()
             .uri()
-            .toString(), equalTo("https://stackoverflow.com/"));
+            .toString(), equalTo("https://stackoverflow.com/questions"));
    }
 
    @Test
@@ -227,7 +228,7 @@ public class HttpClientUnitTest {
          return (th != null) ? "message upon cancel" : "";
       });
       cf.completeExceptionally(new RuntimeException("completed exceptionally"));
-      assertTrue(cf.isCompletedExceptionally(), "Was not completed exceptionally");
+      assertTrue("Was not completed exceptionally", cf.isCompletedExceptionally());
       try {
          cf.join();
          fail("Should have thrown an exception");
@@ -237,5 +238,4 @@ public class HttpClientUnitTest {
 
       assertEquals("message upon cancel", exceptionHandler.join());
    }
-
 }
