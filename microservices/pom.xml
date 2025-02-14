@@ -24,5 +24,6 @@
 		<!--<module>msf4j</module>--> <!-- fails On CI -->
 		<module>open-liberty</module>
 		<module>rest-express</module>
+		<module>pulumi</module>
 	</modules>
 </project>
