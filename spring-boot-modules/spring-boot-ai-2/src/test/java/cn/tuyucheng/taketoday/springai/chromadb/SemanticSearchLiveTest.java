@@ -1,5 +1,7 @@
 package cn.tuyucheng.taketoday.springai.chromadb;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.ai.document.Document;
@@ -10,8 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Import(TestcontainersConfiguration.class)
@@ -26,8 +26,10 @@ class SemanticSearchLiveTest {
    @ValueSource(strings = {"Love and Romance", "Time and Mortality", "Jealousy and Betrayal"})
    void whenSearchingShakespeareTheme_thenRelevantPoemsReturned(String theme) {
       SearchRequest searchRequest = SearchRequest
+            .builder()
             .query(theme)
-            .withTopK(MAX_RESULTS);
+            .topK(MAX_RESULTS)
+            .build();
       List<Document> documents = vectorStore.similaritySearch(searchRequest);
 
       assertThat(documents)
