@@ -430,6 +430,7 @@
             <!-- <module>graphql-modules</module> -->
             <!-- <module>grpc</module> -->
             <!-- <module>java-core-modules</module> -->
+            <module>jmonkeyengine</module>
             <!-- <module>libraries-modules</module> -->
             <!-- <module>javafx</module> -->
             <!-- <module>kotlin-modules</module> -->
