@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>json-modules</artifactId>
+   <packaging>pom</packaging>
+   <name>json-modules</name>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>taketoday-tutorial4j</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <modules>
+      <module>json-1</module>
+      <module>json-2</module>
+      <module>json-3</module>
+      <module>json-arrays</module>
+      <module>json-conversion</module>
+      <module>json-operations</module>
+      <module>json-path</module>
+      <module>gson-1</module>
+      <module>gson-2</module>
+      <module>jackson-annotations</module>
+      <module>jackson-conversions-1</module>
+      <module>jackson-conversions-2</module>
+      <module>jackson-conversions-3</module>
+      <module>jackson-core</module>
+      <module>jackson-custom-conversions</module>
+      <module>jackson-exceptions</module>
+      <module>jackson-jr</module>
+      <module>jackson-polymorphic-deserialization</module>
+   </modules>
+
+   <dependencies>
+      <dependency>
+         <groupId>com.fasterxml.jackson.dataformat</groupId>
+         <artifactId>jackson-dataformat-xml</artifactId>
+         <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>commons-io</groupId>
+         <artifactId>commons-io</artifactId>
+         <version>${commons-io.version}</version>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <pluginManagement>
+         <plugins>
+            <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+         </plugins>
+      </pluginManagement>
+   </build>
+
+   <properties>
+      <json.version>20240303</json.version>
+      <gson.version>2.11.0</gson.version>
+      <javax.version>1.1.2</javax.version>
+   </properties>
+</project>
