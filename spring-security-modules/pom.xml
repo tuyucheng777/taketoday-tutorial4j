@@ -40,6 +40,7 @@
       <module>spring-security-oidc</module>
       <module>spring-security-okta</module>
       <module>spring-security-ott</module>
+      <module>spring-security-passkey</module>
       <module>spring-security-pkce-spa</module>
       <module>spring-security-saml</module>
       <module>spring-security-saml2</module>
