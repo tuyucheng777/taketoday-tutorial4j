@@ -1,14 +1,7 @@
 package cn.tuyucheng.taketoday.recordswithjpa.entity;
 
 import cn.tuyucheng.taketoday.recordswithjpa.records.BookRecord;
-import jakarta.persistence.ColumnResult;
-import jakarta.persistence.ConstructorResult;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SqlResultSetMapping;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @SqlResultSetMapping(
       name = "BookRecordMapping",
@@ -72,5 +65,16 @@ public class Book {
 
    public void setIsbn(String isbn) {
       this.isbn = isbn;
+   }
+
+   @Version
+   private Long version;
+
+   public Long getVersion() {
+      return version;
+   }
+
+   public void setVersion(Long version) {
+      this.version = version;
    }
 }

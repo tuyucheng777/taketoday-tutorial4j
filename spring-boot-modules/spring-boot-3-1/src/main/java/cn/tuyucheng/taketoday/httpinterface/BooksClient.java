@@ -2,7 +2,6 @@ package cn.tuyucheng.taketoday.httpinterface;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import org.springframework.web.reactive.function.client.support.WebClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 @Component
@@ -12,7 +11,7 @@ public class BooksClient {
 
    public BooksClient(WebClient webClient) {
       HttpServiceProxyFactory httpServiceProxyFactory =
-            HttpServiceProxyFactory.builder(WebClientAdapter.forClient(webClient))
+            HttpServiceProxyFactory.builder()
                   .build();
       booksService = httpServiceProxyFactory.createClient(BooksService.class);
    }

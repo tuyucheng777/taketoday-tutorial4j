@@ -3,12 +3,14 @@ package cn.tuyucheng.taketoday.recordswithjpa;
 import cn.tuyucheng.taketoday.recordswithjpa.records.BookRecord;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class QueryServiceIntegrationTest extends RecordsAsJpaIntegrationTest {
 
    @Autowired
