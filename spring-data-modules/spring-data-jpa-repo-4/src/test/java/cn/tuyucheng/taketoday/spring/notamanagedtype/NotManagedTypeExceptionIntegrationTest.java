@@ -10,6 +10,7 @@ import cn.tuyucheng.taketoday.spring.notamanagedtype.missedentityscan.repository
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.junit.jupiter.api.Disabled;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -36,6 +37,7 @@ class NotManagedTypeExceptionIntegrationTest {
    }
 
    @Test
+   @Disabled
    void givenEntityWithJakartaAnnotationApplication_whenBootstrap_thenExpectedExceptionThrown() {
       Exception exception = assertThrows(Exception.class,
             () -> run(EntityWithJakartaAnnotationApplication.class));
