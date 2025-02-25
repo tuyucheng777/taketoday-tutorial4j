@@ -23,9 +23,4 @@ public class Article {
 
    @Enumerated(EnumType.STRING)
    private ArticleStage stage;
-
-   @PrePersist
-   void onCreate() {
-      this.id = UUID.randomUUID();
-   }
 }
