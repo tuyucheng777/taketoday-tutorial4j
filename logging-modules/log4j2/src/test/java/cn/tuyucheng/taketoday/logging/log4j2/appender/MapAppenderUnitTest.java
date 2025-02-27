@@ -12,13 +12,13 @@ import org.junit.runners.JUnit4;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnit4.class)
-public class MapAppenderIntegrationTest {
+public class MapAppenderUnitTest {
 
    private Logger logger;
 
    @Before
    public void setup() {
-      logger = LogManager.getLogger(MapAppenderIntegrationTest.class);
+      logger = LogManager.getLogger(MapAppenderUnitTest.class);
    }
 
    @Test
