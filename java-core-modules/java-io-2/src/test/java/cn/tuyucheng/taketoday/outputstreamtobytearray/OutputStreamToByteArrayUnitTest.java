@@ -18,8 +18,11 @@ public class OutputStreamToByteArrayUnitTest {
       String fileName = "file.txt";
       Path filePath = tempDir.resolve(fileName);
 
-      try (FileOutputStream outputStream = new FileOutputStream(filePath.toFile())) {
-         outputStream.write(data.getBytes(StandardCharsets.UTF_8));
+      DrainableOutputStream drainableOutputStream = new DrainableOutputStream(System.out);
+      try {
+         drainableOutputStream.write(data.getBytes(StandardCharsets.UTF_8));
+      } finally {
+         drainableOutputStream.close();
       }
 
       byte[] writtenData = FileUtils.readFileToByteArray(filePath.toFile());
