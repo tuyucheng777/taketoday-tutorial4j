@@ -1,5 +1,6 @@
 package cn.tuyucheng.taketoday.boot;
 
+import cn.tuyucheng.taketoday.boot.daos.impl.ExtendedRepositoryImpl;
 import cn.tuyucheng.taketoday.jpa.JpaApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "cn.tuyucheng.taketoday.boot.daos")
+@EnableJpaRepositories(repositoryBaseClass = ExtendedRepositoryImpl.class, basePackages = "cn.tuyucheng.taketoday.boot.daos")
 @EntityScan({"cn.tuyucheng.taketoday.boot.domain"})
 @ComponentScan("cn.tuyucheng.taketoday.boot.daos")
 public class BootApplication {
