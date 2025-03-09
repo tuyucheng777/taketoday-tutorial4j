@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>spring-modules</artifactId>
+   <name>spring-modules</name>
+   <packaging>pom</packaging>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>taketoday-tutorial4j</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <modules>
+      <module>spring-actuator</module>
+      <module>spring-aop-1</module>
+      <module>spring-aop-2</module>
+      <module>spring-batch-1</module>
+      <module>spring-batch-2</module>
+      <module>spring-core-1</module>
+      <module>spring-core-2</module>
+      <module>spring-core-3</module>
+      <module>spring-core-4</module>
+      <module>spring-credhub</module>
+      <module>spring-di-1</module>
+      <module>spring-di-2</module>
+      <module>spring-di-3</module>
+      <module>spring-di-4</module>
+      <module>spring-drools</module>
+      <module>spring-jinq</module>
+      <module>spring-protobuf</module>
+      <module>spring-shell</module>
+      <module>spring-spel</module>
+      <module>spring-state-machine</module>
+      <module>spring-static-resources</module>
+      <module>spring-vault</module>
+   </modules>
+</project>

@@ -151,7 +151,7 @@
       <micronaut.aot.enabled>false</micronaut.aot.enabled>
       <micronaut.aot.packageName>com.baeldung.aot.generated</micronaut.aot.packageName>
       <micronaut.runtime>netty</micronaut.runtime>
-      <exec.mainClass>com.baeldung.Application</exec.mainClass>
+      <exec.mainClass>cn.tuyucheng.taketoday.Application</exec.mainClass>
       <docker.baseImage>eclipse-temurin:21-jre-alpine</docker.baseImage>
       <docker.exposedPort>9090</docker.exposedPort>
       <docker.imageName>micronaut_docker_maven</docker.imageName>
