@@ -52,6 +52,8 @@
                      <version>${lombok.mapstruct.binding.version}</version>
                   </path>
                </annotationProcessorPaths>
+               <source>23</source>
+               <target>23</target>
             </configuration>
          </plugin>
       </plugins>
