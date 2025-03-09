@@ -3,17 +3,21 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
-   <artifactId>micronaut-docker</artifactId>
+   <artifactId>micronaut-modules</artifactId>
+   <name>micronaut-modules</name>
    <packaging>pom</packaging>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>microservices-modules</artifactId>
+      <artifactId>taketoday-tutorial4j</artifactId>
       <version>1.0.0</version>
-      <relativePath>../pom.xml</relativePath>
    </parent>
 
    <modules>
-      <module>micronaut-docker-maven</module>
+      <module>micronaut</module>
+      <module>micronaut-docker</module>
+      <module>micronaut-configuration</module>
+      <module>micronaut-reactive</module>
+      <module>microprofile</module>
    </modules>
 </project>

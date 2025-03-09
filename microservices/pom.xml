@@ -16,11 +16,6 @@
 	<modules>
       <module>event-driven-microservice</module>
 		<module>helidon</module>
-		<module>micronaut</module>
-		<module>micronaut-docker</module>
-		<module>micronaut-configuration</module>
-		<module>micronaut-reactive</module>
-		<module>microprofile</module>
 		<!--<module>msf4j</module>--> <!-- fails On CI -->
 		<module>open-liberty</module>
 		<module>rest-express</module>

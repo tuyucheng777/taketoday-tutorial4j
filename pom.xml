@@ -440,6 +440,7 @@
             <!-- <module>mapping-modules</module> -->
             <!-- <module>messaging-modules</module> -->
             <!-- <module>metrics</module> -->
+            <!-- <module>micronaut-modules</module> -->
             <!-- <module>microservices</module> -->
             <!-- <module>netflix-modules</module> -->
             <!-- <module>opensource-libraries</module> -->

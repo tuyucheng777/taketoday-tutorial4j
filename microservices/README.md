@@ -5,7 +5,6 @@
 ## 子模块
 
 + [Helidon](helidon/README.md)
-+ [Micronaut](micronaut/README.md)
 + [MicroProfile](microprofile/README.md)
 + [Msf4j](msf4j/README.md)
 + [OpenLiberty](open-liberty/README.md)
