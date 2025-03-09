@@ -1,13 +1,6 @@
 package cn.tuyucheng.taketoday.streams.processing;
 
-import com.google.common.collect.Iterators;
-import cyclops.data.LazySeq;
-import cyclops.reactive.ReactiveSeq;
-import io.reactivex.rxjava3.core.Observable;
-import org.apache.commons.collections4.ListUtils;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import reactor.core.publisher.Flux;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,7 +9,16 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.apache.commons.collections4.ListUtils;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.google.common.collect.Iterators;
+
+import cyclops.data.LazySeq;
+import cyclops.reactive.ReactiveSeq;
+import io.reactivex.rxjava3.core.Observable;
+import reactor.core.publisher.Flux;
 
 public class StreamProcessingUnitTest {
    public final int BATCH_SIZE = 10;

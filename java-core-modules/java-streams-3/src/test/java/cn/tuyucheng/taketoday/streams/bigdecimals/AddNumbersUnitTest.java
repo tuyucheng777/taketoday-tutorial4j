@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.streams.bigdecimals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class AddNumbersUnitTest {
 
@@ -38,5 +38,4 @@ public class AddNumbersUnitTest {
       BigDecimal result = bigDecimalNumber.reduce(BigDecimal.ZERO, BigDecimal::add);
       assertEquals(11, result);
    }
-
 }

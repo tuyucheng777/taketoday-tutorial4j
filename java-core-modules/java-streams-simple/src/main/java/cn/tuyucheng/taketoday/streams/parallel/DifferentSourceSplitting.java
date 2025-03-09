@@ -50,5 +50,4 @@ public class DifferentSourceSplitting {
    public static void differentSourceLinkedListParallel() {
       linkedListOfNumbers.parallelStream().reduce(0, Integer::sum);
    }
-
 }

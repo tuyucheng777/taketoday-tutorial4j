@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.streams.maxdate;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +28,26 @@ public class DateHelper {
             .get();
    }
 
+   static final Date findMinDateOf(List<Event> events) {
+      if (events == null || events.isEmpty()) {
+         return null;
+      }
+      return events.stream()
+            .map(Event::getDate)
+            .min(Date::compareTo)
+            .get();
+   }
+
+   static final Date findMinDateOfWithComparator(List<Event> events) {
+      if (events == null || events.isEmpty()) {
+         return null;
+      }
+      return events.stream()
+            .map(Event::getDate)
+            .min(Comparator.naturalOrder())
+            .get();
+   }
+
    static final LocalDate findMaxDateOfLocalEvents(List<LocalEvent> events) {
       if (events == null || events.isEmpty()) {
          return null;
@@ -47,4 +68,41 @@ public class DateHelper {
             .get();
    }
 
+   static final LocalDate findMinDateOfLocalEvents(List<LocalEvent> events) {
+      if (events == null || events.isEmpty()) {
+         return null;
+      }
+      return events.stream()
+            .map(LocalEvent::getDate)
+            .min(LocalDate::compareTo)
+            .get();
+   }
+
+   static final LocalDate findMinDateOfLocalEventsWithComparator(List<LocalEvent> events) {
+      if (events == null || events.isEmpty()) {
+         return null;
+      }
+      return events.stream()
+            .map(LocalEvent::getDate)
+            .min(Comparator.naturalOrder())
+            .get();
+   }
+
+   static Date findMaxDateWithCollections(List<Event> events) {
+      if (events == null || events.isEmpty()) {
+         return null;
+      }
+      return Collections.max(events.stream()
+            .map(Event::getDate)
+            .toList());
+   }
+
+   static LocalDate findMaxLocalDateWithCollections(List<LocalEvent> events) {
+      if (events == null || events.isEmpty()) {
+         return null;
+      }
+      return Collections.max(events.stream()
+            .map(LocalEvent::getDate)
+            .toList());
+   }
 }

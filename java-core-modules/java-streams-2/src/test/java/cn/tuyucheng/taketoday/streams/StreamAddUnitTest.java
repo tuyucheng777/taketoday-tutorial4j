@@ -1,16 +1,15 @@
 package cn.tuyucheng.taketoday.streams;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.Spliterators;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class StreamAddUnitTest {
 
@@ -20,8 +19,8 @@ public class StreamAddUnitTest {
 
       Stream<String> newStream = Stream.concat(anStream, Stream.of("A"));
 
-      List<String> resultList = newStream.collect(Collectors.toList());
-      assertEquals(resultList.get(resultList.size() - 1), "A");
+      List<String> resultList = newStream.toList();
+      assertEquals("A", resultList.get(resultList.size() - 1));
    }
 
    @Test
@@ -30,8 +29,8 @@ public class StreamAddUnitTest {
 
       Stream<Integer> newStream = Stream.concat(Stream.of(99), anStream);
 
-      assertEquals(newStream.findFirst()
-            .get(), (Integer) 99);
+      assertEquals((Integer) 99, newStream.findFirst()
+            .get());
    }
 
    @Test
@@ -40,8 +39,8 @@ public class StreamAddUnitTest {
 
       Stream<Double> newStream = insertInStream(anStream, 9.9, 3);
 
-      List<Double> resultList = newStream.collect(Collectors.toList());
-      assertEquals(resultList.get(3), (Double) 9.9);
+      List<Double> resultList = newStream.toList();
+      assertEquals((Double) 9.9, resultList.get(3));
    }
 
    private static <T> Stream<T> insertInStream(Stream<T> stream, T elem, int index) {

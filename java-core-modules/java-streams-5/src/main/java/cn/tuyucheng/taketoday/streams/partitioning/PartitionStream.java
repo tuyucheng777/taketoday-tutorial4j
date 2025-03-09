@@ -43,10 +43,10 @@ public class PartitionStream {
       Supplier<Accumulator<T, A>> supplier = () -> new Accumulator<>(
             batchSize,
             downstream.supplier().get(),
-            downstream.accumulator()::accept
+            downstream.accumulator()
       );
 
-      BiConsumer<Accumulator<T, A>, T> accumulator = (acc, value) -> acc.add(value);
+      BiConsumer<Accumulator<T, A>, T> accumulator = Accumulator::add;
 
       BinaryOperator<Accumulator<T, A>> combiner = (acc1, acc2) -> acc1.combine(acc2, downstream.combiner());
 
@@ -86,5 +86,4 @@ public class PartitionStream {
          return this;
       }
    }
-
 }

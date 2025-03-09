@@ -7,12 +7,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static cn.tuyucheng.taketoday.streams.partitioning.PartitionStream.partitionList;
-import static cn.tuyucheng.taketoday.streams.partitioning.PartitionStream.partitionStream;
-import static cn.tuyucheng.taketoday.streams.partitioning.PartitionStream.partitionUsingGuava;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.assertj.core.api.Assertions.atIndex;
+import static cn.tuyucheng.taketoday.streams.partitioning.PartitionStream.*;
+import static org.assertj.core.api.Assertions.*;
 
 public class PartitionStreamsUnitTest {
 

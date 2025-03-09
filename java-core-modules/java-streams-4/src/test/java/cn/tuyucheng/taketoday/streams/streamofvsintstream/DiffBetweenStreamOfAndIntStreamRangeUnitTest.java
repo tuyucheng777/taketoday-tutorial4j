@@ -29,7 +29,7 @@ public class DiffBetweenStreamOfAndIntStreamRangeUnitTest {
       intStreamByRange.peek(intStreamPeekResult::add)
             .sorted()
             .findFirst();
-      assertEquals(Arrays.asList(1), intStreamPeekResult);
+      assertEquals(List.of(1), intStreamPeekResult);
    }
 
    @Test
@@ -42,12 +42,12 @@ public class DiffBetweenStreamOfAndIntStreamRangeUnitTest {
       // First, the regular Stream
       normalStream.peek(normalStreamPeekResult::add)
             .findFirst();
-      assertEquals(Arrays.asList(1), normalStreamPeekResult);
+      assertEquals(List.of(1), normalStreamPeekResult);
 
       // Then, the IntStream
       intStreamByRange.peek(intStreamPeekResult::add)
             .findFirst();
-      assertEquals(Arrays.asList(1), intStreamPeekResult);
+      assertEquals(List.of(1), intStreamPeekResult);
    }
 
    @Test
@@ -61,6 +61,6 @@ public class DiffBetweenStreamOfAndIntStreamRangeUnitTest {
             .sorted()
             .findFirst();
 
-      assertEquals(Arrays.asList("AAA"), peekResult);
+      assertEquals(List.of("AAA"), peekResult);
    }
 }

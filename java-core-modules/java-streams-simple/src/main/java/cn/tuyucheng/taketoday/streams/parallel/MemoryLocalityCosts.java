@@ -48,5 +48,4 @@ public class MemoryLocalityCosts {
    public static void localityIntegerArrayParallel() {
       Arrays.stream(integerArray).parallel().reduce(0, Integer::sum);
    }
-
 }

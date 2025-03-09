@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.stream;
 
 import com.codepoetics.protonpack.Indexed;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class StreamIndicesUnitTest {
 
@@ -40,9 +40,7 @@ public class StreamIndicesUnitTest {
    @Test
    public void givenList_whenCalled_thenReturnListOfEvenIndexedStrings() {
       List<String> names = Arrays.asList("Afrim", "Bashkim", "Besim", "Lulzim", "Durim", "Shpetim");
-      List<Indexed<String>> expectedResult = Arrays
-            .asList(Indexed.index(0, "Afrim"), Indexed.index(2, "Besim"), Indexed
-                  .index(4, "Durim"));
+      List<Indexed<String>> expectedResult = Arrays.asList(Indexed.index(0, "Afrim"), Indexed.index(2, "Besim"), Indexed.index(4, "Durim"));
       List<Indexed<String>> actualResult = StreamIndices.getEvenIndexedStrings(names);
 
       assertEquals(expectedResult, actualResult);
@@ -51,9 +49,7 @@ public class StreamIndicesUnitTest {
    @Test
    public void givenList_whenCalled_thenReturnListOfOddIndexedStrings() {
       List<String> names = Arrays.asList("Afrim", "Bashkim", "Besim", "Lulzim", "Durim", "Shpetim");
-      List<Indexed<String>> expectedResult = Arrays
-            .asList(Indexed.index(1, "Bashkim"), Indexed.index(3, "Lulzim"), Indexed
-                  .index(5, "Shpetim"));
+      List<Indexed<String>> expectedResult = Arrays.asList(Indexed.index(1, "Bashkim"), Indexed.index(3, "Lulzim"), Indexed.index(5, "Shpetim"));
       List<Indexed<String>> actualResult = StreamIndices.getOddIndexedStrings(names);
 
       assertEquals(expectedResult, actualResult);
@@ -66,5 +62,21 @@ public class StreamIndicesUnitTest {
       List<String> actualResult = StreamIndices.getOddIndexedStringsVersionTwo(names);
 
       assertEquals(expectedResult, actualResult);
+   }
+
+   @Test
+   public void whenCalledSequentially_thenReturnListOfEvenIndexedStrings() {
+      String[] names = {"Afrim", "Bashkim", "Besim", "Lulzim", "Durim", "Shpetim"};
+      List<String> expectedResult = Arrays.asList("Afrim", "Besim", "Durim");
+      List<String> actualResult = StreamIndices.getEvenIndexedStringsUsingAtomicInteger(names);
+      assertEquals(expectedResult, actualResult);
+   }
+
+   @Test
+   public void whenCalledInParallel_thenResultInconsistent() {
+      String[] names = {"Afrim", "Bashkim", "Besim", "Lulzim", "Durim", "Shpetim"};
+      List<String> result = StreamIndices.getEvenIndexedStringsAtomicIntegerParallel(names);
+      // The result can be inconsistent because of race conditions.
+      // assertNotEquals(Arrays.asList("Afrim", "Besim", "Durim"), result);
    }
 }

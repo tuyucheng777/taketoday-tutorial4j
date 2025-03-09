@@ -3,9 +3,6 @@ package cn.tuyucheng.taketoday.streams;
 import java.util.List;
 import java.util.stream.Stream;
 
-/**
- * Created by Alex Vengr
- */
 public class Product {
 
    private int price;

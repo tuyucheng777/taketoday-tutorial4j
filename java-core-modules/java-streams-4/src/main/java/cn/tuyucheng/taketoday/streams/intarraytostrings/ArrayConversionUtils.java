@@ -39,5 +39,4 @@ public class ArrayConversionUtils {
             .mapToObj(Integer::toString)
             .collect(Collectors.joining(", "));
    }
-
 }

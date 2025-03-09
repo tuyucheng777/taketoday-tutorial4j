@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.findfirstnullpointerexception;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,5 +38,4 @@ public class FindFirstNullPointerExceptionUnitTest {
 
       assertTrue(firstNonNullElement.isPresent());
    }
-
 }

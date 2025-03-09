@@ -11,5 +11,4 @@ public class SequentialStream {
             System.out.println(number + " " + Thread.currentThread().getName())
       );
    }
-
 }

@@ -42,5 +42,4 @@ class ForkJoinUnitTest {
       customThreadPool.shutdown();
       assertThat(sum).isEqualTo(10);
    }
-
 }

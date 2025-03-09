@@ -5,9 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FilterUtilsUnitTest {
 
@@ -84,5 +82,4 @@ public class FilterUtilsUnitTest {
    void givenOnlyOneElementMatchingPredicate_WhenFindUniqueElementMatchingPredicateWithCollectingAndThen_ThenGetIt() {
       assertEquals(5, FilterUtils.getUniqueElementMatchingPredicate_WithCollectingAndThen(getIntegers(), IS_STRICTLY_GREATER_THAN4));
    }
-
 }

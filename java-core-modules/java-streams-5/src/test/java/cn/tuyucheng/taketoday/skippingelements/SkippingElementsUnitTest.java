@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.skippingelements;
 
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -77,7 +76,7 @@ class SkippingElementsUnitTest {
    @ParameterizedTest
    @MethodSource("testSource")
    void givenListSkipNthElementInListWithFilterTestShouldFilterNthElement(Stream<String> input, List<String> expected, int n) {
-      final List<String> sourceList = input.collect(Collectors.toList());
+      final List<String> sourceList = input.toList();
       final List<String> actual = IntStream.range(0, sourceList.size())
             .filter(s -> (s + 1) % n == 0)
             .mapToObj(sourceList::get)
@@ -88,7 +87,7 @@ class SkippingElementsUnitTest {
    @ParameterizedTest
    @MethodSource("testSource")
    void givenListSkipNthElementInListWithIterateTestShouldFilterNthElement(Stream<String> input, List<String> expected, int n) {
-      final List<String> sourceList = input.collect(Collectors.toList());
+      final List<String> sourceList = input.toList();
       int limit = sourceList.size() / n;
       final List<String> actual = IntStream.iterate(n - 1, i -> (i + n))
             .limit(limit)
@@ -112,7 +111,7 @@ class SkippingElementsUnitTest {
    @ParameterizedTest
    @MethodSource("testSource")
    void givenListSkipNthElementInListWithForTestShouldFilterNthElement(Stream<String> input, List<String> expected, int n) {
-      final List<String> sourceList = input.collect(Collectors.toList());
+      final List<String> sourceList = input.toList();
       List<String> result = new ArrayList<>();
       for (int i = n - 1; i < sourceList.size(); i += n) {
          result.add(sourceList.get(i));

@@ -18,5 +18,4 @@ public class MyImmutableListCollector {
    public static <T> Collector<T, List<T>, List<T>> toImmutableList() {
       return toImmutableList(ArrayList::new);
    }
-
 }

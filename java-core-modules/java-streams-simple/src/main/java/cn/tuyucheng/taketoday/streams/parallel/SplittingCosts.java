@@ -23,5 +23,4 @@ public class SplittingCosts {
    public static void sourceSplittingIntStreamParallel() {
       IntStream.rangeClosed(1, 100).parallel().reduce(0, Integer::sum);
    }
-
 }

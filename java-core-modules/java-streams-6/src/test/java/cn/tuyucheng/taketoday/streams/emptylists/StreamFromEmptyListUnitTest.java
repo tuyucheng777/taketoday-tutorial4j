@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.streams.emptylists;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class StreamFromEmptyListUnitTest {
 

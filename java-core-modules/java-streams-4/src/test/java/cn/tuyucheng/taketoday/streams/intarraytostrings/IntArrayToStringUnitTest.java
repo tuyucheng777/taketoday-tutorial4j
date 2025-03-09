@@ -1,11 +1,9 @@
 package cn.tuyucheng.taketoday.streams.intarraytostrings;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
-import static cn.tuyucheng.taketoday.streams.intarraytostrings.ArrayConversionUtils.convertToString;
-import static cn.tuyucheng.taketoday.streams.intarraytostrings.ArrayConversionUtils.convertToStringArray;
-import static cn.tuyucheng.taketoday.streams.intarraytostrings.ArrayConversionUtils.convertToStringArrayWithBoxing;
+import static cn.tuyucheng.taketoday.streams.intarraytostrings.ArrayConversionUtils.*;
 
 public class IntArrayToStringUnitTest {
 
@@ -16,7 +14,7 @@ public class IntArrayToStringUnitTest {
 
       String[] strings = convertToStringArray(integerNumbers);
 
-      Assertions.assertArrayEquals(expectedOutput, strings);
+      Assert.assertArrayEquals(expectedOutput, strings);
    }
 
    @Test
@@ -26,7 +24,7 @@ public class IntArrayToStringUnitTest {
 
       String[] strings = convertToStringArray(intNumbers);
 
-      Assertions.assertArrayEquals(expectedOutput, strings);
+      Assert.assertArrayEquals(expectedOutput, strings);
    }
 
    @Test
@@ -36,7 +34,7 @@ public class IntArrayToStringUnitTest {
 
       String[] strings = convertToStringArrayWithBoxing(intNumbers);
 
-      Assertions.assertArrayEquals(expectedOutput, strings);
+      Assert.assertArrayEquals(expectedOutput, strings);
    }
 
    @Test
@@ -46,7 +44,6 @@ public class IntArrayToStringUnitTest {
 
       String string = convertToString(intNumbers);
 
-      Assertions.assertEquals(expectedOutput, string);
+      Assert.assertEquals(expectedOutput, string);
    }
-
 }

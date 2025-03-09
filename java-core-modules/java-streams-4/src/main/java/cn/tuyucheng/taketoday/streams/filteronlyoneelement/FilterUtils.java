@@ -10,12 +10,12 @@ public class FilterUtils {
 
    public static <T> Optional<T> findUniqueElementMatchingPredicate_WithReduction(Stream<T> elements, Predicate<T> predicate) {
       return elements.filter(predicate)
-            .collect(Collectors.reducing((a, b) -> null));
+            .collect(Collectors.reducing((_, _) -> null));
    }
 
    public static <T> T getUniqueElementMatchingPredicate_WithReduction(Stream<T> elements, Predicate<T> predicate) {
       return elements.filter(predicate)
-            .reduce((a, b) -> {
+            .reduce((_, _) -> {
                throw new IllegalStateException("Too many elements match the predicate");
             })
             .orElseThrow(() -> new IllegalStateException("No element matches the predicate"));
@@ -41,10 +41,9 @@ public class FilterUtils {
    private static <T> T getUniqueElement(List<T> elements) {
       if (elements.size() > 1) {
          throw new IllegalStateException("Too many elements match the predicate");
-      } else if (elements.size() == 0) {
+      } else if (elements.isEmpty()) {
          throw new IllegalStateException("No element matches the predicate");
       }
       return elements.get(0);
    }
-
 }

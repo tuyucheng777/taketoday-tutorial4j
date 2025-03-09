@@ -47,5 +47,4 @@ class Java8MapAndFlatMapUnitTest {
       assertEquals(Optional.of("STRING"), Optional.of("string")
             .flatMap(s -> Optional.of("STRING")));
    }
-
 }

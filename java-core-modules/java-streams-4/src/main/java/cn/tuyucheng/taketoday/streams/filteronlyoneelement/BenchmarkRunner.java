@@ -52,5 +52,4 @@ public class BenchmarkRunner {
          blackhole.consume(exception);
       }
    }
-
 }

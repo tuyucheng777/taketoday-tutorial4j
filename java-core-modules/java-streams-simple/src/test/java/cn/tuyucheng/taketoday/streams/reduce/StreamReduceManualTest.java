@@ -4,7 +4,7 @@ import cn.tuyucheng.taketoday.streams.reduce.entities.Rating;
 import cn.tuyucheng.taketoday.streams.reduce.entities.Review;
 import cn.tuyucheng.taketoday.streams.reduce.entities.User;
 import cn.tuyucheng.taketoday.streams.reduce.utilities.NumberUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;

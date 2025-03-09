@@ -1,14 +1,13 @@
 package cn.tuyucheng.taketoday.streams.primitivestreams;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class PrimitiveStreamsUnitTest {
 
@@ -40,7 +39,7 @@ public class PrimitiveStreamsUnitTest {
    public void givenAnArrayOfIntegersWhenAvgIsCalledThenCorrectAvgIsReturned() {
       double avg = streams.avg(20, 98, 12, 7, 35);
 
-      assertTrue(34.4 == avg);
+      assertEquals(34.4, avg, 0.0);
    }
 
    @Test
@@ -64,7 +63,6 @@ public class PrimitiveStreamsUnitTest {
 
    @Test
    public void givenAnArrayWhenSumIsCalledThenTheCorrectSumIsReturned() {
-
       int sum = Stream.of(33, 45).mapToInt(i -> i).sum();
 
       assertEquals(78, sum);
@@ -79,7 +77,7 @@ public class PrimitiveStreamsUnitTest {
       assertEquals(expected, evenInts);
    }
 
-   class Person {
+   static class Person {
       private int age;
 
       Person(int age) {

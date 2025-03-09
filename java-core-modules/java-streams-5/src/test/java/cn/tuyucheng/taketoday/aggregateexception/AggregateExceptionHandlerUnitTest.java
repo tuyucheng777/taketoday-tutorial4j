@@ -3,7 +3,7 @@ package cn.tuyucheng.taketoday.aggregateexception;
 import cn.tuyucheng.taketoday.aggregateexception.entity.Result;
 import io.vavr.control.Either;
 import io.vavr.control.Try;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,8 +13,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.Assert.assertEquals;
 
 public class AggregateExceptionHandlerUnitTest {
    private static final Logger logger = LoggerFactory.getLogger(AggregateExceptionHandlerUnitTest.class);
@@ -23,7 +22,7 @@ public class AggregateExceptionHandlerUnitTest {
    public void givenExtractedMethod_whenFoundEx_thenSuppressExIntoRuntimeEx() {
       String[] strings = {"1", "2", "3", "a", "b", "c"};
       RuntimeException runEx = Arrays.stream(strings)
-            .map(str -> callProcessThrowsExAndNoOutput(str))
+            .map(AggregateExceptionHandlerUnitTest::callProcessThrowsExAndNoOutput)
             .filter(Objects::nonNull)
             .reduce(new RuntimeException("Errors Occurred"), (o1, o2) -> {
                o1.addSuppressed(o2);
@@ -59,7 +58,7 @@ public class AggregateExceptionHandlerUnitTest {
    public void givenProcessMethod_whenStreamResultHasExAndOutput_thenHandleExceptionListAndOutputList() {
       List<String> strings = List.of("1", "2", "3", "a", "b", "c");
       Map map = strings.stream()
-            .map(s -> processReturnsExAndOutput(s))
+            .map(AggregateExceptionHandlerUnitTest::processReturnsExAndOutput)
             .collect(Collectors.partitioningBy(o -> o instanceof RuntimeException, Collectors.toList()));
 
       List<RuntimeException> exceptions = (List<RuntimeException>) map.getOrDefault(Boolean.TRUE, List.of());
@@ -72,7 +71,7 @@ public class AggregateExceptionHandlerUnitTest {
       List<String> strings = List.of("1", "2", "3", "a", "b", "c");
       strings.stream()
             .map(CustomMapper.mapper(Integer::parseInt))
-            .collect(Collectors.collectingAndThen(Collectors.toList(), list -> handleErrorsAndOutputForResult(list)));
+            .collect(Collectors.collectingAndThen(Collectors.toList(), AggregateExceptionHandlerUnitTest::handleErrorsAndOutputForResult));
    }
 
    @Test
@@ -89,7 +88,7 @@ public class AggregateExceptionHandlerUnitTest {
       strings.stream()
             .map(str -> Try.of(() -> Integer.parseInt(str)).toEither())
             .collect(Collectors.collectingAndThen(Collectors.partitioningBy(Either::isLeft, Collectors.toList()),
-                  map -> handleErrorsAndOutputForEither(map)));
+                  AggregateExceptionHandlerUnitTest::handleErrorsAndOutputForEither));
    }
 
    private static void processThrowsExAndNoOutput(String input) {

@@ -10,13 +10,11 @@ import java.util.stream.Stream;
 public class EmptyStreams {
 
    public static void main(String[] args) {
-
       createEmptyStreams();
       checkForEmptyStreamUsingSupplier();
    }
 
    private static void createEmptyStreams() {
-
       // Using Stream.empty()
       Stream<String> emptyStream = Stream.empty();
       System.out.println(emptyStream.findAny().isEmpty());

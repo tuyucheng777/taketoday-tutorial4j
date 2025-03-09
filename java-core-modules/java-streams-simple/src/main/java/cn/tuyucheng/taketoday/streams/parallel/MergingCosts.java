@@ -6,6 +6,7 @@ import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -39,7 +40,7 @@ public class MergingCosts {
    @BenchmarkMode(Mode.AverageTime)
    @OutputTimeUnit(TimeUnit.NANOSECONDS)
    public static void mergingCostsGroupingSequential() {
-      arrayListOfNumbers.stream().collect(Collectors.toSet());
+      new HashSet<>(arrayListOfNumbers);
    }
 
    @Benchmark
@@ -48,5 +49,4 @@ public class MergingCosts {
    public static void mergingCostsGroupingParallel() {
       arrayListOfNumbers.stream().parallel().collect(Collectors.toSet());
    }
-
 }

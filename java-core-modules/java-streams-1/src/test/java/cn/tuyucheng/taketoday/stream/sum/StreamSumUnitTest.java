@@ -16,7 +16,6 @@ public class StreamSumUnitTest {
       List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
       Integer sum = StreamSumCalculator.getSumUsingCustomizedAccumulator(integers);
       assertEquals(15, sum.intValue());
-
    }
 
    @Test
@@ -58,7 +57,6 @@ public class StreamSumUnitTest {
 
       Integer sum = StreamSumCalculatorWithObject.getSumUsingCustomizedAccumulator(items);
       assertEquals(90, sum.intValue());
-
    }
 
    @Test
@@ -132,5 +130,4 @@ public class StreamSumUnitTest {
       Integer sum = StreamSumCalculator.getSumIntegersFromString(string);
       assertEquals(110, sum.intValue());
    }
-
 }

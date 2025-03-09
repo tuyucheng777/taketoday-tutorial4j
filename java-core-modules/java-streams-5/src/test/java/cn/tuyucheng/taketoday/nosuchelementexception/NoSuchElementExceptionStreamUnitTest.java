@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.nosuchelementexception;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -54,9 +54,8 @@ public class NoSuchElementExceptionStreamUnitTest {
             .filter(name -> name.equals("Liam"))
             .findFirst();
 
-      String name = emptyOptional.orElseGet(() -> "unknown");
+      String name = emptyOptional.orElse("unknown");
 
       assertEquals("unknown", name);
    }
-
 }

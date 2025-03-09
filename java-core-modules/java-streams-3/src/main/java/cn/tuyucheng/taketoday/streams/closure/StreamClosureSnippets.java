@@ -23,7 +23,7 @@ public class StreamClosureSnippets {
       Arrays.stream(colors).map(String::toUpperCase).forEach(System.out::println);
 
       // IO-Based Streams Should be Closed via Try with Resources
-      try (Stream<String> lines = Files.lines(Paths.get("/path/tp/file"))) {
+      try (Stream<String> _ = Files.lines(Paths.get("/path/tp/file"))) {
          // lines will be closed after exiting the try block
       }
    }

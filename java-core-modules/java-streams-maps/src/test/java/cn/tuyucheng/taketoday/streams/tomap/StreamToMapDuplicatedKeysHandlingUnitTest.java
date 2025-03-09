@@ -32,10 +32,8 @@ class City {
    public boolean equals(Object o) {
       if (this == o)
          return true;
-      if (!(o instanceof City))
+      if (!(o instanceof City city))
          return false;
-
-      City city = (City) o;
 
       if (!name.equals(city.name))
          return false;
@@ -51,26 +49,21 @@ class City {
 }
 
 public class StreamToMapDuplicatedKeysHandlingUnitTest {
-   // @formatter:off
-    private final List<City> CITY_INPUT = Arrays.asList(
-      new City("New York City", "USA"),
-      new City("Shanghai", "China"),
-      new City("Hamburg", "Germany"),
-      new City("Paris", "France"),
-      new City("Paris", "Texas, USA"));
-    // @formatter:on
+   private final List<City> CITY_INPUT = Arrays.asList(
+         new City("New York City", "USA"),
+         new City("Shanghai", "China"),
+         new City("Hamburg", "Germany"),
+         new City("Paris", "France"),
+         new City("Paris", "Texas, USA"));
 
    @Test
    void givenCityList_whenUsingGroupingBy_shouldContainExpectedCity() {
       Map<String, List<City>> resultMap = CITY_INPUT.stream()
             .collect(groupingBy(City::getName));
       assertEquals(4, resultMap.size());
-      // @formatter:off
-        assertEquals(Arrays.asList(
-          new City("Paris", "France"),
-          new City("Paris", "Texas, USA")), resultMap.get("Paris"));
-        // @formatter:on
-
+      assertEquals(Arrays.asList(
+            new City("Paris", "France"),
+            new City("Paris", "Texas, USA")), resultMap.get("Paris"));
    }
 
    @Test
@@ -93,5 +86,4 @@ public class StreamToMapDuplicatedKeysHandlingUnitTest {
       assertEquals(4, resultMap2.size());
       assertEquals(new City("Paris", "France and Texas, USA"), resultMap3.get("Paris"));
    }
-
 }

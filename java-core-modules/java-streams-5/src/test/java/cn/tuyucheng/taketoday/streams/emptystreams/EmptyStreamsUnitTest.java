@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.streams.emptystreams;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,20 +9,19 @@ import java.util.function.Supplier;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class EmptyStreamsUnitTest {
 
    @Test
    public void givenEmptyStreams_findAnyReturnsAnEmptyOptional() {
-
       Stream<String> emptyStream = Stream.empty();
       assertTrue(emptyStream.findAny().isEmpty());
 
       emptyStream = Stream.of();
       assertTrue(emptyStream.findAny().isEmpty());
 
-      IntStream emptyIntStream = IntStream.of(new int[]{});
+      IntStream emptyIntStream = IntStream.of();
       assertTrue(emptyIntStream.findAny().isEmpty());
 
       emptyIntStream = Arrays.stream(new int[]{});

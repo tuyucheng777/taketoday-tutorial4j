@@ -3,13 +3,13 @@ package cn.tuyucheng.taketoday.streams.firstmatchingelement;
 
 import com.google.common.collect.Iterables;
 import org.apache.commons.collections4.IterableUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class FirstMatchingElementUnitTest {
 
@@ -24,7 +24,7 @@ public class FirstMatchingElementUnitTest {
                counter.getAndIncrement();
                return searchName.equals(user.getUserName());
             })
-            .mapToInt(user -> counter.get())
+            .mapToInt(_ -> counter.get())
             .findFirst()
             .orElse(-1);
 

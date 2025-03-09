@@ -219,6 +219,7 @@
       <module>java-streams-4</module>
       <module>java-streams-5</module>
       <module>java-streams-6</module>
+      <module>java-streams-7</module>
       <module>java-streams-collect</module>
       <module>java-streams-maps</module>
       <module>java-streams-simple</module>

@@ -11,5 +11,4 @@ public class ParallelStream {
             System.out.println(number + " " + Thread.currentThread().getName())
       );
    }
-
 }

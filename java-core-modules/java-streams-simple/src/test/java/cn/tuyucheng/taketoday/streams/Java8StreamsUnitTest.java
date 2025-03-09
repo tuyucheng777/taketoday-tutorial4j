@@ -8,12 +8,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class Java8StreamsUnitTest {
 
@@ -39,22 +36,22 @@ class Java8StreamsUnitTest {
    public void checkStreamCount_whenCreating_givenDifferentSources() {
       String[] arr = new String[]{"a", "b", "c"};
       Stream<String> streamArr = Arrays.stream(arr);
-      assertEquals(streamArr.count(), 3);
+      assertEquals(3, streamArr.count());
 
       Stream<String> streamOf = Stream.of("a", "b", "c");
-      assertEquals(streamOf.count(), 3);
+      assertEquals(3, streamOf.count());
 
       long count = list.stream()
             .distinct()
             .count();
-      assertEquals(count, 9);
+      assertEquals(9, count);
    }
 
    @Test
    void checkStreamCount_whenOperationFilter_thanCorrect() {
       Stream<String> streamFilter = list.stream()
-            .filter(element -> element.isEmpty());
-      assertEquals(streamFilter.count(), 2);
+            .filter(String::isEmpty);
+      assertEquals(2, streamFilter.count());
    }
 
    @Test
@@ -62,8 +59,8 @@ class Java8StreamsUnitTest {
       List<String> uris = new ArrayList<>();
       uris.add("C:\\My.txt");
       Stream<Path> streamMap = uris.stream()
-            .map(uri -> Paths.get(uri));
-      assertEquals(streamMap.count(), 1);
+            .map(Paths::get);
+      assertEquals(1, streamMap.count());
 
       List<Detail> details = new ArrayList<>();
       details.add(new Detail());
@@ -71,7 +68,7 @@ class Java8StreamsUnitTest {
       Stream<String> streamFlatMap = details.stream()
             .flatMap(detail -> detail.getParts()
                   .stream());
-      assertEquals(streamFlatMap.count(), 4);
+      assertEquals(4, streamFlatMap.count());
    }
 
    @Test
@@ -94,15 +91,15 @@ class Java8StreamsUnitTest {
       integers.add(1);
       integers.add(1);
       Integer reduced = integers.stream()
-            .reduce(23, (a, b) -> a + b);
+            .reduce(23, Integer::sum);
       assertTrue(reduced == 26);
    }
 
    @Test
    void checkStreamContains_whenOperationCollect_thenCorrect() {
       List<String> resultList = list.stream()
-            .map(element -> element.toUpperCase())
-            .collect(Collectors.toList());
+            .map(String::toUpperCase)
+            .toList();
       assertEquals(resultList.size(), list.size());
       assertTrue(resultList.contains(""));
    }
@@ -110,7 +107,7 @@ class Java8StreamsUnitTest {
    @Test
    public void checkParallelStream_whenDoWork() {
       list.parallelStream()
-            .forEach(element -> doWork(element));
+            .forEach(this::doWork);
    }
 
    private void doWork(String string) {

@@ -1,10 +1,6 @@
 package cn.tuyucheng.taketoday.streams.streamvscollection;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -34,7 +30,7 @@ public class StreamVsCollectionExample {
    }
 
    public static Map<String, String> userNameMap() {
-      return userNames().collect(Collectors.toMap(u1 -> u1.toString(), u1 -> u1.toString()));
+      return userNames().collect(Collectors.toMap(u1 -> u1, u1 -> u1));
    }
 
    public static Stream<String> filterUserNames() {
@@ -72,7 +68,6 @@ public class StreamVsCollectionExample {
    public static void tryStreamTraversal() {
       Stream<String> userNameStream = userNames();
       userNameStream.forEach(System.out::println);
-
       try {
          userNameStream.forEach(System.out::println);
       } catch (IllegalStateException e) {
@@ -86,9 +81,6 @@ public class StreamVsCollectionExample {
       tryStreamTraversal();
 
       Set<String> set = userNames().collect(Collectors.toCollection(TreeSet::new));
-      set.forEach(val -> System.out.println(val));
-
+      set.forEach(System.out::println);
    }
-
-
 }

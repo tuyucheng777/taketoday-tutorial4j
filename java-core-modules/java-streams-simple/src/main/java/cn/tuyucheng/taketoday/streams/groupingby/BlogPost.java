@@ -2,7 +2,6 @@ package cn.tuyucheng.taketoday.streams.groupingby;
 
 import java.util.IntSummaryStatistics;
 
-
 public class BlogPost {
 
    private String title;
@@ -13,17 +12,11 @@ public class BlogPost {
    record AuthPostTypesLikes(String author, BlogPostType type, int likes) {
    }
 
-   ;
-
    record PostCountTitlesLikesStats(long postCount, String titles, IntSummaryStatistics likesStats) {
    }
 
-   ;
-
    record TitlesBoundedSumOfLikes(String titles, int boundedSumOfLikes) {
    }
-
-   ;
 
    public BlogPost(String title, String author, BlogPostType type, int likes) {
       this.title = title;

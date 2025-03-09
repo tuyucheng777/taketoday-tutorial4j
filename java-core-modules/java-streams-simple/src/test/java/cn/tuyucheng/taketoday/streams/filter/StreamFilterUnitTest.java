@@ -1,10 +1,9 @@
 package cn.tuyucheng.taketoday.streams.filter;
 
+import org.junit.jupiter.api.Test;
 import com.pivovarit.function.ThrowingPredicate;
 import com.pivovarit.function.exception.WrappedException;
-import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -113,7 +112,7 @@ class StreamFilterUnitTest {
       assertThatThrownBy(() -> customers
             .stream()
             .filter((ThrowingPredicate.unchecked(Customer::hasValidProfilePhoto)))
-            .collect(Collectors.toList())).isInstanceOf(WrappedException.class);
+            .toList()).isInstanceOf(WrappedException.class);
    }
 
    @Test
@@ -129,7 +128,7 @@ class StreamFilterUnitTest {
             .filter(c -> {
                try {
                   return c.hasValidProfilePhoto();
-               } catch (IOException e) {
+               } catch (Exception e) {
                   // handle exception
                }
                return false;
@@ -150,10 +149,10 @@ class StreamFilterUnitTest {
             .filter(c -> {
                try {
                   return c.hasValidProfilePhoto();
-               } catch (IOException e) {
+               } catch (Exception e) {
                   throw new RuntimeException(e);
                }
             })
-            .collect(Collectors.toList())).isInstanceOf(RuntimeException.class);
+            .toList()).isInstanceOf(RuntimeException.class);
    }
 }
