@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS Pokemon
+(
+   id
+   UUID
+   PRIMARY
+   KEY,
+   name
+   VARCHAR
+(
+   50
+)
+   );
