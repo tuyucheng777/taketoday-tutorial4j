@@ -3,15 +3,17 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
+   <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
    <artifactId>spring-cloud-bus</artifactId>
    <version>1.0.0</version>
    <name>spring-cloud-bus</name>
    <packaging>pom</packaging>
 
    <parent>
-      <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
-      <artifactId>spring-cloud-modules</artifactId>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>parent-boot-3</artifactId>
       <version>1.0.0</version>
+      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <modules>
@@ -32,6 +34,7 @@
    </dependencyManagement>
 
    <properties>
-      <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
+      <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
+      <spring-boot.version>3.4.2</spring-boot.version>
    </properties>
 </project>

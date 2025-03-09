@@ -42,8 +42,4 @@
          <scope>runtime</scope>
       </dependency>
    </dependencies>
-
-   <properties>
-      <spring-cloud-task-starter.version>2.2.3.RELEASE</spring-cloud-task-starter.version>
-   </properties>
 </project>

@@ -9,14 +9,15 @@
    <packaging>pom</packaging>
 
    <parent>
-      <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
-      <artifactId>spring-cloud-modules</artifactId>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>parent-boot-3</artifactId>
       <version>1.0.0</version>
+      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <modules>
       <module>spring-cloud-task-batch</module>
-      <module>spring-cloud-task-sink</module>
+      <module>spring-cloud-task-stream-bridge</module>
    </modules>
 
    <dependencyManagement>
@@ -46,7 +47,7 @@
    </dependencyManagement>
 
    <properties>
-      <spring-cloud-dependencies.version>2021.0.0</spring-cloud-dependencies.version>
-      <spring-cloud-task.version>2.4.0</spring-cloud-task.version>
+      <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
+      <spring-cloud-task.version>3.1.1</spring-cloud-task.version>
    </properties>
 </project>

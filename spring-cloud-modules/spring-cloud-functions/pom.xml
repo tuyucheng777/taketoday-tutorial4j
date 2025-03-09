@@ -52,6 +52,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
+            <version>${maven-deploy-plugin.version}</version>
             <configuration>
                <skip>true</skip>
             </configuration>
@@ -70,6 +71,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
+            <version>${maven-shade-plugin.version}</version>
             <configuration>
                <createDependencyReducedPom>false</createDependencyReducedPom>
                <shadedArtifactAttached>true</shadedArtifactAttached>
@@ -84,5 +86,7 @@
       <aws-lambda-events.version>2.0.2</aws-lambda-events.version>
       <aws-lambda-java-core.version>1.1.0</aws-lambda-java-core.version>
       <spring-boot-thin.version>1.0.10.RELEASE</spring-boot-thin.version>
+      <maven-deploy-plugin.version>3.1.2</maven-deploy-plugin.version>
+      <maven-shade-plugin.version>3.5.3</maven-shade-plugin.version>
    </properties>
 </project>

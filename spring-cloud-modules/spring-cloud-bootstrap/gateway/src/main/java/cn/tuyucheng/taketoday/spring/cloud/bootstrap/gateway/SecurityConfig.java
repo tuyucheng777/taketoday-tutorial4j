@@ -1,7 +1,5 @@
 package cn.tuyucheng.taketoday.spring.cloud.bootstrap.gateway;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
@@ -13,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @EnableWebFluxSecurity
 @Configuration
@@ -39,12 +39,12 @@ public class SecurityConfig {
    @Bean
    public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
       http.formLogin()
-            .authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/home/index.html"))
+            .authenticationSuccessHandler(new RedirectServerAuthenticationSuccessHandler("/home/browser/index.html"))
             .and()
             .authorizeExchange()
-            .pathMatchers("/book-service/**", "/rating-service/**", "/login*", "/")
+            .pathMatchers("/book-service/**", "/login*", "/")
             .permitAll()
-            .pathMatchers("/eureka/**")
+            .pathMatchers("/rating-service/**")
             .hasRole("ADMIN")
             .anyExchange()
             .authenticated()

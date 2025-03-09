@@ -10,7 +10,7 @@ import com.amazonaws.services.sns.AmazonSNS;
 import com.amazonaws.services.sns.AmazonSNSClientBuilder;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.BeforeClass;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,7 @@ import java.util.Properties;
 /**
  * This class is needed only for testing. This is because we need to
  * create AWS resources before Spring's Application context is created
- * in a {@link BeforeAll} method. Since Autowired dependencies don't
+ * in a {@link BeforeClass} method. Since Autowired dependencies don't
  * work in static context, we will use this class for AWS clients.
  */
 public class SpringCloudAwsTestUtil {

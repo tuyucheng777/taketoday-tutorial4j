@@ -13,7 +13,7 @@ import org.apache.avro.specific.SpecificData;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Employee extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-   private static final long serialVersionUID = -2290873680233940822L;
+   private static final long serialVersionUID = 7340575283344282036L;
    public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Employee\",\"namespace\":\"cn.tuyucheng.taketoday.schema\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"department\",\"type\":\"string\",\"default\":\"IT \"},{\"name\":\"designation\",\"type\":\"string\",\"default\":\"Software Engineer\"}]}");
 
    public static org.apache.avro.Schema getClassSchema() {
@@ -236,8 +236,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     *
     * @return A new Employee RecordBuilder
     */
-   public static cn.tuyucheng.taketoday.schema.Employee.Builder newBuilder() {
-      return new cn.tuyucheng.taketoday.schema.Employee.Builder();
+   public static Employee.Builder newBuilder() {
+      return new Employee.Builder();
    }
 
    /**
@@ -246,8 +246,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     * @param other The existing builder to copy.
     * @return A new Employee RecordBuilder
     */
-   public static cn.tuyucheng.taketoday.schema.Employee.Builder newBuilder(cn.tuyucheng.taketoday.schema.Employee.Builder other) {
-      return new cn.tuyucheng.taketoday.schema.Employee.Builder(other);
+   public static Employee.Builder newBuilder(Employee.Builder other) {
+      return new Employee.Builder(other);
    }
 
    /**
@@ -256,8 +256,8 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
     * @param other The existing instance to copy.
     * @return A new Employee RecordBuilder
     */
-   public static cn.tuyucheng.taketoday.schema.Employee.Builder newBuilder(cn.tuyucheng.taketoday.schema.Employee other) {
-      return new cn.tuyucheng.taketoday.schema.Employee.Builder(other);
+   public static Employee.Builder newBuilder(Employee other) {
+      return new Employee.Builder(other);
    }
 
    /**
@@ -284,7 +284,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @param other The existing Builder to copy.
        */
-      private Builder(cn.tuyucheng.taketoday.schema.Employee.Builder other) {
+      private Builder(Employee.Builder other) {
          super(other);
          if (isValidValue(fields()[0], other.id)) {
             this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -313,7 +313,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @param other The existing instance to copy.
        */
-      private Builder(cn.tuyucheng.taketoday.schema.Employee other) {
+      private Builder(Employee other) {
          super(SCHEMA$);
          if (isValidValue(fields()[0], other.id)) {
             this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -352,7 +352,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        * @param value The value of 'id'.
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder setId(int value) {
+      public Employee.Builder setId(int value) {
          validate(fields()[0], value);
          this.id = value;
          fieldSetFlags()[0] = true;
@@ -374,7 +374,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder clearId() {
+      public Employee.Builder clearId() {
          fieldSetFlags()[0] = false;
          return this;
       }
@@ -394,7 +394,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        * @param value The value of 'firstName'.
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder setFirstName(java.lang.CharSequence value) {
+      public Employee.Builder setFirstName(java.lang.CharSequence value) {
          validate(fields()[1], value);
          this.firstName = value;
          fieldSetFlags()[1] = true;
@@ -416,7 +416,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder clearFirstName() {
+      public Employee.Builder clearFirstName() {
          firstName = null;
          fieldSetFlags()[1] = false;
          return this;
@@ -437,7 +437,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        * @param value The value of 'lastName'.
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder setLastName(java.lang.CharSequence value) {
+      public Employee.Builder setLastName(java.lang.CharSequence value) {
          validate(fields()[2], value);
          this.lastName = value;
          fieldSetFlags()[2] = true;
@@ -459,7 +459,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder clearLastName() {
+      public Employee.Builder clearLastName() {
          lastName = null;
          fieldSetFlags()[2] = false;
          return this;
@@ -480,7 +480,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        * @param value The value of 'department'.
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder setDepartment(java.lang.CharSequence value) {
+      public Employee.Builder setDepartment(java.lang.CharSequence value) {
          validate(fields()[3], value);
          this.department = value;
          fieldSetFlags()[3] = true;
@@ -502,7 +502,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder clearDepartment() {
+      public Employee.Builder clearDepartment() {
          department = null;
          fieldSetFlags()[3] = false;
          return this;
@@ -523,7 +523,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        * @param value The value of 'designation'.
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder setDesignation(java.lang.CharSequence value) {
+      public Employee.Builder setDesignation(java.lang.CharSequence value) {
          validate(fields()[4], value);
          this.designation = value;
          fieldSetFlags()[4] = true;
@@ -545,7 +545,7 @@ public class Employee extends org.apache.avro.specific.SpecificRecordBase implem
        *
        * @return This builder.
        */
-      public cn.tuyucheng.taketoday.schema.Employee.Builder clearDesignation() {
+      public Employee.Builder clearDesignation() {
          designation = null;
          fieldSetFlags()[4] = false;
          return this;

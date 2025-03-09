@@ -3,11 +3,11 @@
     <div class="card-block">
       <div *ngIf="booksToEdit.indexOf(i) === -1 ; then bookView else bookEdit"></div>
       <ng-template #bookView>
-        <button appClickStopPropagation *ngIf="principal.isAdmin()" type="button"
-                class="btn btn-danger custom-close" (click)="delete(i)">Delete
+        <button appClickStopPropagation *ngIf="principal.isAdmin()" type="button" class="btn btn-danger custom-close"
+                (click)="delete(i)">Delete
         </button>
-        <button appClickStopPropagation *ngIf="principal.isAdmin()" type="button"
-                class="btn btn-warning custom-close" (click)="editBook(i)">Edit
+        <button appClickStopPropagation *ngIf="principal.isAdmin()" type="button" class="btn btn-warning custom-close"
+                (click)="editBook(i)">Edit
         </button>
         <h4 class="card-title">Title: {{book.title}}</h4>
         <h6 class="card-subtitle mb-2 text-muted">Author: {{book.author}}</h6>
@@ -19,16 +19,15 @@
         <form appClickStopPropagation (ngSubmit)="saveBook(i, newBooks[i])" class="mt-2 mt-md-0" #f1="ngForm">
           <div class="form-group">
             <label for="title">Title:</label>
-            <input id="title" name="title" [(ngModel)]="newBooks[i].title" required
-                   class="form-control mr-sm-2" type="text">
+            <input id="title" name="title" [(ngModel)]="newBooks[i].title" required class="form-control mr-sm-2"
+                   type="text">
           </div>
           <div class="form-group">
             <label for="author">Author:</label>
-            <input id="author" name="author" [(ngModel)]="newBooks[i].author" required
-                   class="form-control mr-sm-2" type="text">
+            <input id="author" name="author" [(ngModel)]="newBooks[i].author" required class="form-control mr-sm-2"
+                   type="text">
           </div>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!f1.valid">Save
-          </button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!f1.valid">Save</button>
         </form>
       </ng-template>
 
@@ -43,23 +42,21 @@
         <h4 (click)="activateAddNewBook()" class="card-title center-block">Add New Book</h4>
       </ng-template>
       <ng-template #bookAdd>
-        <button appClickStopPropagation type="button" class="btn btn-secondary custom-close"
-                (click)="cancelAddBook()">Cancel
+        <button appClickStopPropagation type="button" class="btn btn-secondary custom-close" (click)="cancelAddBook()">
+          Cancel
         </button>
-        <form appClickStopPropagation (ngSubmit)="addNewBook(newBook, titleNewBook)" class="mt-2 mt-md-0"
-              #f2="ngForm">
+        <form appClickStopPropagation (ngSubmit)="addNewBook(newBook, titleNewBook)" class="mt-2 mt-md-0" #f2="ngForm">
           <div class="form-group">
             <label for="titleNewBook">Title:</label>
-            <input id="titleNewBook" name="title" [(ngModel)]="newBook.title" required
-                   class="form-control mr-sm-2" type="text" #titleNewBook>
+            <input id="titleNewBook" name="title" [(ngModel)]="newBook.title" required class="form-control mr-sm-2"
+                   type="text" #titleNewBook>
           </div>
           <div class="form-group">
             <label for="authorNewBook">Author:</label>
-            <input id="authorNewBook" name="author" [(ngModel)]="newBook.author" required
-                   class="form-control mr-sm-2" type="text">
+            <input id="authorNewBook" name="author" [(ngModel)]="newBook.author" required class="form-control mr-sm-2"
+                   type="text">
           </div>
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!f2.valid">Save
-          </button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" [disabled]="!f2.valid">Save</button>
         </form>
       </ng-template>
 

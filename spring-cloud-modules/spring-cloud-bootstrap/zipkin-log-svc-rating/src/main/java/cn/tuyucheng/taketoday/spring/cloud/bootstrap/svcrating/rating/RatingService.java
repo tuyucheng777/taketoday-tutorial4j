@@ -1,16 +1,15 @@
 package cn.tuyucheng.taketoday.spring.cloud.bootstrap.svcrating.rating;
 
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.base.Preconditions;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.common.base.Preconditions;
-
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 @Transactional(readOnly = true)
@@ -71,10 +70,8 @@ public class RatingService {
       final Rating rating = findRatingById(ratingId);
       updates.keySet()
             .forEach(key -> {
-               switch (key) {
-                  case "stars":
-                     rating.setStars(Integer.parseInt(updates.get(key)));
-                     break;
+               if (key.equals("stars")) {
+                  rating.setStars(Integer.parseInt(updates.get(key)));
                }
             });
       Rating persisted = ratingRepository.save(rating);
@@ -85,7 +82,7 @@ public class RatingService {
    @Transactional(propagation = Propagation.REQUIRED)
    public Rating updateRating(Rating rating, Long ratingId) {
       Preconditions.checkNotNull(rating);
-      Preconditions.checkState(rating.getId() == ratingId);
+      Preconditions.checkState(Objects.equals(rating.getId(), ratingId));
       Preconditions.checkNotNull(ratingRepository.findById(ratingId));
       return ratingRepository.save(rating);
    }

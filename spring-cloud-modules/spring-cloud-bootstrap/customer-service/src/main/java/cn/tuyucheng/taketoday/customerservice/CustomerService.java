@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,6 @@ public class CustomerService {
    private OrderClient orderClient;
 
    private List<Customer> customers = Arrays.asList(
-
          new Customer(1, "John", "Smith"),
          new Customer(2, "Deny", "Dominic"));
 
@@ -42,7 +42,6 @@ public class CustomerService {
 
    @PostMapping(value = "/order")
    public String sendOrder(@RequestBody Map<String, Object> body) {
-
       OrderDTO dto = new OrderDTO();
       dto.setCustomerId((Integer) body.get("customerId"));
       dto.setItemId((String) body.get("itemId"));

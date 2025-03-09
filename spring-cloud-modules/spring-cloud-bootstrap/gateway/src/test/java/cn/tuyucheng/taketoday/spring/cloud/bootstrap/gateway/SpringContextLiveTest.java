@@ -11,8 +11,8 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  * <br>
  * For more info:
- * https://www.baeldung.com/spring-cloud-netflix-eureka
- * https://www.baeldung.com/spring-cloud-gateway-pattern
+ * https://www.taketoday.com/spring-cloud-netflix-eureka
+ * https://www.taketoday.com/spring-cloud-gateway-pattern
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest

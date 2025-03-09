@@ -35,6 +35,11 @@
 
    <dependencies>
       <dependency>
+         <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
+         <artifactId>spring-cloud-hystrix-rest-producer</artifactId>
+         <version>${rest-producer.version}</version>
+      </dependency>
+      <dependency>
          <groupId>org.springframework.cloud</groupId>
          <artifactId>spring-cloud-starter-hystrix</artifactId>
          <version>${spring-cloud-starter-hystrix.version}</version>
@@ -64,7 +69,6 @@
    </dependencies>
 
    <properties>
-      <!-- we need the Mockito version provided by Spring Boot -->
-      <mockito.version>1.10.19</mockito.version>
+      <rest-producer.version>1.0.0</rest-producer.version>
    </properties>
 </project>

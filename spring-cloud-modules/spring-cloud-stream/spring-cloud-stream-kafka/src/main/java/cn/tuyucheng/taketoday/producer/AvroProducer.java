@@ -33,6 +33,7 @@ public class AvroProducer {
             .setHeader(KafkaHeaders.MESSAGE_KEY, employeeKey)
             .build();
 
-      processor.output().send(message);
+      processor.output()
+            .send(message);
    }
 }

@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.spring.cloud.aws.sqs.introduction;
 
-import cn.tuyucheng.taketoday.spring.cloud.aws.sqs.BaseSqsLiveTest;
 import io.awspring.cloud.sqs.operations.SqsTemplate;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -18,7 +17,7 @@ import static org.awaitility.Awaitility.await;
 
 @ActiveProfiles("introduction")
 @SpringBootTest
-public class SpringCloudAwsSQSLiveTest extends BaseSqsLiveTest {
+public class SpringCloudAwsSQSLiveTest {
 
    private static final Logger logger = LoggerFactory.getLogger(SpringCloudAwsSQSLiveTest.class);
 
@@ -52,7 +51,7 @@ public class SpringCloudAwsSQSLiveTest extends BaseSqsLiveTest {
       // given
       String userId = UUID.randomUUID()
             .toString();
-      var payload = new UserCreatedEvent(userId, "John", "john@baeldung.com");
+      var payload = new UserCreatedEvent(userId, "John", "john@taketoday.com");
 
       // when
       sqsTemplate.send(to -> to.queue(eventQueuesProperties.getUserCreatedRecordQueue())
@@ -70,7 +69,7 @@ public class SpringCloudAwsSQSLiveTest extends BaseSqsLiveTest {
       // given
       String userId = UUID.randomUUID()
             .toString();
-      var payload = new UserCreatedEvent(userId, "John", "john@baeldung.com");
+      var payload = new UserCreatedEvent(userId, "John", "john@taketoday.com");
       var headers = Map.<String, Object>of(EVENT_TYPE_CUSTOM_HEADER, "UserCreatedEvent");
 
       // when

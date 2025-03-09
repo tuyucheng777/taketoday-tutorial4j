@@ -2,6 +2,7 @@ package cn.tuyucheng.taketoday.springcloudgateway.webfilters;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +14,13 @@ import org.springframework.http.*;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.web.reactive.server.WebTestClient.ResponseSpec;
+import org.springframework.web.reactive.function.BodyInserters;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("webfilters")
-class WebFilterFactoriesLiveTest {
+@ActiveProfiles({"webfilters", "nosecurity"})
+public class WebFilterFactoriesLiveTest {
 
    @LocalServerPort
    String port;
@@ -31,14 +32,14 @@ class WebFilterFactoriesLiveTest {
    private TestRestTemplate restTemplate;
 
    @BeforeEach
-   void configureClient() {
+   public void configureClient() {
       client = WebTestClient.bindToServer()
             .baseUrl("http://localhost:" + port)
             .build();
    }
 
    @Test
-   void whenCallGetThroughGateway_thenAllHTTPRequestHeadersParametersAreSet() throws JSONException {
+   public void whenCallGetThroughGateway_thenAllHTTPRequestHeadersParametersAreSet() throws JSONException {
       String url = "http://localhost:" + port + "/get";
       ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
       assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -48,13 +49,14 @@ class WebFilterFactoriesLiveTest {
       assertThat(headers.getString("My-Header-Good")).isEqualTo("Good");
       assertThat(headers.getString("My-Header-Bad")).isEqualTo("Good");
       assertThat(headers.getString("My-Header-Set")).isEqualTo("Set");
-      assertTrue(headers.isNull("My-Header-Remove"));
+      assertThat(headers.getString("My-Header-Absent")).isEqualTo("Absent");
+      Assertions.assertTrue(headers.isNull("My-Header-Remove"));
       JSONObject vars = json.getJSONObject("args");
       assertThat(vars.getString("var")).isEqualTo("good");
    }
 
    @Test
-   void whenCallHeaderPostThroughGateway_thenAllHTTPResponseHeadersAreSet() {
+   public void whenCallHeaderPostThroughGateway_thenAllHTTPResponseHeadersAreSet() {
       ResponseSpec response = client.post()
             .uri("/header/post")
             .exchange();
@@ -68,11 +70,14 @@ class WebFilterFactoriesLiveTest {
             .expectHeader()
             .valueEquals("My-Header-Good", "Good")
             .expectHeader()
-            .doesNotExist("My-Header-Remove");
+            .doesNotExist("My-Header-Remove")
+            .expectBody()
+            .jsonPath("$.headers.Accept").doesNotExist()
+            .jsonPath("form").doesNotExist();
    }
 
    @Test
-   void whenCallPostThroughGateway_thenBodyIsRetrieved() throws JSONException {
+   public void whenCallPostThroughGateway_thenBodyIsRetrieved() throws JSONException {
       String url = "http://localhost:" + port + "/post";
 
       HttpEntity<String> entity = new HttpEntity<>("content", new HttpHeaders());
@@ -86,7 +91,7 @@ class WebFilterFactoriesLiveTest {
    }
 
    @Test
-   void whenCallPutThroughGateway_thenBodyIsRetrieved() throws JSONException {
+   public void whenCallPutThroughGateway_thenBodyIsRetrieved() throws JSONException {
       String url = "http://localhost:" + port + "/put";
 
       HttpEntity<String> entity = new HttpEntity<>("CONTENT", new HttpHeaders());
@@ -99,7 +104,7 @@ class WebFilterFactoriesLiveTest {
    }
 
    @Test
-   void whenCallDeleteThroughGateway_thenIsUnauthorizedCodeIsSet() {
+   public void whenCallDeleteThroughGateway_thenIsUnauthorizedCodeIsSet() {
       ResponseSpec response = client.delete()
             .uri("/delete")
             .exchange();
@@ -109,7 +114,7 @@ class WebFilterFactoriesLiveTest {
    }
 
    @Test
-   void whenCallFakePostThroughGateway_thenIsUnauthorizedCodeIsSet() {
+   public void whenCallFakePostThroughGateway_thenIsUnauthorizedCodeIsSet() {
       ResponseSpec response = client.post()
             .uri("/fake/post")
             .exchange();
@@ -119,11 +124,35 @@ class WebFilterFactoriesLiveTest {
    }
 
    @Test
-   void whenCallStatus504ThroughGateway_thenCircuitBreakerIsExecuted() throws JSONException {
+   public void whenCallStatus504ThroughGateway_thenCircuitBreakerIsExecuted() throws JSONException {
       String url = "http://localhost:" + port + "/status/504";
       ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
       JSONObject json = new JSONObject(response.getBody());
       assertThat(json.getString("url")).contains("anything");
+   }
+
+   @Test
+   public void whenCallCachePostThroughGateway_thenMyHeaderCacheIsSet() {
+      ResponseSpec response = client.post()
+            .uri("/cache/post")
+            .body(BodyInserters.fromValue("CachedBody"))
+            .exchange();
+
+      response.expectStatus()
+            .isOk()
+            .expectHeader()
+            .valueEquals("My-Header-Cache", "CachedBody");
+   }
+
+   @Test
+   public void whenCallCacheGetThroughGateway_thenCacheControlIsSet() {
+      ResponseSpec response = client.get()
+            .uri("/cache/get")
+            .exchange();
+
+      response.expectStatus().isOk()
+            .expectHeader()
+            .valueEquals("Cache-Control", "max-age=10");
    }
 }

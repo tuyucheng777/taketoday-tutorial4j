@@ -18,6 +18,7 @@ public class CustomerApplication {
 
    @Bean
    public OrderClient getOrderClient() {
+
       return new OrderClientImpl(new RestTemplateBuilder());
    }
 }

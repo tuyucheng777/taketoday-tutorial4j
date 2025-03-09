@@ -20,7 +20,8 @@ public class SpringCloudSQS {
    static final String QUEUE_NAME = "spring-cloud-test-queue";
 
    /*
-    * CountDownLatch is added to wait for messages during integration test
+    * CountDownLatch is added to wait for messages
+    * during integration test
     */
    CountDownLatch countDownLatch;
 

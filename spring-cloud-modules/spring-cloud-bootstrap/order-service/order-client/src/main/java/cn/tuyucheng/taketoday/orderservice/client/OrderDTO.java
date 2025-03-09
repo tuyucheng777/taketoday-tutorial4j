@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.orderservice.client;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

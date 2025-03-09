@@ -5,6 +5,7 @@ public class Greeting {
    private String name;
 
    public Greeting() {
+
    }
 
    public Greeting(String mesage, String name) {

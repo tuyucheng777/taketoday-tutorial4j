@@ -11,7 +11,9 @@ public class SecurityConfiguration {
 
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-      http.csrf(csrf -> csrf.ignoringRequestMatchers("/encrypt/**", "/decrypt/**"))
+      http.csrf(csrf -> csrf.ignoringRequestMatchers(
+                  "/encrypt/**", "/decrypt/**"
+            ))
             .authorizeRequests(authz -> authz.anyRequest().authenticated())
             .formLogin(Customizer.withDefaults())
             .httpBasic(Customizer.withDefaults());

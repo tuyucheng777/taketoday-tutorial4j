@@ -31,7 +31,7 @@ Metadata:
          z: 0
          embeds: [ ]
 Resources:
-   IAMRoleBaeldung:
+   IAMRoleTaketoday:
       Type: 'AWS::IAM::Role'
       Properties:
          AssumeRolePolicyDocument:
@@ -48,11 +48,11 @@ Resources:
       Metadata:
          'AWS::CloudFormation::Designer':
             id: 157e7d5f-5cb3-4a23-a50c-97e7f6c57173
-   InstanceProfileBaeldung:
+   InstanceProfileTaketoday:
       Type: 'AWS::IAM::InstanceProfile'
       Properties:
          Roles:
-            - !Ref IAMRoleBaeldung
+            - !Ref IAMRoleTaketoday
       Metadata:
          'AWS::CloudFormation::Designer':
             id: 9bbaaa55-9cba-4555-a7c6-fb6ac248fd3a
@@ -61,7 +61,7 @@ Resources:
       Properties:
          ImageId: ami-2581aa40
          InstanceType: t2.micro
-         IamInstanceProfile: !Ref InstanceProfileBaeldung
+         IamInstanceProfile: !Ref InstanceProfileTaketoday
          KeyName: Satish-Ohio
          UserData: !Base64
             'Fn::Join':
@@ -74,4 +74,4 @@ Resources:
          'AWS::CloudFormation::Designer':
             id: a7348729-a594-4dca-9b0a-e1c8d777dc3b
       DependsOn:
-         - InstanceProfileBaeldung
+         - InstanceProfileTaketoday

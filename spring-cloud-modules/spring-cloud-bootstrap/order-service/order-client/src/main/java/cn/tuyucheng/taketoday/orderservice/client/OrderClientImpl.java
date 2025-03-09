@@ -7,7 +7,6 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-
 @Component
 public class OrderClientImpl implements OrderClient {
 
@@ -26,8 +25,6 @@ public class OrderClientImpl implements OrderClient {
 
       HttpEntity<OrderDTO> request = new HttpEntity<>(orderDTO, headers);
 
-      OrderResponse orderResponse = restTemplate.postForObject(serviceUrl + "/create", request, OrderResponse.class);
-
-      return orderResponse;
+      return restTemplate.postForObject(serviceUrl + "/create", request, OrderResponse.class);
    }
 }

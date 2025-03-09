@@ -17,6 +17,9 @@ import java.net.URI;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * This test requires
+ */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("customroutes")
 public class CustomPredicatesApplicationLiveTest {
@@ -43,7 +46,7 @@ public class CustomPredicatesApplicationLiveTest {
       String url = "http://localhost:" + serverPort + "/api/headers";
       RequestEntity<Void> request = RequestEntity
             .get(URI.create(url))
-            .header("Cookie", "customerId=baeldung")
+            .header("Cookie", "customerId=taketoday")
             .build();
 
       ResponseEntity<String> response = restTemplate.exchange(request, String.class);

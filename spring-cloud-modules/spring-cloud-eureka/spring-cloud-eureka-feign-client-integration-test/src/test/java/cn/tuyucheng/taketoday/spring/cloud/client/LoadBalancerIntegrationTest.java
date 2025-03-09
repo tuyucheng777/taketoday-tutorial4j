@@ -1,7 +1,9 @@
 package cn.tuyucheng.taketoday.spring.cloud.client;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringBootConfiguration;
@@ -39,6 +41,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
 @ContextConfiguration(classes = {TestConfig.class})
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class LoadBalancerIntegrationTest {
 
    @Autowired
@@ -98,7 +101,14 @@ class LoadBalancerIntegrationTest {
       @Bean
       public RoundRobinLoadBalancer roundRobinContextLoadBalancer(LoadBalancerClientFactory clientFactory, Environment env) {
          String serviceId = LoadBalancerClientFactory.getName(env);
-         return new RoundRobinLoadBalancer(clientFactory.getLazyProvider(serviceId, ServiceInstanceListSupplier.class), serviceId, -1);
+         return new RoundRobinLoadBalancer(
+               clientFactory.getLazyProvider(serviceId, ServiceInstanceListSupplier.class), serviceId, -1);
       }
+   }
+
+   @AfterAll
+   void tearDown() {
+      mockBooksService.shutdownServer();
+      secondMockBooksService.shutdownServer();
    }
 }

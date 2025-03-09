@@ -1,15 +1,7 @@
 package cn.tuyucheng.taketoday.spring.cloud.bootstrap.svcbook.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -27,7 +19,7 @@ public class BookController {
    }
 
    @GetMapping("/{bookId}")
-   public Book findBook(@PathVariable Long bookId) {
+   public Book findBook(@PathVariable("bookId") Long bookId) {
       return bookService.findBookById(bookId);
    }
 
@@ -37,17 +29,17 @@ public class BookController {
    }
 
    @DeleteMapping("/{bookId}")
-   public void deleteBook(@PathVariable Long bookId) {
+   public void deleteBook(@PathVariable("bookId") Long bookId) {
       bookService.deleteBook(bookId);
    }
 
    @PutMapping("/{bookId}")
-   public Book updateBook(@RequestBody Book book, @PathVariable Long bookId) {
+   public Book updateBook(@RequestBody Book book, @PathVariable("bookId") Long bookId) {
       return bookService.updateBook(book, bookId);
    }
 
    @PatchMapping("/{bookId}")
-   public Book updateBook(@RequestBody Map<String, String> updates, @PathVariable Long bookId) {
+   public Book updateBook(@RequestBody Map<String, String> updates, @PathVariable("bookId") Long bookId) {
       return bookService.updateBook(updates, bookId);
    }
 }

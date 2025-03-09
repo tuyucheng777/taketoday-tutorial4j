@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.spring.cloud.aws.rds;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -20,25 +20,25 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Check the README file in this module for more information.
  */
 @SpringBootTest
-@ExtendWith(SpringExtension.class)
-class SpringCloudRDSLiveTest {
+@RunWith(SpringRunner.class)
+public class SpringCloudRDSLiveTest {
 
    @Autowired
    DataSource dataSource;
 
    @Test
-   void whenDataSourceCreated_thenSuccess() {
+   public void whenDataSourceCreated_thenSuccess() {
       assertThat(dataSource).isNotNull();
    }
 
    @Test
-   void givenDataSource_whenConnectionCreated_thenSuccess() throws SQLException {
+   public void givenDataSource_whenConnectionCreated_thenSuccess() throws SQLException {
       Connection connection = dataSource.getConnection();
       assertThat(connection).isNotNull();
    }
 
    @Test
-   void givenConnection_whenQueryExecuted_thenSuccess() throws SQLException {
+   public void givenConnection_whenQueryExecuted_thenSuccess() throws SQLException {
       Connection connection = dataSource.getConnection();
       Statement statement = connection.createStatement();
       ResultSet resultSet = statement.executeQuery("SELECT 1");

@@ -1,9 +1,8 @@
 package cn.tuyucheng.taketoday.spring.cloud.bootstrap.svcrating.rating;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
@@ -12,9 +11,9 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Repository;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class RatingCacheRepository implements InitializingBean {
@@ -42,13 +41,11 @@ public class RatingCacheRepository implements InitializingBean {
    }
 
    public Rating findCachedRatingById(Long ratingId) {
-
       try {
          return jsonMapper.readValue(valueOps.get("rating-" + ratingId), Rating.class);
       } catch (IOException e) {
          return null;
       }
-
    }
 
    public List<Rating> findAllCachedRatings() {
@@ -58,9 +55,7 @@ public class RatingCacheRepository implements InitializingBean {
             .stream()
             .map(rtId -> {
                try {
-
                   return jsonMapper.readValue(valueOps.get(rtId), Rating.class);
-
                } catch (IOException e) {
                   return null;
                }
@@ -93,7 +88,6 @@ public class RatingCacheRepository implements InitializingBean {
    public boolean deleteRating(Long ratingId) {
       Rating toDel;
       try {
-
          toDel = jsonMapper.readValue(valueOps.get("rating-" + ratingId), Rating.class);
          setOps.remove("book-" + toDel.getBookId(), "rating-" + ratingId);
          redisTemplate.delete("rating-" + ratingId);
@@ -106,7 +100,6 @@ public class RatingCacheRepository implements InitializingBean {
 
    @Override
    public void afterPropertiesSet() throws Exception {
-
       this.redisTemplate = new StringRedisTemplate(cacheConnectionFactory);
 
       this.valueOps = redisTemplate.opsForValue();

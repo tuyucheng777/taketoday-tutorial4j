@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.nio.ByteBuffer;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Component
@@ -31,7 +32,7 @@ public class ProducerSDK {
          entry.setData(ByteBuffer.wrap(("192.168.0." + ipSuffix).getBytes()));
          entry.setPartitionKey(IPS_PARTITION_KEY);
          return entry;
-      }).toList();
+      }).collect(Collectors.toList());
 
       PutRecordsRequest createRecordsRequest = new PutRecordsRequest();
       createRecordsRequest.setStreamName(IPS_STREAM);

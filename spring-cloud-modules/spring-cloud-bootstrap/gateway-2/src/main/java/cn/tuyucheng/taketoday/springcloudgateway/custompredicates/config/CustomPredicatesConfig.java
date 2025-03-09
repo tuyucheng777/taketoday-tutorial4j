@@ -12,16 +12,13 @@ import cn.tuyucheng.taketoday.springcloudgateway.custompredicates.service.Golden
 @Configuration
 public class CustomPredicatesConfig {
 
-
    @Bean
    public GoldenCustomerRoutePredicateFactory goldenCustomer(GoldenCustomerService goldenCustomerService) {
       return new GoldenCustomerRoutePredicateFactory(goldenCustomerService);
    }
 
-
    //@Bean
    public RouteLocator routes(RouteLocatorBuilder builder, GoldenCustomerRoutePredicateFactory gf) {
-
       return builder.routes()
             .route("dsl_golden_route", r ->
                   r.predicate(gf.apply(new Config(true, "customerId")))

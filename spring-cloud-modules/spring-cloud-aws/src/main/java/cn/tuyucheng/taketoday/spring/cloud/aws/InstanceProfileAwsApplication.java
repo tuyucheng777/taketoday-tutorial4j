@@ -28,7 +28,8 @@ public class InstanceProfileAwsApplication {
    private static String fileName = "sample-file.txt";
 
    private static void setupResources() {
-      bucketName = "tuyucheng-test-" + UUID.randomUUID();
+      bucketName = "taketoday-test-" + UUID.randomUUID()
+            .toString();
       try {
          Files.write(Paths.get(fileName), "Hello World!".getBytes());
       } catch (IOException e) {

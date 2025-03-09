@@ -1,3 +1,6 @@
+/**
+ *
+ */
 package cn.tuyucheng.taketoday.springcloudgateway.custompredicates.factories;
 
 import cn.tuyucheng.taketoday.springcloudgateway.custompredicates.service.GoldenCustomerService;
@@ -40,10 +43,9 @@ public class GoldenCustomerRoutePredicateFactory extends AbstractRoutePredicateF
             isGolden = goldenCustomerService.isGoldenCustomer(customerId);
          }
 
-         return config.isGolden() ? isGolden : !isGolden;
+         return config.isGolden() == isGolden;
       };
    }
-
 
    @Validated
    public static class Config {

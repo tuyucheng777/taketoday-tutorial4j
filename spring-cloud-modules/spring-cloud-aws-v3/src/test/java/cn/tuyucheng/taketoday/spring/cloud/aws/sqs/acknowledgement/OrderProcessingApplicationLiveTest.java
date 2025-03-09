@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.spring.cloud.aws.sqs.acknowledgement;
 
-import cn.tuyucheng.taketoday.spring.cloud.aws.sqs.BaseSqsLiveTest;
 import cn.tuyucheng.taketoday.spring.cloud.aws.sqs.acknowledgement.configuration.EventsQueuesProperties;
 import cn.tuyucheng.taketoday.spring.cloud.aws.sqs.acknowledgement.configuration.ProductIdProperties;
 import cn.tuyucheng.taketoday.spring.cloud.aws.sqs.acknowledgement.model.OrderCreatedEvent;
@@ -24,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ActiveProfiles("acknowledgement")
 @SpringBootTest
-class OrderProcessingApplicationLiveTest extends BaseSqsLiveTest {
+class OrderProcessingApplicationLiveTest {
 
    private static final Logger logger = LoggerFactory.getLogger(OrderProcessingApplicationLiveTest.class);
 

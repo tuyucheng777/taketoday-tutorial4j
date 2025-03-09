@@ -1,14 +1,14 @@
 package cn.tuyucheng.taketoday.spring.cloud.bootstrap.svcbook.book;
 
-import java.util.List;
-import java.util.Map;
-
+import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.google.common.base.Preconditions;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 @Transactional(readOnly = true)
@@ -58,7 +58,7 @@ public class BookService {
    @Transactional(propagation = Propagation.REQUIRED)
    public Book updateBook(Book book, Long bookId) {
       Preconditions.checkNotNull(book);
-      Preconditions.checkState(book.getId() == bookId);
+      Preconditions.checkState(Objects.equals(book.getId(), bookId));
       Preconditions.checkArgument(bookRepository.findById(bookId)
             .isPresent());
       return bookRepository.save(book);

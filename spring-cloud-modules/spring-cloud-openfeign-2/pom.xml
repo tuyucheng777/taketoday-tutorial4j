@@ -40,6 +40,10 @@
          <artifactId>feign-okhttp</artifactId>
       </dependency>
       <dependency>
+         <groupId>io.github.openfeign.form</groupId>
+         <artifactId>feign-form-spring</artifactId>
+      </dependency>
+      <dependency>
          <groupId>com.github.tomakehurst</groupId>
          <artifactId>wiremock-jre8</artifactId>
          <version>${wire.mock.version}</version>
@@ -51,7 +55,26 @@
          <version>${junit-jupiter.version}</version>
          <scope>test</scope>
       </dependency>
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>${lombok.version}</version>
+         <scope>provided</scope>
+      </dependency>
    </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>23</source>
+               <target>23</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
    <properties>
       <spring-cloud.version>2021.0.7</spring-cloud.version>

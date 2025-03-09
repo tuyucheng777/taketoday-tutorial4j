@@ -14,7 +14,7 @@ import org.apache.avro.specific.SpecificData;
 @org.apache.avro.specific.AvroGenerated
 public class EmployeeKey extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
    private static final long serialVersionUID = 5288483459411046896L;
-   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EmployeeKey\",\"namespace\":\"com.baeldung.schema\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"departmentName\",\"type\":\"string\"}]}");
+   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EmployeeKey\",\"namespace\":\"cn.tuyucheng.taketoday.schema\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"departmentName\",\"type\":\"string\"}]}");
 
    public static org.apache.avro.Schema getClassSchema() {
       return SCHEMA$;

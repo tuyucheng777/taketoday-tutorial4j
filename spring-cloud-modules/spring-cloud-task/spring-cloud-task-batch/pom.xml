@@ -8,7 +8,7 @@
    <name>spring-cloud-task-batch</name>
 
    <parent>
-      <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
+      <groupId>cn.tuyucheng.taketoday</groupId>
       <artifactId>spring-cloud-task</artifactId>
       <version>1.0.0</version>
    </parent>
