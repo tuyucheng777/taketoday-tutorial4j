@@ -12,4 +12,5 @@ class EmbeddableBookRepositoryIntegrationTest extends RecordsAsJpaEmbeddableInte
    void findBookByAuthor() {
       assertEquals(2, bookRepository.findBookByAuthor(new Author("J.R.R.", "Tolkien")).size());
    }
+
 }

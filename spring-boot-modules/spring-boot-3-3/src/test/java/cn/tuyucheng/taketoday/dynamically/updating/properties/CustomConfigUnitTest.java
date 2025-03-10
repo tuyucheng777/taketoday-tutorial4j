@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = UpdatingPropertiesApplication.class)
-public class CustomConfigUnitTest {
+class CustomConfigUnitTest {
 
    @Autowired
    private ApplicationContext context;

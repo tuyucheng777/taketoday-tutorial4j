@@ -1,9 +1,7 @@
 package cn.tuyucheng.taketoday.dynamically.updating.properties;
 
-import static org.awaitility.Awaitility.await;
-
-import java.util.concurrent.TimeUnit;
-
+import cn.tuyucheng.taketoday.dynamically.updating.properties.services.ExampleBean;
+import cn.tuyucheng.taketoday.dynamically.updating.properties.services.PropertyUpdaterService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +12,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-import cn.tuyucheng.taketoday.dynamically.updating.properties.services.ExampleBean;
-import cn.tuyucheng.taketoday.dynamically.updating.properties.services.PropertyUpdaterService;
+import java.util.concurrent.TimeUnit;
+
+import static org.awaitility.Awaitility.await;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PropertyUpdaterServiceUnitTest {
+class PropertyUpdaterServiceUnitTest {
 
    @Autowired
    private PropertyUpdaterService propertyUpdaterService;
@@ -31,7 +30,7 @@ public class PropertyUpdaterServiceUnitTest {
 
    @Test
    @Timeout(5)
-   public void whenUpdatingProperty_thenPropertyIsUpdatedAndRefreshed() throws InterruptedException {
+   void whenUpdatingProperty_thenPropertyIsUpdatedAndRefreshed() throws InterruptedException {
       // Injects a new property into the test context
       propertyUpdaterService.updateProperty("my.custom.property", "newValue");
 

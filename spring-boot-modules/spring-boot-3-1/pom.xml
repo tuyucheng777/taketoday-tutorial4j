@@ -206,11 +206,9 @@
    </build>
 
    <properties>
-      <java.version>23</java.version>
       <mapstruct.version>1.6.0.Beta1</mapstruct.version>
-      <springdoc.version>2.2.0</springdoc.version>
-      <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
       <start-class>cn.tuyucheng.taketoday.sample.TodoApplication</start-class>
+      <spring-boot.version>3.4.2</spring-boot.version>
       <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
       <springdoc-openapi-webmvc-ui.version>2.5.0</springdoc-openapi-webmvc-ui.version>
       <logback.version>1.5.16</logback.version>

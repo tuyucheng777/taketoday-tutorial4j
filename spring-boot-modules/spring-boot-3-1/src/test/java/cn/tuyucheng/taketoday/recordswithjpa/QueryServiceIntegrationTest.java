@@ -16,6 +16,7 @@ public class QueryServiceIntegrationTest extends RecordsAsJpaIntegrationTest {
    @Autowired
    private QueryService queryService;
 
+
    @Test
    void findAllBooks() {
       List<BookRecord> allBooks = queryService.findAllBooks();

@@ -11,4 +11,5 @@ public class EnableBeanValidation {
    public MethodValidationPostProcessor validator() {
       return new MethodValidationPostProcessor();
    }
+
 }

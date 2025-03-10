@@ -15,6 +15,7 @@ public class RecordsAsJpaEmbeddableIntegrationTest {
 
    @BeforeEach
    void setUp() {
+
       Author author = new Author("J.R.R.", "Tolkien");
       EmbeddableBook book1 = new EmbeddableBook(null, "The Lord of the Rings", author, "978-0544003415");
       EmbeddableBook book2 = new EmbeddableBook(null, "The Hobbit", author, "978-0547928227");

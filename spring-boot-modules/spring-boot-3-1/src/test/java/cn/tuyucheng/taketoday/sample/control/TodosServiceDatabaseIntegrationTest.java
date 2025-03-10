@@ -59,4 +59,5 @@ class TodosServiceDatabaseIntegrationTest {
       assertThatThrownBy(() -> service.delete(id))
             .isInstanceOf(NotFoundException.class);
    }
+
 }
