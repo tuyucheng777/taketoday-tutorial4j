@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoCo
 import org.springframework.context.annotation.PropertySource;
 
 @PropertySource("classpath:connection.via.properties/application.properties")
-@SpringBootApplication(exclude={EmbeddedMongoAutoConfiguration.class})
+@SpringBootApplication(exclude = {EmbeddedMongoAutoConfiguration.class})
 public class SpringMongoConnectionViaPropertiesApp {
 
-    public static void main(String... args) {
-        SpringApplication.run(SpringMongoConnectionViaPropertiesApp.class, args);
-    }
+   public static void main(String... args) {
+      SpringApplication.run(SpringMongoConnectionViaPropertiesApp.class, args);
+   }
 }

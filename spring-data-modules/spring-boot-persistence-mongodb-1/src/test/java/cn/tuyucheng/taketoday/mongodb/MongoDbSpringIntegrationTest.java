@@ -1,7 +1,8 @@
 package cn.tuyucheng.taketoday.mongodb;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import cn.tuyucheng.taketoday.SpringBootPersistenceApplication;
+import com.mongodb.BasicDBObjectBuilder;
+import com.mongodb.DBObject;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,28 +13,26 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import cn.tuyucheng.taketoday.SpringBootPersistenceApplication;
-import com.mongodb.BasicDBObjectBuilder;
-import com.mongodb.DBObject;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ContextConfiguration(classes = SpringBootPersistenceApplication.class)
 @DataMongoTest
 @ExtendWith(SpringExtension.class)
 @DirtiesContext
 public class MongoDbSpringIntegrationTest {
-    @DisplayName("Given object When save object using MongoDB template Then object can be found")
-    @Test
-    public void test(@Autowired MongoTemplate mongoTemplate) {
-        // given
-        DBObject objectToSave = BasicDBObjectBuilder.start()
+   @DisplayName("Given object When save object using MongoDB template Then object can be found")
+   @Test
+   public void test(@Autowired MongoTemplate mongoTemplate) {
+      // given
+      DBObject objectToSave = BasicDBObjectBuilder.start()
             .add("key", "value")
             .get();
 
-        // when
-        mongoTemplate.save(objectToSave, "collection");
+      // when
+      mongoTemplate.save(objectToSave, "collection");
 
-        // then
-        assertThat(mongoTemplate.findAll(DBObject.class, "collection")).extracting("key")
+      // then
+      assertThat(mongoTemplate.findAll(DBObject.class, "collection")).extracting("key")
             .containsOnly("value");
-    }
+   }
 }

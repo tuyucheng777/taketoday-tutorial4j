@@ -1,7 +1,11 @@
 package cn.tuyucheng.taketoday.multipledb.config;
 
-import static java.util.Collections.singletonList;
-
+import cn.tuyucheng.taketoday.multipledb.repository.primary.UserRepository;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -14,45 +18,40 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import cn.tuyucheng.taketoday.multipledb.repository.primary.UserRepository;
-import com.mongodb.MongoClientSettings;
-import com.mongodb.MongoCredential;
-import com.mongodb.ServerAddress;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
+import static java.util.Collections.singletonList;
 
 @Configuration
 @EnableMongoRepositories(basePackageClasses = UserRepository.class, mongoTemplateRef = "primaryMongoTemplate")
 @EnableConfigurationProperties
 public class PrimaryConfig {
 
-    @Bean(name = "primaryProperties")
-    @ConfigurationProperties(prefix = "mongodb.primary")
-    @Primary
-    public MongoProperties primaryProperties() {
-        return new MongoProperties();
-    }
+   @Bean(name = "primaryProperties")
+   @ConfigurationProperties(prefix = "mongodb.primary")
+   @Primary
+   public MongoProperties primaryProperties() {
+      return new MongoProperties();
+   }
 
-    @Bean(name = "primaryMongoClient")
-    public MongoClient mongoClient(@Qualifier("primaryProperties") MongoProperties mongoProperties) {
+   @Bean(name = "primaryMongoClient")
+   public MongoClient mongoClient(@Qualifier("primaryProperties") MongoProperties mongoProperties) {
 
-        MongoCredential credential = MongoCredential.createCredential(mongoProperties.getUsername(), mongoProperties.getAuthenticationDatabase(), mongoProperties.getPassword());
+      MongoCredential credential = MongoCredential.createCredential(mongoProperties.getUsername(), mongoProperties.getAuthenticationDatabase(), mongoProperties.getPassword());
 
-        return MongoClients.create(MongoClientSettings.builder()
-          .applyToClusterSettings(builder -> builder.hosts(singletonList(new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort()))))
-          .credential(credential)
-          .build());
-    }
+      return MongoClients.create(MongoClientSettings.builder()
+            .applyToClusterSettings(builder -> builder.hosts(singletonList(new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort()))))
+            .credential(credential)
+            .build());
+   }
 
-    @Primary
-    @Bean(name = "primaryMongoDBFactory")
-    public MongoDatabaseFactory mongoDatabaseFactory(@Qualifier("primaryMongoClient") MongoClient mongoClient, @Qualifier("primaryProperties") MongoProperties mongoProperties) {
-        return new SimpleMongoClientDatabaseFactory(mongoClient, mongoProperties.getDatabase());
-    }
+   @Primary
+   @Bean(name = "primaryMongoDBFactory")
+   public MongoDatabaseFactory mongoDatabaseFactory(@Qualifier("primaryMongoClient") MongoClient mongoClient, @Qualifier("primaryProperties") MongoProperties mongoProperties) {
+      return new SimpleMongoClientDatabaseFactory(mongoClient, mongoProperties.getDatabase());
+   }
 
-    @Primary
-    @Bean(name = "primaryMongoTemplate")
-    public MongoTemplate mongoTemplate(@Qualifier("primaryMongoDBFactory") MongoDatabaseFactory mongoDatabaseFactory) {
-        return new MongoTemplate(mongoDatabaseFactory);
-    }
+   @Primary
+   @Bean(name = "primaryMongoTemplate")
+   public MongoTemplate mongoTemplate(@Qualifier("primaryMongoDBFactory") MongoDatabaseFactory mongoDatabaseFactory) {
+      return new MongoTemplate(mongoDatabaseFactory);
+   }
 }

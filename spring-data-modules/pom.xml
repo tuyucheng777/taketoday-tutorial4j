@@ -38,11 +38,11 @@
       <module>spring-data-cassandra-test</module>
       <module>spring-data-cosmosdb</module>
       <module>spring-data-couchbase-2</module>
-      <module>spring-data-dynamodb</module>
+      <!-- <module>spring-data-dynamodb</module> -->
       <module>spring-data-eclipselink</module>
       <module>spring-data-elasticsearch</module>
       <module>spring-data-envers</module>
-      <module>spring-data-gemfire</module>
+      <!-- <module>spring-data-gemfire</module> -->
       <module>spring-data-geode</module>
       <module>spring-data-jdbc</module>
       <!-- <module>spring-data-jooq</module> -->
@@ -77,7 +77,7 @@
       <module>spring-data-rest-querydsl</module>
       <module>spring-data-shardingsphere</module>
       <module>spring-data-solr</module>
-      <module>spring-data-yugabytedb</module>
+      <!-- <module>spring-data-yugabytedb</module> -->
    </modules>
 
    <properties>

@@ -11,15 +11,15 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SpringMongoConnectionViaBuilderApp {
 
-    public static void main(String... args) {
-        SpringApplicationBuilder app = new SpringApplicationBuilder(SpringMongoConnectionViaBuilderApp.class);
-        app.web(WebApplicationType.NONE);
-        app.run(args);
-    }
+   public static void main(String... args) {
+      SpringApplicationBuilder app = new SpringApplicationBuilder(SpringMongoConnectionViaBuilderApp.class);
+      app.web(WebApplicationType.NONE);
+      app.run(args);
+   }
 
-    @Bean
-    public MongoClientSettingsBuilderCustomizer customizer(@Value("${custom.uri}") String uri) {
-        ConnectionString connection = new ConnectionString(uri);
-        return settings -> settings.applyConnectionString(connection);
-    }
+   @Bean
+   public MongoClientSettingsBuilderCustomizer customizer(@Value("${custom.uri}") String uri) {
+      ConnectionString connection = new ConnectionString(uri);
+      return settings -> settings.applyConnectionString(connection);
+   }
 }

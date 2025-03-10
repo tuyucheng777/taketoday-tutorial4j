@@ -7,9 +7,9 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @PropertySource("classpath:boot.unique.field/app.properties")
-@EnableMongoRepositories(basePackages = { "com.baeldung.boot.unique.field" })
+@EnableMongoRepositories(basePackages = {"cn.tuyucheng.taketoday.boot.unique.field"})
 public class SpringBootUniqueFieldApplication {
-    public static void main(String... args) {
-        SpringApplication.run(SpringBootUniqueFieldApplication.class, args);
-    }
+   public static void main(String... args) {
+      SpringApplication.run(SpringBootUniqueFieldApplication.class, args);
+   }
 }

@@ -11,31 +11,31 @@ import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoCo
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 
-@SpringBootApplication(exclude={EmbeddedMongoAutoConfiguration.class})
+@SpringBootApplication(exclude = {EmbeddedMongoAutoConfiguration.class})
 public class SpringMongoConnectionViaClientApp extends AbstractMongoClientConfiguration {
 
-    public static void main(String... args) {
-        SpringApplicationBuilder app = new SpringApplicationBuilder(SpringMongoConnectionViaClientApp.class);
-        app.web(WebApplicationType.NONE);
-        app.run(args);
-    }
+   public static void main(String... args) {
+      SpringApplicationBuilder app = new SpringApplicationBuilder(SpringMongoConnectionViaClientApp.class);
+      app.web(WebApplicationType.NONE);
+      app.run(args);
+   }
 
-    @Value("${spring.data.mongodb.uri}")
-    private String uri;
+   @Value("${spring.data.mongodb.uri}")
+   private String uri;
 
-    @Value("${spring.data.mongodb.database}")
-    private String db;
+   @Value("${spring.data.mongodb.database}")
+   private String db;
 
-    @Override
-    public MongoClient mongoClient() {
-        MongoClient client = MongoClients.create(uri);
-        ListDatabasesIterable<Document> databases = client.listDatabases();
-        databases.forEach(System.out::println);
-        return client;
-    }
+   @Override
+   public MongoClient mongoClient() {
+      MongoClient client = MongoClients.create(uri);
+      ListDatabasesIterable<Document> databases = client.listDatabases();
+      databases.forEach(System.out::println);
+      return client;
+   }
 
-    @Override
-    protected String getDatabaseName() {
-        return db;
-    }
+   @Override
+   protected String getDatabaseName() {
+      return db;
+   }
 }
