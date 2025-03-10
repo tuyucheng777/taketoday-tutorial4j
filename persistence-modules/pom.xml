@@ -70,6 +70,8 @@
       <module>jpa-hibernate-cascade-type</module>
       <module>liquibase</module>
       <module>my-sql</module>
+      <module>mybatis</module>
+      <module>mybatis-plus</module>
       <module>neo4j</module>
       <module>orientdb</module>
       <module>persistence-libraries</module>
