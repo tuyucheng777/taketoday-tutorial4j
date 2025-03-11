@@ -1,6 +1,6 @@
-package cn.tuyucheng.taketoday.swagger2bootmvc.controller;
+package cn.tuyucheng.taketoday.parametervsschema.controller;
 
-import cn.tuyucheng.taketoday.swagger2bootmvc.model.User;
+import cn.tuyucheng.taketoday.parametervsschema.model.User;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.http.HttpStatus;
