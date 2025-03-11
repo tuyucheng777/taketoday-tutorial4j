@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.logging.log4j2.tests;
+package cn.tuyucheng.taketoday.logging.log4j2;
 
 import cn.tuyucheng.taketoday.logging.log4j2.Log4j2BaseIntegrationTest;
 import com.fasterxml.jackson.databind.JsonNode;

@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.log4j;
+package cn.tuyucheng.taketoday.logging.log4j;
 
 import org.apache.log4j.Logger;
 

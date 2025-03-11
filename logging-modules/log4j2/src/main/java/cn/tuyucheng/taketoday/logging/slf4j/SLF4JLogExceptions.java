@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.slf4j;
+package cn.tuyucheng.taketoday.logging.slf4j;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.logging.log4j2.tests;
+package cn.tuyucheng.taketoday.logging.log4j2;
 
 import cn.tuyucheng.taketoday.logging.log4j2.tests.jdbc.ConnectionFactory;
 import org.apache.logging.log4j.*;
