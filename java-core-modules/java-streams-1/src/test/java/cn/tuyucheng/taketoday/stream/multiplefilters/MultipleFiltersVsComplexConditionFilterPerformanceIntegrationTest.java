@@ -1,15 +1,16 @@
 package cn.tuyucheng.taketoday.stream.multiplefilters;
 
-import org.apache.commons.lang3.time.StopWatch;
-import org.junit.Test;
-
 import java.text.MessageFormat;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 
+import org.apache.commons.lang3.time.StopWatch;
+import org.junit.Ignore;
+import org.junit.Test;
+
 public class MultipleFiltersVsComplexConditionFilterPerformanceIntegrationTest {
 
-   // this test is slow, avoid running it on pipeline
+   @Ignore("this test is slow, avoid running it on pipeline")
    @Test
    public void measureProcessingTimeForEachSolution() {
       averageMultipleMeasurements("Stream with Multiple Filters", this::measureTimeForMultipleFilters, 10_000);
