@@ -3,10 +3,12 @@ package cn.tuyucheng.taketoday.spring.data.persistence.customrepository.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.Objects;
 
 @Entity
+@Table(name = "`user`")
 public class User {
 
    @Id
