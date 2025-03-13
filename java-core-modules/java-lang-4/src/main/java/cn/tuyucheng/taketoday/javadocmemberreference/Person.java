@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.javadocmemberreference;
 
-import cn.tuyucheng.taketoday.vehicle.Car;
 import cn.tuyucheng.taketoday.vehicle.Vehicle;
+import cn.tuyucheng.taketoday.vehicle.Car;
 
 public class Person {
 

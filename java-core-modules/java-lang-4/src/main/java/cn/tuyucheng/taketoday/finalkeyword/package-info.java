@@ -6,7 +6,7 @@
  * implications of using final on a variable, method, and class level.
  * </p>
  *
- * @author tuyucheng
+ * @author taketoday
  * @version 1.1
  * @since 1.0
  */

@@ -1,11 +1,8 @@
 package cn.tuyucheng.taketoday.objectcreation;
 
-import cn.tuyucheng.taketoday.objectcreation.objects.ClonableRabbit;
-import cn.tuyucheng.taketoday.objectcreation.objects.Rabbit;
-import cn.tuyucheng.taketoday.objectcreation.objects.RabbitType;
-import cn.tuyucheng.taketoday.objectcreation.objects.SerializableRabbit;
-import cn.tuyucheng.taketoday.objectcreation.utils.CreateRabbits;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -13,9 +10,13 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.InvocationTargetException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.Test;
+
+import cn.tuyucheng.taketoday.objectcreation.objects.ClonableRabbit;
+import cn.tuyucheng.taketoday.objectcreation.objects.Rabbit;
+import cn.tuyucheng.taketoday.objectcreation.objects.RabbitType;
+import cn.tuyucheng.taketoday.objectcreation.objects.SerializableRabbit;
+import cn.tuyucheng.taketoday.objectcreation.utils.CreateRabbits;
 
 public class CreateRabbitsUnitTest {
 

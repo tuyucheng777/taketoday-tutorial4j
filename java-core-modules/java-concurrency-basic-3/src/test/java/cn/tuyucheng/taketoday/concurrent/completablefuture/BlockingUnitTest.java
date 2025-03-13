@@ -13,7 +13,7 @@ class BlockingUnitTest {
     void givenCompletableFuture_whenGet_thenReturnResult()
       throws ExecutionException, InterruptedException {
         CompletableFuture<String> completableFuture = CompletableFuture
-          .supplyAsync(() -> "Baeldung")
+          .supplyAsync(() -> "Taketoday")
           .thenApply(String::toUpperCase);
 
         assertEquals("BAELDUNG", completableFuture.get());

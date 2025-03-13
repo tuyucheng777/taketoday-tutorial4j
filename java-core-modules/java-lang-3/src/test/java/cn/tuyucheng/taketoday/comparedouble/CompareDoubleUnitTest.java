@@ -2,10 +2,10 @@ package cn.tuyucheng.taketoday.comparedouble;
 
 import com.google.common.math.DoubleMath;
 import org.apache.commons.math3.util.Precision;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class CompareDoubleUnitTest {
 
@@ -67,5 +67,14 @@ public class CompareDoubleUnitTest {
          d1 += .1;
       }
       return d1;
+   }
+
+   @Test
+   public void givenTwoEqualDoubleValues_whenUseComparator_thenReturnsZero() {
+      double d1 = getFirstDouble(0);
+      double d2 = .1 * 8;
+      DoubleComparator comparator = new DoubleComparator(0.000001d);
+      int result = comparator.compare(d1, d2);
+      assertEquals(0, result);
    }
 }

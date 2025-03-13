@@ -1,12 +1,8 @@
 package cn.tuyucheng.taketoday.inheritancecomposition;
 
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Computer;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Memory;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Processor;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.StandardMemory;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.StandardProcessor;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.StandardSoundCard;
-import org.junit.jupiter.api.Test;
+import cn.tuyucheng.taketoday.inheritancecomposition.model.*;
+import cn.tuyucheng.taketoday.inheritancecomposition.model.*;
+import org.junit.Test;
 
 import java.util.Optional;
 

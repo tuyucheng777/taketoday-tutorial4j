@@ -36,7 +36,7 @@ public class Application {
         }).start();
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-        MessageService messageService = new MessageService("Welcome to Baeldung!");
+        MessageService messageService = new MessageService("Welcome to Taketoday!");
         Future<String> future1 = (Future<String>) executorService.submit(new MessageServiceCallable(messageService));
         Future<String> future2 = (Future<String>) executorService.submit(new MessageServiceCallable(messageService));
         System.out.println(future1.get());

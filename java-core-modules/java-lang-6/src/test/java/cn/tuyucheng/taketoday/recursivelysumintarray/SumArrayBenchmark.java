@@ -1,5 +1,11 @@
 package cn.tuyucheng.taketoday.recursivelysumintarray;
 
+import static cn.tuyucheng.taketoday.recursivelysumintarray.RecursivelySumIntArrayUnitTest.sumIntArray1;
+import static cn.tuyucheng.taketoday.recursivelysumintarray.RecursivelySumIntArrayUnitTest.sumIntArray2;
+
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -14,9 +20,6 @@ import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.AverageTime)
 @State(Scope.Thread)
@@ -48,11 +51,11 @@ public class SumArrayBenchmark {
 
    @Benchmark
    public int withArrayCopy() {
-      return RecursivelySumIntArrayUnitTest.sumIntArray1(array);
+      return sumIntArray1(array);
    }
 
    @Benchmark
    public int withoutArrayCopy() {
-      return RecursivelySumIntArrayUnitTest.sumIntArray2(array, array.length - 1);
+      return sumIntArray2(array, array.length - 1);
    }
 }

@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.staticmodifier;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.AfterClass;
+import org.junit.Test;
 
 public class CarUnitTest {
 
-   @AfterAll
+   @AfterClass
    public static void setUpCarInstance() {
       Car.setNumberOfCars(0);
    }

@@ -1,9 +1,8 @@
 package cn.tuyucheng.taketoday.imports.wildcard;
 
+import java.util.*;
+import java.sql.*;
 import java.sql.Date;
-import java.sql.Time;
-import java.util.List;
-import java.util.UUID;
 
 public class Library {
 

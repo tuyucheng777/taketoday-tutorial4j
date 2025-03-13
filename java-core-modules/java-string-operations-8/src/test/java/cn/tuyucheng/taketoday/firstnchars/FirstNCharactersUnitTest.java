@@ -10,7 +10,7 @@ class FirstNCharactersUnitTest {
 
    @Test
    void givenString_whenUsingSubstringMethod_thenGetFirstChars() {
-      String givenInput = "Hello Baeldung Readers";
+      String givenInput = "Hello Taketoday Readers";
 
       assertEquals("He", givenInput.substring(0, 2));
    }
@@ -35,7 +35,7 @@ class FirstNCharactersUnitTest {
 
    @Test
    void givenString_whenUsingStringUtilsSubstringMethod_thenGetFirstChars() {
-      String givenInput = "Baeldung";
+      String givenInput = "Taketoday";
 
       assertEquals("Baeld", StringUtils.substring(givenInput, 0, 5));
    }

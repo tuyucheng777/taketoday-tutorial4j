@@ -14,7 +14,7 @@ public class CompileTimeVariables {
       CompileTimeVariables instance = new CompileTimeVariables();
       printWriter.println(instance.maximumLoginAttempts);
 
-      final String username = "tuyucheng" + "-" + "user";
+      final String username = "taketoday" + "-" + "user";
       printWriter.println(username);
    }
 

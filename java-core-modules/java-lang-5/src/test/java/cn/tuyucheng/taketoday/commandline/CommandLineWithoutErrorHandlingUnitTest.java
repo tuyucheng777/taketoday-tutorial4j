@@ -1,6 +1,8 @@
 package cn.tuyucheng.taketoday.commandline;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.junit.Assert.fail;
 
 public class CommandLineWithoutErrorHandlingUnitTest {
 

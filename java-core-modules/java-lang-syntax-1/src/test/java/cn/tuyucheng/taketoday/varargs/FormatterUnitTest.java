@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.varargs;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,23 +18,23 @@ public class FormatterUnitTest {
 
    @Test
    public void givenOneArgument_thenResultHasTwoTrailingSpace() {
-      String actualResult = format("tuyucheng");
+      String actualResult = format("taketoday");
 
-      assertThat(actualResult, is("tuyucheng  "));
+      assertThat(actualResult, is("taketoday  "));
    }
 
    @Test
    public void givenTwoArguments_thenOneTrailingSpaceExists() {
-      String actualResult = format("tuyucheng", "rocks");
+      String actualResult = format("taketoday", "rocks");
 
-      assertThat(actualResult, is("tuyucheng rocks "));
+      assertThat(actualResult, is("taketoday rocks "));
    }
 
    @Test
    public void givenMoreThanThreeArguments_thenTheFirstThreeAreUsed() {
-      String actualResult = formatWithVarArgs("tuyucheng", "rocks", "java", "and", "spring");
+      String actualResult = formatWithVarArgs("taketoday", "rocks", "java", "and", "spring");
 
-      assertThat(actualResult, is("tuyucheng rocks java"));
+      assertThat(actualResult, is("taketoday rocks java"));
    }
 
    public String format() {

@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.staticfinal;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +8,7 @@ class BikeUnitTest {
 
    @Test
    void givenTireConstantSetUponDeclaration_whenGetTire_thenReturnTwo() {
-      Assertions.assertEquals(2, Bike.TIRE);
+      assertEquals(2, Bike.TIRE);
    }
 
    @Test

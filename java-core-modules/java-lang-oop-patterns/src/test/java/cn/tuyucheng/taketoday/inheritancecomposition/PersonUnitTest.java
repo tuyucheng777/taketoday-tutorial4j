@@ -1,16 +1,16 @@
 package cn.tuyucheng.taketoday.inheritancecomposition;
 
 import cn.tuyucheng.taketoday.inheritancecomposition.model.Person;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class PersonUnitTest {
 
    private static Person person;
 
-   @BeforeAll
+   @BeforeClass
    public static void setPersonInstance() {
       person = new Person("John", "john@domain.com", 35);
    }

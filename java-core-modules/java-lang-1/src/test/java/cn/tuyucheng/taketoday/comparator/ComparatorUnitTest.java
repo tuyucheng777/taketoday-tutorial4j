@@ -1,19 +1,19 @@
 package cn.tuyucheng.taketoday.comparator;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ComparatorUnitTest {
 
    List<Player> footballTeam;
 
-   @BeforeEach
+   @Before
    public void setUp() {
       footballTeam = new ArrayList<Player>();
       Player player1 = new Player(59, "John", 20);

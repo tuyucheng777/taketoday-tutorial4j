@@ -52,6 +52,7 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
+
    <build>
       <plugins>
          <plugin>
@@ -71,8 +72,8 @@
                      <version>${jmh.version}</version>
                   </path>
                </annotationProcessorPaths>
-               <source>14</source>
-               <target>14</target>
+               <source>23</source>
+               <target>23</target>
             </configuration>
          </plugin>
       </plugins>

@@ -14,7 +14,7 @@ public class CompletableFutureThreadPoolUnitTest {
 
     @Test
     void whenUsingNonAsync_thenUsesMainThread() throws ExecutionException, InterruptedException {
-        CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Baeldung");
+        CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Taketoday");
 
         CompletableFuture<Integer> nameLength = name.thenApply(value -> {
             printCurrentThread();
@@ -27,7 +27,7 @@ public class CompletableFutureThreadPoolUnitTest {
     @Test
     void whenUsingNonAsync_thenUsesCallersThread() throws InterruptedException {
         Runnable test = () -> {
-            CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Baeldung");
+            CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Taketoday");
 
             CompletableFuture<Integer> nameLength = name.thenApply(value -> {
                 printCurrentThread();
@@ -47,7 +47,7 @@ public class CompletableFutureThreadPoolUnitTest {
 
     @Test
     void whenUsingAsync_thenUsesCommonPool() throws ExecutionException, InterruptedException {
-        CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Baeldung");
+        CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Taketoday");
 
         CompletableFuture<Integer> nameLength = name.thenApplyAsync(value -> {
             printCurrentThread();
@@ -60,7 +60,7 @@ public class CompletableFutureThreadPoolUnitTest {
     @Test
     void whenUsingAsync_thenUsesCustomExecutor() throws ExecutionException, InterruptedException {
         Executor testExecutor = Executors.newFixedThreadPool(5);
-        CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Baeldung");
+        CompletableFuture<String> name = CompletableFuture.supplyAsync(() -> "Taketoday");
 
         CompletableFuture<Integer> nameLength = name.thenApplyAsync(value -> {
             printCurrentThread();
@@ -72,7 +72,7 @@ public class CompletableFutureThreadPoolUnitTest {
 
     @Test
     void whenOverridingDefaultThreadPool_thenUsesCustomExecutor() throws ExecutionException, InterruptedException {
-        CompletableFuture<String> name = CustomCompletableFuture.supplyAsync(() -> "Baeldung");
+        CompletableFuture<String> name = CustomCompletableFuture.supplyAsync(() -> "Taketoday");
 
         CompletableFuture<Integer> nameLength = name.thenApplyAsync(value -> {
             printCurrentThread();

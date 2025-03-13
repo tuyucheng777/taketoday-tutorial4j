@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.utilities.warning;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +8,7 @@ class StringUtilsStringUtilsSuppressWarningUnitTest {
 
    @Test
    void givenAnEmptyString_whenCallingIsEmpty_thenResultIsTrue() {
-      Assertions.assertThat(StringUtilsSuppressWarning.isEmpty("")).isTrue();
+      assertThat(StringUtilsSuppressWarning.isEmpty("")).isTrue();
    }
 
    @Test

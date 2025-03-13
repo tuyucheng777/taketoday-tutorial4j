@@ -1,13 +1,14 @@
 package cn.tuyucheng.taketoday.staticmethod;
 
-import cn.tuyucheng.taketoday.staticmodifier.Car;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.AfterClass;
+import org.junit.Test;
+
+import cn.tuyucheng.taketoday.staticmodifier.Car;
 
 public class CallNonStaticMethodUnitTest {
-   @AfterAll
+   @AfterClass
    public static void setUpCarInstance() {
       Car.setNumberOfCars(0);
    }

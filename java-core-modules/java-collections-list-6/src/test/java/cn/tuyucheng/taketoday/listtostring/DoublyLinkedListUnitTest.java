@@ -1,4 +1,4 @@
-package com.baeldung.listtostring;
+package cn.tuyucheng.taketoday.listtostring;
 
 import org.junit.jupiter.api.Test;
 

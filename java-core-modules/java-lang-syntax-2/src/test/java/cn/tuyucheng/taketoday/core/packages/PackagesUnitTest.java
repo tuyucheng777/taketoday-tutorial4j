@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.core.packages;
 
 import cn.tuyucheng.taketoday.core.packages.domain.TodoItem;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class PackagesUnitTest {
 

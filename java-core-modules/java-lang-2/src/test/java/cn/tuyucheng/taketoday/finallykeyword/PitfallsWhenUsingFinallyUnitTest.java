@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.finallykeyword;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
 
 public class PitfallsWhenUsingFinallyUnitTest {
 

@@ -4,14 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-lang-1</artifactId>
-   <name>java-lang-1</name>
    <packaging>jar</packaging>
+   <name>java-lang-1</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
       <artifactId>java-core-modules</artifactId>
       <version>1.0.0</version>
    </parent>
+
+   <dependencies>
+      <dependency>
+         <groupId>commons-beanutils</groupId>
+         <artifactId>commons-beanutils</artifactId>
+         <version>${commons.beanutils.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons-lang3.version}</version>
+      </dependency>
+   </dependencies>
 
    <build>
       <finalName>java-lang-1</finalName>
@@ -22,4 +35,8 @@
          </resource>
       </resources>
    </build>
+
+   <properties>
+      <commons.beanutils.version>1.9.4</commons.beanutils.version>
+   </properties>
 </project>

@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.initializationguide;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.*;
 
 import java.lang.reflect.InvocationTargetException;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class UserUnitTest {
 

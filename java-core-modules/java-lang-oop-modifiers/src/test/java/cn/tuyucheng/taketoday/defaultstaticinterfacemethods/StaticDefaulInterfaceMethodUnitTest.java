@@ -3,22 +3,22 @@ package cn.tuyucheng.taketoday.defaultstaticinterfacemethods;
 import cn.tuyucheng.taketoday.defaultstaticinterfacemethods.model.Car;
 import cn.tuyucheng.taketoday.defaultstaticinterfacemethods.model.Motorbike;
 import cn.tuyucheng.taketoday.defaultstaticinterfacemethods.model.Vehicle;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class StaticDefaulInterfaceMethodUnitTest {
 
    private static Car car;
    private static Motorbike motorbike;
 
-   @BeforeAll
+   @BeforeClass
    public static void setUpCarInstance() {
       car = new Car("BMW");
    }
 
-   @BeforeAll
+   @BeforeClass
    public static void setUpMotorbikeInstance() {
       motorbike = new Motorbike("Yamaha");
    }

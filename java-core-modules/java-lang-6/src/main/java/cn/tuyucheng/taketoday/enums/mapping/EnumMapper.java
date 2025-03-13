@@ -1,12 +1,13 @@
 package cn.tuyucheng.taketoday.enums.mapping;
 
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingConstants;
+import org.mapstruct.ValueMapping;
+
 import cn.tuyucheng.taketoday.enums.mapping.order.CmsOrderStatus;
 import cn.tuyucheng.taketoday.enums.mapping.order.OrderStatus;
 import cn.tuyucheng.taketoday.enums.mapping.user.ExternalUserStatus;
 import cn.tuyucheng.taketoday.enums.mapping.user.UserStatus;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.ValueMapping;
 
 @Mapper
 public interface EnumMapper {

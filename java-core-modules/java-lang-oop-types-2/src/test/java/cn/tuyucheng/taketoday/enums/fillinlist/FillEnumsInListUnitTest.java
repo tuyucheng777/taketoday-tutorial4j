@@ -8,13 +8,8 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 
-import static cn.tuyucheng.taketoday.enums.fillinlist.MagicNumber.FIVE;
-import static cn.tuyucheng.taketoday.enums.fillinlist.MagicNumber.FOUR;
-import static cn.tuyucheng.taketoday.enums.fillinlist.MagicNumber.ONE;
-import static cn.tuyucheng.taketoday.enums.fillinlist.MagicNumber.THREE;
-import static cn.tuyucheng.taketoday.enums.fillinlist.MagicNumber.TWO;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static cn.tuyucheng.taketoday.enums.fillinlist.MagicNumber.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 enum MagicNumber {
    ONE, TWO, THREE, FOUR, FIVE

@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-lang-oop-types-1</artifactId>
-   <name>java-lang-oop-types-1</name>
    <packaging>jar</packaging>
+   <name>java-lang-oop-types-1</name>
 
    <parent>
-      <artifactId>java-core-modules</artifactId>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
+      <artifactId>java-core-modules</artifactId>
       <version>1.0.0</version>
    </parent>
 

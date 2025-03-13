@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.typeerasure;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class TypeErasureUnitTest {
 

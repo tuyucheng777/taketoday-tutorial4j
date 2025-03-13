@@ -42,7 +42,7 @@ public class PascalTriangle {
    public static void main(String[] args) {
       int n = 5;
       printUseRecursion(n);
-//        printUseBinomialExpansion(n);
+      //        printUseBinomialExpansion(n);
    }
 
 }

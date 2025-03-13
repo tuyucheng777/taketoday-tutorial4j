@@ -1,9 +1,8 @@
 package cn.tuyucheng.taketoday.imports.wildcard;
 
 import java.awt.*;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.UUID;
 
 public class BookView extends Frame {
 

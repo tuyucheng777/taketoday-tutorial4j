@@ -2,7 +2,7 @@ package cn.tuyucheng.taketoday.core.scope;
 
 public class NestedScopesExample {
 
-   String title = "Tuyucheng";
+   String title = "Taketoday";
 
    public void printTitle() {
       System.out.println(title);

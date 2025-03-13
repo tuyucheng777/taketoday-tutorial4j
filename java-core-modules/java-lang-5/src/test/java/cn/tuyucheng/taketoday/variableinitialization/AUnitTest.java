@@ -1,10 +1,11 @@
 package cn.tuyucheng.taketoday.variableinitialization;
 
-import cn.tuyucheng.taketoday.variableInitialization.A;
-import cn.tuyucheng.taketoday.variableInitialization.B;
+import static org.mockito.Mockito.mock;
+
 import org.junit.jupiter.api.Test;
 
-import static org.mockito.Mockito.mock;
+import cn.tuyucheng.taketoday.variableInitialization.A;
+import cn.tuyucheng.taketoday.variableInitialization.B;
 
 public class AUnitTest {
 

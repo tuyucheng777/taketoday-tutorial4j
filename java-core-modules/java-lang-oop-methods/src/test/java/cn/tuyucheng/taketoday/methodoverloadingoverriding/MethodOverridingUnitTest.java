@@ -2,22 +2,22 @@ package cn.tuyucheng.taketoday.methodoverloadingoverriding;
 
 import cn.tuyucheng.taketoday.methodoverloadingoverriding.model.Car;
 import cn.tuyucheng.taketoday.methodoverloadingoverriding.model.Vehicle;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class MethodOverridingUnitTest {
 
    private static Vehicle vehicle;
    private static Car car;
 
-   @BeforeAll
+   @BeforeClass
    public static void setUpVehicleInstance() {
       vehicle = new Vehicle();
    }
 
-   @BeforeAll
+   @BeforeClass
    public static void setUpCarInstance() {
       car = new Car();
    }

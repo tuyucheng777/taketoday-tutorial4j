@@ -1,15 +1,16 @@
 package cn.tuyucheng.taketoday.classtype;
 
-import cn.tuyucheng.taketoday.generics.classtype.ContainerTypeFromReflection;
-import cn.tuyucheng.taketoday.generics.classtype.ContainerTypeFromTypeParameter;
-import cn.tuyucheng.taketoday.generics.classtype.TypeToken;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import cn.tuyucheng.taketoday.generics.classtype.ContainerTypeFromReflection;
+import cn.tuyucheng.taketoday.generics.classtype.ContainerTypeFromTypeParameter;
+import cn.tuyucheng.taketoday.generics.classtype.TypeToken;
 
 public class GenericClassTypeUnitTest {
 

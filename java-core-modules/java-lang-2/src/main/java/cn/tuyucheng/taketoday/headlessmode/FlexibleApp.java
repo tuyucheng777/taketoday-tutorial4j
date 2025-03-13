@@ -1,7 +1,8 @@
 package cn.tuyucheng.taketoday.headlessmode;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.GraphicsEnvironment;
+
+import javax.swing.JOptionPane;
 
 public class FlexibleApp {
    public static final int HEADLESS = 0;

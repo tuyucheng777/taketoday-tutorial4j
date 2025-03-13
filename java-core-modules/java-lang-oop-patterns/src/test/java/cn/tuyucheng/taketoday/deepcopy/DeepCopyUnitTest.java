@@ -1,14 +1,15 @@
 package cn.tuyucheng.taketoday.deepcopy;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import org.apache.commons.lang3.SerializationUtils;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.apache.commons.lang3.SerializationUtils;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 
 public class DeepCopyUnitTest {
 
@@ -81,7 +82,7 @@ public class DeepCopyUnitTest {
    }
 
    @Test
-   @Disabled
+   @Ignore
    public void whenMakingCopies_thenShowHowLongEachMethodTakes() throws CloneNotSupportedException, IOException {
       int times = 1000000;
       Address address = new Address("Downing St 10", "London", "England");

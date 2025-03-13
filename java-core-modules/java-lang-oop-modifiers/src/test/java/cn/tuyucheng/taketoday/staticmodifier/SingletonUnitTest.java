@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.staticmodifier;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SingletonUnitTest {
 
@@ -10,6 +10,6 @@ public class SingletonUnitTest {
       Singleton object1 = Singleton.getInstance();
       Singleton object2 = Singleton.getInstance();
 
-      Assertions.assertSame(object1, object2);
+      Assert.assertSame(object1, object2);
    }
 }

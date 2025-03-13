@@ -5,16 +5,16 @@
  */
 package cn.tuyucheng.taketoday.enums.values;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
 
 /**
  * @author chris
@@ -25,19 +25,19 @@ public class Element2UnitTest {
    public Element2UnitTest() {
    }
 
-   @BeforeAll
+   @BeforeClass
    public static void setUpClass() {
    }
 
-   @AfterAll
+   @AfterClass
    public static void tearDownClass() {
    }
 
-   @BeforeEach
+   @Before
    public void setUp() {
    }
 
-   @AfterEach
+   @After
    public void tearDown() {
    }
 

@@ -1,10 +1,8 @@
 package cn.tuyucheng.taketoday.enums.extendenum;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ExtendEnumUnitTest {
    private Application app = new Application();

@@ -10,7 +10,7 @@ public class TieredCompilation {
          } else {
             formatter = new XmlFormatter();
          }
-         formatter.format(new Article("Tiered Compilation in JVM", "Tuyucheng"));
+         formatter.format(new Article("Tiered Compilation in JVM", "Taketoday"));
       }
    }
 

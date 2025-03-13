@@ -1,15 +1,14 @@
 package cn.tuyucheng.taketoday.utilities;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 class StringUtilsUnitTest {
 
    @Test
    void givenAnEmptyString_whenCallingIsEmpty_thenResultIsTrue() {
-      Assertions.assertThat(StringUtils.isEmpty("")).isTrue();
+      assertThat(StringUtils.isEmpty("")).isTrue();
    }
 
    @Test

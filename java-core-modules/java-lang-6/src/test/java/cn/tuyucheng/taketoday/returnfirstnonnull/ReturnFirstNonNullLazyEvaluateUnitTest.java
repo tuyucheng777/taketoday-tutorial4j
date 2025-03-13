@@ -1,18 +1,18 @@
 package cn.tuyucheng.taketoday.returnfirstnonnull;
 
-import org.apache.commons.lang3.ObjectUtils;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import org.apache.commons.lang3.ObjectUtils;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 public class ReturnFirstNonNullLazyEvaluateUnitTest {
 

@@ -1,11 +1,16 @@
 package cn.tuyucheng.taketoday.stopexecution;
 
-import org.junit.FixMethodOrder;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.runners.MethodSorters;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
+
+import org.junit.Assert;
+import org.junit.FixMethodOrder;
+import org.junit.jupiter.api.Test;
+import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StopExecutionFurtherCodeUnitTest {
@@ -15,7 +20,7 @@ public class StopExecutionFurtherCodeUnitTest {
    void givenExecution_whenStopIsNotCalled_thenTaskIsPerformed() {
       StopExecutionFurtherCode stopExecution = new StopExecutionFurtherCode();
       int performedTask = stopExecution.performTask(10, 20);
-      Assertions.assertEquals(30, performedTask);
+      Assert.assertEquals(30, performedTask);
    }
 
    // This test case have been commented because, otherwise, the program will exit since System.exit(statusCode) is being used.
@@ -28,7 +33,7 @@ public class StopExecutionFurtherCodeUnitTest {
     }*/
 
    @Test
-   void givenWrongUrlAndPath_whenDownloadCalled_thenExecutionIsStopped() throws MalformedURLException {
+   void givenWrongUrlAndPath_whenDownloadCalled_thenExecutionIsStopped() throws Exception {
       StopExecutionFurtherCode stopExecutionFurtherCode = new StopExecutionFurtherCode();
       stopExecutionFurtherCode.download("", "");
    }
@@ -38,14 +43,14 @@ public class StopExecutionFurtherCodeUnitTest {
       StopExecutionFurtherCode stopExecutionFurtherCode = new StopExecutionFurtherCode();
       String name = "John";
       String result1 = stopExecutionFurtherCode.stopExecutionUsingException(name);
-      Assertions.assertEquals("JOHN", result1);
+      Assert.assertEquals("JOHN", result1);
       try {
          Integer number1 = 10;
-         Assertions.assertThrows(IllegalArgumentException.class, () -> {
+         Assert.assertThrows(IllegalArgumentException.class, () -> {
             int result = stopExecutionFurtherCode.stopExecutionUsingException(number1);
          });
       } catch (Exception e) {
-         Assertions.fail("Unexpected exception thrown: " + e.getMessage());
+         Assert.fail("Unexpected exception thrown: " + e.getMessage());
       }
    }
 
@@ -53,7 +58,7 @@ public class StopExecutionFurtherCodeUnitTest {
    void givenBaseCase_whenStopExecutionWhenBaseCaseKnownCalled_thenFactorialIsCalculated() throws MalformedURLException {
       StopExecutionFurtherCode stopExecutionFurtherCode = new StopExecutionFurtherCode();
       int factorial = stopExecutionFurtherCode.calculateFactorial(1);
-      Assertions.assertEquals(1, factorial);
+      Assert.assertEquals(1, factorial);
    }
 
    @Test
@@ -61,7 +66,7 @@ public class StopExecutionFurtherCodeUnitTest {
       StopExecutionFurtherCode stopExecutionFurtherCode = new StopExecutionFurtherCode();
       int[] nums = {1, 2, 3, -1, 1, 2, 3};
       int sum = stopExecutionFurtherCode.calculateSum(nums);
-      Assertions.assertEquals(6, sum);
+      Assert.assertEquals(6, sum);
    }
 
    @Test
@@ -71,7 +76,7 @@ public class StopExecutionFurtherCodeUnitTest {
       Thread.sleep(2000);
       stopExecution.interrupt();
       stopExecution.join();
-      Assertions.assertTrue(!stopExecution.isAlive());
+      Assert.assertTrue(!stopExecution.isAlive());
    }
 
    @Test
@@ -79,7 +84,7 @@ public class StopExecutionFurtherCodeUnitTest {
       StopExecutionFurtherCode furtherCode = new StopExecutionFurtherCode();
       final String[] lines = {"Line 1", "Line 2", "Line 3", "stop", "Line 4", "Line 5"};
       int statusCode = furtherCode.processLines(lines);
-      Assertions.assertEquals(-1, statusCode);
+      Assert.assertEquals(-1, statusCode);
    }
 
 }

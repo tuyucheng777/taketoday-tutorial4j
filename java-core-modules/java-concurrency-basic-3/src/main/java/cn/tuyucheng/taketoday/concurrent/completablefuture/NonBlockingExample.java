@@ -10,7 +10,7 @@ public class NonBlockingExample {
     private static final Logger logger = LoggerFactory.getLogger(NonBlockingExample.class);
 
     public static void main(String[] args) {
-        CompletableFuture.supplyAsync(() -> "Baeldung")
+        CompletableFuture.supplyAsync(() -> "Taketoday")
           .thenApply(String::length)
           .thenAccept(s -> logger.info(String.valueOf(s)));
     }

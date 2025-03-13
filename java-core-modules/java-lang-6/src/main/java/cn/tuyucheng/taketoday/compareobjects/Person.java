@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.compareobjects;
 
-import org.apache.commons.lang3.builder.DiffExclude;
-
 import java.util.List;
 import java.util.Objects;
+
+import org.apache.commons.lang3.builder.DiffExclude;
 
 public class Person {
    private String firstName;

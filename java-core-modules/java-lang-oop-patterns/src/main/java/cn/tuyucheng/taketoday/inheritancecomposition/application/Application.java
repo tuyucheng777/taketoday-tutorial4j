@@ -1,12 +1,7 @@
 package cn.tuyucheng.taketoday.inheritancecomposition.application;
 
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Actress;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Computer;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Person;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.StandardMemory;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.StandardProcessor;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.StandardSoundCard;
-import cn.tuyucheng.taketoday.inheritancecomposition.model.Waitress;
+import cn.tuyucheng.taketoday.inheritancecomposition.model.*;
+import cn.tuyucheng.taketoday.inheritancecomposition.model.*;
 
 public class Application {
 

@@ -1,14 +1,15 @@
 package cn.tuyucheng.taketoday.enums.mapping;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 import cn.tuyucheng.taketoday.enums.mapping.order.CmsOrderStatus;
 import cn.tuyucheng.taketoday.enums.mapping.order.OrderStatus;
 import cn.tuyucheng.taketoday.enums.mapping.user.ExternalUserStatus;
 import cn.tuyucheng.taketoday.enums.mapping.user.UserStatus;
 import cn.tuyucheng.taketoday.enums.mapping.user.UserStatusMapper;
 import cn.tuyucheng.taketoday.enums.mapping.user.UserStatusWithFieldVariable;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EnumConversionUnitTest {
 

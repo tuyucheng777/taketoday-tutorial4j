@@ -1,19 +1,20 @@
 package cn.tuyucheng.taketoday.returnfirstnonnull;
 
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterables;
-import org.apache.commons.lang3.ObjectUtils;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.apache.commons.lang3.ObjectUtils;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Predicates;
+import com.google.common.collect.Iterables;
 
 public class ReturnFirstNonNullUnitTest {
 

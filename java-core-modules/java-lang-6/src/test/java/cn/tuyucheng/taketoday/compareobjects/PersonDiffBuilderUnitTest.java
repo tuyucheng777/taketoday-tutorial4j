@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.compareobjects;
 
-import org.apache.commons.lang3.builder.Diff;
-import org.apache.commons.lang3.builder.DiffResult;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import org.apache.commons.lang3.builder.Diff;
+import org.apache.commons.lang3.builder.DiffResult;
+import org.junit.jupiter.api.Test;
 
 public class PersonDiffBuilderUnitTest {
 

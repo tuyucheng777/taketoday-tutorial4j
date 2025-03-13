@@ -57,8 +57,8 @@
                               <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
                            </archive>
                            <includes>
-                              <include>com/baeldung/instrumentation/application/AgentLoader.class</include>
-                              <include>com/baeldung/instrumentation/application/Launcher.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/application/AgentLoader.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/application/Launcher.class</include>
                            </includes>
                         </configuration>
                      </execution>
@@ -92,9 +92,9 @@
                            </archive>
 
                            <includes>
-                              <include>com/baeldung/instrumentation/application/MyAtm.class</include>
-                              <include>com/baeldung/instrumentation/application/MyAtmApplication.class</include>
-                              <include>com/baeldung/instrumentation/application/Launcher.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/application/MyAtm.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/application/MyAtmApplication.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/application/Launcher.class</include>
                            </includes>
                         </configuration>
                      </execution>
@@ -128,8 +128,8 @@
                            </archive>
 
                            <includes>
-                              <include>com/baeldung/instrumentation/agent/AtmTransformer.class</include>
-                              <include>com/baeldung/instrumentation/agent/MyInstrumentationAgent.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/agent/AtmTransformer.class</include>
+                              <include>cn/tuyucheng/taketoday/instrumentation/agent/MyInstrumentationAgent.class</include>
                            </includes>
                         </configuration>
                      </execution>
