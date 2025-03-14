@@ -1,11 +1,7 @@
 package cn.tuyucheng.taketoday.reflection.createobject;
 
-import cn.tuyucheng.taketoday.reflection.createobject.basic.BronzeJobCard;
-import cn.tuyucheng.taketoday.reflection.createobject.basic.GoldJobCard;
-import cn.tuyucheng.taketoday.reflection.createobject.basic.MaintenanceJob;
-import cn.tuyucheng.taketoday.reflection.createobject.basic.PaintJob;
-import cn.tuyucheng.taketoday.reflection.createobject.basic.RepairJob;
-import cn.tuyucheng.taketoday.reflection.createobject.basic.SilverJobCard;
+import cn.tuyucheng.taketoday.reflection.createobject.basic.*;
+import cn.tuyucheng.taketoday.reflection.createobject.basic.*;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;

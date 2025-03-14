@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.reflect;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.lang.reflect.Parameter;
 import java.util.Arrays;

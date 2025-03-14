@@ -1,4 +1,4 @@
 package cn.tuyucheng.taketoday.reflection.access.packages.search;
 
-public interface InterfaceExample {
+public @interface Searchable {
 }

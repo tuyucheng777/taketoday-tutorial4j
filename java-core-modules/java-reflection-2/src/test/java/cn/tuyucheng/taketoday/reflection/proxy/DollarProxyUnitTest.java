@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.reflection.proxy;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.lang.reflect.Proxy;
 import java.util.function.Consumer;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class DollarProxyUnitTest {
    @Test

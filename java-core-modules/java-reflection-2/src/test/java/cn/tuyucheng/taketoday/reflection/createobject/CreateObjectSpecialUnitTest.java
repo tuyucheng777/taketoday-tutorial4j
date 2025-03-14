@@ -4,11 +4,12 @@ import cn.tuyucheng.taketoday.reflection.createobject.special.MaintenanceJob;
 import cn.tuyucheng.taketoday.reflection.createobject.special.PaintJob;
 import cn.tuyucheng.taketoday.reflection.createobject.special.PlatinumJobCard;
 import cn.tuyucheng.taketoday.reflection.createobject.special.RepairJob;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CreateObjectSpecialUnitTest {
    @Test

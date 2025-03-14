@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-reflection-1</artifactId>
-   <name>java-reflection-1</name>
    <packaging>jar</packaging>
+   <name>java-reflection</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -49,8 +49,8 @@
    </build>
 
    <properties>
-      <source.version>1.8</source.version>
-      <target.version>1.8</target.version>
+      <source.version>23</source.version>
+      <target.version>23</target.version>
       <reflections.version>0.10.2</reflections.version>
    </properties>
 </project>

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>java-reflection-3</artifactId>
-   <name>java-reflection-3</name>
    <packaging>jar</packaging>
+   <name>java-reflection-3</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday.java-core-modules</groupId>
@@ -19,6 +19,11 @@
          <artifactId>spring-test</artifactId>
          <version>${spring.version}</version>
          <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons-lang3.version}</version>
       </dependency>
       <dependency>
          <groupId>org.reflections</groupId>
@@ -49,7 +54,7 @@
          <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.8</version>
+            <version>${jacoco-maven-plugin.version}</version>
             <executions>
                <execution>
                   <goals>
@@ -69,10 +74,10 @@
    </build>
 
    <properties>
-      <reflections.version>0.9.12</reflections.version>
-      <source.version>1.8</source.version>
-      <target.version>1.8</target.version>
-      <spring.version>6.2.2</spring.version>
+      <reflections.version>0.10.2</reflections.version>
+      <source.version>23</source.version>
+      <target.version>23</target.version>
+      <spring.version>5.3.4</spring.version>
+      <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
    </properties>
-
 </project>

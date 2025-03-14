@@ -1,15 +1,15 @@
 package cn.tuyucheng.taketoday.reflection.innerclass;
 
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class CreateInnerClassWithReflectionUnitTest {
 
@@ -64,4 +64,5 @@ public class CreateInnerClassWithReflectionUnitTest {
       Person.Address personAddressObj = constructorOfPersonAddress.newInstance(personObj, "751003");
       assertTrue(personAddressObj instanceof Person.Address);
    }
+
 }

@@ -1,8 +1,8 @@
 package cn.tuyucheng.taketoday.currentmethod;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * The class presents various ways of finding the name of currently executed method.

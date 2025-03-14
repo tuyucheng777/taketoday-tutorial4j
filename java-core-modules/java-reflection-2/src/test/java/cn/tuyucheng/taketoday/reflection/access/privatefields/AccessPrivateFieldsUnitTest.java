@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.reflection.access.privatefields;
 
+import java.lang.reflect.Field;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.lang.reflect.Field;
 
 public class AccessPrivateFieldsUnitTest {
 
