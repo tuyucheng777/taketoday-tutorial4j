@@ -1,6 +1,10 @@
 package cn.tuyucheng.taketoday.java9.process;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,30 +12,26 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
-class ProcessUnderstandingUnitTest {
+class ProcessUnderstandingManualTest {
 
    @Test
    public void givenSubProcess_whenEncounteringError_thenErrorStreamNotNull() throws IOException {
       Process process = Runtime.getRuntime()
-            .exec("javac -cp src src\\main\\java\\com\\tuyucheng\\java9\\process\\ProcessCompilationError.java");
+            .exec("javac -cp src\\test\\resources\\cn\\tuyucheng\\taketoday\\java9\\process\\ProcessCompilationError.java");
       BufferedReader error = new BufferedReader(new InputStreamReader(process.getErrorStream()));
       String errorString = error.readLine();
       assertNotNull(errorString);
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenStarted_thenStartSuccessIsAlive() throws IOException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       assertTrue(builder.start().isAlive());
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenDestroying_thenProcessNotAlive() throws IOException, InterruptedException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       Process process = builder.start();
@@ -40,7 +40,7 @@ class ProcessUnderstandingUnitTest {
       assertFalse(process.isAlive());
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenAlive_thenDestroyForcibly() throws IOException, InterruptedException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       Process process = builder.start();
@@ -52,7 +52,7 @@ class ProcessUnderstandingUnitTest {
       assertFalse(process.isAlive());
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenDestroyed_thenCheckIfAlive() throws IOException, InterruptedException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       Process process = builder.start();
@@ -61,21 +61,21 @@ class ProcessUnderstandingUnitTest {
       assertFalse(process.isAlive());
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenCurrentThreadWaitsIndefinitelyuntilSubProcessEnds_thenProcessWaitForReturnsGrt0() throws IOException, InterruptedException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       Process process = builder.start();
       assertThat(process.waitFor() >= 0);
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenCurrentThreadWaitsAndSubProcessNotTerminated_thenProcessWaitForReturnsFalse() throws IOException, InterruptedException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       Process process = builder.start();
       assertFalse(process.waitFor(1, TimeUnit.SECONDS));
    }
 
-   //@Test - windows specific
+   @Test // windows specific
    public void givenSubProcess_whenCurrentThreadWillNotWaitIndefinitelyforSubProcessToEnd_thenProcessExitValueReturnsGrt0() throws IOException {
       ProcessBuilder builder = new ProcessBuilder("notepad.exe");
       Process process = builder.start();
@@ -93,7 +93,7 @@ class ProcessUnderstandingUnitTest {
    public void givenSourceProgram_whenReadingInputStream_thenFirstLineEquals3() throws IOException, InterruptedException {
 
       Runtime.getRuntime()
-            .exec("javac -cp src src/main/java/com/tuyucheng/java9/process/OutputStreamExample.java"
+            .exec("javac -cp src src/main/java/cn/tuyucheng/taketoday/java9/process/OutputStreamExample.java"
                   .replace("/", File.separator))
             .waitFor(5, TimeUnit.SECONDS);
 

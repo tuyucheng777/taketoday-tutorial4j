@@ -1,7 +1,8 @@
 package cn.tuyucheng.taketoday.java9.process;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -13,11 +14,12 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ProcessApiUnitTest {
 
-   @BeforeEach
+   @Before
    public void init() {
 
    }

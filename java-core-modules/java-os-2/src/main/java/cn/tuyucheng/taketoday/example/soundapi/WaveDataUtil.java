@@ -1,9 +1,10 @@
 package cn.tuyucheng.taketoday.example.soundapi;
 
+import java.io.File;
+
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
-import java.io.File;
 
 public class WaveDataUtil {
    public boolean saveToFile(String name, AudioFileFormat.Type fileType, AudioInputStream audioInputStream) {

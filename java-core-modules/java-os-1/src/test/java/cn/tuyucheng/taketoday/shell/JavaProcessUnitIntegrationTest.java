@@ -1,9 +1,9 @@
 package cn.tuyucheng.taketoday.shell;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.File;
 import java.util.concurrent.ExecutorService;
@@ -12,24 +12,24 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JavaProcessUnitIntegrationTest {
    private static final boolean IS_WINDOWS = System.getProperty("os.name").toLowerCase().startsWith("windows");
 
-   private Consumer<String> consumer = Assertions::assertNotNull;
+   private Consumer<String> consumer = Assert::assertNotNull;
 
    private String homeDirectory = System.getProperty("user.home");
 
    private ExecutorService executorService;
 
-   @BeforeEach
+   @Before
    public void setUp() {
       executorService = Executors.newSingleThreadExecutor();
    }
 
-   @AfterEach
+   @After
    public void tearDown() {
       executorService.shutdown();
    }

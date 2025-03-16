@@ -1,16 +1,17 @@
 package cn.tuyucheng.taketoday.screenshot;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertTrue;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import javax.imageio.ImageIO;
 
-@Disabled
+import org.junit.Ignore;
+import org.junit.Test;
+
+@Ignore
 public class ScreenshotUnitTest {
 
    @Test

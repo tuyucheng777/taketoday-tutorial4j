@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.printscreen;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.After;
+import org.junit.Test;
 
 public class ScreenshotLiveTest {
 
@@ -18,7 +18,7 @@ public class ScreenshotLiveTest {
       assertTrue(file.exists());
    }
 
-   @AfterEach
+   @After
    public void tearDown() throws Exception {
       file.delete();
    }
