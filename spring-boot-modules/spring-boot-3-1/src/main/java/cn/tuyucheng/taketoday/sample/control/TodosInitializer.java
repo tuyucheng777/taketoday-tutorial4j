@@ -24,4 +24,5 @@ public class TodosInitializer {
          this.service.create(new Todo(null, "Enter some TODO items!"));
       }
    }
+
 }

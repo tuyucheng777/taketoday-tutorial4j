@@ -21,4 +21,5 @@ public class CorsConfigurationData {
 
    private String[] origins = {"*"};
    private boolean credentials = false;
+
 }

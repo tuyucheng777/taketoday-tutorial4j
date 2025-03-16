@@ -12,4 +12,5 @@ interface TodoEntityMapper {
    TodoEntity map(Todo todo);
 
    Todo map(TodoEntity todo);
+
 }

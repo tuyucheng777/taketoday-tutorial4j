@@ -20,4 +20,5 @@ public record Todo(
    public Todo(Long id, String title) {
       this(id, title, null, null, Status.NEW);
    }
+
 }

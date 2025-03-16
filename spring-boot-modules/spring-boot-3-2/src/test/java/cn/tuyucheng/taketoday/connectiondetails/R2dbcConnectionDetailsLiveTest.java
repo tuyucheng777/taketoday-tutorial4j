@@ -32,6 +32,7 @@ public class R2dbcConnectionDetailsLiveTest {
 
    @Test
    public void givenSecretVault_whenQueryPostgresReactive_thenSuccess() {
+
       String sql = "select * from information_schema.tables";
 
       List<String> result = r2dbcEntityTemplate.getDatabaseClient().sql(sql).fetch().all()

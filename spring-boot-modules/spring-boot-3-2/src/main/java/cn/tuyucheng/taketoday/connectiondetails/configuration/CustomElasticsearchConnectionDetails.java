@@ -25,4 +25,5 @@ public class CustomElasticsearchConnectionDetails implements ElasticsearchConnec
    public String getPassword() {
       return VaultAdapter.getSecret("elastic_secret");
    }
+
 }

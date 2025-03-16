@@ -11,3 +11,4 @@ public class MongoDBConnectionDetails implements MongoConnectionDetails {
       return new ConnectionString(VaultAdapter.getSecret("mongo_connection_string"));
    }
 }
+

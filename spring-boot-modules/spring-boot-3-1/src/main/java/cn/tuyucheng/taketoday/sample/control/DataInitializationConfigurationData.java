@@ -10,4 +10,5 @@ import org.springframework.context.annotation.Configuration;
 public class DataInitializationConfigurationData {
 
    private boolean initializeOnStartup = true;
+
 }

@@ -45,4 +45,5 @@ public class Neo4jConnectionDetailsLiveTest {
       Person data = neo4jTemplate.save(person);
       assertEquals("James", data.getName());
    }
+
 }

@@ -4,7 +4,7 @@
 
 ## 目录
 
-+ [Spring Boot 3](spring-boot-3/README.md)
++ [Spring Boot 3](spring-boot-3-1/README.md)
 + [Spring Boot 3 Native](spring-boot-3-native/README.md)
 + [Spring Boot 3 Observation](spring-boot-3-observation/README.md)
 + [Spring Boot 3 RSocket Exchange](spring-boot-3-rsocket-exchange/README.md)

@@ -20,4 +20,5 @@ public class GlobalExceptionHandler {
    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
    protected void handleValidationException() {
    }
+
 }

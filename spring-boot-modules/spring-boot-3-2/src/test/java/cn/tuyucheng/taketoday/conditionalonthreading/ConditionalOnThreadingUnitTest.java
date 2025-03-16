@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-class ConditionalOnThreadingUnitTest {
+public class ConditionalOnThreadingUnitTest {
 
    ApplicationContextRunner applicationContextRunner = new ApplicationContextRunner()
          .withUserConfiguration(CurrentConfig.class);
@@ -37,7 +37,7 @@ class ConditionalOnThreadingUnitTest {
 
    @Test
    @EnabledForJreRange(max = JRE.JAVA_20)
-   void whenJava20AndVirtualThreadsEnabled_thenThreadingIsPlatform() {
+   public void whenJava20AndVirtualThreadsEnabled_thenThreadingIsPlatform() {
       applicationContextRunner.withPropertyValues("spring.threads.virtual.enabled=true").run(context -> {
          Assertions.assertThat(context.getBean(ThreadingType.class)).isEqualTo(ThreadingType.PLATFORM);
       });
@@ -45,7 +45,7 @@ class ConditionalOnThreadingUnitTest {
 
    @Test
    @EnabledForJreRange(max = JRE.JAVA_20)
-   void whenJava20AndVirtualThreadsDisabled_thenThreadingIsPlatform() {
+   public void whenJava20AndVirtualThreadsDisabled_thenThreadingIsPlatform() {
       applicationContextRunner.withPropertyValues("spring.threads.virtual.enabled=false").run(context -> {
          Assertions.assertThat(context.getBean(ThreadingType.class)).isEqualTo(ThreadingType.PLATFORM);
       });
@@ -53,7 +53,7 @@ class ConditionalOnThreadingUnitTest {
 
    @Test
    @EnabledForJreRange(min = JRE.JAVA_21)
-   void whenJava21AndVirtualThreadsEnabled_thenThreadingIsVirtual() {
+   public void whenJava21AndVirtualThreadsEnabled_thenThreadingIsVirtual() {
       applicationContextRunner.withPropertyValues("spring.threads.virtual.enabled=true").run(context -> {
          Assertions.assertThat(context.getBean(ThreadingType.class)).isEqualTo(ThreadingType.VIRTUAL);
       });
@@ -61,9 +61,10 @@ class ConditionalOnThreadingUnitTest {
 
    @Test
    @EnabledForJreRange(min = JRE.JAVA_21)
-   void whenJava21AndVirtualThreadsDisabled_thenThreadingIsPlatform() {
+   public void whenJava21AndVirtualThreadsDisabled_thenThreadingIsPlatform() {
       applicationContextRunner.withPropertyValues("spring.threads.virtual.enabled=false").run(context -> {
          Assertions.assertThat(context.getBean(ThreadingType.class)).isEqualTo(ThreadingType.PLATFORM);
       });
    }
+
 }

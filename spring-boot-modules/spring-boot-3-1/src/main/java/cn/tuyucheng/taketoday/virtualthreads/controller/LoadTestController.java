@@ -17,4 +17,5 @@ public class LoadTestController {
       LOG.info("hey, I'm doing something");
       Thread.sleep(1000);
    }
+
 }

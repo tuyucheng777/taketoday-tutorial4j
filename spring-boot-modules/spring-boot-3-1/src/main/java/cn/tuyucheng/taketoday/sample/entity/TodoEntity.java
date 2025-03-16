@@ -1,6 +1,11 @@
 package cn.tuyucheng.taketoday.sample.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
@@ -44,4 +49,5 @@ public class TodoEntity {
       this.id = id;
       this.title = title;
    }
+
 }

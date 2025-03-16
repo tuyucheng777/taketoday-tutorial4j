@@ -50,3 +50,4 @@ public class MongoDBConnectionDetailsLiveTest {
       assertEquals("My First Entry in MongoDB", result);
    }
 }
+

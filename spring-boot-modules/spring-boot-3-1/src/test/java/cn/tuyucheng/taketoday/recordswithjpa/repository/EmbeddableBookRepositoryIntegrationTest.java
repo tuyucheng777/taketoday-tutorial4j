@@ -4,7 +4,7 @@ import cn.tuyucheng.taketoday.recordswithjpa.RecordsAsJpaEmbeddableIntegrationTe
 import cn.tuyucheng.taketoday.recordswithjpa.embeddable.Author;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class EmbeddableBookRepositoryIntegrationTest extends RecordsAsJpaEmbeddableIntegrationTest {
 

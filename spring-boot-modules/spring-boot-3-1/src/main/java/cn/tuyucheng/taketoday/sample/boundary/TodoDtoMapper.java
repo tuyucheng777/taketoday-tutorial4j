@@ -30,4 +30,5 @@ interface TodoDtoMapper {
          default -> Todo.Status.NEW;
       };
    }
+
 }

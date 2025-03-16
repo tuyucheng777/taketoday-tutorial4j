@@ -28,4 +28,5 @@ public class SpringJUnitWebConfigIntegrationTest {
    @Configuration
    static class Config {
    }
+
 }

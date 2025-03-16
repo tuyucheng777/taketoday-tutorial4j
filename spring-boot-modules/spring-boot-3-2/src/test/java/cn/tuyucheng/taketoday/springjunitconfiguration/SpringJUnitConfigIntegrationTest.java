@@ -6,8 +6,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.assertNotNull;
 
+/**
+ * @SpringJUnitConfig(SpringJUnitConfigTest.Config.class) is equivalent to:
+ * @ExtendWith(SpringExtension.class)
+ * @ContextConfiguration(classes = SpringJUnitConfigTest.Config.class )
+ */
 @SpringJUnitConfig(SpringJUnitConfigIntegrationTest.Config.class)
 public class SpringJUnitConfigIntegrationTest {
 
@@ -22,4 +27,5 @@ public class SpringJUnitConfigIntegrationTest {
    @Configuration
    static class Config {
    }
+
 }
