@@ -11,4 +11,5 @@ public class SpringBootJdbiApplication {
    public static void main(String[] args) {
       SpringApplication.run(SpringBootJdbiApplication.class, args);
    }
+
 }

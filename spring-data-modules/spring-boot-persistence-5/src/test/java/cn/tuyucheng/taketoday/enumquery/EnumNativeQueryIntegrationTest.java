@@ -42,4 +42,5 @@ class EnumNativeQueryIntegrationTest {
       assertThat(retrievedArticles).isNotEmpty().extracting(Article::getStage).doesNotContain(ArticleStage.PUBLISHED)
             .hasSameElementsAs(stagesToQuery);
    }
+
 }

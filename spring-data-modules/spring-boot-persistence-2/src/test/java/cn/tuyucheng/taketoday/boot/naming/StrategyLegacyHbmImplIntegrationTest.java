@@ -2,6 +2,7 @@ package cn.tuyucheng.taketoday.boot.naming;
 
 import cn.tuyucheng.taketoday.boot.naming.NamingConfig.Config;
 import cn.tuyucheng.taketoday.boot.naming.entity.Preference;
+
 import org.assertj.core.api.SoftAssertions;
 import org.hibernate.boot.Metadata;
 import org.hibernate.mapping.PersistentClass;

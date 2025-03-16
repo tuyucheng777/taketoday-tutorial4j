@@ -18,4 +18,5 @@ public class School {
    private Integer id;
 
    private String name;
+
 }

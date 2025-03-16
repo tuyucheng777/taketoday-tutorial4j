@@ -53,12 +53,13 @@ public class SpringBootDataSourceRoutingIntegrationTest {
 
    @Test
    public void givenClientDbs_whenContextsSwitch_thenRouteToCorrectDatabase() throws Exception {
+
       // test ACME WIDGETS
       String clientName = clientService.getClientName(ClientDatabase.CLIENT_A);
-      assertEquals("CLIENT A", clientName);
+      assertEquals(clientName, "CLIENT A");
 
       // test WIDGETS_ARE_US
       clientName = clientService.getClientName(ClientDatabase.CLIENT_B);
-      assertEquals("CLIENT B", clientName);
+      assertEquals(clientName, "CLIENT B");
    }
 }

@@ -46,6 +46,7 @@ abstract public class BaseNPlusOneIntegrationTest<T> extends ParametrizationAwar
       SQLStatementCountValidator.reset();
       System.out.println("************************************************");
       System.out.println("\n\n\n\n\n");
+
    }
 
    @AfterEach

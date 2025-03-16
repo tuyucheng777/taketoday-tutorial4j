@@ -9,4 +9,5 @@ public interface StudentNamedEntityGraphRepository extends JpaRepository<Student
 
    @EntityGraph(value = "Student.school")
    Page<Student> findAll(Pageable pageable);
+
 }

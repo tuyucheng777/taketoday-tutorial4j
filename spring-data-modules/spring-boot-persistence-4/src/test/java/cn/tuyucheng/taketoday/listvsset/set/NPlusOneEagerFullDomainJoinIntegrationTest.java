@@ -93,4 +93,5 @@ class NPlusOneEagerFullDomainJoinIntegrationTest extends BaseNPlusOneIntegration
       // Handle non-existent users while adding comments
       databaseUtil.mergeAll(jsonUtils.getUsers(User.class));
    }
+
 }

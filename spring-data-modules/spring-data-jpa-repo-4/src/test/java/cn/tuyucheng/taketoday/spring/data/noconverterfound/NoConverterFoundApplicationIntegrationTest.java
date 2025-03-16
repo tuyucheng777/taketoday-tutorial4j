@@ -60,4 +60,5 @@ class NoConverterFoundApplicationIntegrationTest {
       assertThat(employeeRepository.findIEmployeeFullNameById(3).fullName())
             .isEqualTo("Eva Smith");
    }
+
 }

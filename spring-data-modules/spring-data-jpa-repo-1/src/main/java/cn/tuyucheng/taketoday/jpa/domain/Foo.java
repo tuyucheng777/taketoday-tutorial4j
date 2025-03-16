@@ -57,12 +57,17 @@ public class Foo implements Serializable {
          return false;
       final Foo other = (Foo) obj;
       if (name == null) {
-         return other.name == null;
-      } else return name.equals(other.name);
+         if (other.name != null)
+            return false;
+      } else if (!name.equals(other.name))
+         return false;
+      return true;
    }
 
    @Override
    public String toString() {
-      return "Foo [name=" + name + "]";
+      final StringBuilder builder = new StringBuilder();
+      builder.append("Foo [name=").append(name).append("]");
+      return builder.toString();
    }
 }

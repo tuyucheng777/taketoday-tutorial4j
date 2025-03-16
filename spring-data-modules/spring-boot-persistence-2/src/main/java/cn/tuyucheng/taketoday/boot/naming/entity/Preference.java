@@ -14,4 +14,5 @@ public class Preference {
 
    @ManyToOne
    private Account account;
+
 }

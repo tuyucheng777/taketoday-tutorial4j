@@ -31,4 +31,5 @@ public class ExtendedRepositoryImpl<T, ID extends Serializable> extends SimpleJp
       TypedQuery<T> q = entityManager.createQuery(query);
       return q.getResultList();
    }
+
 }

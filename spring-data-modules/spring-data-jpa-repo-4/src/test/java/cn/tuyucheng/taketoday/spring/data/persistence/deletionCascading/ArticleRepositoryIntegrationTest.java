@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.deletionCascading;
 
 import cn.tuyucheng.taketoday.spring.data.persistence.unidirectionalcascadingdelete.*;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import jakarta.transaction.Transactional;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -31,6 +31,7 @@ public class ArticleRepositoryIntegrationTest {
    @Test
    @Transactional
    public void givenAnArticleAndItsComments_whenDeleteArticle_thenCommentsDeletedAutomatically() {
+
       Set<Comment> comments = new HashSet<>();
       Article article = new Article();
       article.setName("introduction to Spring");
@@ -61,5 +62,7 @@ public class ArticleRepositoryIntegrationTest {
       assertThat(articleRepository.findAll()).isEmpty();
 
       assertThat(commentRepository.findAll()).isEmpty();
+
    }
 }
+

@@ -28,4 +28,5 @@ public class ShopSale {
 
    @Column(name = "total_amount")
    private BigDecimal totalAmount;
+
 }

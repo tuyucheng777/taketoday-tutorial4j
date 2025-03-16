@@ -28,4 +28,5 @@ public class SpringBootH2IntegrationTest {
       assertNotNull(foundEntity);
       assertEquals(genericEntity.getValue(), foundEntity.getValue());
    }
+
 }

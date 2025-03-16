@@ -9,4 +9,5 @@ public class ImageArchiveApplication {
    public static void main(String[] args) {
       SpringApplication.run(ImageArchiveApplication.class, args);
    }
+
 }

@@ -16,4 +16,5 @@ public class UserService extends cn.tuyucheng.taketoday.listvsset.Service<User> 
    public UserRepository getRepository() {
       return ((UserRepository) super.getRepository());
    }
+
 }

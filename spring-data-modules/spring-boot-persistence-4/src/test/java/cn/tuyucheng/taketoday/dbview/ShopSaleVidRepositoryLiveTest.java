@@ -37,4 +37,5 @@ class ShopSaleVidRepositoryLiveTest {
       assertThat(shopSaleList).isNotEmpty();
       shopSaleList.forEach(s -> assertThat(s.getShopId()).isEqualTo(shopId));
    }
+
 }

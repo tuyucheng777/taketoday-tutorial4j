@@ -15,4 +15,5 @@ public class ShopSaleCompositeId {
    private int year;
 
    private int month;
+
 }

@@ -10,4 +10,5 @@ import java.util.List;
 public interface PassengerRepository extends JpaRepository<Passenger, Long> {
 
    List<Passenger> findByFirstNameIgnoreCase(String firstName);
+
 }

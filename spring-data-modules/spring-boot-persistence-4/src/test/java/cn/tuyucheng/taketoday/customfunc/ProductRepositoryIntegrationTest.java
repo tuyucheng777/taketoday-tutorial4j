@@ -60,4 +60,5 @@ public class ProductRepositoryIntegrationTest {
    public void afterEach() {
       productRepository.deleteAll();
    }
+
 }

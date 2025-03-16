@@ -46,7 +46,9 @@ class AdditionalLookupIntegrationTest extends DatabaseConfigurationBaseIntegrati
       Group group = new Group();
       group.setAdministrator(user);
       assertThatExceptionOfType(DataIntegrityViolationException.class)
-            .isThrownBy(() -> groupRepository.save(group));
+            .isThrownBy(() -> {
+               groupRepository.save(group);
+            });
       assertSelectCount(0);
    }
 
@@ -67,7 +69,9 @@ class AdditionalLookupIntegrationTest extends DatabaseConfigurationBaseIntegrati
       User user = userRepository.getReferenceById(1L);
       Group group = new Group();
       assertThatExceptionOfType(LazyInitializationException.class)
-            .isThrownBy(() -> group.addUser(user));
+            .isThrownBy(() -> {
+               group.addUser(user);
+            });
    }
 
    @Test

@@ -1,11 +1,6 @@
 package cn.tuyucheng.taketoday.boot.findby;
 
-import cn.tuyucheng.taketoday.findby.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.sql.Timestamp;
 import java.time.Instant;
@@ -13,7 +8,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import cn.tuyucheng.taketoday.findby.Account;
+import cn.tuyucheng.taketoday.findby.AccountApplication;
+import cn.tuyucheng.taketoday.findby.AccountRepository;
+import cn.tuyucheng.taketoday.findby.Permission;
+import cn.tuyucheng.taketoday.findby.PermissionRepository;
 
 @SpringBootTest(classes = AccountApplication.class)
 public class AccountRepositoryUnitTest {

@@ -33,6 +33,7 @@ public class FlushIntegrationTest {
 
    @Test
    void givenANewCustomer_whenPersistAndNoFlush_thenDatabaseNotSynchronizedWithPersistentContextUsingCommitFlushMode() {
+
       entityManager.setFlushMode(FlushModeType.COMMIT);
 
       EntityTransaction transaction = getTransaction();

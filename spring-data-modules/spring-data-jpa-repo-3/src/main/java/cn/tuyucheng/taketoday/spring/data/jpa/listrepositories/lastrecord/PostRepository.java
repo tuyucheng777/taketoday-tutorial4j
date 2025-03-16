@@ -11,4 +11,5 @@ public interface PostRepository extends JpaRepository<Post, Integer> {
 
    @Query("SELECT p FROM Post p ORDER BY p.publicationDate DESC LIMIT 1")
    Post findLastPost();
+
 }

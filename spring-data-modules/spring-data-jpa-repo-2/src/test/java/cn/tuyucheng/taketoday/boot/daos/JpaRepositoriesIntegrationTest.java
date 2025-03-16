@@ -7,7 +7,9 @@ import cn.tuyucheng.taketoday.boot.domain.Store;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -17,6 +19,10 @@ import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest(properties = "spring.sql.init.data-locations=classpath:import_entities.sql", showSql = false)
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@TestPropertySource(properties = {
+      "spring.jpa.properties.hibernate.globally_quoted_identifiers=false"
+})
 public class JpaRepositoriesIntegrationTest {
    @Autowired
    private LocationRepository locationRepository;

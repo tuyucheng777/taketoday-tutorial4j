@@ -52,4 +52,5 @@ class CustomQueryBookRepositoryIntegrationTest {
       assertTrue(book.isPresent());
       return book.get();
    }
+
 }

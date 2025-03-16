@@ -1,12 +1,14 @@
 package cn.tuyucheng.taketoday.spring.oracle.pooling.configuration;
 
-import com.mchange.v2.c3p0.ComboPooledDataSource;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import javax.sql.DataSource;
-import java.sql.SQLException;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @Profile("c3p0")

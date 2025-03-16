@@ -1,11 +1,10 @@
 package cn.tuyucheng.taketoday.spring.insertableonly.persistable;
 
-import org.springframework.data.domain.Persistable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.data.domain.Persistable;
 
 @Entity
 public class PersistableBook implements Persistable<Long> {

@@ -1,12 +1,13 @@
 package cn.tuyucheng.taketoday.spring.oracle.pooling;
 
-import lombok.extern.slf4j.Slf4j;
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.sql.DataSource;
+import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
 @Slf4j
@@ -21,6 +22,8 @@ public class SpringOraclePoolingApplication implements CommandLineRunner {
 
    @Override
    public void run(String... args) throws Exception {
-      LOGGER.info("Connection Polling datasource : " + dataSource);
+      log.info("Connection Polling datasource : " + dataSource);
+
    }
+
 }

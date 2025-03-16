@@ -65,9 +65,11 @@ class SimpleBookRepositoryIntegrationTest {
       assertThat(actualBook.get().getTitle()).isEqualTo(TITLE);
    }
 
+
    private SimpleBook getBookById(long id) {
       Optional<SimpleBook> book = repository.findById(id);
       assertTrue(book.isPresent());
       return book.get();
    }
+
 }

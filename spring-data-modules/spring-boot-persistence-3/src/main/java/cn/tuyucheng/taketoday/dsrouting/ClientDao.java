@@ -22,5 +22,7 @@ public class ClientDao {
       return this.jdbcTemplate.query(SQL_GET_CLIENT_NAME, rowMapper).get(0);
    }
 
-   private static RowMapper<String> rowMapper = (rs, rowNum) -> rs.getString("name");
+   private static RowMapper<String> rowMapper = (rs, rowNum) -> {
+      return rs.getString("name");
+   };
 }

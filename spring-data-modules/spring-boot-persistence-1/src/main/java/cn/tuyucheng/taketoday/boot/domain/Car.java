@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+/**
+ * @author paullatzelsperger
+ * @since 2019-03-20
+ */
 @Entity
 public class Car {
 

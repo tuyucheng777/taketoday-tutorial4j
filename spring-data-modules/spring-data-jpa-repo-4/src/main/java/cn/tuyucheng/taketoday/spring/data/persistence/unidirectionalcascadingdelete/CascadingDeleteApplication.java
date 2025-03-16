@@ -8,4 +8,5 @@ public class CascadingDeleteApplication {
    public static void main(String[] args) {
       SpringApplication.run(CascadingDeleteApplication.class, args);
    }
+
 }

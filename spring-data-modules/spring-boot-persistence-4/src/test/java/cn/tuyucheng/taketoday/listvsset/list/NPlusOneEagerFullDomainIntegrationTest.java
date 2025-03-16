@@ -63,6 +63,7 @@ class NPlusOneEagerFullDomainIntegrationTest extends BaseNPlusOneIntegrationTest
       result += 1;
       result += explorePosts(posts, visitedMap);
       return result;
+
    }
 
    private int explorePosts(List<Post> posts, HashMap<String, Set<Long>> visitedMap) {
@@ -115,4 +116,5 @@ class NPlusOneEagerFullDomainIntegrationTest extends BaseNPlusOneIntegrationTest
       // Handle non-existent users while adding comments
       databaseUtil.mergeAll(jsonUtils.getUsers(User.class));
    }
+
 }

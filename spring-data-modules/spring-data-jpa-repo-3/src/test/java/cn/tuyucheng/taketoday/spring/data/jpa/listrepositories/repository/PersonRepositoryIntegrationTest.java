@@ -59,4 +59,5 @@ class PersonRepositoryIntegrationTest {
 
       assertEquals("Query did not return a unique result: 2 results were returned", exception.getMessage());
    }
+
 }

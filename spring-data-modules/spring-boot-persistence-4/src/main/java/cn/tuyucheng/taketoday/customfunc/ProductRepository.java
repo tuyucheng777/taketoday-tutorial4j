@@ -20,4 +20,5 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
    @Query(value = "SELECT sha256Hex(p.name) FROM Product p")
    List<String> getProductNameListInSha256Hex();
+
 }

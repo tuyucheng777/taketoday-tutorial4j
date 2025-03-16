@@ -8,3 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface PermissionRepository extends JpaRepository<Permission, Integer> {
    Permission findByType(String type);
 }
+

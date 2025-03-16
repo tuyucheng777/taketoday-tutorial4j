@@ -24,4 +24,5 @@ public interface ArticleRepository extends JpaRepository<Article, UUID> {
 
    @Query(nativeQuery = true, value = "SELECT * FROM articles WHERE stage IN (:#{#stages.![name()]})")
    List<Article> getByStageIn(@Param("stages") List<ArticleStage> stages);
+
 }

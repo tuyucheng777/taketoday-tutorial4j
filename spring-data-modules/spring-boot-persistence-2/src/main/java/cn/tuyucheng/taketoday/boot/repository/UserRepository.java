@@ -1,6 +1,5 @@
 package cn.tuyucheng.taketoday.boot.repository;
 
-import cn.tuyucheng.taketoday.boot.domain.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -10,6 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
+
+import cn.tuyucheng.taketoday.boot.domain.User;
 
 import java.util.Collection;
 import java.util.List;
@@ -78,4 +79,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
    @Modifying
    @Query(value = "UPDATE Users u SET u.status = ? WHERE u.name = ?", nativeQuery = true)
    int updateUserSetStatusForNameNative(Integer status, String name);
+
 }

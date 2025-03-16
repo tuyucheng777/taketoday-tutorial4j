@@ -12,4 +12,5 @@ public class ApplicationDataLoading {
 
       SpringApplication.run(ApplicationDataLoading.class, args);
    }
+
 }

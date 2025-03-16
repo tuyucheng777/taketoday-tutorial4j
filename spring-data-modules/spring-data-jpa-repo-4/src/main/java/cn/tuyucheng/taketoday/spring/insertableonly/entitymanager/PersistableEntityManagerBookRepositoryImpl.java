@@ -14,4 +14,5 @@ public class PersistableEntityManagerBookRepositoryImpl<S> implements Persistabl
       entityManager.persist(entity);
       return entity;
    }
+
 }

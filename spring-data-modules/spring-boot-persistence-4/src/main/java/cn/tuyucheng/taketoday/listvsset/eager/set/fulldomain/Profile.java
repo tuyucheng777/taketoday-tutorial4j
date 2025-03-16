@@ -88,3 +88,4 @@ public class Profile {
             + ", profilePictureUrl=" + this.getProfilePictureUrl() + ", user=" + this.getUser() + ")";
    }
 }
+

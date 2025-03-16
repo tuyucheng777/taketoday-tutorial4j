@@ -1,5 +1,6 @@
 package cn.tuyucheng.taketoday.boot.daos.impl;
 
+
 import cn.tuyucheng.taketoday.boot.daos.CustomItemTypeRepository;
 import cn.tuyucheng.taketoday.boot.domain.ItemType;
 import jakarta.persistence.EntityManager;

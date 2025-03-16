@@ -27,4 +27,5 @@ class FileLocationService {
 
       return fileSystemRepository.findInFileSystem(image.getLocation());
    }
+
 }

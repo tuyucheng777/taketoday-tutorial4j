@@ -51,7 +51,11 @@ public class Service<S> extends ParametrizationAware<S> {
    public int getUserByIdWithFunction(Long id, ToIntFunction<S> function) {
 
       Optional<S> optionalUser = repository.findById(id);
-      return optionalUser.map(function::applyAsInt).orElse(0);
+      if (optionalUser.isPresent()) {
+         return function.applyAsInt(optionalUser.get());
+      } else {
+         return 0;
+      }
    }
 
    public void save(S entity) {

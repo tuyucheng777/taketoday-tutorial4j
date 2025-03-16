@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepositoryPagingAndSort extends JpaRepository<Employee, Long> {
+
 }

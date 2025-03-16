@@ -28,4 +28,5 @@ class LibraryIntegrationTest {
       Assertions.assertEquals(2, lib.getAddresses().size());
       Assertions.assertEquals(2, lib.getBooks().size());
    }
+
 }

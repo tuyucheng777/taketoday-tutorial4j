@@ -22,4 +22,5 @@ public class NaturalIdRepositoryImpl<T, ID extends Serializable> extends SimpleJ
             .bySimpleNaturalId(this.getDomainClass())
             .loadOptional(naturalId);
    }
+
 }

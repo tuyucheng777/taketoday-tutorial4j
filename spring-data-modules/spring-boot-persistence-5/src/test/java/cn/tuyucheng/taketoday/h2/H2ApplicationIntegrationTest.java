@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 @SpringBootTest
 class H2ApplicationIntegrationTest {
 
+
    @Test
    void givenApplication_whenBootstrapped_thenDataAvailable() throws Exception {
       Connection connection = DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "password");

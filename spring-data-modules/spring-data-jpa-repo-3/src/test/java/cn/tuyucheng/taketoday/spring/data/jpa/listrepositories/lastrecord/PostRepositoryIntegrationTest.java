@@ -36,4 +36,5 @@ class PostRepositoryIntegrationTest {
       assertNotNull(post);
       assertEquals(5, post.getId());
    }
+
 }

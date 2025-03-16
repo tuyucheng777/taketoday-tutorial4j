@@ -47,4 +47,6 @@ class JsonUtilUnitTest {
       List<Group> groups = jsonUtils.getGroups(Group.class);
       assertThat(groups).isNotEmpty();
    }
+
+
 }

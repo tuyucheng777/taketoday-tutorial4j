@@ -22,4 +22,5 @@ public class ClientDatabaseContextHolder {
    public static void clear() {
       CONTEXT.remove();
    }
+
 }

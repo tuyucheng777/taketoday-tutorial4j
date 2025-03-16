@@ -28,8 +28,10 @@ public class MetadataExtractorIntegrator implements Integrator {
 
    @Override
    public void integrate(Metadata metadata, SessionFactoryImplementor sessionFactory, SessionFactoryServiceRegistry serviceRegistry) {
+
       this.database = metadata.getDatabase();
       this.metadata = metadata;
+
    }
 
    @Override

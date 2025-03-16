@@ -1,7 +1,5 @@
 package cn.tuyucheng.taketoday.boot.naming;
 
-import cn.tuyucheng.taketoday.boot.naming.NamingConfig.Config;
-import cn.tuyucheng.taketoday.boot.naming.entity.Account;
 import org.assertj.core.api.SoftAssertions;
 import org.hibernate.boot.Metadata;
 import org.hibernate.mapping.PersistentClass;
@@ -11,6 +9,9 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import cn.tuyucheng.taketoday.boot.naming.NamingConfig.Config;
+import cn.tuyucheng.taketoday.boot.naming.entity.Account;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

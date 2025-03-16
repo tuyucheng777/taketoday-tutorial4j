@@ -54,4 +54,5 @@ class RepositoryCheckBookRepositoryIntegrationTest {
       assertTrue(book.isPresent());
       return book.get();
    }
+
 }

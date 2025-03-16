@@ -16,4 +16,5 @@ public class StudentWithSchoolNameDTO {
    private String lastName;
 
    private String schoolName;
+
 }

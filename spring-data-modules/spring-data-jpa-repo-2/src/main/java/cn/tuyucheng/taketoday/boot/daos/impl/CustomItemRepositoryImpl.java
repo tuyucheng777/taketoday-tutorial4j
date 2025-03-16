@@ -1,5 +1,6 @@
 package cn.tuyucheng.taketoday.boot.daos.impl;
 
+
 import cn.tuyucheng.taketoday.boot.daos.CustomItemRepository;
 import cn.tuyucheng.taketoday.boot.domain.Item;
 import jakarta.persistence.EntityManager;
@@ -27,4 +28,5 @@ public class CustomItemRepositoryImpl implements CustomItemRepository {
       final Item item = entityManager.find(Item.class, id);
       entityManager.remove(item);
    }
+
 }

@@ -125,6 +125,16 @@
          <artifactId>oracle-spring-boot-starter-ucp</artifactId>
          <version>${oracle-spring-boot-starter-ucp.version}</version>
       </dependency>
+      <dependency>
+         <groupId>io.hypersistence</groupId>
+         <artifactId>hypersistence-utils-hibernate-62</artifactId>
+         <version>${hypersistence-utils.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.vladmihalcea</groupId>
+         <artifactId>db-util</artifactId>
+         <version>${db.util.version}</version>
+      </dependency>
    </dependencies>
 
    <build>
@@ -146,7 +156,9 @@
       <logback.version>1.4.6</logback.version>
       <mysql-connector-java.version>8.2.0</mysql-connector-java.version>
       <junit-jupiter.version>5.9.3</junit-jupiter.version> <!-- Upgrading to latest version breaks the tests -->
-      <spring-boot.version>3.4.0</spring-boot.version>
+      <spring-boot.version>3.4.2</spring-boot.version>
       <oracle-spring-boot-starter-ucp.version>24.2.0</oracle-spring-boot-starter-ucp.version>
+      <hypersistence-utils.version>3.7.0</hypersistence-utils.version>
+      <db.util.version>1.0.7</db.util.version>
    </properties>
 </project>

@@ -52,4 +52,5 @@ class EntityMangerBookRepositoryIntegrationTest {
       assertTrue(book.isPresent());
       return book.get();
    }
+
 }

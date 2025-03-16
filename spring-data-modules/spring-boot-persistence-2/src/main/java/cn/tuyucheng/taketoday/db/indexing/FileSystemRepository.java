@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.db.indexing;
 
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.stereotype.Repository;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
+
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.stereotype.Repository;
 
 @Repository
 class FileSystemRepository {
@@ -32,4 +32,5 @@ class FileSystemRepository {
          throw new RuntimeException();
       }
    }
+
 }

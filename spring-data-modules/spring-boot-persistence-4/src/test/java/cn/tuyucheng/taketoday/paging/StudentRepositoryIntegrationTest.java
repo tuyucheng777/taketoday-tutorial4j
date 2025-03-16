@@ -99,4 +99,5 @@ class StudentRepositoryIntegrationTest {
       studentPage.get().map(student -> modelMapper.map(student, StudentWithSchoolNameDTO.class)).toList();
       assertSelectCount(1);
    }
+
 }

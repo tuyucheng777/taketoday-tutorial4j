@@ -25,4 +25,5 @@ public class SimpleBookService {
    public Optional<SimpleBook> findById(Long id) {
       return repository.findById(id);
    }
+
 }

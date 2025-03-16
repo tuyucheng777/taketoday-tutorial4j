@@ -16,7 +16,7 @@ public class Application {
 
    @Bean
    public CommandLineRunner run(UserRepository userRepository) throws Exception {
-      return (String[] _) -> {
+      return (String[] args) -> {
          User user1 = new User("John", "john@domain.com");
          User user2 = new User("Julie", "julie@domain.com");
          userRepository.save(user1);

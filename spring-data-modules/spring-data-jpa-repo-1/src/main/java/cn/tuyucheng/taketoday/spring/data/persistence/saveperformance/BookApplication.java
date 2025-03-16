@@ -25,6 +25,7 @@ public class BookApplication {
 
    @EventListener(ApplicationReadyEvent.class)
    public void executePerformanceBenchmark() {
+
       int bookCount = 10000;
 
       long start = System.currentTimeMillis();
@@ -46,5 +47,6 @@ public class BookApplication {
       end = System.currentTimeMillis();
 
       LOGGER.debug("It took {}ms to execute saveAll() with {}} books.", (end - start), bookCount);
+
    }
 }

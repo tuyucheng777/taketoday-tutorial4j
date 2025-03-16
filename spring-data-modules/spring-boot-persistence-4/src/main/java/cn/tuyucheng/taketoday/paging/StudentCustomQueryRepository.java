@@ -10,4 +10,5 @@ public interface StudentCustomQueryRepository extends JpaRepository<Student, Str
    @Query(value = "SELECT stu FROM Student stu LEFT JOIN FETCH stu.school ",
          countQuery = "SELECT COUNT(stu) FROM Student stu")
    Page<Student> findAll(Pageable pageable);
+
 }

@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.boot.jdbi.dao;
 
-import cn.tuyucheng.taketoday.boot.jdbi.domain.CarModel;
+import java.util.List;
+
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.locator.UseClasspathSqlLocator;
@@ -9,7 +10,7 @@ import org.jdbi.v3.sqlobject.statement.SqlBatch;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
-import java.util.List;
+import cn.tuyucheng.taketoday.boot.jdbi.domain.CarModel;
 
 @UseClasspathSqlLocator
 public interface CarModelDao {

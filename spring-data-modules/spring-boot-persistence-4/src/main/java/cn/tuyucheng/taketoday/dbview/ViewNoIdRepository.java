@@ -11,4 +11,5 @@ public interface ViewNoIdRepository<T, K> extends Repository<T, K> {
    long count();
 
    List<T> findAll();
+
 }

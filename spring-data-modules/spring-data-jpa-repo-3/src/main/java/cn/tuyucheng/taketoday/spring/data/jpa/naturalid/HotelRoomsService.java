@@ -31,4 +31,5 @@ public class HotelRoomsService {
             .using("floor", floor)
             .loadOptional();
    }
+
 }

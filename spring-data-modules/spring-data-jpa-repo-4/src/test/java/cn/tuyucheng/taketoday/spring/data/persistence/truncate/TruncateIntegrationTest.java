@@ -67,4 +67,5 @@ class TruncateIntegrationTest {
    private MyEntity givenMyEntity() {
       return new MyEntity();
    }
+
 }

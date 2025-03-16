@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -34,7 +35,7 @@ public class StudentApplicationUnitTest {
             .distinct()
             .limit(count)
             .boxed()
-            .toList();
+            .collect(Collectors.toList());
 
       for (int i = 0; i < count; i++) {
          Integer score = scores.get(i);
@@ -43,7 +44,7 @@ public class StudentApplicationUnitTest {
       }
 
       studentRepo.saveAll(students);
-      Comparator<Student> c = Comparator.comparing(Student::getScore);
+      Comparator<Student> c = Comparator.comparing(a -> a.getScore());
       c = c.reversed();
       students.sort(c);
    }
@@ -55,6 +56,7 @@ public class StudentApplicationUnitTest {
 
    @Test
    public void givenStudentScores_whenMoreThanOne_thenFindFirst() {
+
       Student student = studentRepo.findFirstByOrderByScoreDesc();
       Student s = students.get(0);
       assertEquals(student, s);
@@ -62,6 +64,7 @@ public class StudentApplicationUnitTest {
 
    @Test
    public void givenStudentScores_whenMoreThan3_thenFindFirstThree() {
+
       List<Student> firstThree = studentRepo.findFirst3ByOrderByScoreDesc();
       List<Student> sList = students.subList(0, 3);
       assertArrayEquals(firstThree.toArray(), sList.toArray());
@@ -69,6 +72,7 @@ public class StudentApplicationUnitTest {
 
    @Test
    public void givenStudentScores_whenNameMatches_thenFindFirstStudent() {
+
       String matchString = "3";
       Student student = studentRepo.findFirstByNameLike("%" + matchString + "%", Sort.by("score")
             .descending());
@@ -82,12 +86,13 @@ public class StudentApplicationUnitTest {
 
    @Test
    public void givenStudentScores_whenBetweenRange_thenFindFirstTwoStudents() {
+
       List<Student> topTwoBetweenRange = studentRepo.findFirst2ByScoreBetween(50, 60, Sort.by("score")
             .descending());
       List<Student> _students = students.stream()
             .filter(a -> a.getScore() >= 50 && a.getScore() <= 60)
             .limit(2)
-            .toList();
+            .collect(Collectors.toList());
       assertArrayEquals(_students.toArray(), topTwoBetweenRange.toArray());
    }
 }

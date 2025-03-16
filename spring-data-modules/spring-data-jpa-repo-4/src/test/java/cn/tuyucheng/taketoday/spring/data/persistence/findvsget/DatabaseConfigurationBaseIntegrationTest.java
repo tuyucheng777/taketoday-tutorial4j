@@ -45,4 +45,6 @@ abstract class DatabaseConfigurationBaseIntegrationTest {
       groupRepository.deleteAll();
       userRepository.deleteAll();
    }
+
 }
+

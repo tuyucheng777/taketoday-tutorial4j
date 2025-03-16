@@ -1,5 +1,6 @@
 package cn.tuyucheng.taketoday.spring.data.noconverterfound.models;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -47,4 +48,5 @@ public class Employee {
    public void setSalary(double salary) {
       this.salary = salary;
    }
+
 }

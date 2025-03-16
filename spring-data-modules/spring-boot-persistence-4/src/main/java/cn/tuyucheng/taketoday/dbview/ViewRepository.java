@@ -18,4 +18,5 @@ public interface ViewRepository<T, K> extends Repository<T, K> {
    List<T> findAllById(Iterable<K> ids);
 
    Optional<T> findById(K id);
+
 }

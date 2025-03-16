@@ -1,24 +1,28 @@
 package cn.tuyucheng.taketoday.boot.jdbi;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import cn.tuyucheng.taketoday.boot.jdbi.dao.CarMakerDao;
 import cn.tuyucheng.taketoday.boot.jdbi.dao.CarModelDao;
 import cn.tuyucheng.taketoday.boot.jdbi.domain.CarMaker;
 import cn.tuyucheng.taketoday.boot.jdbi.domain.CarModel;
 import cn.tuyucheng.taketoday.boot.jdbi.service.CarMakerService;
+
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(classes = {SpringBootJdbiApplication.class, JdbiConfiguration.class})
 @Slf4j
 class SpringBootJdbiApplicationIntegrationTest {
+
 
    @Autowired
    private CarMakerDao carMakerDao;
@@ -31,20 +35,22 @@ class SpringBootJdbiApplicationIntegrationTest {
 
    @Test
    void givenNewCarMaker_whenInsertNewCarMaker_thenSuccess() {
-      Assertions.assertNotNull(carMakerDao);
+
+      assertNotNull(carMakerDao);
 
       CarMaker carMaker = CarMaker.builder()
             .name("Diamond Motors")
             .build();
 
       Long generatedId = carMakerDao.insert(carMaker);
-      LOGGER.info("[I37] generatedId = {}", generatedId);
+      log.info("[I37] generatedId = {}", generatedId);
       assertThat(generatedId).isGreaterThan(0);
    }
 
    @Test
    void givenNewCarMakers_whenInsertNewCarMakers_thenSuccess() {
-      Assertions.assertNotNull(carMakerDao);
+
+      assertNotNull(carMakerDao);
 
       CarMaker carMaker1 = CarMaker.builder()
             .name("maker1")
@@ -59,19 +65,23 @@ class SpringBootJdbiApplicationIntegrationTest {
       makers.add(carMaker2);
 
       List<Long> generatedIds = carMakerDao.bulkInsert(makers);
-      LOGGER.info("[I37] generatedIds = {}", generatedIds);
+      log.info("[I37] generatedIds = {}", generatedIds);
       assertThat(generatedIds).size().isEqualTo(makers.size());
    }
 
+
    @Test
    void givenExistingCarMaker_whenFindById_thenReturnExistingCarMaker() {
+
       CarMaker maker = carMakerDao.findById(1L);
       assertThat(maker).isNotNull();
       assertThat(maker.getId()).isEqualTo(1);
+
    }
 
    @Test
    void givenExistingCarMaker_whenBulkInsertFails_thenRollback() {
+
       CarMaker maker = carMakerDao.findById(1L);
       CarModel m1 = CarModel.builder()
             .makerId(maker.getId())
@@ -92,12 +102,14 @@ class SpringBootJdbiApplicationIntegrationTest {
       // This insert fails because we have the same SKU
       try {
          carMakerService.bulkInsert(maker);
-         Assertions.assertTrue(true, "Insert must fail");
+         assertTrue("Insert must fail", true);
       } catch (Exception ex) {
-         LOGGER.info("[I113] Exception: {}", ex.getMessage());
+         log.info("[I113] Exception: {}", ex.getMessage());
       }
 
       CarModel m = carModelDao.findByMakerIdAndSku(maker.getId(), "1-M1");
       assertThat(m).isNull();
+
    }
+
 }

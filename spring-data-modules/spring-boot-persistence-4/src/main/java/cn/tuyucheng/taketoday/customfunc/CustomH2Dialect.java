@@ -20,4 +20,5 @@ public class CustomH2Dialect extends H2Dialect {
             .setInvariantType(types.getBasicTypeForJavaType(String.class))
             .register();
    }
+
 }

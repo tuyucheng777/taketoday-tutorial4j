@@ -9,4 +9,5 @@ public class DatabaseViewApplication {
    public static void main(String[] args) {
       SpringApplication.run(DatabaseViewApplication.class, args);
    }
+
 }

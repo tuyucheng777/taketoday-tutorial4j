@@ -55,5 +55,6 @@ public class PassengerRepositoryIntegrationTest {
       assertThat(passengers, not(contains(siya)));
       assertThat(passengers, not(contains(jill)));
       assertThat(passengers, not(contains(ricki)));
+
    }
 }

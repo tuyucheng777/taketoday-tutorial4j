@@ -55,6 +55,7 @@ class NPlusOneEagerSimpleDomainIntegrationTest extends BaseNPlusOneIntegrationTe
                assertThat(updatedUser.getPosts()).hasSize(originalNumberOfPosts - 1);
             });
          }
+
       });
    }
 
@@ -62,4 +63,5 @@ class NPlusOneEagerSimpleDomainIntegrationTest extends BaseNPlusOneIntegrationTe
       List<User> users = jsonUtils.getUsers(User.class);
       databaseUtil.saveAll(users);
    }
+
 }

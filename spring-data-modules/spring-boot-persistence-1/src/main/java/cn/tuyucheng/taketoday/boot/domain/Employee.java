@@ -5,6 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * @author harshavs
+ * @since 2019-08-01
+ */
 @Entity
 @Table(name = "employees")
 public class Employee {

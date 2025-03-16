@@ -36,4 +36,5 @@ public class ShopSaleVid {
 
    @Column(name = "total_amount")
    private BigDecimal totalAmount;
+
 }

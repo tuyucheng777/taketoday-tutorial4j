@@ -21,6 +21,7 @@ public class JpaPopulators {
 
    @Bean
    public UnmarshallerRepositoryPopulatorFactoryBean repositoryPopulator() {
+
       Jaxb2Marshaller unmarshaller = new Jaxb2Marshaller();
       unmarshaller.setClassesToBeBound(Fruit.class);
 
@@ -29,4 +30,5 @@ public class JpaPopulators {
       factory.setResources(new Resource[]{new ClassPathResource("apple-fruit-data.xml"), new ClassPathResource("guava-fruit-data.xml")});
       return factory;
    }
+
 }

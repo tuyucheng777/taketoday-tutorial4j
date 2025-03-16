@@ -114,4 +114,5 @@ public class ResultDTO {
    public void setProductPrice(Double productPrice) {
       this.productPrice = productPrice;
    }
+
 }

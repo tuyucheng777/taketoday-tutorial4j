@@ -58,4 +58,5 @@ public class ResultDTO_wo_Ids {
    public void setProductPrice(Double productPrice) {
       this.productPrice = productPrice;
    }
+
 }

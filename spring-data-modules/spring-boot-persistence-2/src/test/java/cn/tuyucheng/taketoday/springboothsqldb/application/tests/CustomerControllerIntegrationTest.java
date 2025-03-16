@@ -1,10 +1,6 @@
 package cn.tuyucheng.taketoday.springboothsqldb.application.tests;
 
 
-import cn.tuyucheng.taketoday.springboothsqldb.application.entities.Customer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +10,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import cn.tuyucheng.taketoday.springboothsqldb.application.entities.Customer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -50,6 +51,7 @@ class CustomerControllerIntegrationTest {
    void whenGetHttpRequesttoCustomers_thenStatusOK() throws Exception {
       this.mockMvc
             .perform(MockMvcRequestBuilders.get("/customers"))
+
             .andExpect(MockMvcResultMatchers.content().contentType(MEDIA_TYPE_JSON))
             .andExpect(MockMvcResultMatchers.status().isOk());
    }

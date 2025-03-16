@@ -9,4 +9,5 @@ public class StoredProcedureApplication {
    public static void main(String[] args) {
       SpringApplication.run(StoredProcedureApplication.class, args);
    }
+
 }

@@ -71,4 +71,5 @@ public class Student {
    public void setKVTags(List<KVTag> kvTags) {
       this.kvTags.addAll(kvTags);
    }
+
 }

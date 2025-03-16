@@ -26,4 +26,5 @@ public class Student {
    @ManyToOne(fetch = FetchType.LAZY)
    @JoinColumn(name = "school_id", referencedColumnName = "school_id")
    private School school;
+
 }

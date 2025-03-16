@@ -56,4 +56,5 @@ public class StudentService {
                .forEach(emailService::sendEmailToStudent);
       }
    }
+
 }

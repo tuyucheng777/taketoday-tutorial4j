@@ -63,7 +63,7 @@ public class UserControllerUnitTest {
 
       when(mockedBindingResult.hasErrors()).thenReturn(false);
 
-      assertThat(userController.updateUser(1L, user, mockedBindingResult, mockedModel)).isEqualTo("index");
+      assertThat(userController.updateUser(1l, user, mockedBindingResult, mockedModel)).isEqualTo("index");
    }
 
    @Test
@@ -72,11 +72,11 @@ public class UserControllerUnitTest {
 
       when(mockedBindingResult.hasErrors()).thenReturn(true);
 
-      assertThat(userController.updateUser(1L, user, mockedBindingResult, mockedModel)).isEqualTo("update-user");
+      assertThat(userController.updateUser(1l, user, mockedBindingResult, mockedModel)).isEqualTo("update-user");
    }
 
    @Test(expected = IllegalArgumentException.class)
    public void whenCalleddeleteUser_thenIllegalArgumentException() {
-      assertThat(userController.deleteUser(1L, mockedModel)).isEqualTo("index");
+      assertThat(userController.deleteUser(1l, mockedModel)).isEqualTo("index");
    }
 }

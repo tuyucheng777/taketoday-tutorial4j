@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Lazy(value = false)
 public interface UserRepository extends JpaRepository<User, Long> {
+
 }

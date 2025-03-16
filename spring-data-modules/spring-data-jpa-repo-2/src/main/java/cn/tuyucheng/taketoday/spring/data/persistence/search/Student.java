@@ -71,4 +71,5 @@ public class Student {
       Student other = (Student) obj;
       return id == other.id && Objects.equals(name, other.name) && score == other.score;
    }
+
 }

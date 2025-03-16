@@ -29,4 +29,5 @@ public interface CarRepository extends JpaRepository<Car, Integer> {
 
    @Query(value = "CALL FIND_CARS_AFTER_YEAR(:year_in);", nativeQuery = true)
    List<Car> findCarsAfterYear(@Param("year_in") Integer year_in);
+
 }

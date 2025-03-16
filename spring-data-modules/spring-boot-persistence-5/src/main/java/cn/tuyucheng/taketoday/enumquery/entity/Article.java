@@ -23,4 +23,5 @@ public class Article {
 
    @Enumerated(EnumType.STRING)
    private ArticleStage stage;
+
 }

@@ -6,6 +6,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author paullatzelsperger
+ * @since 2019-03-20
+ */
 @Repository
 public interface CarRepository extends JpaRepository<Car, Integer> {
 

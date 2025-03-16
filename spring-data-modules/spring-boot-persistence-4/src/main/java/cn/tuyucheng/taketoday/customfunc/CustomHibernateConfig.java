@@ -12,4 +12,5 @@ public class CustomHibernateConfig implements HibernatePropertiesCustomizer {
    public void customize(Map<String, Object> hibernateProperties) {
       hibernateProperties.put("hibernate.dialect", "cn.tuyucheng.taketoday.customfunc.CustomH2Dialect");
    }
+
 }

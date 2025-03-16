@@ -1,10 +1,10 @@
 package cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference;
 
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.Employee;
-import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.QEmployee;
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.config.SpringDataJpaConfig;
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.repository.EmployeeRepository;
 import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.springdata.repository.EmployeeRepositoryPagingAndSort;
+import cn.tuyucheng.taketoday.spring.data.persistence.springdatajpadifference.model.QEmployee;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;

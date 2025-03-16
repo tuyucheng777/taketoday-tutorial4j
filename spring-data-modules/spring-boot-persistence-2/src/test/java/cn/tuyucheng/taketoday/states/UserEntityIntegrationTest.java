@@ -1,6 +1,8 @@
 package cn.tuyucheng.taketoday.states;
 
-import jakarta.persistence.EntityManagerFactory;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -8,8 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import jakarta.persistence.EntityManagerFactory;
 
 @SpringBootTest
 class UserEntityIntegrationTest {
@@ -69,6 +70,7 @@ class UserEntityIntegrationTest {
       // when
       userEntity.setManager(manager);
 
+
       // then
       assertThatThrownBy(() -> {
          session.saveOrUpdate(userEntity);
@@ -89,6 +91,7 @@ class UserEntityIntegrationTest {
 
       // when
       userEntity.setManager(manager);
+
 
       // then
       session.saveOrUpdate(userEntity);
@@ -112,6 +115,7 @@ class UserEntityIntegrationTest {
       // when
       userEntity.setManager(manager);
 
+
       // then
       session.saveOrUpdate(userEntity);
       transaction.commit();
@@ -121,6 +125,7 @@ class UserEntityIntegrationTest {
       UserEntityWithCascade savedUser = otherSession.get(UserEntityWithCascade.class, "John");
       assertThat(savedUser.getManager().getName()).isEqualTo("Adam");
    }
+
 
    private Session openSession() {
       return entityManagerFactory.unwrap(SessionFactory.class).openSession();

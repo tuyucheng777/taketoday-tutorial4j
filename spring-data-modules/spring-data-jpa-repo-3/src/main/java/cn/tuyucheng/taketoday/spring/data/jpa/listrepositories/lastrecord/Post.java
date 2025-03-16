@@ -36,4 +36,5 @@ public class Post {
    public void setPublicationDate(LocalDate publicationDate) {
       this.publicationDate = publicationDate;
    }
+
 }

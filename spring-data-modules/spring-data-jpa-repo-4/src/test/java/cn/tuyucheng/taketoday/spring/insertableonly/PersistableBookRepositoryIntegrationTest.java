@@ -52,4 +52,5 @@ class PersistableBookRepositoryIntegrationTest {
       assertTrue(book.isPresent());
       return book.get();
    }
+
 }

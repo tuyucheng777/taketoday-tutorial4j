@@ -32,4 +32,6 @@ class FindUserIntegrationIntegrationTest extends DatabaseConfigurationBaseIntegr
    void whenGettingUserByIncorrectIdThenReturnNull(Long id) {
       assertThat(service.findUser(id)).isNull();
    }
+
+
 }

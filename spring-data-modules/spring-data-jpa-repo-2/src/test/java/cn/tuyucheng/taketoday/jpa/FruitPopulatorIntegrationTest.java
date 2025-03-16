@@ -21,6 +21,7 @@ public class FruitPopulatorIntegrationTest {
 
    @Test
    public void givenFruitJsonPopulatorThenShouldInsertRecordOnStart() {
+
       List<Fruit> fruits = fruitRepository.findAll();
       assertEquals("record count is not matching", 2, fruits.size());
 
