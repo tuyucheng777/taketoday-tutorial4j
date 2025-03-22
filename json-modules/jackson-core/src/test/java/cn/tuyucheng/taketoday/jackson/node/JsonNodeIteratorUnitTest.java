@@ -26,11 +26,7 @@ public class JsonNodeIteratorUnitTest {
       final JsonNode rootNode = ExampleStructure.getExampleRoot();
 
       String yaml = onTest.toYaml(rootNode);
-      System.out.println(yaml.toString());
 
       assertEquals(expectedYaml, yaml);
-
    }
-
-
 }
