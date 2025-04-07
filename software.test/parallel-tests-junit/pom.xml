@@ -10,9 +10,8 @@
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>parent-java</artifactId>
+      <artifactId>software.test</artifactId>
       <version>1.0.0</version>
-      <relativePath>../../parent-java</relativePath>
    </parent>
 
    <modules>
