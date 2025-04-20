@@ -59,6 +59,7 @@ class TaketodayLearningAssistant {
          System.out.print("Anything else?\n");
          String nextLine = scanner.nextLine();
          if (nextLine.equalsIgnoreCase("exit")) {
+            scanner.close();
             System.exit(0);
          }
          messages.add(new ChatMessage(ChatMessageRole.USER.value(), nextLine));
