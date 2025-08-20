@@ -132,7 +132,7 @@
    <properties>
       <spring-cloud.version>2023.0.4</spring-cloud.version>
       <start-class>cn.tuyucheng.taketoday.webflux.kafka.stream.Application</start-class>
-      <java.version>23</java.version>
+      <java.version>25</java.version>
       <testcontainers.version>1.20.3</testcontainers.version>
       <clickhouse.version>0.7.1</clickhouse.version>
       <maven.compiler.release>23</maven.compiler.release>

@@ -57,6 +57,6 @@
 	</build>
 
 	<properties>
-		<java.version>23</java.version>
+		<java.version>25</java.version>
 	</properties>
 </project>

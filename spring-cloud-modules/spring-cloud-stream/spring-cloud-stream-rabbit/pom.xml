@@ -19,9 +19,9 @@
       <junit.jupiter.version>5.7.1</junit.jupiter.version>
       <spring-cloud-dependencies.version>2024.0.0</spring-cloud-dependencies.version>
       <spring-boot.version>3.4.2</spring-boot.version>
-      <java.version>23</java.version>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <java.version>25</java.version>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
    </properties>
 
    <dependencies>

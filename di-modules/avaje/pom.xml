@@ -30,8 +30,8 @@
    </dependencies>
 
    <properties>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <avaje.inject.version>11.0</avaje.inject.version>
    </properties>
 </project>

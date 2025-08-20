@@ -103,8 +103,8 @@
 
    <properties>
       <structure-maven.version>0.0.2</structure-maven.version>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <orderservice.mainclass>cn.tuyucheng.taketoday.orderservice.OrderApplication</orderservice.mainclass>
       <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
    </properties>

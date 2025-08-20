@@ -234,7 +234,7 @@
       <spring-boot.version>3.4.2</spring-boot.version>
       <junit-jupiter.version>5.11.0-M2</junit-jupiter.version>
       <native-build-tools-plugin.version>0.9.17</native-build-tools-plugin.version>
-      <java.version>23</java.version>
+      <java.version>25</java.version>
       <maven.compiler.source>${java.version}</maven.compiler.source>
       <maven.compiler.target>${java.version}</maven.compiler.target>
    </properties>

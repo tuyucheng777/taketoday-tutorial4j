@@ -26,8 +26,8 @@
    </dependencies>
 
    <properties>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <slf4-simple.version>1.7.21</slf4-simple.version>
    </properties>

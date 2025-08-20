@@ -10,7 +10,7 @@
    <name>taketoday-tutorial4j</name>
 
    <properties>
-      <java.version>23</java.version>
+      <java.version>25</java.version>
 
       <skip.unit.tests>false</skip.unit.tests>
       <skip.integration.tests>true</skip.integration.tests>
@@ -37,7 +37,7 @@
       <logback.version>1.5.12</logback.version>
 
       <!-- plugins -->
-      <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+      <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
       <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
       <maven-failsafe-plugin.version>3.3.0</maven-failsafe-plugin.version>
       <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
@@ -459,7 +459,7 @@
             <!-- <module>security-modules</module> -->
             <!-- <module>rsocket</module> -->
             <!-- <module>server-modules</module> -->
-            <!-- <module>software.test</module> -->
+            <module>software.test</module>
             <!-- <module>spring-boot-modules</module> -->
             <!-- <module>spring-cloud-modules</module> -->
             <!-- <module>spring-data-modules</module> -->

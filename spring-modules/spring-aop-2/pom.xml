@@ -216,6 +216,6 @@
       <start-class>cn.tuyucheng.taketoday.Application</start-class>
       <commons-rng-core.version>1.5</commons-rng-core.version>
       <spring-aspects.version>6.1.5</spring-aspects.version>
-      <java.version>23</java.version>
+      <java.version>25</java.version>
    </properties>
 </project>

@@ -29,8 +29,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven-compiler-plugin.version}</version>
             <configuration>
-               <source>23</source>
-               <target>23</target>
+               <source>25</source>
+               <target>25</target>
             </configuration>
          </plugin>
          <plugin>

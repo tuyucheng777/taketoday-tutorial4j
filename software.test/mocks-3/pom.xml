@@ -86,7 +86,7 @@
    </build>
 
    <properties>
-      <java.version>23</java.version>
+      <java.version>25</java.version>
       <moco.version>1.5.0</moco.version>
       <spring-test.version>6.2.0</spring-test.version>
    </properties>

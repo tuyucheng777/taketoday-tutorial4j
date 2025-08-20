@@ -15,7 +15,7 @@
    </parent>
 
    <properties>
-      <java.version>23</java.version>
+      <java.version>25</java.version>
       <spring-boot-thin-layout.version>1.0.28.RELEASE</spring-boot-thin-layout.version>
       <!-- Spring Boot start class! WARING: correct class must be set! -->
       <start-class>cn.tuyucheng.taketoday.azure.functions.AzureSpringCloudFunctionApplication</start-class>

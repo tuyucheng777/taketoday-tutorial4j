@@ -65,8 +65,8 @@
    </build>
 
    <properties>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <vavr.version>0.10.2</vavr.version>
       <assertj-core.version>3.23.1</assertj-core.version>
       <commons-lang3.version>3.12.0</commons-lang3.version>

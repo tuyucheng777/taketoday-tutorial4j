@@ -107,8 +107,8 @@
    </build>
 
    <properties>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <querydsl.version>5.0.0</querydsl.version>
       <hibernate.version>6.5.2.Final</hibernate.version>
       <jakarta.persistence.version>3.1.0</jakarta.persistence.version>

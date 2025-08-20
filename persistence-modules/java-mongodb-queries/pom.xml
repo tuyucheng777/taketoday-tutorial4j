@@ -26,8 +26,8 @@
    </dependencies>
 
    <properties>
-      <maven.compiler.source>23</maven.compiler.source>
-      <maven.compiler.target>23</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <mongodb.version>4.6.0</mongodb.version>
       <junit.version>5.8.1</junit.version>
    </properties>

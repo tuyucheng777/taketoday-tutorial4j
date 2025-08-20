@@ -84,8 +84,8 @@
         <start-class>cn.tuyucheng.taketoday.spring.cloud.aws.sqs.SpringCloudAwsApplication</start-class>
         <spring-cloud-aws.version>3.2.0</spring-cloud-aws.version>
         <maven.surefire.version>3.1.0</maven.surefire.version>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
-        <java.version>23</java.version>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <java.version>25</java.version>
     </properties>
 </project>
