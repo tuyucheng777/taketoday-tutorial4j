@@ -3,7 +3,6 @@ package cn.tuyucheng.taketoday.resilientapp;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,9 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.springframework.http.HttpStatus.*;
+import static org.springframework.http.HttpStatus.BANDWIDTH_LIMIT_EXCEEDED;
+import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.TOO_MANY_REQUESTS;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
       // test marked as manual because there are multiple test methods calling the same API and the order is not guaranteed
@@ -67,7 +68,7 @@ class ResilientAppControllerManualTest {
       EXTERNAL_SERVICE.stubFor(WireMock.get("/api/external")
             .willReturn(serverError()));
       ResponseEntity<String> response2 = restTemplate.getForEntity("/api/retry", String.class);
-      Assert.assertEquals(response2.getBody(), "all retries have exhausted");
+      assertEquals("all retries have exhausted", response2.getBody());
       EXTERNAL_SERVICE.verify(3, getRequestedFor(urlEqualTo("/api/external")));
    }
 

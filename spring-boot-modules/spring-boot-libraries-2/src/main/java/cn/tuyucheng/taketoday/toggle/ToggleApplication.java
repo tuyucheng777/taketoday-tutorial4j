@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.toggle;
 
 import jakarta.annotation.security.RolesAllowed;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
