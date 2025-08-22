@@ -72,6 +72,7 @@
       <module>spring-boot-exceptions</module>
       <module>spring-boot-featureflag-unleash</module>
       <module>spring-boot-flowable</module>
+      <module>spring-boot-flyway-multidb</module>
       <module>spring-boot-graalvm-docker</module>
       <module>spring-boot-gradle-1</module>
       <module>spring-boot-gradle-2</module>
