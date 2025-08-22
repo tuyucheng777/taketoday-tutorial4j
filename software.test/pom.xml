@@ -77,6 +77,7 @@
       <module>spring-rest-testing</module>
       <module>spring-testing-1</module>
       <module>spring-testing-2</module>
+      <module>spring-testing-3</module>
       <module>tdd</module>
       <module>test-containers</module>
       <module>testing-assertions</module>

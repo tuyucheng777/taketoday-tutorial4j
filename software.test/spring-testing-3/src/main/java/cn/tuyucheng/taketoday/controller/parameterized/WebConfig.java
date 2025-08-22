@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.config;
+package cn.tuyucheng.taketoday.controller.parameterized;
 
 import jakarta.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;

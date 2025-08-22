@@ -12,7 +12,7 @@ import java.util.Map;
 @Controller
 public class EmployeeRoleController {
 
-   private static final Map<String, Role> userRoleCache = new HashMap<>();
+   private static Map<String, Role> userRoleCache = new HashMap<>();
 
    static {
       userRoleCache.put("John", Role.ADMIN);
@@ -22,6 +22,7 @@ public class EmployeeRoleController {
    @RequestMapping(value = "/role/{name}", method = RequestMethod.GET, produces = "application/text")
    @ResponseBody
    public String getEmployeeRole(@PathVariable("name") String employeeName) {
+
       return userRoleCache.get(employeeName).toString();
    }
 
