@@ -1,5 +1,4 @@
-package cn.tuyucheng.taketoday.mockito.whenvsdomethods;
+package cn.tuyucheng.taketoday.whenvsdomethods;
 
 public class IAmOnHolidayException extends RuntimeException {
-
 }
