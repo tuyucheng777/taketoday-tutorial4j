@@ -152,9 +152,6 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-               <compilerArgs>--enable-preview</compilerArgs>
-            </configuration>
          </plugin>
       </plugins>
    </build>
@@ -162,11 +159,9 @@
    <properties>
       <mapstruct.version>1.6.0.Beta1</mapstruct.version>
       <start-class>cn.tuyucheng.taketoday.sample.TodoApplication</start-class>
-      <spring-boot.version>3.4.2</spring-boot.version>
       <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
       <springdoc-openapi-webmvc-ui.version>2.5.0</springdoc-openapi-webmvc-ui.version>
       <logback.version>1.5.16</logback.version>
       <org.slf4j.version>2.0.16</org.slf4j.version>
-      <junit-platform-commons.version>1.11.4</junit-platform-commons.version>
    </properties>
 </project>

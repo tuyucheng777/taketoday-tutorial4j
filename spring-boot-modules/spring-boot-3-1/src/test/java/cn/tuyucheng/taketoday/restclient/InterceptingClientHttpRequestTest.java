@@ -2,15 +2,9 @@ package cn.tuyucheng.taketoday.restclient;
 
 
 import org.junit.jupiter.api.Test;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
-import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.http.client.ClientHttpRequest;
-import org.springframework.http.client.support.HttpRequestWrapper;
 
 
 class InterceptingClientHttpRequestTest {
