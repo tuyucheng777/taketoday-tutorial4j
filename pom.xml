@@ -335,6 +335,7 @@
             <module>protobuffer</module>
             <module>quarkus-modules</module>
             <module>software.test</module>
+            <module>spring-ai-modules</module>
             <module>spring-boot-modules</module>
             <module>spring-cloud-modules</module>
             <module>spring-data-modules</module>
@@ -390,6 +391,7 @@
             <module>protobuffer</module>
             <module>quarkus-modules</module>
             <module>software.test</module>
+            <module>spring-ai-modules</module>
             <module>spring-boot-modules</module>
             <module>spring-cloud-modules</module>
             <module>spring-data-modules</module>
@@ -459,7 +461,8 @@
             <!-- <module>security-modules</module> -->
             <!-- <module>rsocket</module> -->
             <!-- <module>server-modules</module> -->
-            <module>software.test</module>
+            <!-- <module>software.test</module> -->
+            <module>spring-ai-modules</module>
             <!-- <module>spring-boot-modules</module> -->
             <!-- <module>spring-cloud-modules</module> -->
             <!-- <module>spring-data-modules</module> -->
