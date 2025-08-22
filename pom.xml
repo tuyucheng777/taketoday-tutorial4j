@@ -54,7 +54,7 @@
       <commons-collections4.version>4.4</commons-collections4.version>
       <commons-io.version>2.16.1</commons-io.version>
       <commons-lang3.version>3.14.0</commons-lang3.version>
-      <commons-cli.version>1.6.0</commons-cli.version>
+      <commons-cli.version>1.8.0</commons-cli.version>
       <commons-fileupload.version>1.5</commons-fileupload.version>
 
       <!-- jsp & servlet -->
@@ -67,7 +67,7 @@
       <log4j.version>1.2.17</log4j.version>
       <jmh-core.version>1.37</jmh-core.version>
       <jmh-generator.version>1.37</jmh-generator.version>
-      <lombok.version>1.18.32</lombok.version>
+      <lombok.version>1.18.36</lombok.version>
       <h2.version>2.2.224</h2.version>
       <guava.version>33.2.1-jre</guava.version>
       <jackson.version>2.17.2</jackson.version>
