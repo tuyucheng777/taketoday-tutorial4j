@@ -32,10 +32,37 @@
          <version>${jackson-databind.version}</version>
          <scope>test</scope>
       </dependency>
+      <dependency>
+         <groupId>org.assertj</groupId>
+         <artifactId>assertj-guava</artifactId>
+         <version>${assertj-guava.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>com.google.guava</groupId>
+         <artifactId>guava</artifactId>
+         <version>${guava.version}</version>
+      </dependency>
    </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+            <version>${assertj-generator.version}</version>
+            <configuration>
+               <classes>
+                  <param>cn.tuyucheng.taketoday.assertj.custom.Person</param>
+               </classes>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 
    <properties>
       <json-unit.version>3.5.0</json-unit.version>
       <jackson-databind.version>2.18.1</jackson-databind.version>
+      <assertj-guava.version>3.4.0</assertj-guava.version>
+      <assertj-generator.version>2.1.0</assertj-generator.version>
    </properties>
 </project>

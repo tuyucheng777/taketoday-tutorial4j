@@ -33,11 +33,6 @@
          <scope>test</scope>
       </dependency>
       <dependency>
-         <groupId>org.assertj</groupId>
-         <artifactId>assertj-guava</artifactId>
-         <version>${assertj-guava.version}</version>
-      </dependency>
-      <dependency>
          <groupId>org.javalite</groupId>
          <artifactId>javalite-common</artifactId>
          <version>${javalite.version}</version>
@@ -57,25 +52,8 @@
       </dependency>
    </dependencies>
 
-   <build>
-      <plugins>
-         <plugin>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
-            <version>${assertj-generator.version}</version>
-            <configuration>
-               <classes>
-                  <param>cn.tuyucheng.taketoday.assertj.custom.Person</param>
-               </classes>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
-
    <properties>
       <truth.version>0.32</truth.version>
-      <assertj-guava.version>3.4.0</assertj-guava.version>
-      <assertj-generator.version>2.1.0</assertj-generator.version>
       <javalite.version>1.4.13</javalite.version>
       <jgotesting.version>0.12</jgotesting.version>
    </properties>
