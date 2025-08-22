@@ -29,7 +29,7 @@
 * [Mock Library](mocks-1/README.md)
 * [Cucumber](cucumber-1/README.md)
 * [Serenity](serenity/README.md)
-* [Rest Assured](rest-assured/README.md)
+* [Rest Assured](rest-assured-1/README.md)
 * [Rest Test](rest-testing/README.md)
 * [Arquillian](arquillian/README.md)
 * [MicroShed](microshed/README.md)
