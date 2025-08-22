@@ -7,8 +7,8 @@ public class Engine {
    @Value("8")
    private int cylinderCount;
 
-   //    @Value("${engine.fuelType}")
-   //    private String fuelType;
+   // @Value("${engine.fuelType}")
+   // private String fuelType;
 
    public Engine() {
       this(8);
@@ -22,5 +22,4 @@ public class Engine {
    public void setCylinderCount(int cylinderCount) {
       this.cylinderCount = cylinderCount;
    }
-
 }

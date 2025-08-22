@@ -13,5 +13,4 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
    public Employee findByName(String name);
 
    public List<Employee> findAll();
-
 }

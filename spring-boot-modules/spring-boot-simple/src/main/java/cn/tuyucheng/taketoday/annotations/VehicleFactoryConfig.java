@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Configuration
-@ComponentScan(basePackages = "com.baeldung.annotations")
+@ComponentScan(basePackages = "cn.tuyucheng.taketoday.annotations")
 @ComponentScan(basePackageClasses = VehicleFactoryConfig.class)
 //@ImportResource("classpath:/annotations.xml")
 //@PropertySource("classpath:/annotations.properties")
@@ -24,5 +24,4 @@ public class VehicleFactoryConfig {
    public Engine engine() {
       return new Engine();
    }
-
 }

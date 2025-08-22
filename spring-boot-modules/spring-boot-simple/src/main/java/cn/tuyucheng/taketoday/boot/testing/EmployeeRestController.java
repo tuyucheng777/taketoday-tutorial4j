@@ -25,5 +25,4 @@ public class EmployeeRestController {
    public List<Employee> getAllEmployees() {
       return employeeService.getAllEmployees();
    }
-
 }

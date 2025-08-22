@@ -71,8 +71,8 @@
       <h2.version>2.2.224</h2.version>
       <guava.version>33.2.1-jre</guava.version>
       <jackson.version>2.17.2</jackson.version>
-      <junit-platform.version>1.11.0-M2</junit-platform.version>
-      <junit-jupiter.version>5.11.0-M2</junit-jupiter.version>
+      <junit-platform.version>1.13.4</junit-platform.version>
+      <junit-jupiter.version>5.13.4</junit-jupiter.version>
       <junit-platform-surefire-provider.version>1.3.2</junit-platform-surefire-provider.version>
       <mockito-inline.version>5.2.0</mockito-inline.version>
       <mockito-junit-jupiter.version>5.12.0</mockito-junit-jupiter.version>

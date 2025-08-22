@@ -41,5 +41,4 @@ public class GenericEntityController {
    public GenericEntity findByDate(@PathVariable("date") LocalDateTime date) {
       return entityList.stream().findFirst().get();
    }
-
 }

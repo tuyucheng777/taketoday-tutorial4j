@@ -11,5 +11,4 @@ public class HibernateCondition implements Condition {
       // application specific condition check
       return true;
    }
-
 }
