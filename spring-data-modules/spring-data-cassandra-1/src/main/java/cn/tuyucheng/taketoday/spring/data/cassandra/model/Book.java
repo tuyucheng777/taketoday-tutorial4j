@@ -25,6 +25,9 @@ public class Book {
    @Column
    private Set<String> tags = new HashSet<>();
 
+   public Book() {
+   }
+
    public Book(final UUID id, final String title, final String publisher, final Set<String> tags) {
       this.id = id;
       this.title = title;
@@ -63,5 +66,4 @@ public class Book {
    public void setTags(final Set<String> tags) {
       this.tags = tags;
    }
-
 }
