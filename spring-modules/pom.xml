@@ -35,6 +35,7 @@
       <module>spring-spel</module>
       <module>spring-state-machine</module>
       <module>spring-static-resources</module>
+      <module>spring-structurizr</module>
       <module>spring-vault</module>
    </modules>
 </project>
