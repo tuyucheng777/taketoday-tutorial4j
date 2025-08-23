@@ -28,6 +28,16 @@
 
    <build>
       <finalName>java-lang-1</finalName>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>25</source>
+               <target>25</target>
+            </configuration>
+         </plugin>
+      </plugins>
       <resources>
          <resource>
             <directory>src/main/resources</directory>
