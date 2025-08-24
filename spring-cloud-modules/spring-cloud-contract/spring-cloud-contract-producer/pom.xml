@@ -50,7 +50,7 @@
          <plugin>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-            <version>${spring-cloud-contract.version}</version>
+            <version>4.2.1</version>
             <extensions>true</extensions>
             <configuration>
                <baseClassForTests>cn.tuyucheng.taketoday.spring.cloud.springcloudcontractproducer.BaseTestClass
