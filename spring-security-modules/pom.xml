@@ -30,6 +30,7 @@
       <module>spring-security-core-2</module>
       <module>spring-security-core-3</module>
       <module>spring-security-dynamic-registration</module>
+      <module>spring-security-faking-oauth2-sso</module>
       <module>spring-security-ldap</module>
       <module>spring-security-legacy-oidc</module>
       <module>spring-security-login-and-registration</module>
