@@ -15,7 +15,7 @@ import java.net.URL;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class DownloadWebpageUnitTest {
+class DownloadWebpageLiveTest {
 
    @Test
    public void givenURLConnection_whenRetrieveWebpage_thenWebpageIsNotNullAndContainsHtmlTag() throws IOException, URISyntaxException {
