@@ -1,10 +1,13 @@
 package cn.tuyucheng.taketoday.mapper;
 
-import cn.tuyucheng.taketoday.dto.CustomerDto;
-import cn.tuyucheng.taketoday.entity.Customer;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
+
+import cn.tuyucheng.taketoday.context.MappingContext;
+import cn.tuyucheng.taketoday.dto.CustomerDto;
+import cn.tuyucheng.taketoday.entity.Customer;
 
 public class CustomerDtoMapperUnitTest {
 
@@ -20,7 +23,18 @@ public class CustomerDtoMapperUnitTest {
       CustomerDto customerDto = customerDtoMapper.from(customer);
 
       // then
-      Assertions.assertEquals(customerDto.getForename(), customer.getFirstName());
-      Assertions.assertEquals(customerDto.getSurname(), customer.getLastName());
+      assertEquals(customerDto.getForename(), customer.getFirstName());
+      assertEquals(customerDto.getSurname(), customer.getLastName());
+   }
+
+   @Test
+   void givenCustomer_whenMappedUsingContext_thenReturnsFormattedDto() {
+      Customer customer = new Customer();
+      customer.setFirstName(" max ");
+      customer.setLastName(" powers ");
+      MappingContext context = new MappingContext();
+      CustomerDto dto = customerDtoMapper.from(customer, context);
+      assertEquals("MAX", dto.getForename());
+      assertEquals("POWERS", dto.getSurname());
    }
 }
