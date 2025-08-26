@@ -1,14 +1,14 @@
 package cn.tuyucheng.taketoday.array;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
 
 public class MultiDimensionalArrayUnitTest {
 
@@ -46,7 +46,21 @@ public class MultiDimensionalArrayUnitTest {
       ByteArrayOutputStream outContent = new ByteArrayOutputStream();
       System.setOut(new PrintStream(outContent));
       obj.printElements(multiDimensionalArr);
-      assertEquals("[1, 2][3, 4, 5][6, 7, 8, 9]", outContent.toString().replace("\r", "").replace("\n", ""));
+      assertEquals("[1, 2][3, 4, 5][6, 7, 8, 9]", outContent.toString()
+            .replace("\r", "")
+            .replace("\n", ""));
+      System.setOut(System.out);
+   }
+
+   @Test
+   public void givenMultiDimensionalArray_whenUsingNestedForLoopToPrint_thenVerifyPrintedElements() {
+      int[][] multiDimensionalArr = {{1, 2}, {3, 4, 5}, {6, 7, 8, 9}};
+      ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+      System.setOut(new PrintStream(outContent));
+      obj.printElementsUsingNestedForLoop(multiDimensionalArr);
+      assertEquals("1 2 3 4 5 6 7 8 9 ", outContent.toString()
+            .replace("\r", "")
+            .replace("\n", ""));
       System.setOut(System.out);
    }
 

@@ -18,12 +18,46 @@ public class MultiDimensionalArray {
       return multiDimensionalArray;
    }
 
+   int[][] declarationAndThenInitializationBaseOnIndex() {
+      int[][] multiDimensionalArray = new int[3][];
+      multiDimensionalArray[0] = new int[2];
+      multiDimensionalArray[1] = new int[3];
+      multiDimensionalArray[2] = new int[4];
+
+      multiDimensionalArray[0][0] = 1;
+      multiDimensionalArray[0][1] = 2;
+
+      multiDimensionalArray[1][0] = 3;
+      multiDimensionalArray[1][1] = 4;
+      multiDimensionalArray[1][2] = 5;
+
+      multiDimensionalArray[2][0] = 6;
+      multiDimensionalArray[2][1] = 7;
+      multiDimensionalArray[2][2] = 8;
+      multiDimensionalArray[2][3] = 9;
+
+      return multiDimensionalArray;
+   }
+
    int[][] declarationAndThenInitializationUsingUserInputs() {
       int[][] multiDimensionalArray = new int[3][];
       multiDimensionalArray[0] = new int[2];
       multiDimensionalArray[1] = new int[3];
       multiDimensionalArray[2] = new int[4];
+
       initializeElements(multiDimensionalArray);
+      return multiDimensionalArray;
+   }
+
+   int[][] declarationAndThenInitializationFirstAlternative() {
+      int[][] multiDimensionalArray = new int[][]{new int[]{1, 2}, new int[]{3, 4, 5}, new int[]{6, 7, 8, 9}};
+
+      return multiDimensionalArray;
+   }
+
+   int[][] declarationAndThenInitializationSecondAlternative() {
+      int[][] multiDimensionalArray = {new int[]{1, 2}, new int[]{3, 4, 5}, new int[]{6, 7, 8, 9}};
+
       return multiDimensionalArray;
    }
 
@@ -45,6 +79,15 @@ public class MultiDimensionalArray {
    void printElements(int[][] multiDimensionalArray) {
       for (int index = 0; index < multiDimensionalArray.length; index++) {
          System.out.println(Arrays.toString(multiDimensionalArray[index]));
+      }
+   }
+
+   void printElementsUsingNestedForLoop(int[][] multiDimensionalArray) {
+      for (int i = 0; i < multiDimensionalArray.length; i++) {
+         for (int j = 0; j < multiDimensionalArray[i].length; j++) {
+            System.out.print(multiDimensionalArray[i][j] + " ");
+         }
+         System.out.println();
       }
    }
 
