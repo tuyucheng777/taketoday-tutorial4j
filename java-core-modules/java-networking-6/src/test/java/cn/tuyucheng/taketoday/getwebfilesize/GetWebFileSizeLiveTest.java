@@ -24,7 +24,6 @@ class GetWebFileSizeLiveTest {
       } else {
          fail("Could not determine file size");
       }
-
    }
 
    @Test
@@ -40,7 +39,5 @@ class GetWebFileSizeLiveTest {
       } else {
          fail("Could not determine file size");
       }
-
    }
-
 }
