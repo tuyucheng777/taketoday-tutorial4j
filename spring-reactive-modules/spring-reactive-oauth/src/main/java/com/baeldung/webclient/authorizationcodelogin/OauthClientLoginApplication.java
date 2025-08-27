@@ -1,4 +1,4 @@
-package com.baeldung.webclient.authorizationcodelogin;
+package cn.tuyucheng.taketoday.webclient.authorizationcodelogin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

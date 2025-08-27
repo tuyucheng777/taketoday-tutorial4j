@@ -1,4 +1,4 @@
-package com.baeldung.webclient;
+package cn.tuyucheng.taketoday.webclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

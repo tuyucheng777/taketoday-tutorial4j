@@ -1,6 +1,6 @@
-package com.baeldung.filters;
+package cn.tuyucheng.taketoday.filters;
 
-import static com.baeldung.filters.WebClientFilters.modifyRequestHeaders;
+import static cn.tuyucheng.taketoday.filters.WebClientFilters.modifyRequestHeaders;
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;

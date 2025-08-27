@@ -1,10 +1,10 @@
-package com.baeldung.validations.functional.validators;
+package cn.tuyucheng.taketoday.validations.functional.validators;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.baeldung.validations.functional.model.CustomRequestEntity;
+import cn.tuyucheng.taketoday.validations.functional.model.CustomRequestEntity;
 
 public class CustomRequestEntityValidator implements Validator {
 

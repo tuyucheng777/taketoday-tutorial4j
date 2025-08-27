@@ -105,7 +105,7 @@ public class EmployeeTestWithoutMockMvc {
 ```java
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.baeldung.web")
+@ComponentScan("cn.tuyucheng.taketoday.web")
 public class WebConfig implements WebMvcConfigurer {
     ...
 }

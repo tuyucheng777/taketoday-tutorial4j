@@ -1,4 +1,4 @@
-package com.baeldung.reactorbus.domain;
+package cn.tuyucheng.taketoday.reactorbus.domain;
 
 public class NotificationData {
 

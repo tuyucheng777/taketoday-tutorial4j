@@ -16,8 +16,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * This test requires:
- * * the service in com.baeldung.service running
- * * the 'second service' in com.baeldung.secondservice running
+ * * the service in cn.tuyucheng.taketoday.service running
+ * * the 'second service' in cn.tuyucheng.taketoday.secondservice running
  */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class CustomFiltersLiveTest {

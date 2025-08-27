@@ -1,4 +1,4 @@
-package com.baeldung.switchIfEmpty.model;
+package cn.tuyucheng.taketoday.switchIfEmpty.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

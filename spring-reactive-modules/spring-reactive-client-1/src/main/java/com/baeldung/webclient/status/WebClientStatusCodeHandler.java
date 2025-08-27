@@ -1,7 +1,7 @@
-package com.baeldung.webclient.status;
+package cn.tuyucheng.taketoday.webclient.status;
 
-import com.baeldung.webclient.status.exception.CustomBadRequestException;
-import com.baeldung.webclient.status.exception.CustomServerErrorException;
+import cn.tuyucheng.taketoday.webclient.status.exception.CustomBadRequestException;
+import cn.tuyucheng.taketoday.webclient.status.exception.CustomServerErrorException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.reactive.function.client.ClientResponse;

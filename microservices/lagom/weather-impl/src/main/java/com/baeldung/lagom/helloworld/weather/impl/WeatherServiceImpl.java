@@ -1,9 +1,9 @@
-package com.baeldung.lagom.helloworld.weather.impl;
+package cn.tuyucheng.taketoday.lagom.helloworld.weather.impl;
 
 import java.util.concurrent.CompletableFuture;
 
-import com.baeldung.lagom.helloworld.weather.api.WeatherService;
-import com.baeldung.lagom.helloworld.weather.api.WeatherStats;
+import cn.tuyucheng.taketoday.lagom.helloworld.weather.api.WeatherService;
+import cn.tuyucheng.taketoday.lagom.helloworld.weather.api.WeatherStats;
 
 import com.lightbend.lagom.javadsl.api.ServiceCall;
 

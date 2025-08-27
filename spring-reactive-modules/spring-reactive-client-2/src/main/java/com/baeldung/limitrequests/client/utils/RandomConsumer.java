@@ -1,9 +1,9 @@
-package com.baeldung.limitrequests.client.utils;
+package cn.tuyucheng.taketoday.limitrequests.client.utils;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.baeldung.limitrequests.server.RandomController;
+import cn.tuyucheng.taketoday.limitrequests.server.RandomController;
 
 import reactor.core.publisher.Mono;
 

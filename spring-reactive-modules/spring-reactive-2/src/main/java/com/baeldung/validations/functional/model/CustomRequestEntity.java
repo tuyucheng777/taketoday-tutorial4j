@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional.model;
+package cn.tuyucheng.taketoday.validations.functional.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

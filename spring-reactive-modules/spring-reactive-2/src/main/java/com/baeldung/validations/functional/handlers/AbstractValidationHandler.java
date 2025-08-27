@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional.handlers;
+package cn.tuyucheng.taketoday.validations.functional.handlers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BeanPropertyBindingResult;

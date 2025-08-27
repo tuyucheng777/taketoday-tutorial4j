@@ -1,4 +1,4 @@
-package com.baeldung;
+package cn.tuyucheng.taketoday;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

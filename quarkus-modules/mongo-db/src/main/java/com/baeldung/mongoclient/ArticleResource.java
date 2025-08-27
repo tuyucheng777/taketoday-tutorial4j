@@ -1,4 +1,4 @@
-package com.baeldung.mongoclient;
+package cn.tuyucheng.taketoday.mongoclient;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;

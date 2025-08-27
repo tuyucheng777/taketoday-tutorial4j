@@ -1,4 +1,4 @@
-package com.baeldung.webclient.timeout;
+package cn.tuyucheng.taketoday.webclient.timeout;
 
 import io.netty.channel.ChannelOption;
 import io.netty.channel.epoll.EpollChannelOption;

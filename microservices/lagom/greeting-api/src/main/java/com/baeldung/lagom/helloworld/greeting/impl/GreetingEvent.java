@@ -1,4 +1,4 @@
-package com.baeldung.lagom.helloworld.greeting.impl;
+package cn.tuyucheng.taketoday.lagom.helloworld.greeting.impl;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.lightbend.lagom.serialization.Jsonable;
@@ -17,7 +17,7 @@ public interface GreetingEvent extends Jsonable {
         public String getFromUser() {
             return fromUser;
         }
-        
+
     }
 
 }

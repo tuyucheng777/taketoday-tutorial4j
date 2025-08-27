@@ -1,4 +1,4 @@
-package com.baeldung.spring.data.dynamodb.repository.rule;
+package cn.tuyucheng.taketoday.spring.data.dynamodb.repository.rule;
 
 import com.amazonaws.services.dynamodbv2.local.main.ServerRunner;
 import com.amazonaws.services.dynamodbv2.local.server.DynamoDBProxyServer;

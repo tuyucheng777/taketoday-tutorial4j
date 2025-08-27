@@ -1,4 +1,4 @@
-package com.baeldung.lagom.helloworld.weather.api;
+package cn.tuyucheng.taketoday.lagom.helloworld.weather.api;
 
 import java.util.Arrays;
 import java.util.Collections;

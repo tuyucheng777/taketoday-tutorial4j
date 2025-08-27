@@ -1,4 +1,4 @@
-package com.baeldung.pagination.model;
+package cn.tuyucheng.taketoday.pagination.model;
 
 import java.util.UUID;
 

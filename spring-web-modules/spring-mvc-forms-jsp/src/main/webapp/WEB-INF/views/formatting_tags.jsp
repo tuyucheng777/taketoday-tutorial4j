@@ -108,7 +108,7 @@
     </h3>
 
     <p>
-        <fmt:bundle basename="com.baeldung.jstl.bundles.CustomMessage" prefix="verb.">
+        <fmt:bundle basename="cn.tuyucheng.taketoday.jstl.bundles.CustomMessage" prefix="verb.">
             <fmt:message key="go"/><br/>
             <fmt:message key="come"/><br/>
             <fmt:message key="sit"/><br/>
@@ -124,7 +124,7 @@
 
     <p>
         <fmt:setLocale value="fr_FR"/>
-        <fmt:bundle basename="com.baeldung.jstl.bundles.CustomMessage" prefix="verb.">
+        <fmt:bundle basename="cn.tuyucheng.taketoday.jstl.bundles.CustomMessage" prefix="verb.">
             <fmt:message key="go"/><br/>
             <fmt:message key="come"/><br/>
             <fmt:message key="sit"/><br/>
@@ -140,7 +140,7 @@
 
     <p>
         <fmt:setLocale value="En"/>
-        <fmt:setBundle basename="com.baeldung.jstl.bundles.CustomMessage" var="lang"/>
+        <fmt:setBundle basename="cn.tuyucheng.taketoday.jstl.bundles.CustomMessage" var="lang"/>
         <fmt:message key="verb.go" bundle="${lang}"/><br/>
         <fmt:message key="verb.come" bundle="${lang}"/><br/>
         <fmt:message key="verb.sit" bundle="${lang}"/><br/>
@@ -203,7 +203,7 @@
     </h3>
     <fmt:requestEncoding value="UTF-8"/>
     <fmt:setLocale value="fr_FR"/>
-    <fmt:setBundle basename="com.baeldung.jstl.bundles.CustomMessage" var="lang"/>
+    <fmt:setBundle basename="cn.tuyucheng.taketoday.jstl.bundles.CustomMessage" var="lang"/>
     <fmt:message key="verb.go" bundle="${lang}"/><br/>
     <fmt:message key="verb.come" bundle="${lang}"/><br/>
     <fmt:message key="verb.sit" bundle="${lang}"/><br/>

@@ -1,7 +1,7 @@
-package com.baeldung.router;
+package cn.tuyucheng.taketoday.router;
 
-import com.baeldung.filters.TraceHandlerFilterFunction;
-import com.baeldung.handler.TraceRouterHandler;
+import cn.tuyucheng.taketoday.filters.TraceHandlerFilterFunction;
+import cn.tuyucheng.taketoday.handler.TraceRouterHandler;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

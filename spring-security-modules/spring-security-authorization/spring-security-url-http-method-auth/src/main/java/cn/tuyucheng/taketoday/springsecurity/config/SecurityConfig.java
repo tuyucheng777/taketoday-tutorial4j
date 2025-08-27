@@ -1,4 +1,4 @@
-package com.baeldung.springsecurity.config;
+package cn.tuyucheng.taketoday.springsecurity.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

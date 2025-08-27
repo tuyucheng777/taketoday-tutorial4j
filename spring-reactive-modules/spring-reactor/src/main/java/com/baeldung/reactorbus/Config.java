@@ -1,4 +1,4 @@
-package com.baeldung.reactorbus;
+package cn.tuyucheng.taketoday.reactorbus;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

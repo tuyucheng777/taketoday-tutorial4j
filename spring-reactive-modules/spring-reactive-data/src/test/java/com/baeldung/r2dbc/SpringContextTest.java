@@ -1,4 +1,4 @@
-package com.baeldung.r2dbc;
+package cn.tuyucheng.taketoday.r2dbc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

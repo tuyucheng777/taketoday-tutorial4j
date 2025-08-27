@@ -1,4 +1,4 @@
-package com.baeldung.synchronous.gateway;
+package cn.tuyucheng.taketoday.synchronous.gateway;
 
 public class CustomerInfo {
 

@@ -1,7 +1,7 @@
-package com.baeldung.springsecurity.service;
+package cn.tuyucheng.taketoday.springsecurity.service;
 
-import com.baeldung.springsecurity.entity.User;
-import com.baeldung.springsecurity.repository.UserRepository;
+import cn.tuyucheng.taketoday.springsecurity.entity.User;
+import cn.tuyucheng.taketoday.springsecurity.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

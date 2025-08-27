@@ -1,4 +1,4 @@
-package com.baeldung.restclient;
+package cn.tuyucheng.taketoday.restclient;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
-import com.baeldung.Post;
+import cn.tuyucheng.taketoday.Post;
 
 @Path("/rest-client/consume-posts")
 public class PostClientResource {

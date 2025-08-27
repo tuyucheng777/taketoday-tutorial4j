@@ -1,4 +1,4 @@
-package com.baeldung.webclient.manualrequest;
+package cn.tuyucheng.taketoday.webclient.manualrequest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.baeldung.restclient;
+package cn.tuyucheng.taketoday.restclient;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-import com.baeldung.Post;
+import cn.tuyucheng.taketoday.Post;
 
 @Path("/posts")
 @RegisterRestClient(configKey = "post-api")

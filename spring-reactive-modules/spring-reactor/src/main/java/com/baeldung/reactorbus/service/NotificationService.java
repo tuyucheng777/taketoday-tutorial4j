@@ -1,6 +1,6 @@
-package com.baeldung.reactorbus.service;
+package cn.tuyucheng.taketoday.reactorbus.service;
 
-import com.baeldung.reactorbus.domain.NotificationData;
+import cn.tuyucheng.taketoday.reactorbus.domain.NotificationData;
 
 public interface NotificationService {
 

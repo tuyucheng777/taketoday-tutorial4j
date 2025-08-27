@@ -1,6 +1,6 @@
-package com.baeldung.couchbase.domain.repository.view;
+package cn.tuyucheng.taketoday.couchbase.domain.repository.view;
 
-import com.baeldung.couchbase.domain.Person;
+import cn.tuyucheng.taketoday.couchbase.domain.Person;
 import org.springframework.data.couchbase.core.query.View;
 import org.springframework.data.couchbase.core.query.ViewIndexed;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

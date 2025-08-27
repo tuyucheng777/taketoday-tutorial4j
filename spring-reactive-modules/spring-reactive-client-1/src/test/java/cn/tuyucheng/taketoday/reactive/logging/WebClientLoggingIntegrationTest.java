@@ -55,9 +55,9 @@ public class WebClientLoggingIntegrationTest {
       post = new Post("Learn WebClient logging with Baeldung!", "", 1);
       sampleResponseBody = new ObjectMapper().writeValueAsString(post);
 
-      ch.qos.logback.classic.Logger jetty = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("com.baeldung.reactive.logging.jetty");
+      ch.qos.logback.classic.Logger jetty = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("cn.tuyucheng.taketoday.reactive.logging.jetty");
       jettyAppender = mock(Appender.class);
-      when(jettyAppender.getName()).thenReturn("com.baeldung.reactive.logging.jetty");
+      when(jettyAppender.getName()).thenReturn("cn.tuyucheng.taketoday.reactive.logging.jetty");
       jetty.addAppender(jettyAppender);
 
       ch.qos.logback.classic.Logger netty = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("reactor.netty.http.client");
@@ -65,9 +65,9 @@ public class WebClientLoggingIntegrationTest {
       when(nettyAppender.getName()).thenReturn("reactor.netty.http.client");
       netty.addAppender(nettyAppender);
 
-      ch.qos.logback.classic.Logger test = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("com.baeldung.reactive");
+      ch.qos.logback.classic.Logger test = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger("cn.tuyucheng.taketoday.reactive");
       mockAppender = mock(Appender.class);
-      when(mockAppender.getName()).thenReturn("com.baeldung.reactive");
+      when(mockAppender.getName()).thenReturn("cn.tuyucheng.taketoday.reactive");
       test.addAppender(mockAppender);
 
    }

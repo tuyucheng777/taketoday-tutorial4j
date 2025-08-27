@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional;
+package cn.tuyucheng.taketoday.validations.functional;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.web.reactive.server.WebTestClient.ResponseSpec;
 
-import com.baeldung.validations.functional.model.AnnotatedRequestEntity;
-import com.baeldung.validations.functional.model.CustomRequestEntity;
+import cn.tuyucheng.taketoday.validations.functional.model.AnnotatedRequestEntity;
+import cn.tuyucheng.taketoday.validations.functional.model.CustomRequestEntity;
 
 import reactor.core.publisher.Mono;
 

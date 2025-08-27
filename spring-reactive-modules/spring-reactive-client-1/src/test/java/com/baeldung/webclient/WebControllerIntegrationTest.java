@@ -1,4 +1,4 @@
-package com.baeldung.webclient;
+package cn.tuyucheng.taketoday.webclient;
 
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.BEFORE_CLASS;
 

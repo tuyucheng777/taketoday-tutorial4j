@@ -1,4 +1,4 @@
-package com.baeldung.exception;
+package cn.tuyucheng.taketoday.exception;
 
 public class ServiceException extends RuntimeException {
 

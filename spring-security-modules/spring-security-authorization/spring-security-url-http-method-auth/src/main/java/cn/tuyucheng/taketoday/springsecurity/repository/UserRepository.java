@@ -1,6 +1,6 @@
-package com.baeldung.springsecurity.repository;
+package cn.tuyucheng.taketoday.springsecurity.repository;
 
-import com.baeldung.springsecurity.entity.User;
+import cn.tuyucheng.taketoday.springsecurity.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

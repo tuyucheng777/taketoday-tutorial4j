@@ -1,4 +1,4 @@
-package com.baeldung.lagom.helloworld.weather.api;
+package cn.tuyucheng.taketoday.lagom.helloworld.weather.api;
 
 import static com.lightbend.lagom.javadsl.api.Service.named;
 import static com.lightbend.lagom.javadsl.api.Service.*;

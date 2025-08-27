@@ -1,8 +1,8 @@
-package com.baeldung.springsecurity.controller;
+package cn.tuyucheng.taketoday.springsecurity.controller;
 
-import com.baeldung.springsecurity.dto.request.PostRequestDto;
-import com.baeldung.springsecurity.dto.response.PostResponseDto;
-import com.baeldung.springsecurity.service.PostService;
+import cn.tuyucheng.taketoday.springsecurity.dto.request.PostRequestDto;
+import cn.tuyucheng.taketoday.springsecurity.dto.response.PostResponseDto;
+import cn.tuyucheng.taketoday.springsecurity.service.PostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;

@@ -1,8 +1,8 @@
-package com.baeldung.springsecurity.controller;
+package cn.tuyucheng.taketoday.springsecurity.controller;
 
-import com.baeldung.springsecurity.dto.request.RegisterRequestDto;
-import com.baeldung.springsecurity.dto.UserProfileDto;
-import com.baeldung.springsecurity.service.UserService;
+import cn.tuyucheng.taketoday.springsecurity.dto.request.RegisterRequestDto;
+import cn.tuyucheng.taketoday.springsecurity.dto.UserProfileDto;
+import cn.tuyucheng.taketoday.springsecurity.service.UserService;
 import org.springframework.http.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.access.prepost.PreAuthorize;

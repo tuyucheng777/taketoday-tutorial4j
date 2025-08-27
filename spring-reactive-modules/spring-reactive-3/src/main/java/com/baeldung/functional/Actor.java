@@ -1,4 +1,4 @@
-package com.baeldung.functional;
+package cn.tuyucheng.taketoday.functional;
 
 class Actor {
    private String firstname;

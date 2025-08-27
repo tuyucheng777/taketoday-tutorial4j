@@ -1,4 +1,4 @@
-package com.baeldung;
+package cn.tuyucheng.taketoday;
 
 public class Post {
 

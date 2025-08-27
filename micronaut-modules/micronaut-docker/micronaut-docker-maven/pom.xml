@@ -149,7 +149,7 @@
       <micronaut.serialization.version>2.13.0</micronaut.serialization.version>
       <micronaut.version>4.7.3</micronaut.version>
       <micronaut.aot.enabled>false</micronaut.aot.enabled>
-      <micronaut.aot.packageName>com.baeldung.aot.generated</micronaut.aot.packageName>
+      <micronaut.aot.packageName>cn.tuyucheng.taketoday.aot.generated</micronaut.aot.packageName>
       <micronaut.runtime>netty</micronaut.runtime>
       <exec.mainClass>cn.tuyucheng.taketoday.Application</exec.mainClass>
       <docker.baseImage>eclipse-temurin:21-jre-alpine</docker.baseImage>

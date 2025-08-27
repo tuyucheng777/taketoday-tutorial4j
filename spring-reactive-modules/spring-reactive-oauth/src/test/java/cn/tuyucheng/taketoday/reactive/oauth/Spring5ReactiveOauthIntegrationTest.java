@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.reactive.oauth;
 
-import com.baeldung.webclient.clientcredentials.configuration.WebClientConfig;
+import cn.tuyucheng.taketoday.webclient.clientcredentials.configuration.WebClientConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

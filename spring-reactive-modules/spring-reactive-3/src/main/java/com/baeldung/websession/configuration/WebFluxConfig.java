@@ -1,4 +1,4 @@
-package com.baeldung.websession.configuration;
+package cn.tuyucheng.taketoday.websession.configuration;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

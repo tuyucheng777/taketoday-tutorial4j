@@ -1,4 +1,4 @@
-package com.baeldung.couchbase.domain.repository.n1ql;
+package cn.tuyucheng.taketoday.couchbase.domain.repository.n1ql;
 
 import java.util.UUID;
 
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.baeldung.couchbase.domain.Person;
-import com.baeldung.couchbase.domain.repository.n1ql.N1QLPersonRepository;
+import cn.tuyucheng.taketoday.couchbase.domain.Person;
+import cn.tuyucheng.taketoday.couchbase.domain.repository.n1ql.N1QLPersonRepository;
 
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;

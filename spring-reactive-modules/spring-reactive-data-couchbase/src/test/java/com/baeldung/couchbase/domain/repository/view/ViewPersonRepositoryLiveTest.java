@@ -1,4 +1,4 @@
-package com.baeldung.couchbase.domain.repository.view;
+package cn.tuyucheng.taketoday.couchbase.domain.repository.view;
 
 import java.util.UUID;
 
@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.baeldung.couchbase.configuration.CouchbaseProperties;
-import com.baeldung.couchbase.configuration.ViewReactiveCouchbaseConfiguration;
-import com.baeldung.couchbase.domain.Person;
-import com.baeldung.couchbase.domain.repository.CouchbaseMockConfiguration;
+import cn.tuyucheng.taketoday.couchbase.configuration.CouchbaseProperties;
+import cn.tuyucheng.taketoday.couchbase.configuration.ViewReactiveCouchbaseConfiguration;
+import cn.tuyucheng.taketoday.couchbase.domain.Person;
+import cn.tuyucheng.taketoday.couchbase.domain.repository.CouchbaseMockConfiguration;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

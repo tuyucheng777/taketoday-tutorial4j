@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional.routers;
+package cn.tuyucheng.taketoday.validations.functional.routers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,10 +8,10 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import com.baeldung.validations.functional.handlers.FunctionalHandler;
-import com.baeldung.validations.functional.handlers.impl.AnnotatedRequestEntityValidationHandler;
-import com.baeldung.validations.functional.handlers.impl.CustomRequestEntityValidationHandler;
-import com.baeldung.validations.functional.handlers.impl.OtherEntityValidationHandler;
+import cn.tuyucheng.taketoday.validations.functional.handlers.FunctionalHandler;
+import cn.tuyucheng.taketoday.validations.functional.handlers.impl.AnnotatedRequestEntityValidationHandler;
+import cn.tuyucheng.taketoday.validations.functional.handlers.impl.CustomRequestEntityValidationHandler;
+import cn.tuyucheng.taketoday.validations.functional.handlers.impl.OtherEntityValidationHandler;
 
 @Configuration
 public class ValidationsRouters {

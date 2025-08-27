@@ -1,8 +1,8 @@
-package com.baeldung.mongoclient;
+package cn.tuyucheng.taketoday.mongoclient;
 
 import java.util.List;
 
-import com.baeldung.MongoResource;
+import cn.tuyucheng.taketoday.MongoResource;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.common.QuarkusTestResource;
 import jakarta.inject.Inject;

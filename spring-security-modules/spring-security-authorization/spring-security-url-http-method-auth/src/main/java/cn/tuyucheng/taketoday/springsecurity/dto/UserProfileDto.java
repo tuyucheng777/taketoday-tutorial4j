@@ -1,6 +1,6 @@
-package com.baeldung.springsecurity.dto;
+package cn.tuyucheng.taketoday.springsecurity.dto;
 
-import com.baeldung.springsecurity.utils.Role;
+import cn.tuyucheng.taketoday.springsecurity.utils.Role;
 
 public class UserProfileDto {
    private String username;

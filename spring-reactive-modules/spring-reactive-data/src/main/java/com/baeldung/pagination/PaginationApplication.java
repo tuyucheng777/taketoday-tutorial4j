@@ -1,4 +1,4 @@
-package com.baeldung.pagination;
+package cn.tuyucheng.taketoday.pagination;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

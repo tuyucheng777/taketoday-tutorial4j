@@ -1,4 +1,4 @@
-package com.baeldung.javahttpclient;
+package cn.tuyucheng.taketoday.javahttpclient;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-import com.baeldung.Post;
+import cn.tuyucheng.taketoday.Post;
 
 @Path("/java-http-client/consume-posts")
 public class JavaHttpClientPostResource {

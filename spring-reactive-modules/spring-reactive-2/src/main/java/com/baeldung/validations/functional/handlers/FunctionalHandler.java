@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional.handlers;
+package cn.tuyucheng.taketoday.validations.functional.handlers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,8 +10,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.baeldung.validations.functional.model.CustomRequestEntity;
-import com.baeldung.validations.functional.validators.CustomRequestEntityValidator;
+import cn.tuyucheng.taketoday.validations.functional.model.CustomRequestEntity;
+import cn.tuyucheng.taketoday.validations.functional.validators.CustomRequestEntityValidator;
 
 import reactor.core.publisher.Mono;
 

@@ -1,4 +1,4 @@
-package com.baeldung.custom.deserialization;
+package cn.tuyucheng.taketoday.custom.deserialization;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,7 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import com.baeldung.custom.deserialization.model.OrderResponse;
+import cn.tuyucheng.taketoday.custom.deserialization.model.OrderResponse;
 
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;

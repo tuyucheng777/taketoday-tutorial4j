@@ -1,4 +1,4 @@
-package com.baeldung.staticcontent;
+package cn.tuyucheng.taketoday.staticcontent;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

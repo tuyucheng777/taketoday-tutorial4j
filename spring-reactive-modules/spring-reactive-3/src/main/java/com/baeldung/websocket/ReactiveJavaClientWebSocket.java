@@ -1,4 +1,4 @@
-package com.baeldung.websocket;
+package cn.tuyucheng.taketoday.websocket;
 
 import java.net.URI;
 import java.time.Duration;

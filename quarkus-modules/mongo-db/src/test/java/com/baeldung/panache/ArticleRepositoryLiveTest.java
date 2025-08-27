@@ -1,8 +1,8 @@
-package com.baeldung.panache;
+package cn.tuyucheng.taketoday.panache;
 
 import java.util.List;
 
-import com.baeldung.MongoResource;
+import cn.tuyucheng.taketoday.MongoResource;
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;

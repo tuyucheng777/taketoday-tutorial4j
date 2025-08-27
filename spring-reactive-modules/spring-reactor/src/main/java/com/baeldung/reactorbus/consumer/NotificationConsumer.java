@@ -1,10 +1,10 @@
-package com.baeldung.reactorbus.consumer;
+package cn.tuyucheng.taketoday.reactorbus.consumer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.baeldung.reactorbus.domain.NotificationData;
-import com.baeldung.reactorbus.service.NotificationService;
+import cn.tuyucheng.taketoday.reactorbus.domain.NotificationData;
+import cn.tuyucheng.taketoday.reactorbus.service.NotificationService;
 
 import reactor.bus.Event;
 import reactor.fn.Consumer;

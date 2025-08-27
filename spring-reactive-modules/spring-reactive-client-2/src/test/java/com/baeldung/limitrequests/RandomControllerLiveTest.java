@@ -1,4 +1,4 @@
-package com.baeldung.limitrequests;
+package cn.tuyucheng.taketoday.limitrequests;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException.InternalServerError;
 
-import com.baeldung.limitrequests.client.DelayElements;
-import com.baeldung.limitrequests.client.GuavaRateLimit;
-import com.baeldung.limitrequests.client.LimitConcurrency;
-import com.baeldung.limitrequests.client.Resilience4jRateLimit;
-import com.baeldung.limitrequests.client.ZipWithInterval;
-import com.baeldung.limitrequests.server.Concurrency;
+import cn.tuyucheng.taketoday.limitrequests.client.DelayElements;
+import cn.tuyucheng.taketoday.limitrequests.client.GuavaRateLimit;
+import cn.tuyucheng.taketoday.limitrequests.client.LimitConcurrency;
+import cn.tuyucheng.taketoday.limitrequests.client.Resilience4jRateLimit;
+import cn.tuyucheng.taketoday.limitrequests.client.ZipWithInterval;
+import cn.tuyucheng.taketoday.limitrequests.server.Concurrency;
 
 class RandomControllerLiveTest {
 

@@ -1,6 +1,6 @@
-package com.baeldung.lagom.helloworld.weather.impl;
+package cn.tuyucheng.taketoday.lagom.helloworld.weather.impl;
 
-import com.baeldung.lagom.helloworld.weather.api.WeatherService;
+import cn.tuyucheng.taketoday.lagom.helloworld.weather.api.WeatherService;
 
 import com.google.inject.AbstractModule;
 import com.lightbend.lagom.javadsl.server.ServiceGuiceSupport;

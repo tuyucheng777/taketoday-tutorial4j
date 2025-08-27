@@ -1,4 +1,4 @@
-package com.baeldung.switchIfEmpty.controller;
+package cn.tuyucheng.taketoday.switchIfEmpty.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baeldung.switchIfEmpty.model.User;
-import com.baeldung.switchIfEmpty.service.UserService;
+import cn.tuyucheng.taketoday.switchIfEmpty.model.User;
+import cn.tuyucheng.taketoday.switchIfEmpty.service.UserService;
 
 import reactor.core.publisher.Mono;
 

@@ -1,4 +1,4 @@
-package com.baeldung.functional;
+package cn.tuyucheng.taketoday.functional;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromValue;
 import static org.springframework.web.reactive.function.BodyInserters.fromResource;

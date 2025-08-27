@@ -1,4 +1,4 @@
-package com.baeldung.websocket;
+package cn.tuyucheng.taketoday.websocket;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

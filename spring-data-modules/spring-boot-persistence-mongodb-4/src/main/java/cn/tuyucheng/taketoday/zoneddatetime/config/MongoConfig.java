@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import java.util.ArrayList;
 import java.util.List;
 
-@EnableMongoRepositories(basePackages = { "com.baeldung" })
+@EnableMongoRepositories(basePackages = { "cn.tuyucheng.taketoday" })
 public class MongoConfig extends AbstractMongoClientConfiguration {
 
     private final List<Converter<?, ?>> converters = new ArrayList<Converter<?, ?>>();

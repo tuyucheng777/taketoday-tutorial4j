@@ -1,4 +1,4 @@
-package com.baeldung.limitrequests.client.utils;
+package cn.tuyucheng.taketoday.limitrequests.client.utils;
 
 public interface Client {
 

@@ -1,4 +1,4 @@
-package com.baeldung.pagination.controller;
+package cn.tuyucheng.taketoday.pagination.controller;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -6,8 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baeldung.pagination.model.Product;
-import com.baeldung.pagination.repository.ProductRepository;
+import cn.tuyucheng.taketoday.pagination.model.Product;
+import cn.tuyucheng.taketoday.pagination.repository.ProductRepository;
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;

@@ -1,4 +1,4 @@
-package com.baeldung.panache;
+package cn.tuyucheng.taketoday.panache;
 
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import jakarta.enterprise.context.ApplicationScoped;

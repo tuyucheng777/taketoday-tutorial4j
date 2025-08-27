@@ -1,6 +1,6 @@
-package com.baeldung.webclient;
+package cn.tuyucheng.taketoday.webclient;
 
-import com.baeldung.webclient.status.WebClientStatusCodeHandler;
+import cn.tuyucheng.taketoday.webclient.status.WebClientStatusCodeHandler;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.junit.After;
 import org.junit.Before;

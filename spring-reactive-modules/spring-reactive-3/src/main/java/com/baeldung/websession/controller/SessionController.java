@@ -1,6 +1,6 @@
-package com.baeldung.websession.controller;
+package cn.tuyucheng.taketoday.websession.controller;
 
-import com.baeldung.websession.transfer.CustomResponse;
+import cn.tuyucheng.taketoday.websession.transfer.CustomResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

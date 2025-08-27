@@ -1,7 +1,7 @@
-package com.baeldung.webclient.json;
+package cn.tuyucheng.taketoday.webclient.json;
 
-import com.baeldung.webclient.json.model.Book;
-import com.baeldung.webclient.json.model.Reader;
+import cn.tuyucheng.taketoday.webclient.json.model.Book;
+import cn.tuyucheng.taketoday.webclient.json.model.Reader;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;

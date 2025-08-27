@@ -1,4 +1,4 @@
-package com.baeldung.springsecurity.entity;
+package cn.tuyucheng.taketoday.springsecurity.entity;
 
 import jakarta.persistence.*;
 

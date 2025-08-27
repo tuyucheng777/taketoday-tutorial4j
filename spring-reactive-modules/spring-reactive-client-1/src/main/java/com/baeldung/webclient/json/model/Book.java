@@ -1,4 +1,4 @@
-package com.baeldung.webclient.json.model;
+package cn.tuyucheng.taketoday.webclient.json.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;

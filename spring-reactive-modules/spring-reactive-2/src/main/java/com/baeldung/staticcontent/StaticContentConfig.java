@@ -1,4 +1,4 @@
-package com.baeldung.staticcontent;
+package cn.tuyucheng.taketoday.staticcontent;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

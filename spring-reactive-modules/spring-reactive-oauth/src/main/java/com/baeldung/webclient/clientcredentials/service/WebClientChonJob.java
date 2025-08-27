@@ -1,4 +1,4 @@
-package com.baeldung.webclient.clientcredentials.service;
+package cn.tuyucheng.taketoday.webclient.clientcredentials.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

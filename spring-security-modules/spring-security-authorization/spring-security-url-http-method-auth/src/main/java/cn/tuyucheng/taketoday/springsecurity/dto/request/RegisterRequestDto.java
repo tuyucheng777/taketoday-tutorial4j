@@ -1,6 +1,6 @@
-package com.baeldung.springsecurity.dto.request;
+package cn.tuyucheng.taketoday.springsecurity.dto.request;
 
-import com.baeldung.springsecurity.utils.Role;
+import cn.tuyucheng.taketoday.springsecurity.utils.Role;
 
 public class RegisterRequestDto {
    private String username;

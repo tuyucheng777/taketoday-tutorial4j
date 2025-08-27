@@ -1,4 +1,4 @@
-package com.baeldung.custom.deserialization.model;
+package cn.tuyucheng.taketoday.custom.deserialization.model;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.baeldung.synchronous.gateway;
+package cn.tuyucheng.taketoday.synchronous.gateway;
 
 import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.springframework.test.annotation.DirtiesContext.ClassMode.BEFORE_CLASS;
@@ -13,9 +13,9 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import com.baeldung.synchronous.SynchronousRequestsApp;
-import com.baeldung.synchronous.system.billing.BillingController;
-import com.baeldung.synchronous.system.customer.CustomerController;
+import cn.tuyucheng.taketoday.synchronous.SynchronousRequestsApp;
+import cn.tuyucheng.taketoday.synchronous.system.billing.BillingController;
+import cn.tuyucheng.taketoday.synchronous.system.customer.CustomerController;
 
 @DirtiesContext(classMode = BEFORE_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = SynchronousRequestsApp.class)

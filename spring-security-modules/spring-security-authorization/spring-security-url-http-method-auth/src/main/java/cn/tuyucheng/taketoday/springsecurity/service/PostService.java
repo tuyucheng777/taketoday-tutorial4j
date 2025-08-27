@@ -1,10 +1,10 @@
-package com.baeldung.springsecurity.service;
+package cn.tuyucheng.taketoday.springsecurity.service;
 
-import com.baeldung.springsecurity.dto.request.PostRequestDto;
-import com.baeldung.springsecurity.dto.response.PostResponseDto;
-import com.baeldung.springsecurity.entity.Post;
-import com.baeldung.springsecurity.entity.User;
-import com.baeldung.springsecurity.repository.PostRepository;
+import cn.tuyucheng.taketoday.springsecurity.dto.request.PostRequestDto;
+import cn.tuyucheng.taketoday.springsecurity.dto.response.PostResponseDto;
+import cn.tuyucheng.taketoday.springsecurity.entity.Post;
+import cn.tuyucheng.taketoday.springsecurity.entity.User;
+import cn.tuyucheng.taketoday.springsecurity.repository.PostRepository;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 

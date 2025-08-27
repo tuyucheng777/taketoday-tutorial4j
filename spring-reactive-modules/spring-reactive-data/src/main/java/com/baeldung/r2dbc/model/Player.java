@@ -1,4 +1,4 @@
-package com.baeldung.r2dbc.model;
+package cn.tuyucheng.taketoday.r2dbc.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

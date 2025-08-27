@@ -1,4 +1,4 @@
-package com.baeldung.controller;
+package cn.tuyucheng.taketoday.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

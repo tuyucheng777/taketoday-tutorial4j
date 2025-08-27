@@ -1,4 +1,4 @@
-package com.baeldung.custom.deserialization;
+package cn.tuyucheng.taketoday.custom.deserialization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

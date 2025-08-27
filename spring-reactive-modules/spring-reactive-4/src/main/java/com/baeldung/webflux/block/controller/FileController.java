@@ -1,4 +1,4 @@
-package com.baeldung.webflux.block.controller;
+package cn.tuyucheng.taketoday.webflux.block.controller;
 
 import java.util.function.Function;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baeldung.webflux.block.service.FileContentSearchService;
-import com.baeldung.webflux.block.service.FileService;
-import com.baeldung.webflux.block.util.ThreadLogger;
+import cn.tuyucheng.taketoday.webflux.block.service.FileContentSearchService;
+import cn.tuyucheng.taketoday.webflux.block.service.FileService;
+import cn.tuyucheng.taketoday.webflux.block.util.ThreadLogger;
 
 import reactor.core.publisher.Mono;
 

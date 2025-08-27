@@ -1,4 +1,4 @@
-package com.baeldung.custom.deserialization.config;
+package cn.tuyucheng.taketoday.custom.deserialization.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

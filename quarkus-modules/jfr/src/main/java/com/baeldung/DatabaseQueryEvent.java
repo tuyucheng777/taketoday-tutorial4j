@@ -1,9 +1,9 @@
-package com.baeldung;
+package cn.tuyucheng.taketoday;
 
 import jdk.jfr.Event;
 import jdk.jfr.Name;
 
-@Name("com.baeldung.DatabaseQueryEvent")
+@Name("cn.tuyucheng.taketoday.DatabaseQueryEvent")
 public class DatabaseQueryEvent extends Event {
 
    private final String query;

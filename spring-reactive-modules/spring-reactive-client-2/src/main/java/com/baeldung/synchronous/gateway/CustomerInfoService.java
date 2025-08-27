@@ -1,13 +1,13 @@
-package com.baeldung.synchronous.gateway;
+package cn.tuyucheng.taketoday.synchronous.gateway;
 
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.baeldung.synchronous.system.billing.Billing;
-import com.baeldung.synchronous.system.billing.BillingController;
-import com.baeldung.synchronous.system.customer.Customer;
-import com.baeldung.synchronous.system.customer.CustomerController;
+import cn.tuyucheng.taketoday.synchronous.system.billing.Billing;
+import cn.tuyucheng.taketoday.synchronous.system.billing.BillingController;
+import cn.tuyucheng.taketoday.synchronous.system.customer.Customer;
+import cn.tuyucheng.taketoday.synchronous.system.customer.CustomerController;
 
 import reactor.core.publisher.Mono;
 

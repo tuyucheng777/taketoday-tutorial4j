@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional.model;
+package cn.tuyucheng.taketoday.validations.functional.model;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

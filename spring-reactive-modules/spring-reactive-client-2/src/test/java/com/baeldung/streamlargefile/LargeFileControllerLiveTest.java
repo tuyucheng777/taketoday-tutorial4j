@@ -1,4 +1,4 @@
-package com.baeldung.streamlargefile;
+package cn.tuyucheng.taketoday.streamlargefile;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -11,9 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.baeldung.streamlargefile.client.LargeFileDownloadWebClient;
-import com.baeldung.streamlargefile.client.LimitedFileDownloadWebClient;
-import com.baeldung.streamlargefile.server.LargeFileController;
+import cn.tuyucheng.taketoday.streamlargefile.client.LargeFileDownloadWebClient;
+import cn.tuyucheng.taketoday.streamlargefile.client.LimitedFileDownloadWebClient;
+import cn.tuyucheng.taketoday.streamlargefile.server.LargeFileController;
 
 class LargeFileControllerLiveTest {
 

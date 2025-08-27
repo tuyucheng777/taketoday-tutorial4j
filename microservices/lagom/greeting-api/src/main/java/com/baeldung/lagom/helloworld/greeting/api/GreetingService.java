@@ -1,4 +1,4 @@
-package com.baeldung.lagom.helloworld.greeting.api;
+package cn.tuyucheng.taketoday.lagom.helloworld.greeting.api;
 
 import static com.lightbend.lagom.javadsl.api.Service.named;
 import static com.lightbend.lagom.javadsl.api.Service.restCall;

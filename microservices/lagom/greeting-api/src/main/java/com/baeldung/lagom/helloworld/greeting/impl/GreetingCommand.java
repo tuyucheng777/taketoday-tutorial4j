@@ -1,4 +1,4 @@
-package com.baeldung.lagom.helloworld.greeting.impl;
+package cn.tuyucheng.taketoday.lagom.helloworld.greeting.impl;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -11,15 +11,15 @@ public interface GreetingCommand extends Jsonable {
 
     @SuppressWarnings("serial")
     @JsonDeserialize
-    public final class ReceivedGreetingCommand implements GreetingCommand, 
+    public final class ReceivedGreetingCommand implements GreetingCommand,
       CompressedJsonable, PersistentEntity.ReplyType<String> {
-        private final String fromUser;       
+        private final String fromUser;
 
         @JsonCreator
         public ReceivedGreetingCommand(String fromUser) {
             this.fromUser = Preconditions.checkNotNull(fromUser, "fromUser");
         }
-        
+
         public String getFromUser() {
             return fromUser;
         }

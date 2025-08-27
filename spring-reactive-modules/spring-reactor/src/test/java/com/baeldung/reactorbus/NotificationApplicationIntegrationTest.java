@@ -1,4 +1,4 @@
-package com.baeldung.reactorbus;
+package cn.tuyucheng.taketoday.reactorbus;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

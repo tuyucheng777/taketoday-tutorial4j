@@ -1,4 +1,4 @@
-package com.baeldung.functional;
+package cn.tuyucheng.taketoday.functional;
 
 import static org.springframework.web.reactive.function.BodyInserters.fromValue;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
@@ -28,7 +28,7 @@ import org.springframework.web.server.adapter.WebHttpHandlerBuilder;
 import reactor.core.publisher.Flux;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.baeldung.functional"})
+@ComponentScan(basePackages = {"cn.tuyucheng.taketoday.functional"})
 public class FunctionalSpringBootApplication {
 
    private static final Actor BRAD_PITT = new Actor("Brad", "Pitt");

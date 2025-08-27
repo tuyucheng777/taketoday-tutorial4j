@@ -1,12 +1,12 @@
-package com.baeldung.lagom.helloworld.greeting.impl;
+package cn.tuyucheng.taketoday.lagom.helloworld.greeting.impl;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-import com.baeldung.lagom.helloworld.greeting.api.GreetingService;
-import com.baeldung.lagom.helloworld.greeting.impl.GreetingCommand.ReceivedGreetingCommand;
-import com.baeldung.lagom.helloworld.weather.api.WeatherService;
-import com.baeldung.lagom.helloworld.weather.api.WeatherStats;
+import cn.tuyucheng.taketoday.lagom.helloworld.greeting.api.GreetingService;
+import cn.tuyucheng.taketoday.lagom.helloworld.greeting.impl.GreetingCommand.ReceivedGreetingCommand;
+import cn.tuyucheng.taketoday.lagom.helloworld.weather.api.WeatherService;
+import cn.tuyucheng.taketoday.lagom.helloworld.weather.api.WeatherStats;
 
 import com.google.inject.Inject;
 import com.lightbend.lagom.javadsl.api.ServiceCall;
@@ -34,10 +34,10 @@ public class GreetingServiceImpl implements GreetingService {
             PersistentEntityRef<GreetingCommand> ref = persistentEntityRegistry.refFor(GreetingEntity.class, user);
             CompletableFuture<String> greetingResponse = ref.ask(new ReceivedGreetingCommand(user))
               .toCompletableFuture();
-            CompletableFuture<WeatherStats> todaysWeatherInfo = 
+            CompletableFuture<WeatherStats> todaysWeatherInfo =
               (CompletableFuture<WeatherStats>) weatherService.weatherStatsForToday().invoke();
             try {
-                return CompletableFuture.completedFuture(greetingResponse.get() + 
+                return CompletableFuture.completedFuture(greetingResponse.get() +
                   " Today's weather stats: " + todaysWeatherInfo.get().getMessage());
             } catch (InterruptedException | ExecutionException e) {
                 return CompletableFuture.completedFuture("Sorry Some Error at our end, working on it");

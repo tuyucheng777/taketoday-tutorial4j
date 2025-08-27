@@ -1,4 +1,4 @@
-package com.baeldung.websession.configuration;
+package cn.tuyucheng.taketoday.websession.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

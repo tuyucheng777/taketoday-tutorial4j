@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.baeldung.quarkus.extension</groupId>
+        <groupId>cn.tuyucheng.taketoday.quarkus.extension</groupId>
         <artifactId>quarkus-extension</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.baeldung.mathematics</groupId>
+    <groupId>cn.tuyucheng.taketoday.mathematics</groupId>
     <artifactId>quarkus-load-shedding</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 

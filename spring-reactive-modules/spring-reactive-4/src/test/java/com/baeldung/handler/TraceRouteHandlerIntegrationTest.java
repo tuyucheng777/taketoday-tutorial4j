@@ -1,4 +1,4 @@
-package com.baeldung.handler;
+package cn.tuyucheng.taketoday.handler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.EntityExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import com.baeldung.router.TraceRouter;
+import cn.tuyucheng.taketoday.router.TraceRouter;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {TraceRouter.class, TraceRouterHandler.class})

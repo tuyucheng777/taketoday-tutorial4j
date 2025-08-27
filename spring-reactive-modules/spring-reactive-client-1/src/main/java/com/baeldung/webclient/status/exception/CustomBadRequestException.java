@@ -1,4 +1,4 @@
-package com.baeldung.webclient.status.exception;
+package cn.tuyucheng.taketoday.webclient.status.exception;
 
 public class CustomBadRequestException extends Exception {
    public CustomBadRequestException(String message) {

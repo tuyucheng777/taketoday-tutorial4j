@@ -1,4 +1,4 @@
-package com.baeldung.springsecurity.dto.response;
+package cn.tuyucheng.taketoday.springsecurity.dto.response;
 
 public class PostResponseDto {
    private Long id;

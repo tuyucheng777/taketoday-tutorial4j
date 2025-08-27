@@ -1,4 +1,4 @@
-// package com.baeldung.jaxrs;
+// package cn.tuyucheng.taketoday.jaxrs;
 //
 // import java.util.List;
 //
@@ -8,7 +8,7 @@
 // import jakarta.ws.rs.Produces;
 // import jakarta.ws.rs.core.MediaType;
 //
-// import com.baeldung.Post;
+// import cn.tuyucheng.taketoday.Post;
 //
 //@Path("jax-rs/consume-posts")
 // public class JaxRsPostResource {

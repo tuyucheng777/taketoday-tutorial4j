@@ -1,11 +1,11 @@
-package com.baeldung.limitrequests.client;
+package cn.tuyucheng.taketoday.limitrequests.client;
 
 import java.time.Duration;
 
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.baeldung.limitrequests.client.utils.Client;
-import com.baeldung.limitrequests.client.utils.RandomConsumer;
+import cn.tuyucheng.taketoday.limitrequests.client.utils.Client;
+import cn.tuyucheng.taketoday.limitrequests.client.utils.RandomConsumer;
 
 import io.github.resilience4j.ratelimiter.RateLimiter;
 import io.github.resilience4j.ratelimiter.RateLimiterConfig;

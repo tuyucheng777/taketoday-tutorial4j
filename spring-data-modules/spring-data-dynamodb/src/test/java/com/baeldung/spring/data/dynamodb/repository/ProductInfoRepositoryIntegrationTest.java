@@ -1,4 +1,4 @@
-package com.baeldung.spring.data.dynamodb.repository;
+package cn.tuyucheng.taketoday.spring.data.dynamodb.repository;
 
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
@@ -7,10 +7,10 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ResourceInUseException;
-import com.baeldung.Application;
-import com.baeldung.spring.data.dynamodb.model.ProductInfo;
-import com.baeldung.spring.data.dynamodb.repositories.ProductInfoRepository;
-import com.baeldung.spring.data.dynamodb.repository.rule.LocalDbCreationRule;
+import cn.tuyucheng.taketoday.Application;
+import cn.tuyucheng.taketoday.spring.data.dynamodb.model.ProductInfo;
+import cn.tuyucheng.taketoday.spring.data.dynamodb.repositories.ProductInfoRepository;
+import cn.tuyucheng.taketoday.spring.data.dynamodb.repository.rule.LocalDbCreationRule;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;

@@ -1,4 +1,4 @@
-package com.baeldung.synchronous.system.billing;
+package cn.tuyucheng.taketoday.synchronous.system.billing;
 
 public class Billing {
 

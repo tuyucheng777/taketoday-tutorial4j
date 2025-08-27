@@ -1,4 +1,4 @@
-package com.baeldung.switchIfEmpty.controller;
+package cn.tuyucheng.taketoday.switchIfEmpty.controller;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import com.baeldung.switchIfEmpty.model.User;
-import com.baeldung.switchIfEmpty.service.UserService;
+import cn.tuyucheng.taketoday.switchIfEmpty.model.User;
+import cn.tuyucheng.taketoday.switchIfEmpty.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ch.qos.logback.classic.Level;

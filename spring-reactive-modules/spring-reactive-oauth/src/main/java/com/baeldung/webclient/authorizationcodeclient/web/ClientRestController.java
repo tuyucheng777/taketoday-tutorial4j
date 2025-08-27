@@ -1,4 +1,4 @@
-package com.baeldung.webclient.authorizationcodeclient.web;
+package cn.tuyucheng.taketoday.webclient.authorizationcodeclient.web;
 
 import static org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId;
 import static org.springframework.security.oauth2.client.web.reactive.function.client.ServerOAuth2AuthorizedClientExchangeFilterFunction.oauth2AuthorizedClient;

@@ -1,4 +1,4 @@
-package com.baeldung.webclient.authorizationcodelogin.configuration;
+package cn.tuyucheng.taketoday.webclient.authorizationcodelogin.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

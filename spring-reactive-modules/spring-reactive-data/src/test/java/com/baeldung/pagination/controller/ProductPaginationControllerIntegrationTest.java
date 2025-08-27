@@ -1,4 +1,4 @@
-package com.baeldung.pagination.controller;
+package cn.tuyucheng.taketoday.pagination.controller;
 
 import static org.assertj.core.api.Assertions.atIndex;
 import static org.assertj.core.api.AssertionsForClassTypes.tuple;
@@ -13,7 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import com.baeldung.pagination.model.Product;
+import cn.tuyucheng.taketoday.pagination.model.Product;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;

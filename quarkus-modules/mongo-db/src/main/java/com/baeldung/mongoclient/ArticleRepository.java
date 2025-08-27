@@ -1,4 +1,4 @@
-package com.baeldung.mongoclient;
+package cn.tuyucheng.taketoday.mongoclient;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;

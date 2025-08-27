@@ -1,4 +1,4 @@
-package com.baeldung.webflux;
+package cn.tuyucheng.taketoday.webflux;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.baeldung.limitrequests;
+package cn.tuyucheng.taketoday.limitrequests;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

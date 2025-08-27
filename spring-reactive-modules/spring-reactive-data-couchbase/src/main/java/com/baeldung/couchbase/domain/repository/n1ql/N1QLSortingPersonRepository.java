@@ -1,6 +1,6 @@
-package com.baeldung.couchbase.domain.repository.n1ql;
+package cn.tuyucheng.taketoday.couchbase.domain.repository.n1ql;
 
-import com.baeldung.couchbase.domain.Person;
+import cn.tuyucheng.taketoday.couchbase.domain.Person;
 
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.data.repository.reactive.ReactiveSortingRepository;

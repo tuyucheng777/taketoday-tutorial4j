@@ -1,6 +1,6 @@
-package com.baeldung.springsecurity.entity;
+package cn.tuyucheng.taketoday.springsecurity.entity;
 
-import com.baeldung.springsecurity.utils.Role;
+import cn.tuyucheng.taketoday.springsecurity.utils.Role;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,4 +1,4 @@
-package com.baeldung.disruptor;
+package cn.tuyucheng.taketoday.disruptor;
 
 import com.lmax.disruptor.RingBuffer;
 

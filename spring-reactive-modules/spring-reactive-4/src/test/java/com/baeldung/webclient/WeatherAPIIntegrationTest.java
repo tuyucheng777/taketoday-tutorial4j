@@ -1,4 +1,4 @@
-package com.baeldung.webclient;
+package cn.tuyucheng.taketoday.webclient;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;

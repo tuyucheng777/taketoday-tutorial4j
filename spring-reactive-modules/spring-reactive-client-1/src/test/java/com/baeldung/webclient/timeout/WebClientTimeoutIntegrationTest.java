@@ -1,4 +1,4 @@
-package com.baeldung.webclient.timeout;
+package cn.tuyucheng.taketoday.webclient.timeout;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import io.netty.handler.timeout.ReadTimeoutException;

@@ -1,7 +1,7 @@
-package com.baeldung.lagom.helloworld.greeting.impl;
+package cn.tuyucheng.taketoday.lagom.helloworld.greeting.impl;
 
-import com.baeldung.lagom.helloworld.greeting.api.GreetingService;
-import com.baeldung.lagom.helloworld.weather.api.WeatherService;
+import cn.tuyucheng.taketoday.lagom.helloworld.greeting.api.GreetingService;
+import cn.tuyucheng.taketoday.lagom.helloworld.weather.api.WeatherService;
 
 import com.google.inject.AbstractModule;
 import com.lightbend.lagom.javadsl.server.ServiceGuiceSupport;

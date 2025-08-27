@@ -1,9 +1,9 @@
-package com.baeldung.limitrequests.client;
+package cn.tuyucheng.taketoday.limitrequests.client;
 
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.baeldung.limitrequests.client.utils.Client;
-import com.baeldung.limitrequests.client.utils.RandomConsumer;
+import cn.tuyucheng.taketoday.limitrequests.client.utils.Client;
+import cn.tuyucheng.taketoday.limitrequests.client.utils.RandomConsumer;
 
 import reactor.core.publisher.Flux;
 

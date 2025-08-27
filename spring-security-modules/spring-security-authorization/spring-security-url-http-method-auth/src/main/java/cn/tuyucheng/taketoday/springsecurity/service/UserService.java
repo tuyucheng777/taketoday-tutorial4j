@@ -1,9 +1,9 @@
-package com.baeldung.springsecurity.service;
+package cn.tuyucheng.taketoday.springsecurity.service;
 
-import com.baeldung.springsecurity.dto.request.RegisterRequestDto;
-import com.baeldung.springsecurity.dto.UserProfileDto;
-import com.baeldung.springsecurity.entity.User;
-import com.baeldung.springsecurity.repository.UserRepository;
+import cn.tuyucheng.taketoday.springsecurity.dto.request.RegisterRequestDto;
+import cn.tuyucheng.taketoday.springsecurity.dto.UserProfileDto;
+import cn.tuyucheng.taketoday.springsecurity.entity.User;
+import cn.tuyucheng.taketoday.springsecurity.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional.handlers.impl;
+package cn.tuyucheng.taketoday.validations.functional.handlers.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -7,8 +7,8 @@ import org.springframework.validation.Validator;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import com.baeldung.validations.functional.handlers.AbstractValidationHandler;
-import com.baeldung.validations.functional.model.AnnotatedRequestEntity;
+import cn.tuyucheng.taketoday.validations.functional.handlers.AbstractValidationHandler;
+import cn.tuyucheng.taketoday.validations.functional.model.AnnotatedRequestEntity;
 
 import reactor.core.publisher.Mono;
 

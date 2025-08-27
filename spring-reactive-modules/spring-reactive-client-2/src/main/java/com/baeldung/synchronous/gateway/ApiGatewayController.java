@@ -1,4 +1,4 @@
-package com.baeldung.synchronous.gateway;
+package cn.tuyucheng.taketoday.synchronous.gateway;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

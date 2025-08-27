@@ -1,4 +1,4 @@
-package com.baeldung.validations.functional;
+package cn.tuyucheng.taketoday.validations.functional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

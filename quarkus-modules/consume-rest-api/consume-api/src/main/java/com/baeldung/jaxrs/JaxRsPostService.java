@@ -1,8 +1,8 @@
-// package com.baeldung.jaxrs;
+// package cn.tuyucheng.taketoday.jaxrs;
 //
 // import java.util.List;
 //
-// import com.baeldung.Post;
+// import cn.tuyucheng.taketoday.Post;
 //
 // import jakarta.enterprise.context.ApplicationScoped;
 // import jakarta.ws.rs.client.Client;

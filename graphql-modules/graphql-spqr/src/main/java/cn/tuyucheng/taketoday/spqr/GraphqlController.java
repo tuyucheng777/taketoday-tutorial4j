@@ -22,7 +22,7 @@ public class GraphqlController {
    @Autowired
    public GraphqlController(BookResolver bookResolver) {
       GraphQLSchema schema = new GraphQLSchemaGenerator()
-            .withBasePackages("com.baeldung")
+            .withBasePackages("cn.tuyucheng.taketoday")
             .withOperationsFromSingleton(bookResolver)
             .generate();
       this.graphQL = new GraphQL.Builder(schema).build();

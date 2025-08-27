@@ -1,4 +1,4 @@
-package com.baeldung.streamlargefile.client;
+package cn.tuyucheng.taketoday.streamlargefile.client;
 
 import java.io.IOException;
 import java.nio.file.Files;

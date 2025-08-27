@@ -1,4 +1,4 @@
-package com.baeldung.webclient.clientcredentials;
+package cn.tuyucheng.taketoday.webclient.clientcredentials;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.baeldung.webclient.clientcredentials.service.WebClientChonJob;
-import com.baeldung.webclient.utils.ListAppender;
+import cn.tuyucheng.taketoday.webclient.clientcredentials.service.WebClientChonJob;
+import cn.tuyucheng.taketoday.webclient.utils.ListAppender;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 

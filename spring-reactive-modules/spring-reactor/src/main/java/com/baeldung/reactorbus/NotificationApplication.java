@@ -1,6 +1,6 @@
-package com.baeldung.reactorbus;
+package cn.tuyucheng.taketoday.reactorbus;
 
-import com.baeldung.reactorbus.consumer.NotificationConsumer;
+import cn.tuyucheng.taketoday.reactorbus.consumer.NotificationConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

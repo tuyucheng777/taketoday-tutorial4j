@@ -1,4 +1,4 @@
-package com.baeldung.couchbase.configuration;
+package cn.tuyucheng.taketoday.couchbase.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.couchbase.config.AbstractCouchbaseConfiguration;

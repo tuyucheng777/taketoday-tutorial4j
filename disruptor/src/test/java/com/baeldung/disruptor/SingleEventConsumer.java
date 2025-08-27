@@ -1,4 +1,4 @@
-package com.baeldung.disruptor;
+package cn.tuyucheng.taketoday.disruptor;
 
 import static org.junit.Assert.assertEquals;
 

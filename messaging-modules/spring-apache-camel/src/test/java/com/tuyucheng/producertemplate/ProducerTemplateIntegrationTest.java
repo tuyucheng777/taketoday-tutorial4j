@@ -15,8 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 
-import com.baeldung.camel.producertemplate.ProducerTemplateApplication;
-import com.baeldung.camel.producertemplate.ProducerTemplateController;
+import cn.tuyucheng.taketoday.camel.producertemplate.ProducerTemplateApplication;
+import cn.tuyucheng.taketoday.camel.producertemplate.ProducerTemplateController;
 
 @SpringBootTest(classes = ProducerTemplateApplication.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)

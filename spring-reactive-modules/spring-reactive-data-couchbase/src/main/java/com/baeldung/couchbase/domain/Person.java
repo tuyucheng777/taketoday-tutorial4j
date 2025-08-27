@@ -1,4 +1,4 @@
-package com.baeldung.couchbase.domain;
+package cn.tuyucheng.taketoday.couchbase.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.couchbase.core.mapping.Document;

@@ -1,4 +1,4 @@
-package com.baeldung.webclient.manualrequest.configure;
+package cn.tuyucheng.taketoday.webclient.manualrequest.configure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

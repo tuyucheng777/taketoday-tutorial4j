@@ -1,4 +1,4 @@
-package com.baeldung.webclient;
+package cn.tuyucheng.taketoday.webclient;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

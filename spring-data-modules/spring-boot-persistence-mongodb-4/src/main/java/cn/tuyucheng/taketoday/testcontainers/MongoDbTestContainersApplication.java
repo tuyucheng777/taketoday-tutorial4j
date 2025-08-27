@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-@EnableMongoRepositories(basePackages = { "com.baeldung" })
+@EnableMongoRepositories(basePackages = { "cn.tuyucheng.taketoday" })
 public class MongoDbTestContainersApplication {
 
     public static void main(String... args) {

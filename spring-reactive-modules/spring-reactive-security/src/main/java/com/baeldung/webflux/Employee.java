@@ -1,4 +1,4 @@
-package com.baeldung.webflux;
+package cn.tuyucheng.taketoday.webflux;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

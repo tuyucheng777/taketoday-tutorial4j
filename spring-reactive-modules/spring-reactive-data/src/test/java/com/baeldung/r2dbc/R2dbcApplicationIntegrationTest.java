@@ -1,9 +1,9 @@
-package com.baeldung.r2dbc;
+package cn.tuyucheng.taketoday.r2dbc;
 
 
-import com.baeldung.r2dbc.configuration.R2DBCConfiguration;
-import com.baeldung.r2dbc.model.Player;
-import com.baeldung.r2dbc.repository.PlayerRepository;
+import cn.tuyucheng.taketoday.r2dbc.configuration.R2DBCConfiguration;
+import cn.tuyucheng.taketoday.r2dbc.model.Player;
+import cn.tuyucheng.taketoday.r2dbc.repository.PlayerRepository;
 import io.r2dbc.h2.H2ConnectionFactory;
 import org.junit.Before;
 import org.junit.Test;

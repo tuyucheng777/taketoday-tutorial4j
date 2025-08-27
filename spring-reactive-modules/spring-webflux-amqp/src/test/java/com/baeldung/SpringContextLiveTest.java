@@ -1,4 +1,4 @@
-package com.baeldung;
+package cn.tuyucheng.taketoday;
 
 import cn.tuyucheng.taketoday.spring.amqp.SpringWebfluxAmqpApplication;
 import org.junit.Test;

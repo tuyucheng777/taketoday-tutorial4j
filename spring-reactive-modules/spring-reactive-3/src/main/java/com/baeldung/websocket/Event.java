@@ -1,4 +1,4 @@
-package com.baeldung.websocket;
+package cn.tuyucheng.taketoday.websocket;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

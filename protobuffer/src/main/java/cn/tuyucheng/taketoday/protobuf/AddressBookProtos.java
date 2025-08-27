@@ -566,7 +566,7 @@ public final class AddressBookProtos {
                         Person.class, Builder.class);
          }
 
-         // Construct using com.baeldung.protobuf.AddressBookProtos.Person.newBuilder()
+         // Construct using cn.tuyucheng.taketoday.protobuf.AddressBookProtos.Person.newBuilder()
          private Builder() {
             maybeForceBuilderInitialization();
          }
@@ -1434,7 +1434,7 @@ public final class AddressBookProtos {
                         AddressBook.class, Builder.class);
          }
 
-         // Construct using com.baeldung.protobuf.AddressBookProtos.AddressBook.newBuilder()
+         // Construct using cn.tuyucheng.taketoday.protobuf.AddressBookProtos.AddressBook.newBuilder()
          private Builder() {
             maybeForceBuilderInitialization();
          }

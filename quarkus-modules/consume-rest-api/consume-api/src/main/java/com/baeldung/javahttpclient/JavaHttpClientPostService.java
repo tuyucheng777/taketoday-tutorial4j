@@ -1,4 +1,4 @@
-package com.baeldung.javahttpclient;
+package cn.tuyucheng.taketoday.javahttpclient;
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
-import com.baeldung.Post;
+import cn.tuyucheng.taketoday.Post;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

@@ -1,13 +1,13 @@
-package com.baeldung.custom.deserialization.controller;
+package cn.tuyucheng.taketoday.custom.deserialization.controller;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.baeldung.custom.deserialization.model.OrderResponse;
-import com.baeldung.custom.deserialization.service.ExternalServiceV1;
-import com.baeldung.custom.deserialization.service.ExternalServiceV2;
+import cn.tuyucheng.taketoday.custom.deserialization.model.OrderResponse;
+import cn.tuyucheng.taketoday.custom.deserialization.service.ExternalServiceV1;
+import cn.tuyucheng.taketoday.custom.deserialization.service.ExternalServiceV2;
 
 import reactor.core.publisher.Mono;
 

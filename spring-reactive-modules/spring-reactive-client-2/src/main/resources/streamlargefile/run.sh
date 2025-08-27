@@ -17,5 +17,5 @@ mvn clean package dependency:copy-dependencies
 
 echo "GET $url with $client client..."
 java -Xmx$xmx -cp target/dependency/*:target/* \
-"com.baeldung.streamlargefile.client.${client}FileDownloadWebClient" \
+"cn.tuyucheng.taketoday.streamlargefile.client.${client}FileDownloadWebClient" \
 "$url" "$download_destination"
