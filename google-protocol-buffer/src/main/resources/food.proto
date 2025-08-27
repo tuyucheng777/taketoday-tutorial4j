@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package cn.tuyucheng.taketoday;
+
+option java_package = "cn.tuyucheng.taketoday.generated";
+
+message Menu {
+  map<string, float> items = 1;
+}
+
+message FoodDelivery{
+  map<string, Menu> restaurants = 1;
+}

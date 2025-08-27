@@ -322,26 +322,71 @@
 
          <modules>
             <module>jacoco-aggregate-report</module>
-            <module>parent-spring-5</module>
+            <!-- <module>parent-spring-5</module> -->
             <module>parent-spring-6</module>
-            <module>parent-boot-2</module>
+            <!-- <module>parent-boot-2</module> -->
             <module>parent-boot-3</module>
-            <module>annotations</module>
-            <module>ddd</module>
-            <module>ddd-contexts</module>
-            <module>grpc</module>
-            <module>java-core-modules</module>
-            <module>microservices</module>
-            <module>protobuffer</module>
-            <module>quarkus-modules</module>
-            <module>software.test</module>
-            <module>spring-ai-modules</module>
-            <module>spring-boot-modules</module>
-            <module>spring-cloud-modules</module>
-            <module>spring-data-modules</module>
-            <module>spring-reactive-modules</module>
-            <module>spring-security-modules</module>
-            <module>spring-web-modules</module>
+            <!-- <module>akka-modules</module> -->
+            <!-- <module>algorithms-modules</module> -->
+            <!-- <module>annotations</module> -->
+            <!-- <module>apache-modules</module> -->
+            <!-- <module>choco-solver</module> -->
+            <!-- <module>ddd</module> -->
+            <!-- <module>ddd-contexts</module> -->
+            <!-- <module>deeplearning4j</module> -->
+            <!-- <module>di-modules</module> -->
+            <!-- <module>disruptor</module> -->
+            <!-- <module>docker-modules</module> -->
+            <!-- <module>dubbo</module> -->
+            <!-- <module>google-protocol-buffer</module> -->
+            <!-- <module>design-patterns-modules</module> -->
+            <!-- <module>docker-modules</module> -->
+            <!-- <module>graphql-modules</module> -->
+            <!-- <module>grpc</module> -->
+            <!-- <module>java-core-modules</module> -->
+            <!-- <module>jmonkeyengine</module> -->
+            <!-- <module>json-modules</module> -->
+            <!-- <module>libraries-modules</module> -->
+            <!-- <module>javafx</module> -->
+            <!-- <module>kotlin-modules</module> -->
+            <!-- <module>logging-modules</module> -->
+            <!-- <module>maven.modules</module> -->
+            <!-- <module>mapping-modules</module> -->
+            <!-- <module>messaging-modules</module> -->
+            <!-- <module>metrics</module> -->
+            <!-- <module>micronaut-modules</module> -->
+            <!-- <module>microservices</module> -->
+            <!-- <module>netflix-modules</module> -->
+            <!-- <module>opensource-libraries</module> -->
+            <!-- <module>pdf-1</module> -->
+            <!-- <module>pdf-2</module> -->
+            <!-- <module>persistence-modules</module> -->
+            <!-- <module>persistence-modules</module> -->
+            <!-- <module>protobuffer</module> -->
+            <!-- <module>quarkus-modules</module> -->
+            <!-- <module>reactive-modules</module> -->
+            <!-- <module>reactive-systems</module> -->
+            <!-- <module>reactor-core</module> -->
+            <!-- <module>rsocket</module> -->
+            <!-- <module>rule-engines-modules</module> -->
+            <!-- <module>rxjava-modules</module> -->
+            <!-- <module>security-modules</module> -->
+            <!-- <module>rsocket</module> -->
+            <!-- <module>server-modules</module> -->
+            <!-- <module>software.test</module> -->
+            <!-- <module>spring-ai-modules</module> -->
+            <!-- <module>spring-boot-modules</module> -->
+            <!-- <module>spring-cloud-modules</module> -->
+            <!-- <module>spring-data-modules</module> -->
+            <!-- <module>spring-modules</module> -->
+            <!-- <module>spring-reactive-modules</module> -->
+            <!-- <module>spring-security-modules</module> -->
+            <!-- <module>spring-web-modules</module> -->
+            <!-- <module>vavr-modules</module> -->
+            <!-- <module>vertx-modules</module> -->
+            <!-- <module>web-framework</module> -->
+            <module>timefold-solver</module>
+            <!-- <module>vaadin</module> -->
          </modules>
       </profile>
 
@@ -378,26 +423,71 @@
 
          <modules>
             <module>jacoco-aggregate-report</module>
-            <module>parent-spring-5</module>
+            <!-- <module>parent-spring-5</module> -->
             <module>parent-spring-6</module>
-            <module>parent-boot-2</module>
+            <!-- <module>parent-boot-2</module> -->
             <module>parent-boot-3</module>
-            <module>annotations</module>
-            <module>ddd</module>
-            <module>ddd-contexts</module>
-            <module>grpc</module>
-            <module>java-core-modules</module>
-            <module>microservices</module>
-            <module>protobuffer</module>
-            <module>quarkus-modules</module>
-            <module>software.test</module>
-            <module>spring-ai-modules</module>
-            <module>spring-boot-modules</module>
-            <module>spring-cloud-modules</module>
-            <module>spring-data-modules</module>
-            <module>spring-reactive-modules</module>
-            <module>spring-security-modules</module>
-            <module>spring-web-modules</module>
+            <!-- <module>akka-modules</module> -->
+            <!-- <module>algorithms-modules</module> -->
+            <!-- <module>annotations</module> -->
+            <!-- <module>apache-modules</module> -->
+            <!-- <module>choco-solver</module> -->
+            <!-- <module>ddd</module> -->
+            <!-- <module>ddd-contexts</module> -->
+            <!-- <module>deeplearning4j</module> -->
+            <!-- <module>di-modules</module> -->
+            <!-- <module>disruptor</module> -->
+            <!-- <module>docker-modules</module> -->
+            <!-- <module>dubbo</module> -->
+            <!-- <module>google-protocol-buffer</module> -->
+            <!-- <module>design-patterns-modules</module> -->
+            <!-- <module>docker-modules</module> -->
+            <!-- <module>graphql-modules</module> -->
+            <!-- <module>grpc</module> -->
+            <!-- <module>java-core-modules</module> -->
+            <!-- <module>jmonkeyengine</module> -->
+            <!-- <module>json-modules</module> -->
+            <!-- <module>libraries-modules</module> -->
+            <!-- <module>javafx</module> -->
+            <!-- <module>kotlin-modules</module> -->
+            <!-- <module>logging-modules</module> -->
+            <!-- <module>maven.modules</module> -->
+            <!-- <module>mapping-modules</module> -->
+            <!-- <module>messaging-modules</module> -->
+            <!-- <module>metrics</module> -->
+            <!-- <module>micronaut-modules</module> -->
+            <!-- <module>microservices</module> -->
+            <!-- <module>netflix-modules</module> -->
+            <!-- <module>opensource-libraries</module> -->
+            <!-- <module>pdf-1</module> -->
+            <!-- <module>pdf-2</module> -->
+            <!-- <module>persistence-modules</module> -->
+            <!-- <module>persistence-modules</module> -->
+            <!-- <module>protobuffer</module> -->
+            <!-- <module>quarkus-modules</module> -->
+            <!-- <module>reactive-modules</module> -->
+            <!-- <module>reactive-systems</module> -->
+            <!-- <module>reactor-core</module> -->
+            <!-- <module>rsocket</module> -->
+            <!-- <module>rule-engines-modules</module> -->
+            <!-- <module>rxjava-modules</module> -->
+            <!-- <module>security-modules</module> -->
+            <!-- <module>rsocket</module> -->
+            <!-- <module>server-modules</module> -->
+            <!-- <module>software.test</module> -->
+            <!-- <module>spring-ai-modules</module> -->
+            <!-- <module>spring-boot-modules</module> -->
+            <!-- <module>spring-cloud-modules</module> -->
+            <!-- <module>spring-data-modules</module> -->
+            <!-- <module>spring-modules</module> -->
+            <!-- <module>spring-reactive-modules</module> -->
+            <!-- <module>spring-security-modules</module> -->
+            <!-- <module>spring-web-modules</module> -->
+            <!-- <module>vavr-modules</module> -->
+            <!-- <module>vertx-modules</module> -->
+            <!-- <module>web-framework</module> -->
+            <module>timefold-solver</module>
+            <!-- <module>vaadin</module> -->
          </modules>
       </profile>
 
@@ -427,6 +517,7 @@
             <!-- <module>disruptor</module> -->
             <!-- <module>docker-modules</module> -->
             <!-- <module>dubbo</module> -->
+            <!-- <module>google-protocol-buffer</module> -->
             <!-- <module>design-patterns-modules</module> -->
             <!-- <module>docker-modules</module> -->
             <!-- <module>graphql-modules</module> -->
