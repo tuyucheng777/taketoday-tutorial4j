@@ -26,6 +26,7 @@
       <module>consume-rest-api</module>
       <module>quarkus-virtual-threads</module>
       <!-- <module>quarkus-hibernate-reactive</module> -->
+      <module>quarkus-kogito</module>
       <module>quarkus-langchain4j</module>
       <module>quarkus-management-interface</module>
       <module>quarkus-panache</module>
