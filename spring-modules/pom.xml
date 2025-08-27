@@ -29,6 +29,7 @@
       <module>spring-di-3</module>
       <module>spring-di-4</module>
       <module>spring-drools</module>
+      <module>spring-grpc</module>
       <module>spring-jinq</module>
       <module>spring-protobuf</module>
       <module>spring-shell</module>
