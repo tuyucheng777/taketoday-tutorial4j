@@ -28,6 +28,7 @@
       <!-- <module>quarkus-hibernate-reactive</module> -->
       <module>quarkus-langchain4j</module>
       <module>quarkus-management-interface</module>
+      <module>quarkus-panache</module>
       <module>quarkus-websockets-next</module>
       <module>quarkus-rbac</module>
       <module>mongo-db</module>
