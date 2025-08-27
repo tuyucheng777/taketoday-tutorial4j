@@ -11,7 +11,7 @@
       <encoding>UTF-8</encoding>
       <maven.compiler.source>25</maven.compiler.source>
       <maven.compiler.target>25</maven.compiler.target>
-      <maven.compiler.release>23</maven.compiler.release>
+      <maven.compiler.release>25</maven.compiler.release>
       <pulumi.version>(,1.0]</pulumi.version>
       <pulumi.aws.version>(6.0.2,6.99]</pulumi.aws.version>
       <junit.jupiter.version>5.7.0</junit.jupiter.version>

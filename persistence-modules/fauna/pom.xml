@@ -59,7 +59,7 @@
 
    <properties>
       <faunadb.version>4.2.0</faunadb.version>
-      <maven.compiler.release>23</maven.compiler.release>
+      <maven.compiler.release>25</maven.compiler.release>
       <start-class>cn.tuyucheng.taketoday.faunablog.FaunaBlogApplication</start-class>
    </properties>
 </project>

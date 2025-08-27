@@ -59,6 +59,6 @@
    </build>
 
    <properties>
-      <maven.compiler.release>11</maven.compiler.release>
+      <maven.compiler.release>25</maven.compiler.release>
    </properties>
 </project>
