@@ -10,7 +10,8 @@ import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
 @Configuration
 public class ContentSecurityPolicySecurityConfiguration {
-   private static final String REPORT_TO = "{\"group\":\"csp-violation-report\",\"max_age\":2592000,\"endpoints\":[{\"url\":\"https://localhost:8080/report\"}]}";
+   private static final String REPORT_TO = """
+         {"group":"csp-violation-report","max_age":2592000,"endpoints":[{"url":"https://localhost:8080/report"}]}""";
 
    @Bean
    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
