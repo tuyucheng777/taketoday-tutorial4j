@@ -37,7 +37,7 @@ public class LoggingGatewayFilterFactory extends AbstractGatewayFilterFactory<Lo
          return chain.filter(exchange)
                .then(Mono.fromRunnable(() -> {
                   if (config.isPostLogger())
-                     logger.info("Post GatewayFilter logging: " + config.getBaseMessage());
+                     logger.info("Post GatewayFilter logging: {}", config.getBaseMessage());
                }));
       }, 1);
    }
