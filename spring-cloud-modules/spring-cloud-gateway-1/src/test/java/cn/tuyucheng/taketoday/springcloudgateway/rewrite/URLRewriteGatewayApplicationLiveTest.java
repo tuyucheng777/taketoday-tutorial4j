@@ -1,7 +1,7 @@
 package cn.tuyucheng.taketoday.springcloudgateway.rewrite;
 
 import com.sun.net.httpserver.HttpServer;
-import org.junit.jupiter.api.AfterAll;
+import org.junit.AfterClass;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +32,6 @@ class URLRewriteGatewayApplicationLiveTest {
 
    // Create a running HttpServer that echoes back the request URL.
    private static HttpServer startTestServer() {
-
       try {
          log.info("[I26] Starting mock server");
          mockServer = HttpServer.create();
@@ -60,7 +59,7 @@ class URLRewriteGatewayApplicationLiveTest {
       }
    }
 
-   // TIP: https://www.baeldung.com/spring-dynamicpropertysource
+   // TIP: https://www.tuyucheng.com/spring-dynamicpropertysource
    @DynamicPropertySource
    static void registerBackendServer(DynamicPropertyRegistry registry) {
       registry.add("rewrite.backend.uri", () -> {
@@ -69,7 +68,7 @@ class URLRewriteGatewayApplicationLiveTest {
       });
    }
 
-   @AfterAll
+   @AfterClass
    public static void stopMockBackend() {
       log.info("[I40] Shutdown mock http server");
       mockServer.stop(5);

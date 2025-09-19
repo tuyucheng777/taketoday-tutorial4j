@@ -32,34 +32,29 @@ public class ChainRequestGatewayFilterFactory extends AbstractGatewayFilterFacto
 
    @Override
    public GatewayFilter apply(Config config) {
-      return (exchange, chain) -> {
-         return client.get()
-               .uri(config.getLanguageServiceEndpoint())
-               .exchange()
-               .flatMap(response -> {
-                  return (response.statusCode()
-                        .is2xxSuccessful()) ? response.bodyToMono(String.class) : Mono.just(config.getDefaultLanguage());
-               })
-               .map(LanguageRange::parse)
-               .map(range -> {
-                  exchange.getRequest()
-                        .mutate()
-                        .headers(h -> h.setAcceptLanguage(range));
+      return (exchange, chain) -> client.get()
+            .uri(config.getLanguageServiceEndpoint())
+            .exchange()
+            .flatMap(response -> (response.statusCode()
+                  .is2xxSuccessful()) ? response.bodyToMono(String.class) : Mono.just(config.getDefaultLanguage()))
+            .map(LanguageRange::parse)
+            .map(range -> {
+               exchange.getRequest()
+                     .mutate()
+                     .headers(h -> h.setAcceptLanguage(range));
 
-                  String allOutgoingRequestLanguages = exchange.getRequest()
-                        .getHeaders()
-                        .getAcceptLanguage()
-                        .stream()
-                        .map(LanguageRange::getRange)
-                        .collect(Collectors.joining(","));
+               String allOutgoingRequestLanguages = exchange.getRequest()
+                     .getHeaders()
+                     .getAcceptLanguage()
+                     .stream()
+                     .map(LanguageRange::getRange)
+                     .collect(Collectors.joining(","));
 
-                  logger.info("Chain Request output - Request contains Accept-Language header: " + allOutgoingRequestLanguages);
+               logger.info("Chain Request output - Request contains Accept-Language header: " + allOutgoingRequestLanguages);
 
-                  return exchange;
-               })
-               .flatMap(chain::filter);
-
-      };
+               return exchange;
+            })
+            .flatMap(chain::filter);
    }
 
    public static class Config {

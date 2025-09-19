@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:customfilters-global-application.properties")
 public class CustomFiltersGatewayApplication {
 
-   public static void main(String[] args) {
+   static void main(String[] args) {
       SpringApplication.run(CustomFiltersGatewayApplication.class, args);
    }
 }

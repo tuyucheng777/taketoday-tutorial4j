@@ -1,5 +1,6 @@
 package cn.tuyucheng.taketoday.springcloudgateway.oauth.backend.domain;
 
+
 public class Quote {
 
    private String symbol;

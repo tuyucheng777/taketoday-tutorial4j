@@ -23,7 +23,7 @@ public class ModifyRequestGatewayFilterFactory extends AbstractGatewayFilterFact
 
    @Override
    public List<String> shortcutFieldOrder() {
-      return Arrays.asList("defaultLocale");
+      return List.of("defaultLocale");
    }
 
    @Override

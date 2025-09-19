@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * * the 'second service' in cn.tuyucheng.taketoday.secondservice running
  */
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-class CustomFiltersLiveTest {
+public class CustomFiltersLiveTest {
 
    @LocalServerPort
    String port;
@@ -29,7 +29,7 @@ class CustomFiltersLiveTest {
    private WebTestClient client;
 
    @BeforeEach
-   void clearLogList() {
+   public void clearLogList() {
       LoggerListAppender.clearEventList();
       client = WebTestClient.bindToServer()
             .baseUrl("http://localhost:" + port)
@@ -37,7 +37,7 @@ class CustomFiltersLiveTest {
    }
 
    @Test
-   void whenCallServiceThroughGateway_thenAllConfiguredFiltersGetExecuted() {
+   public void whenCallServiceThroughGateway_thenAllConfiguredFiltersGetExecuted() {
       ResponseSpec response = client.get()
             .uri("/service/resource")
             .exchange();
@@ -45,7 +45,7 @@ class CustomFiltersLiveTest {
       response.expectStatus()
             .isOk()
             .expectHeader()
-            .doesNotExist("Bael-Custom-Language-Header")
+            .doesNotExist("Tuyu-Custom-Language-Header")
             .expectBody(String.class)
             .isEqualTo("Service Resource");
 
@@ -70,7 +70,7 @@ class CustomFiltersLiveTest {
    }
 
    @Test
-   void givenRequestWithLocaleQueryParam_whenCallServiceThroughGateway_thenAllConfiguredFiltersGetExecuted() {
+   public void givenRequestWithLocaleQueryParam_whenCallServiceThroughGateway_thenAllConfiguredFiltersGetExecuted() {
       ResponseSpec response = client.get()
             .uri("/service/resource?locale=en")
             .exchange();
@@ -78,7 +78,7 @@ class CustomFiltersLiveTest {
       response.expectStatus()
             .isOk()
             .expectHeader()
-            .exists("Bael-Custom-Language-Header")
+            .exists("Tuyu-Custom-Language-Header")
             .expectBody(String.class)
             .isEqualTo("Service Resource");
 
@@ -93,7 +93,7 @@ class CustomFiltersLiveTest {
     */
    private Condition<ILoggingEvent> eventContains(String substring) {
       return new Condition<>(entry -> (substring == null || (entry.getFormattedMessage() != null && entry.getFormattedMessage()
-              .contains(substring))), String.format("entry with message '%s'", substring));
+            .contains(substring))), String.format("entry with message '%s'", substring));
    }
 
    /**
@@ -101,9 +101,9 @@ class CustomFiltersLiveTest {
     */
    private Condition<ILoggingEvent> eventContainsExcept(String substring, String except) {
       return new Condition<>(entry -> (substring == null || (entry.getFormattedMessage() != null && entry.getFormattedMessage()
-              .contains(substring)
-              && !entry.getFormattedMessage()
-              .contains(except))),
-              String.format("entry with message '%s'", substring));
+            .contains(substring)
+            && !entry.getFormattedMessage()
+            .contains(except))),
+            String.format("entry with message '%s'", substring));
    }
 }

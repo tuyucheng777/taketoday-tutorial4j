@@ -11,7 +11,7 @@ spring:
          globalcors:
             corsConfigurations:
                '[/**]':
-                  allowedOrigins: "https://www.taketoday.com"
+                  allowedOrigins: "https://www.tuyucheng.com"
                   allowedMethods:
                      - GET
                   allowedHeaders: "*"
@@ -28,7 +28,7 @@ spring:
                method: GET
                metadata:
                   cors:
-                     allowedOrigins: 'https://www.taketoday.com,http://localhost:3000'
+                     allowedOrigins: 'https://www.tuyucheng.com,http://localhost:3000'
                      allowedMethods:
                         - GET
                      allowedHeaders: '*'

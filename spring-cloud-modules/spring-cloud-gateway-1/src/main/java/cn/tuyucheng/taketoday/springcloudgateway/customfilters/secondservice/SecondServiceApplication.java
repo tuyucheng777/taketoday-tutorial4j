@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:secondservice-application.properties")
 public class SecondServiceApplication {
 
-   public static void main(String[] args) {
+   static void main(String[] args) {
       SpringApplication.run(SecondServiceApplication.class, args);
    }
 }

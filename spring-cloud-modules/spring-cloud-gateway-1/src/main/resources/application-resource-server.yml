@@ -5,7 +5,7 @@ spring:
       oauth2:
          resourceserver:
             opaquetoken:
-               introspection-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token/introspect
+               introspection-uri: http://localhost:8083/auth/realms/tuyucheng/protocol/openid-connect/token/introspect
                client-id: quotes-client
                client-secret: 0e082231-a70d-48e8-b8a5-fbfb743041b6
    cloud:

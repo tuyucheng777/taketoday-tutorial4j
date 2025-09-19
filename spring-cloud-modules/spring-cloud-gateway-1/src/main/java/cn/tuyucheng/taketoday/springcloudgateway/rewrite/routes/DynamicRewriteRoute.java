@@ -19,7 +19,7 @@ public class DynamicRewriteRoute {
 
    @Value("${rewrite.backend.uri}")
    private String backendUri;
-   private static Random rnd = new Random();
+   private static final Random rnd = new Random();
 
    @Bean
    public RouteLocator dynamicZipCodeRoute(RouteLocatorBuilder builder) {

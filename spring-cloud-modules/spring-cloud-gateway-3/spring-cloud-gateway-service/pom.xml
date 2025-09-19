@@ -9,9 +9,10 @@
    <packaging>jar</packaging>
 
    <parent>
-      <groupId>cn.tuyucheng.taketoday</groupId>
+      <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
       <artifactId>spring-cloud-gateway-3</artifactId>
       <version>1.0.0</version>
+      <relativePath>../../spring-cloud-gateway-3</relativePath>
    </parent>
 
    <dependencyManagement>
@@ -39,7 +40,7 @@
    </dependencies>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <spring-cloud-dependencies.version>2023.0.3</spring-cloud-dependencies.version>
       <springdoc-openapi-starter-webflux-ui.version>2.6.0</springdoc-openapi-starter-webflux-ui.version>
    </properties>

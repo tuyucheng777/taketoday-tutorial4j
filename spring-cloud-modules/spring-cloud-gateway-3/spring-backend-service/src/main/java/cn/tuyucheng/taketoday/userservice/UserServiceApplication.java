@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 @PropertySource("classpath:application-backend.yml")
 public class UserServiceApplication {
-   public static void main(String[] args) {
+   static void main(String[] args) {
       SpringApplication.run(UserServiceApplication.class, args);
    }
 }

@@ -112,7 +112,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
-               <mainClass>cn.tuyucheng.taketoday.springcloudgateway.introduction.IntroductionGatewayApplication</mainClass>
+               <mainClass>cn.tuyucheng.taketoday.springcloudgateway.introduction.IntroductionGatewayApplication
+               </mainClass>
                <excludes>
                   <exclude>
                      <groupId>org.projectlombok</groupId>
@@ -133,8 +134,7 @@
                   <groupId>org.springframework.boot</groupId>
                   <artifactId>spring-boot-maven-plugin</artifactId>
                   <configuration>
-                     <mainClass>cn.tuyucheng.taketoday.springcloudgateway.oauth.backend.QuotesApplication
-                     </mainClass>
+                     <mainClass>cn.tuyucheng.taketoday.springcloudgateway.oauth.backend.QuotesApplication</mainClass>
                   </configuration>
                </plugin>
             </plugins>
@@ -148,8 +148,7 @@
                   <groupId>org.springframework.boot</groupId>
                   <artifactId>spring-boot-maven-plugin</artifactId>
                   <configuration>
-                     <mainClass>
-                        cn.tuyucheng.taketoday.springcloudgateway.oauth.server.ResourceServerGatewayApplication
+                     <mainClass>cn.tuyucheng.taketoday.springcloudgateway.oauth.server.ResourceServerGatewayApplication
                      </mainClass>
                      <jvmArguments>-Dspring.profiles.active=resource-server</jvmArguments>
                   </configuration>
@@ -165,8 +164,7 @@
                   <groupId>org.springframework.boot</groupId>
                   <artifactId>spring-boot-maven-plugin</artifactId>
                   <configuration>
-                     <mainClass>
-                        cn.tuyucheng.taketoday.springcloudgateway.oauth.server.ResourceServerGatewayApplication
+                     <mainClass>cn.tuyucheng.taketoday.springcloudgateway.oauth.server.ResourceServerGatewayApplication
                      </mainClass>
                      <jvmArguments>-Dspring.profiles.active=oauth-client</jvmArguments>
                   </configuration>
@@ -193,7 +191,7 @@
    </profiles>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <spring-cloud-dependencies.version>2023.0.0</spring-cloud-dependencies.version>
       <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
       <redis.version>0.7.2</redis.version>

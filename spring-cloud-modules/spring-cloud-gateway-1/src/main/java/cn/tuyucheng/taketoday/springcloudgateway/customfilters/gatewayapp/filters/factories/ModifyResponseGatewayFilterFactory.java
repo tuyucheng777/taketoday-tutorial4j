@@ -21,25 +21,23 @@ public class ModifyResponseGatewayFilterFactory extends AbstractGatewayFilterFac
 
    @Override
    public GatewayFilter apply(Config config) {
-      return (exchange, chain) -> {
-         return chain.filter(exchange)
-               .then(Mono.fromRunnable(() -> {
-                  ServerHttpResponse response = exchange.getResponse();
+      return (exchange, chain) -> chain.filter(exchange)
+            .then(Mono.fromRunnable(() -> {
+               ServerHttpResponse response = exchange.getResponse();
 
-                  Optional.ofNullable(exchange.getRequest()
-                              .getQueryParams()
-                              .getFirst("locale"))
-                        .ifPresent(qp -> {
-                           String responseContentLanguage = response.getHeaders()
-                                 .getContentLanguage()
-                                 .getLanguage();
+               Optional.ofNullable(exchange.getRequest()
+                           .getQueryParams()
+                           .getFirst("locale"))
+                     .ifPresent(qp -> {
+                        String responseContentLanguage = response.getHeaders()
+                              .getContentLanguage()
+                              .getLanguage();
 
-                           response.getHeaders()
-                                 .add("Bael-Custom-Language-Header", responseContentLanguage);
-                           logger.info("Added custom header to Response");
-                        });
-               }));
-      };
+                        response.getHeaders()
+                              .add("Tuyu-Custom-Language-Header", responseContentLanguage);
+                        logger.info("Added custom header to Response");
+                     });
+            }));
    }
 
    public static class Config {

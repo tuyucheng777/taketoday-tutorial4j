@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = IntroductionGatewayApplication.class)
-class SpringContextTest {
+public class SpringContextTest {
 
    @Test
-   void whenSpringContextIsBootstrapped_thenNoExceptions() {
+   public void whenSpringContextIsBootstrapped_thenNoExceptions() {
    }
 }

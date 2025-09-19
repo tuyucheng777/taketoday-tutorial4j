@@ -9,9 +9,10 @@
    <packaging>jar</packaging>
 
    <parent>
-      <groupId>cn.tuyucheng.taketoday</groupId>
       <artifactId>spring-cloud-gateway-3</artifactId>
+      <groupId>cn.tuyucheng.taketoday.spring.cloud</groupId>
       <version>1.0.0</version>
+      <relativePath>../../spring-cloud-gateway-3</relativePath>
    </parent>
 
    <dependencyManagement>
@@ -61,7 +62,7 @@
    </build>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <springdoc-openapi-starter-webmvc-ui.version>2.6.0</springdoc-openapi-starter-webmvc-ui.version>
    </properties>
 </project>

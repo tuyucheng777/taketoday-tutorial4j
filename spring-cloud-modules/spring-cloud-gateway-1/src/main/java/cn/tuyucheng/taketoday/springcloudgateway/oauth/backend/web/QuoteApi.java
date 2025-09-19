@@ -1,12 +1,14 @@
 package cn.tuyucheng.taketoday.springcloudgateway.oauth.backend.web;
 
-import cn.tuyucheng.taketoday.springcloudgateway.oauth.backend.domain.Quote;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.server.resource.authentication.BearerTokenAuthentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import cn.tuyucheng.taketoday.springcloudgateway.oauth.backend.domain.Quote;
+
 import reactor.core.publisher.Mono;
 
 @RestController

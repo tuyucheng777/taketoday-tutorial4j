@@ -1,3 +1,6 @@
+/**
+ *
+ */
 package cn.tuyucheng.taketoday.springcloudgateway.oauth.shared;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -12,6 +15,7 @@ import java.util.stream.Collectors;
 
 /**
  * Custom ReactiveTokenIntrospector to map realm roles into Spring GrantedAuthorities
+ *
  */
 public class KeycloakReactiveTokenInstrospector implements ReactiveOpaqueTokenIntrospector {
 

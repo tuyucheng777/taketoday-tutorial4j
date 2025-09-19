@@ -11,7 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication()
 @PropertySource("classpath:ipaddress-application.properties")
 public class IpAddressApplication {
-   public static void main(String[] args) {
+   static void main(String[] args) {
       SpringApplication.run(IpAddressApplication.class, args);
    }
 

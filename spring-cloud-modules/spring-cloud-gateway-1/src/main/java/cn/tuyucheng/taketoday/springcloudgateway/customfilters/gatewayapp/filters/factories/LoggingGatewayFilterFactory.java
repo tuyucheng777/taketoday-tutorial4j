@@ -33,7 +33,7 @@ public class LoggingGatewayFilterFactory extends AbstractGatewayFilterFactory<Lo
    public GatewayFilter apply(Config config) {
       return new OrderedGatewayFilter((exchange, chain) -> {
          if (config.isPreLogger())
-            logger.info("Pre GatewayFilter logging: " + config.getBaseMessage());
+            logger.info("Pre GatewayFilter logging: {}", config.getBaseMessage());
          return chain.filter(exchange)
                .then(Mono.fromRunnable(() -> {
                   if (config.isPostLogger())

@@ -1,10 +1,11 @@
 package cn.tuyucheng.taketoday.springcloudgateway.customfilters.gatewayapp.routes;
 
-import cn.tuyucheng.taketoday.springcloudgateway.customfilters.gatewayapp.filters.factories.LoggingGatewayFilterFactory;
-import cn.tuyucheng.taketoday.springcloudgateway.customfilters.gatewayapp.filters.factories.LoggingGatewayFilterFactory.Config;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
+
+import cn.tuyucheng.taketoday.springcloudgateway.customfilters.gatewayapp.filters.factories.LoggingGatewayFilterFactory;
+import cn.tuyucheng.taketoday.springcloudgateway.customfilters.gatewayapp.filters.factories.LoggingGatewayFilterFactory.Config;
 
 /**
  * Note: We want to keep this as an example of configuring a Route with a custom filter
@@ -16,7 +17,6 @@ public class ServiceRouteConfiguration {
 
    @Bean
    public RouteLocator routes(RouteLocatorBuilder builder, LoggingGatewayFilterFactory loggingFactory) {
-
       return builder.routes()
             .route("service_route_java_config", r -> r.path("/service/**")
                   .filters(f -> f.rewritePath("/service(?<segment>/?.*)", "$\\{segment}")
