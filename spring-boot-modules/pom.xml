@@ -39,6 +39,7 @@
       <module>spring-boot-artifacts-2</module>
       <module>spring-boot-autoconfiguration</module>
       <module>spring-boot-aws</module>
+      <module>spring-boot-azure-deployment</module>
       <module>spring-boot-basic-customization-1</module>
       <module>spring-boot-basic-customization-2</module>
       <module>spring-boot-basic-customization-3</module>
@@ -78,6 +79,7 @@
       <module>spring-boot-graphql-2</module>
       <module>spring-boot-groovy</module>
       <module>spring-boot-grpc</module>
+      <module>spring-boot-heroku-deployment</module>
       <module>spring-boot-http2</module>
       <module>spring-boot-jasypt</module>
       <module>spring-boot-jsp</module>
