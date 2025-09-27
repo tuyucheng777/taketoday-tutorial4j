@@ -1,0 +1,41 @@
+package cn.tuyucheng.taketoday.persistence.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import cn.tuyucheng.taketoday.persistence.dao.IFooAuditableDao;
+import cn.tuyucheng.taketoday.persistence.dao.IFooDao;
+import cn.tuyucheng.taketoday.persistence.dao.common.IAuditOperations;
+import cn.tuyucheng.taketoday.persistence.dao.common.IOperations;
+import cn.tuyucheng.taketoday.persistence.model.Foo;
+import cn.tuyucheng.taketoday.persistence.service.IFooAuditableService;
+import cn.tuyucheng.taketoday.persistence.service.common.AbstractHibernateAuditableService;
+
+@Service
+public class FooAuditableService extends AbstractHibernateAuditableService<Foo> implements IFooAuditableService {
+
+   @Autowired
+   @Qualifier("fooHibernateDao")
+   private IFooDao dao;
+
+   @Autowired
+   @Qualifier("fooHibernateAuditableDao")
+   private IFooAuditableDao auditDao;
+
+   public FooAuditableService() {
+      super();
+   }
+
+   // API
+
+   @Override
+   protected IOperations<Foo> getDao() {
+      return dao;
+   }
+
+   @Override
+   protected IAuditOperations<Foo> getAuditableDao() {
+      return auditDao;
+   }
+}

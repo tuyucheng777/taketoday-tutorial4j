@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join;
+package cn.tuyucheng.taketoday.specifications.join;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

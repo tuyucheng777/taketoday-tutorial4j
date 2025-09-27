@@ -1,6 +1,7 @@
-package cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join;
+package cn.tuyucheng.taketoday.specifications.join;
 
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -15,7 +16,7 @@ public class Author {
    private String lastName;
 
    @OneToMany(cascade = CascadeType.ALL)
-   private List<Book> books;
+   private List<BookAuthorEntity> bookAuthorEntities;
 
    public Long getId() {
       return id;
@@ -41,16 +42,16 @@ public class Author {
       this.lastName = lastName;
    }
 
-   public List<Book> getBooks() {
-      return books;
+   public List<BookAuthorEntity> getBookAuthorEntities() {
+      return bookAuthorEntities;
    }
 
-   public void setBooks(List<Book> books) {
-      this.books = books;
+   public void setBookAuthorEntities(List<BookAuthorEntity> bookAuthorEntities) {
+      this.bookAuthorEntities = bookAuthorEntities;
    }
 
    @Override
    public String toString() {
-      return "Author{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", books=" + books + '}';
+      return "Author{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", books=" + bookAuthorEntities + '}';
    }
 }

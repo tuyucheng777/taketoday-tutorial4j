@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.spring.data.jpa.query.specifications.join;
+package cn.tuyucheng.taketoday.specifications.join;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Book {
+public class BookAuthorEntity {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
