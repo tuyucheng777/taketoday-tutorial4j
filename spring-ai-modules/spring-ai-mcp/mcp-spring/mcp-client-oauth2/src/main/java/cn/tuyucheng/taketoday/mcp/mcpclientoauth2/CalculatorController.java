@@ -18,6 +18,7 @@ public class CalculatorController {
 
    @GetMapping("/calculate")
    public String calculate(@RequestParam String expression, @RegisteredOAuth2AuthorizedClient("authserver") OAuth2AuthorizedClient authorizedClient) {
+
       String prompt = String.format("Please calculate the following mathematical expression using the available calculator tools: %s", expression);
 
       return chatClient.prompt()

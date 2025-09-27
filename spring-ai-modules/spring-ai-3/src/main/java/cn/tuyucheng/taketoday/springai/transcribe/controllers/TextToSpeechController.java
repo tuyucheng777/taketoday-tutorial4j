@@ -46,14 +46,16 @@ public class TextToSpeechController {
    public ResponseEntity<StreamingResponseBody> streamSpeech(@RequestParam("text") String text) {
       Flux<byte[]> audioStream = textToSpeechService.makeSpeechStream(text);
 
-      StreamingResponseBody responseBody = outputStream -> audioStream.toStream().forEach(bytes -> {
-         try {
-            outputStream.write(bytes);
-            outputStream.flush();
-         } catch (IOException e) {
-            throw new UncheckedIOException(e);
-         }
-      });
+      StreamingResponseBody responseBody = outputStream -> {
+         audioStream.toStream().forEach(bytes -> {
+            try {
+               outputStream.write(bytes);
+               outputStream.flush();
+            } catch (IOException e) {
+               throw new UncheckedIOException(e);
+            }
+         });
+      };
 
       return ResponseEntity.ok()
             .contentType(MediaType.APPLICATION_OCTET_STREAM)

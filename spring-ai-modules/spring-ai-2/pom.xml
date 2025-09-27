@@ -4,15 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <artifactId>spring-ai-2</artifactId>
-   <version>1.0.0</version>
+   <version>0.0.1</version>
    <packaging>jar</packaging>
    <name>spring-ai-2</name>
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>parent-boot-3</artifactId>
+      <artifactId>spring-ai-modules</artifactId>
       <version>1.0.0</version>
-      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <repositories>
@@ -180,6 +179,7 @@
 
    <properties>
       <spring-ai.version>1.0.0-M6</spring-ai.version>
+      <junit-jupiter.version>5.9.0</junit-jupiter.version>
       <spring-boot-docker-compose.version>3.1.1</spring-boot-docker-compose.version>
    </properties>
 </project>

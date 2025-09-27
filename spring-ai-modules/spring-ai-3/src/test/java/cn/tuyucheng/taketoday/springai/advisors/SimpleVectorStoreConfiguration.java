@@ -11,6 +11,7 @@ public class SimpleVectorStoreConfiguration {
 
    @Bean
    public VectorStore vectorStore(@Qualifier("openAiEmbeddingModel") EmbeddingModel embeddingModel) {
+
       return CustomSimpleVectorStore.builder(embeddingModel)
             .build();
    }

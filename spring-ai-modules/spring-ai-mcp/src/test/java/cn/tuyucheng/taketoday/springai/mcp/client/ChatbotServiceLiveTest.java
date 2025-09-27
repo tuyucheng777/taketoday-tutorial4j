@@ -41,6 +41,7 @@ class ChatbotServiceLiveTest {
    @Nested
    @EnabledIfEnvironmentVariable(named = "BRAVE_API_KEY", matches = ".*")
    class BraveSearchLiveTest {
+
       @Test
       void whenQuestionAskedAfterKnowledgeCutoff_thenCorrectAnswerReturned() {
          String question = "How much was Elon Musk's initial offer to buy OpenAI in 2025?";
@@ -82,6 +83,7 @@ class ChatbotServiceLiveTest {
 
    @Nested
    class AuthorToolsLiveTest {
+
       @Test
       void whenQueryingWithArticleTile_thenCorrectAuthorDetailsReturned() {
          String question = "Who wrote the article 'Testing CORS in Spring Boot?' on Tuyucheng, and how can I contact them?";

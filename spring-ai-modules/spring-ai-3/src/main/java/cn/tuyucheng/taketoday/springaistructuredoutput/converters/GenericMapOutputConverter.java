@@ -41,13 +41,9 @@ public class GenericMapOutputConverter<V> implements StructuredOutputConverter<M
    }
 
    public String getFormat() {
-      String raw = """
-            Your response should be in JSON format.
-            The data structure for the JSON should match this Java class: %s
-            For the map values, here is the JSON Schema instance your output must adhere to:
-            ```%s```
-            Do not include any explanations, only provide a RFC8259 compliant JSON response following this format without deviation.
-            """;
+      String raw = "Your response should be in JSON format.\nThe data structure for the JSON should match this Java class: %s\n" +
+            "For the map values, here is the JSON Schema instance your output must adhere to:\n```%s```\n" +
+            "Do not include any explanations, only provide a RFC8259 compliant JSON response following this format without deviation.\n";
       return String.format(raw, HashMap.class.getName(), this.jsonSchema);
    }
 

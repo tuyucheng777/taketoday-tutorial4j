@@ -1,10 +1,6 @@
 package cn.tuyucheng.taketoday.imagegen;
 
-import org.springframework.ai.image.Image;
-import org.springframework.ai.image.ImageModel;
-import org.springframework.ai.image.ImageOptions;
-import org.springframework.ai.image.ImagePrompt;
-import org.springframework.ai.image.ImageResponse;
+import org.springframework.ai.image.*;
 import org.springframework.ai.openai.OpenAiImageOptions;
 import org.springframework.stereotype.Service;
 

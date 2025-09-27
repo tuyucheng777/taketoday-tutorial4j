@@ -15,9 +15,7 @@ import org.springframework.context.annotation.Profile;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @Profile("airag")
 @SpringBootTest(classes = SpringAiRagApplication.class)

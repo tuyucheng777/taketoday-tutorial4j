@@ -5,7 +5,8 @@ import org.springframework.boot.testcontainers.service.connection.ContainerConne
 import org.springframework.boot.testcontainers.service.connection.ContainerConnectionSource;
 import org.testcontainers.oracle.OracleContainer;
 
-class OracleDatabaseContainerConnectionDetailsFactory extends ContainerConnectionDetailsFactory<OracleContainer, JdbcConnectionDetails> {
+class OracleDatabaseContainerConnectionDetailsFactory
+      extends ContainerConnectionDetailsFactory<OracleContainer, JdbcConnectionDetails> {
 
    @Override
    protected JdbcConnectionDetails getContainerConnectionDetails(ContainerConnectionSource<OracleContainer> source) {

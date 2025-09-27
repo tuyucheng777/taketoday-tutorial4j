@@ -1,8 +1,5 @@
 package cn.tuyucheng.taketoday.springai.vertexai;
 
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.ai.content.Media;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.embedding.DocumentEmbeddingModel;
@@ -11,6 +8,9 @@ import org.springframework.ai.embedding.EmbeddingResponse;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MimeType;
+
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class MultiModalEmbeddingService {

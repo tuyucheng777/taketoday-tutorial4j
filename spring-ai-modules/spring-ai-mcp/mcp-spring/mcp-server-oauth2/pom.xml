@@ -16,6 +16,14 @@
       <relativePath/>
    </parent>
 
+   <properties>
+      <classmate.version>1.7.0</classmate.version>
+      <spring-ai.version>1.0.0-M7</spring-ai.version>
+      <java.version>25</java.version>
+      <spring-ai.version>1.0.0</spring-ai.version>
+      <junit-version>5.10.2</junit-version>
+   </properties>
+
    <dependencies>
       <dependency>
          <groupId>com.fasterxml</groupId>
@@ -27,7 +35,6 @@
          <artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
          <version>${spring-ai.version}</version>
       </dependency>
-
       <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
@@ -48,12 +55,4 @@
          </plugin>
       </plugins>
    </build>
-
-   <properties>
-      <classmate.version>1.7.0</classmate.version>
-      <spring-ai.version>1.0.0-M7</spring-ai.version>
-      <java.version>25</java.version>
-      <spring-ai.version>1.0.0</spring-ai.version>
-      <junit-version>5.10.2</junit-version>
-   </properties>
 </project>

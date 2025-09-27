@@ -90,7 +90,7 @@ public class CharacterServiceChatImpl implements CharacterService {
             .user(u -> u.text("Generate {amount} D&D characters, where key is a character's name")
                   .param("amount", String.valueOf(amount)))
             .call()
-            .entity(new ParameterizedTypeReference<>() {
+            .entity(new ParameterizedTypeReference<Map<String, Object>>() {
             });
    }
 

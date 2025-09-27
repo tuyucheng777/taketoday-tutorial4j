@@ -15,6 +15,8 @@ public class TestcontainersConfiguration {
 
    @Bean
    public DynamicPropertyRegistrar dynamicPropertyRegistrar(OllamaContainer ollamaContainer) {
-      return registry -> registry.add("spring.ai.ollama.base-url", ollamaContainer::getEndpoint);
+      return registry -> {
+         registry.add("spring.ai.ollama.base-url", ollamaContainer::getEndpoint);
+      };
    }
 }

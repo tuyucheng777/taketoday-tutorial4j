@@ -1,11 +1,11 @@
 package cn.tuyucheng.taketoday.springai.vertexai;
 
-import java.util.Arrays;
-
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.embedding.EmbeddingRequest;
 import org.springframework.ai.embedding.EmbeddingResponse;
 import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
 
 @Service
 public class TextEmbeddingService {

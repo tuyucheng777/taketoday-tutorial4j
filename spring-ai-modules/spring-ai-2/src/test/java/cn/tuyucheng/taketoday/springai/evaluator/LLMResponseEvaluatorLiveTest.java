@@ -109,5 +109,4 @@ class LLMResponseEvaluatorLiveTest {
       EvaluationResponse evaluationResponse = factCheckingEvaluator.evaluate(evaluationRequest);
       assertThat(evaluationResponse.isPass()).isFalse();
    }
-
 }

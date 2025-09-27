@@ -1,13 +1,9 @@
 package cn.tuyucheng.taketoday.ollamachatbot;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import java.util.List;
-
+import cn.tuyucheng.taketoday.ollamachatbot.model.HelpDeskRequest;
+import cn.tuyucheng.taketoday.ollamachatbot.model.HistoryEntry;
+import cn.tuyucheng.taketoday.ollamachatbot.service.HelpDeskChatbotAgentService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.ai.ollama.OllamaChatModel;
@@ -18,10 +14,11 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import cn.tuyucheng.taketoday.ollamachatbot.model.HelpDeskRequest;
-import cn.tuyucheng.taketoday.ollamachatbot.model.HistoryEntry;
-import cn.tuyucheng.taketoday.ollamachatbot.service.HelpDeskChatbotAgentService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
+
+import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @AutoConfigureMockMvc
 @RunWith(SpringRunner.class)

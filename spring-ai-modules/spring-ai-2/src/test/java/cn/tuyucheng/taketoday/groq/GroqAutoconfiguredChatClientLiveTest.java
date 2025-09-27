@@ -20,7 +20,6 @@ public class GroqAutoconfiguredChatClientLiveTest {
 
    @Test
    void whenCallOpenAIClient_thenReturnResponseFromGroq() {
-
       String prompt = """
             Context:
             Support Ticket #98765:

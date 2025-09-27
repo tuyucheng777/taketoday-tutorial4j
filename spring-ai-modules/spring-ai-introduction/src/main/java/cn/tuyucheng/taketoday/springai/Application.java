@@ -1,11 +1,12 @@
-package cn.tuyucheng.taketoday;
+package cn.tuyucheng.taketoday.springai;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringAIProjectApplication {
+class Application {
+
    public static void main(String[] args) {
-      SpringApplication.run(SpringAIProjectApplication.class, args);
+      SpringApplication.run(Application.class, args);
    }
 }

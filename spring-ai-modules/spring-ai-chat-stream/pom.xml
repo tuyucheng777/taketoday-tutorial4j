@@ -10,7 +10,6 @@
       <groupId>cn.tuyucheng.taketoday</groupId>
       <artifactId>spring-ai-modules</artifactId>
       <version>1.0.0</version>
-      <relativePath>../pom.xml</relativePath>
    </parent>
 
    <repositories>
@@ -76,7 +75,6 @@
    <properties>
       <java.version>25</java.version>
       <spring-ai.version>1.0.1</spring-ai.version>
-      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 
    <build>

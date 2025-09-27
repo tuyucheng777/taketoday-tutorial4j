@@ -65,7 +65,7 @@ public class ChatService {
                },
                sink::error,
                () -> {
-                  if (buffer.length() > 0) {
+                  if (!buffer.isEmpty()) {
                      sink.next(buffer.toString());
                   }
                   sink.complete();
@@ -89,7 +89,7 @@ public class ChatService {
                },
                sink::error,
                () -> {
-                  if (buffer.length() > 0) {
+                  if (!buffer.isEmpty()) {
                      sink.next(buffer.toString());
                   }
                   sink.complete();

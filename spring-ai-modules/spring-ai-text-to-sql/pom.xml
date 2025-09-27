@@ -54,6 +54,11 @@
       </dependency>
    </dependencies>
 
+   <properties>
+      <java.version>25</java.version>
+      <spring-ai.version>1.0.0</spring-ai.version>
+   </properties>
+
    <build>
       <plugins>
          <plugin>
@@ -62,9 +67,4 @@
          </plugin>
       </plugins>
    </build>
-
-   <properties>
-      <java.version>25</java.version>
-      <spring-ai.version>1.0.0</spring-ai.version>
-   </properties>
 </project>

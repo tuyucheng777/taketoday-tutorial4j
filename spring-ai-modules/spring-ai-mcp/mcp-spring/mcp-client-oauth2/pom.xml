@@ -15,6 +15,12 @@
       <relativePath/>
    </parent>
 
+   <properties>
+      <java.version>25</java.version>
+      <spring-ai.version>1.0.0</spring-ai.version>
+      <spring-boot.starter.test>3.5.4</spring-boot.starter.test>
+   </properties>
+
    <dependencies>
       <dependency>
          <groupId>org.springframework.ai</groupId>
@@ -59,10 +65,4 @@
          </plugin>
       </plugins>
    </build>
-
-   <properties>
-      <java.version>25</java.version>
-      <spring-ai.version>1.0.0</spring-ai.version>
-      <spring-boot.starter.test>3.5.4</spring-boot.starter.test>
-   </properties>
 </project>

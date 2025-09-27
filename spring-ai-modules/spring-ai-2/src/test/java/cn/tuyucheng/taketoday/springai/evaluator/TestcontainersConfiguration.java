@@ -19,5 +19,4 @@ class TestcontainersConfiguration {
          registry.add("spring.ai.ollama.base-url", ollamaContainer::getEndpoint);
       };
    }
-
 }

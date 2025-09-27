@@ -34,7 +34,9 @@ class ChatbotServiceLiveTest {
 
       assertThat(followUpChatResponse)
             .isNotNull()
-            .satisfies(response -> assertThat(response.answer())
-                  .containsAnyOf("Neville", "Neville Longbottom"));
+            .satisfies(response -> {
+               assertThat(response.answer())
+                     .containsAnyOf("Neville", "Neville Longbottom");
+            });
    }
 }

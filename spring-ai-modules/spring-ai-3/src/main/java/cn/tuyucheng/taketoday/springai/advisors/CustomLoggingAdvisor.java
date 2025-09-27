@@ -26,6 +26,7 @@ public class CustomLoggingAdvisor implements CallAroundAdvisor {
             .getResult()
             .getOutput()
             .getText());
+
    }
 
    private AdvisedRequest before(AdvisedRequest advisedRequest) {

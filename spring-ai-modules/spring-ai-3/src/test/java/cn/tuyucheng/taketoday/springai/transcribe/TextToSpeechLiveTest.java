@@ -59,7 +59,6 @@ class TextToSpeechLiveTest {
 
    @Test
    void givenStreamingEndpoint_whenCalled_thenReceiveAudioFileBytes() throws Exception {
-
       String longText = """
             Hello from Tuyucheng!
             Here, we explore the world of Java,
