@@ -24,7 +24,7 @@ public class KafkaCountingMessagesComponent {
 
    @PostConstruct
    public void init() {
-      System.out.println(getTotalNumberOfMessagesInATopic("baeldung"));
+      System.out.println(getTotalNumberOfMessagesInATopic("tuyucheng"));
    }
 
    public Long getTotalNumberOfMessagesInATopic(String topic) {

@@ -25,7 +25,7 @@ class AvroMagicByteApp {
             .run(args);
    }
 
-   @KafkaListener(topics = "baeldung.article.published")
+   @KafkaListener(topics = "tuyucheng.article.published")
    public void listen(Article article) {
       LOG.info("a new article was published: {}", article);
       blog.add(article.getTitle());

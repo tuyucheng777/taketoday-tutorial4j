@@ -42,7 +42,7 @@ class AvroMagicByteLiveTest {
 
    @Test
    void whenSendingCorrectArticle_thenItsAddedToTheBlog() throws Exception {
-      avroKafkaTemplate().send("baeldung.article.published", aTestArticle("Avro Magic Byte"))
+      avroKafkaTemplate().send("tuyucheng.article.published", aTestArticle("Avro Magic Byte"))
             .get();
 
       await().untilAsserted(() -> assertThat(listener.getBlog()).containsExactly("Avro Magic Byte"));
@@ -50,10 +50,10 @@ class AvroMagicByteLiveTest {
 
    @Test
    void whenSendingMalformedMessage_thenSendToDLQ() throws Exception {
-      stringKafkaTemplate().send("baeldung.article.published", "not a valid avro message!")
+      stringKafkaTemplate().send("tuyucheng.article.published", "not a valid avro message!")
             .get();
 
-      var dlqRecord = listenForOneMessage("baeldung.article.published-dlt", ofSeconds(5L));
+      var dlqRecord = listenForOneMessage("tuyucheng.article.published-dlt", ofSeconds(5L));
 
       assertThat(dlqRecord.value()).isEqualTo("not a valid avro message!");
    }
