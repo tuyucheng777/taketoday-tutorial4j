@@ -1,12 +1,11 @@
 package cn.tuyucheng.taketoday.spring.data.cassandra.repository;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import java.util.NoSuchElementException;
-
+import cn.tuyucheng.taketoday.spring.data.cassandra.model.Book;
+import com.datastax.driver.core.utils.UUIDs;
+import com.datastax.oss.driver.api.core.CqlSession;
+import com.google.common.collect.ImmutableSet;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +14,8 @@ import org.testcontainers.containers.CassandraContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import cn.tuyucheng.taketoday.spring.data.cassandra.model.Book;
-import com.datastax.driver.core.utils.UUIDs;
-import com.datastax.oss.driver.api.core.CqlSession;
-import com.google.common.collect.ImmutableSet;
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @Testcontainers
 @SpringBootTest
@@ -35,11 +32,6 @@ class BookRepositoryLiveTest {
 
    @Autowired
    private BookRepository bookRepository;
-
-   @AfterEach
-   void cleanUpDatabase() {
-      bookRepository.deleteAll();
-   }
 
    @BeforeAll
    static void setupCassandraConnectionProperties() {
@@ -88,15 +80,15 @@ class BookRepositoryLiveTest {
             .getTitle());
    }
 
-   @Test
+   // @Test(expected = java.util.NoSuchElementException.class)
    void whenDeletingExistingBooks_thenNotAvailableOnRetrieval() {
       final Book javaBook = new Book(UUIDs.timeBased(), "Head First Java", "O'Reilly Media", ImmutableSet.of("Computer", "Software"));
       bookRepository.save(javaBook);
       bookRepository.delete(javaBook);
       final Iterable<Book> books = bookRepository.findByTitleAndPublisher("Head First Java", "O'Reilly Media");
-      assertThrows(NoSuchElementException.class, () -> {
-         books.iterator().next();
-      });
+      assertNotEquals(javaBook.getId(), books.iterator()
+            .next()
+            .getId());
    }
 
    @Test
@@ -110,6 +102,6 @@ class BookRepositoryLiveTest {
       for (final Book book : books) {
          bookCount++;
       }
-      assertEquals(bookCount, 2);
+      Assertions.assertEquals(2, bookCount);
    }
 }

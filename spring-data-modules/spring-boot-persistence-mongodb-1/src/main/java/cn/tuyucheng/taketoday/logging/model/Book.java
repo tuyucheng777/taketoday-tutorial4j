@@ -2,6 +2,7 @@ package cn.tuyucheng.taketoday.logging.model;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Objects;
@@ -12,8 +13,10 @@ public class Book {
    @MongoId
    private ObjectId id;
 
+   @Field("bookName")
    private String bookName;
 
+   @Field("authorName")
    private String authorName;
 
    public ObjectId getId() {

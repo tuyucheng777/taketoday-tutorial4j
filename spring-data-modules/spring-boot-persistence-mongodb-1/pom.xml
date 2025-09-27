@@ -9,9 +9,9 @@
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>parent-boot-2</artifactId>
+      <artifactId>parent-boot-3</artifactId>
       <version>1.0.0</version>
-      <relativePath>../../parent-boot-2</relativePath>
+      <relativePath>../../parent-boot-3</relativePath>
    </parent>
 
    <dependencies>
@@ -48,7 +48,7 @@
    </build>
 
    <properties>
-      <de.flapdoodle.embed.mongo.version>4.20.0</de.flapdoodle.embed.mongo.version>
+      <de.flapdoodle.embed.mongo.version>4.13.0</de.flapdoodle.embed.mongo.version>
       <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
    </properties>
 </project>

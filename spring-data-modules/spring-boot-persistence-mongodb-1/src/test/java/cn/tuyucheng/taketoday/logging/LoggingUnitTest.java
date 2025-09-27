@@ -1,17 +1,9 @@
 package cn.tuyucheng.taketoday.logging;
 
 import cn.tuyucheng.taketoday.logging.model.Book;
-import com.mongodb.client.MongoClients;
-import de.flapdoodle.embed.mongo.MongodExecutable;
-import de.flapdoodle.embed.mongo.MongodStarter;
-import de.flapdoodle.embed.mongo.config.ImmutableMongodConfig;
-import de.flapdoodle.embed.mongo.config.MongodConfig;
-import de.flapdoodle.embed.mongo.config.Net;
-import de.flapdoodle.embed.mongo.distribution.Version;
-import de.flapdoodle.embed.process.runtime.Network;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -34,30 +26,11 @@ import static org.springframework.data.mongodb.core.query.Update.update;
 @TestPropertySource(properties = {"logging.level.org.springframework.data.mongodb.core.MongoTemplate=WARN"}, value = "/embedded.properties")
 public class LoggingUnitTest {
 
-   private static final String CONNECTION_STRING = "mongodb://%s:%d";
-
-   private MongodExecutable mongodExecutable;
-   private MongoTemplate mongoTemplate;
-
-   @AfterEach
-   void clean() {
-      mongodExecutable.stop();
-   }
+   private @Autowired MongoTemplate mongoTemplate;
 
    @BeforeEach
    void setup() throws Exception {
-      String ip = "localhost";
-      int port = Network.freeServerPort(Network.getLocalHost());
-
-      ImmutableMongodConfig mongodConfig = MongodConfig.builder()
-            .version(Version.Main.PRODUCTION)
-            .net(new Net(ip, port, Network.localhostIsIPv6()))
-            .build();
-
-      MongodStarter starter = MongodStarter.getDefaultInstance();
-      mongodExecutable = starter.prepare(mongodConfig);
-      mongodExecutable.start();
-      mongoTemplate = new MongoTemplate(MongoClients.create(String.format(CONNECTION_STRING, ip, port)), "test");
+      mongoTemplate.dropCollection("book");
    }
 
    @Test
