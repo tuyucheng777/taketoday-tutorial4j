@@ -8,7 +8,7 @@ import java.util.Optional;
 
 interface MovieRepository extends JpaRepository<Movie, Long> {
 
-   List<UpcomingMovies> findUpcomingMoviesByStartTimeBetween(Instant start, Instant end);
+   List<UpcomingMovie> findUpcomingMoviesByStartTimeBetween(Instant start, Instant end);
 
    default Optional<AvailableMovieSeats> findAvailableSeatsByMovieId(Long movieId) {
       return findById(movieId).map(movie -> new AvailableMovieSeats(movie.title(), movie.screenRoom(), movie.startTime(), movie.freeSeats()));
