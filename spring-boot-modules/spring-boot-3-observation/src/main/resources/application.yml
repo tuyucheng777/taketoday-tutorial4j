@@ -1,6 +1,9 @@
 management:
+   observations:
+      annotations:
+         enabled: true
    endpoints:
       web:
          exposure:
             include: '*'
-            #health,info,beans,metrics,startup
+            # health,info,beans,metrics,startup
