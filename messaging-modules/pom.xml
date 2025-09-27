@@ -19,6 +19,7 @@
       <module>apache-camel-kserve</module>
       <module>apache-rocketmq</module>
       <module>automq</module>
+      <module>dapr</module>
       <module>ibm-mq</module>
       <module>java-redpanda</module>
       <module>jeromq</module>
