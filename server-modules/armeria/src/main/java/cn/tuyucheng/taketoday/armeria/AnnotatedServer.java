@@ -68,7 +68,7 @@ public class AnnotatedServer {
       @Get("/json-response")
       @ProducesJson
       public JsonBody jsonResponse() {
-         return new JsonBody("Taketoday", 42);
+         return new JsonBody("Tuyucheng", 42);
       }
 
       @Post("/uppercase-response")
@@ -115,9 +115,7 @@ public class AnnotatedServer {
       static class UppercasingRequestConverter implements RequestConverterFunction {
          @Override
          public Object convertRequest(ServiceRequestContext ctx, AggregatedHttpRequest request,
-                                      Class<?> expectedResultType, ParameterizedType expectedParameterizedResultType)
-               throws Exception {
-
+                                      Class<?> expectedResultType, ParameterizedType expectedParameterizedResultType) throws Exception {
             if (expectedResultType.isAssignableFrom(String.class)) {
                return request.content(StandardCharsets.UTF_8).toUpperCase();
             }

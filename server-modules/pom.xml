@@ -15,6 +15,7 @@
 
    <modules>
       <module>apache-tomcat</module>
+      <module>armeria</module>
       <module>netty</module>
       <module>undertow</module>
       <module>wildfly</module>

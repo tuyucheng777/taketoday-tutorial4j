@@ -24,7 +24,7 @@ public class FluentRoutesServer {
             .path("/get")
             .produces(MediaType.PLAIN_TEXT)
             .matchesParams("name")
-            .build((ctx, req) -> HttpResponse.of("Hello, " + ctx.path()));
+            .build((ctx, _) -> HttpResponse.of("Hello, " + ctx.path()));
 
       Server server = sb.build();
       CompletableFuture<Void> future = server.start();

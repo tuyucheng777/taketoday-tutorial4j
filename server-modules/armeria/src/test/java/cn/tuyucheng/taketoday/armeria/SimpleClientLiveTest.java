@@ -35,11 +35,11 @@ class SimpleClientLiveTest {
    void post() {
       WebClient webClient = WebClient.of();
 
-      AggregatedHttpResponse response = webClient.post("http://localhost:8080/uppercase-body", "taketoday").aggregate().join();
+      AggregatedHttpResponse response = webClient.post("http://localhost:8080/uppercase-body", "tuyucheng").aggregate().join();
 
       assertEquals(HttpStatus.OK, response.status());
       assertEquals("text/plain; charset=utf-8", response.headers().get("content-type"));
-      assertEquals("Hello: BAELDUNG", response.contentUtf8());
+      assertEquals("Hello: TUYUCHENG", response.contentUtf8());
    }
 
    @Test
@@ -52,12 +52,12 @@ class SimpleClientLiveTest {
                   .path("/uppercase-body")
                   .contentType(MediaType.PLAIN_TEXT_UTF_8)
                   .build(),
-            HttpData.ofUtf8("Taketoday"));
+            HttpData.ofUtf8("Tuyucheng"));
       AggregatedHttpResponse response = webClient.execute(request).aggregate().join();
 
       assertEquals(HttpStatus.OK, response.status());
       assertEquals("text/plain; charset=utf-8", response.headers().get("content-type"));
-      assertEquals("Hello: BAELDUNG", response.contentUtf8());
+      assertEquals("Hello: TUYUCHENG", response.contentUtf8());
    }
 
    @Test

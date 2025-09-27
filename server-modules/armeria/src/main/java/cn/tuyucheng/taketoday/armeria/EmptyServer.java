@@ -17,9 +17,7 @@ public class EmptyServer {
 
       sb.accessLogWriter(AccessLogWriter.common(), true);
 
-      sb.service("/", (ctx, req) -> {
-         return HttpResponse.of("Hello, world!");
-      });
+      sb.service("/", (_, _) -> HttpResponse.of("Hello, world!"));
 
       Server server = sb.build();
       CompletableFuture<Void> future = server.start();
