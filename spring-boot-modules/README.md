@@ -90,7 +90,7 @@
 + [Spring Boot Remoting](spring-boot-remoting/README.md)
 + [Spring Boot Request Params](spring-boot-request-params/README.md)
 + [Spring Boot Resilience4j](spring-boot-resilience4j/README.md)
-+ [Spring Boot Rest](spring-boot-rest/README.md)
++ [Spring Boot Rest](spring-boot-rest-1/README.md)
 + [Spring Boot Runtime](spring-boot-runtime-1/README.md)
 + [Spring Boot Scheduling](spring-boot-scheduling/README.md)
 + [Spring Boot Security](spring-boot-security/README.md)
