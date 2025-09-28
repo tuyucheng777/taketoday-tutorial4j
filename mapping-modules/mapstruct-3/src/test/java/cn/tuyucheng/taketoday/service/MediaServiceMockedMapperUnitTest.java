@@ -1,16 +1,13 @@
 package cn.tuyucheng.taketoday.service;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import org.junit.Test;
-
 import cn.tuyucheng.taketoday.dto.MediaDto;
 import cn.tuyucheng.taketoday.entity.Media;
 import cn.tuyucheng.taketoday.mapper.MediaMapper;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 public class MediaServiceMockedMapperUnitTest {
 

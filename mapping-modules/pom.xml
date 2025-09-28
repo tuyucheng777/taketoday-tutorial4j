@@ -16,6 +16,7 @@
    <modules>
       <module>mapstruct-1</module>
       <module>mapstruct-2</module>
+      <module>mapstruct-3</module>
       <module>orika</module>
    </modules>
 </project>

@@ -1,9 +1,8 @@
 package cn.tuyucheng.taketoday.spring;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
+import cn.tuyucheng.taketoday.dto.MediaDto;
+import cn.tuyucheng.taketoday.entity.Media;
+import cn.tuyucheng.taketoday.service.MediaService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
@@ -12,9 +11,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import cn.tuyucheng.taketoday.dto.MediaDto;
-import cn.tuyucheng.taketoday.entity.Media;
-import cn.tuyucheng.taketoday.service.MediaService;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Config.class)
