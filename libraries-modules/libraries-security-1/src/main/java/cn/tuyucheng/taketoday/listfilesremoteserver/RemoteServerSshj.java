@@ -27,10 +27,10 @@ public class RemoteServerSshj {
          try (SFTPClient sftpClient = sshClient.newSFTPClient()) {
             List<RemoteResourceInfo> files = sftpClient.ls(REMOTE_DIR);
             for (RemoteResourceInfo file : files) {
-               LOGGER.info("Filename: {}", file.getName());
-               LOGGER.info("Permissions: {}", file.getAttributes()
+               LOGGER.info("Filename: " + file.getName());
+               LOGGER.info("Permissions: " + file.getAttributes()
                      .getPermissions());
-               LOGGER.info("Last Modification Time: {}", file.getAttributes()
+               LOGGER.info("Last Modification Time: " + file.getAttributes()
                      .getMtime());
             }
          }

@@ -1,14 +1,15 @@
 package cn.tuyucheng.taketoday.jline;
 
-import org.jline.reader.*;
+import org.jline.reader.EndOfFileException;
+import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
+import org.jline.reader.UserInterruptException;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class HistoryExample {
-
    public static void main(String[] args) throws Exception {
       try (Terminal terminal = TerminalBuilder.builder().system(true).build()) {
          LineReader lineReader = LineReaderBuilder.builder()

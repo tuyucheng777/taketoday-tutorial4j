@@ -52,14 +52,14 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
             .build();
 
       // ATM category
-      Attribute amountAttribute = Attribute.builder("urn:taketoday:atm:withdrawal:amount")
+      Attribute amountAttribute = Attribute.builder("urn:tuyucheng:atm:withdrawal:amount")
             .value(DoubleExp.of("1200.00"))
             .build();
       Entity atmEntity = Entity.builder()
             .attribute(amountAttribute)
             .build();
 
-      Category atmCategory = Category.builder(Categories.parse("urn:taketoday:atm:withdrawal"))
+      Category atmCategory = Category.builder(Categories.parse("urn:tuyucheng:atm:withdrawal"))
             .entity(atmEntity)
             .build();
 
@@ -109,13 +109,13 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
             .build();
 
       // ATM category
-      Attribute amountAttribute = Attribute.builder("urn:taketoday:atm:withdrawal:amount")
+      Attribute amountAttribute = Attribute.builder("urn:tuyucheng:atm:withdrawal:amount")
             .value(DoubleExp.of("499.00"))
             .build();
       Entity atmEntity = Entity.builder()
             .attribute(amountAttribute)
             .build();
-      Category atmCategory = Category.builder(Categories.parse("urn:taketoday:atm:withdrawal"))
+      Category atmCategory = Category.builder(Categories.parse("urn:tuyucheng:atm:withdrawal"))
             .entity(atmEntity)
             .build();
 
@@ -162,14 +162,14 @@ public class NightlyWithdrawalPolicyUnitTest extends XacmlPolicyTestSupport {
             .build();
 
       // ATM category
-      Attribute amountAttribute = Attribute.builder("urn:taketoday:atm:withdrawal:amount")
+      Attribute amountAttribute = Attribute.builder("urn:tuyucheng:atm:withdrawal:amount")
             .value(DoubleExp.of("2000.00"))
             .build();
       Entity atmEntity = Entity.builder()
             .attribute(amountAttribute)
             .build();
 
-      Category atmCategory = Category.builder(Categories.parse("urn:taketoday:atm:withdrawal"))
+      Category atmCategory = Category.builder(Categories.parse("urn:tuyucheng:atm:withdrawal"))
             .entity(atmEntity)
             .build();
 

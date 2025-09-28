@@ -19,6 +19,8 @@
       <module>libraries-3</module>
       <module>libraries-4</module>
       <module>libraries-5</module>
+      <module>libraries-6</module>
+      <module>libraries-7</module>
       <module>libraries-ai</module>
       <module>libraries-apache-commons-1</module>
       <module>libraries-apache-commons-2</module>
@@ -31,7 +33,8 @@
       <module>libraries-data-1</module>
       <module>libraries-data-2</module>
       <module>libraries-data-3</module>
-      <module>libraries-data-db</module>
+      <module>libraries-data-db-1</module>
+      <module>libraries-data-db-2</module>
       <module>libraries-data-io-1</module>
       <module>libraries-data-io-2</module>
       <module>libraries-data-mariadb4j</module>
@@ -41,7 +44,8 @@
       <module>libraries-http-3</module>
       <module>libraries-io</module>
       <module>libraries-jdk8</module>
-      <module>libraries-llms</module>
+      <module>libraries-llms-1</module>
+      <module>libraries-llms-2</module>
       <module>libraries-open-telemetry</module>
       <module>libraries-primitive</module>
       <module>libraries-reporting</module>

@@ -159,11 +159,11 @@ public class OrderedMapUnitTest {
    public void givenALinkedMap_whenElementRemoved_thenSizeDecrease() {
       LinkedMap<String, Integer> lmap = (LinkedMap<String, Integer>) this.runnersLinkedMap;
       Integer johnAge = lmap.remove("John");// by object
-      assertEquals(new Integer(36), johnAge);
+      assertEquals(Integer.valueOf(36), johnAge);
       assertEquals(lmap.size(), RUNNERS_COUNT - 1);
 
       Integer emilyAge = lmap.remove(0);// by index
-      assertEquals(new Integer(37), emilyAge);
+      assertEquals(Integer.valueOf(37), emilyAge);
       assertEquals(lmap.size(), RUNNERS_COUNT - 2);
    }
 
@@ -201,11 +201,11 @@ public class OrderedMapUnitTest {
 
       Integer johnAge = lomap.remove("John");// by object
 
-      assertEquals(new Integer(36), johnAge);
+      assertEquals(Integer.valueOf(36), johnAge);
       assertEquals(lomap.size(), RUNNERS_COUNT - 1);
 
       Integer emilyAge = lomap.remove(0);// by index
-      assertEquals(new Integer(37), emilyAge);
+      assertEquals(Integer.valueOf(37), emilyAge);
       assertEquals(lomap.size(), RUNNERS_COUNT - 2);
    }
 }

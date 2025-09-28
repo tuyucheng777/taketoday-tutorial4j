@@ -1,0 +1,103 @@
+package cn.tuyucheng.taketoday.jcabi;
+
+import com.jcabi.aspects.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
+public class JcabiAspectJ {
+
+   public static void main(String[] args) {
+      try {
+         displayFactorial(10);
+         getFactorial(10).get();
+
+         String result = cacheExchangeRates();
+         if (result != cacheExchangeRates()) {
+            System.out.println(result);
+         }
+
+         divideByZero();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+
+      divideByZeroQuietly();
+      try {
+         processFile();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
+
+   @Loggable
+   @Async
+   public static void displayFactorial(int number) {
+      long result = factorial(number);
+      System.out.println(result);
+   }
+
+   @Loggable
+   @Async
+   public static Future<Long> getFactorial(int number) {
+      return CompletableFuture.supplyAsync(() -> factorial(number));
+   }
+
+   /**
+    * Finds factorial of a number
+    *
+    * @param number
+    * @return
+    */
+   public static long factorial(int number) {
+      long result = 1;
+      for (int i = number; i > 0; i--) {
+         result *= i;
+      }
+      return result;
+   }
+
+   @Loggable
+   @Cacheable(lifetime = 2, unit = TimeUnit.SECONDS)
+   public static String cacheExchangeRates() {
+      String result = null;
+      try {
+         URL exchangeRateUrl = new URI("https://api.exchangeratesapi.io/latest").toURL();
+         URLConnection con = exchangeRateUrl.openConnection();
+         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+         result = in.readLine();
+      } catch (IOException | URISyntaxException e) {
+         e.printStackTrace();
+      }
+      return result;
+   }
+
+   @LogExceptions
+   public static void divideByZero() {
+      int x = 1 / 0;
+   }
+
+   @RetryOnFailure(attempts = 2, types = {NumberFormatException.class})
+   @Quietly
+   public static void divideByZeroQuietly() {
+      int x = 1 / 0;
+   }
+
+   @UnitedThrow(IllegalStateException.class)
+   public static void processFile() throws IOException, InterruptedException {
+      BufferedReader reader = new BufferedReader(new FileReader("tuyucheng.txt"));
+      reader.readLine();
+
+      Thread thread = new Thread();
+      thread.wait(2000);
+   }
+}

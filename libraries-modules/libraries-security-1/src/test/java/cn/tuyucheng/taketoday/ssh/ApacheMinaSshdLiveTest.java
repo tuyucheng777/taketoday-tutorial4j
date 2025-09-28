@@ -14,7 +14,7 @@ public class ApacheMinaSshdLiveTest {
       String password = "password";
       String host = "test.rebex.net";
       int port = 22;
-      long defaultTimeoutSeconds = 10L;
+      long defaultTimeoutSeconds = 10l;
       String command = "ls\n";
       String responseString = SshdDemo.listFolderStructure(username, password, host, port, defaultTimeoutSeconds, command);
 
@@ -27,7 +27,7 @@ public class ApacheMinaSshdLiveTest {
       String password = "password";
       String host = "test.rebex.net";
       int port = 22;
-      long defaultTimeoutSeconds = 10L;
+      long defaultTimeoutSeconds = 10l;
       String command = "ls\n";
       String responseString = SshdDemo.listFolderStructure(username, password, host, port, defaultTimeoutSeconds, command);
 

@@ -1,7 +1,0 @@
-class reladomo.libraries.cn.tuyucheng.taketoday.Department
-id, name
-1, "Marketing"
-
-class reladomo.libraries.cn.tuyucheng.taketoday.Employee
-id, name
-1, "Paul"

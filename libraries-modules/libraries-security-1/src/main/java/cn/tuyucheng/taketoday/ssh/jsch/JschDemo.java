@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 
 public class JschDemo {
 
-   public static void main(String[] args) throws Exception {
+   public static void main(String args[]) throws Exception {
       String username = "demo";
       String password = "password";
       String host = "test.rebex.net";

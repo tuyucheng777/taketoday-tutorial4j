@@ -31,7 +31,6 @@ public class BouncyCastlePGPDemoApplication {
    }
 
    public static void main(String[] args) {
-
       Path resourcesPath = Paths.get("src", "main", "resources");
       String pgpresource = resourcesPath.resolve("pgp")
             .toAbsolutePath()
@@ -43,7 +42,7 @@ public class BouncyCastlePGPDemoApplication {
 
       try {
          encryptFile(encryptedFileName, plainTextInputFileName, pubKeyFileName, true);
-         decryptFile(encryptedFileName, privKeyFileName, "taketoday".toCharArray(), "decryptedFile", true);
+         decryptFile(encryptedFileName, privKeyFileName, "tuyucheng".toCharArray(), "decryptedFile", true);
       } catch (NoSuchProviderException e) {
          logger.error(e.getMessage());
       } catch (IOException e) {
@@ -51,11 +50,9 @@ public class BouncyCastlePGPDemoApplication {
       } catch (PGPException e) {
          logger.error(e.getMessage());
       }
-
    }
 
    public static void encryptFile(String outputFileName, String inputFileName, String pubKeyFileName, boolean armor) throws IOException, NoSuchProviderException, PGPException {
-
       OutputStream out = new BufferedOutputStream(new FileOutputStream(outputFileName));
       PGPPublicKey encKey = PGPExampleUtil.readPublicKey(pubKeyFileName);
       if (armor) {

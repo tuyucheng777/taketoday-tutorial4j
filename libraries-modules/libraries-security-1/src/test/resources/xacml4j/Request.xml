@@ -20,10 +20,10 @@
          <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#time">21:00:00</AttributeValue>
       </Attribute>
    </Attributes>
-   <Attributes Category="urn:taketoday:atm:withdrawal">
+   <Attributes Category="urn:tuyucheng:atm:withdrawal">
       <Attribute
             IncludeInResult="false"
-            AttributeId="urn:taketoday:atm:withdrawal:amount">
+            AttributeId="urn:tuyucheng:atm:withdrawal:amount">
          <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#decimal">1200</AttributeValue>
       </Attribute>
    </Attributes>

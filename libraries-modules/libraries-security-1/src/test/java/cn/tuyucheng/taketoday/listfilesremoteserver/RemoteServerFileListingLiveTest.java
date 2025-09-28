@@ -45,6 +45,7 @@ public class RemoteServerFileListingLiveTest {
    @Test
    public void givenApacheSshd_whenListFiles_thenSuccess() throws IOException {
       try (SshClient client = setUpSshClient(); ClientSession session = connectToServer(client); SftpClient sftp = createSftpClient(session)) {
+
          List<SftpClient.DirEntry> entries = listDirectory(sftp, REMOTE_DIR);
          printDirectoryEntries(entries);
       }

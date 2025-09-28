@@ -10,7 +10,6 @@ import org.jline.terminal.TerminalBuilder;
 import java.nio.file.Path;
 
 public class CompletionExample {
-
    public static void main(String[] args) throws Exception {
       try (Terminal terminal = TerminalBuilder.builder().system(true).build()) {
          Completer completer = new AggregateCompleter(

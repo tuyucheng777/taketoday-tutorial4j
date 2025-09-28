@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>libraries-data-db-1</artifactId>
+   <name>libraries-data-db-1</name>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>parent-boot-3</artifactId>
+      <version>1.0.0</version>
+      <relativePath>../../parent-boot-3</relativePath>
+   </parent>
+
+   <dependencies>
+      <!-- Hikari CP -->
+      <dependency>
+         <groupId>com.zaxxer</groupId>
+         <artifactId>HikariCP</artifactId>
+         <version>${HikariCP.version}</version>
+         <scope>compile</scope>
+      </dependency>
+      <dependency>
+         <groupId>com.h2database</groupId>
+         <artifactId>h2</artifactId>
+      </dependency>
+      <!-- Debezium -->
+      <dependency>
+         <groupId>io.debezium</groupId>
+         <artifactId>debezium-api</artifactId>
+         <version>${debezium.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>io.debezium</groupId>
+         <artifactId>debezium-embedded</artifactId>
+         <version>${debezium.version}</version>
+         <exclusions>
+            <exclusion>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-log4j12</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+      <dependency>
+         <groupId>io.debezium</groupId>
+         <artifactId>debezium-connector-mysql</artifactId>
+         <version>${debezium.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.testcontainers</groupId>
+         <artifactId>testcontainers</artifactId>
+         <version>${testcontainers-version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.testcontainers</groupId>
+         <artifactId>mysql</artifactId>
+         <version>${testcontainers-version}</version>
+      </dependency>
+      <!-- Spring Core dependencies -->
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+      <!-- Spring Data JPA, crud repository -->
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-data-jpa</artifactId>
+      </dependency>
+      <!-- MySQL -->
+      <dependency>
+         <groupId>com.mysql</groupId>
+         <artifactId>mysql-connector-j</artifactId>
+      </dependency>
+      <!-- Utility dependencies -->
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>jakarta.xml.bind</groupId>
+         <artifactId>jakarta.xml.bind-api</artifactId>
+         <version>${jakarta.xml.bind.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons-lang3.version}</version>
+      </dependency>
+   </dependencies>
+
+   <properties>
+      <HikariCP.version>5.1.0</HikariCP.version>
+      <debezium.version>2.5.0.Final</debezium.version>
+      <testcontainers-version>1.19.3</testcontainers-version>
+      <jakarta.xml.bind.version>4.0.1</jakarta.xml.bind.version>
+      <spring-boot.repackage.skip>true</spring-boot.repackage.skip> <!-- to avoid repackaging of the jar -->
+   </properties>
+</project>

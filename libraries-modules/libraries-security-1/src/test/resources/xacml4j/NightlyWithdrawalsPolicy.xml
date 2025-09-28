@@ -2,14 +2,14 @@
 <Policy xmlns="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17 http://docs.oasis-open.org/xacml/3.0/xacml-core-v3-schema-wd-17.xsd"
-        PolicyId="urn:taketoday:atm:WithdrawalPolicy"
+        PolicyId="urn:tuyucheng:atm:WithdrawalPolicy"
         Version="1.0"
         RuleCombiningAlgId="urn:oasis:names:tc:xacml:1.0:rule-combining-algorithm:deny-overrides">
    <Description>
       Withdrawal policy example
    </Description>
    <Target/>
-   <Rule RuleId="urn:oasis:names:tc:taketoday:WithDrawalPolicy:Rule1" Effect="Deny">
+   <Rule RuleId="urn:oasis:names:tc:tuyucheng:WithDrawalPolicy:Rule1" Effect="Deny">
       <Description>
          Deny withdrawals over $500 between 20:00 and 08:00
       </Description>
@@ -47,15 +47,15 @@
                   <AttributeDesignator
                         DataType="http://www.w3.org/2001/XMLSchema#double"
                         MustBePresent="true"
-                        Category="urn:taketoday:atm:withdrawal"
-                        AttributeId="urn:taketoday:atm:withdrawal:amount"/>
+                        Category="urn:tuyucheng:atm:withdrawal"
+                        AttributeId="urn:tuyucheng:atm:withdrawal:amount"/>
                </Apply>
                <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#double">500.00</AttributeValue>
             </Apply>
          </Apply>
       </Condition>
    </Rule>
-   <Rule RuleId="urn:oasis:names:tc:taketoday:WithDrawalPolicy:Rule2" Effect="Permit">
+   <Rule RuleId="urn:oasis:names:tc:tuyucheng:WithDrawalPolicy:Rule2" Effect="Permit">
       <Description>
          Permit withdrawals under $500 between 20:00 and 08:00
       </Description>
@@ -93,15 +93,15 @@
                   <AttributeDesignator
                         DataType="http://www.w3.org/2001/XMLSchema#double"
                         MustBePresent="true"
-                        Category="urn:taketoday:atm:withdrawal"
-                        AttributeId="urn:taketoday:atm:withdrawal:amount"/>
+                        Category="urn:tuyucheng:atm:withdrawal"
+                        AttributeId="urn:tuyucheng:atm:withdrawal:amount"/>
                </Apply>
                <AttributeValue DataType="http://www.w3.org/2001/XMLSchema#double">500.00</AttributeValue>
             </Apply>
          </Apply>
       </Condition>
    </Rule>
-   <Rule RuleId="urn:oasis:names:tc:taketoday:WithDrawalPolicy:Rule3" Effect="Permit">
+   <Rule RuleId="urn:oasis:names:tc:tuyucheng:WithDrawalPolicy:Rule3" Effect="Permit">
       <Description>
          Permit withdrawals of any value between 08:00 and 20:00
       </Description>

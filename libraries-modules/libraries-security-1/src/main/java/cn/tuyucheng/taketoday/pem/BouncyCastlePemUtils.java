@@ -25,6 +25,7 @@ public class BouncyCastlePemUtils {
 
       try (FileReader keyReader = new FileReader(file);
            PemReader pemReader = new PemReader(keyReader)) {
+
          PemObject pemObject = pemReader.readPemObject();
          byte[] content = pemObject.getContent();
          X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(content);
@@ -47,6 +48,7 @@ public class BouncyCastlePemUtils {
 
       try (FileReader keyReader = new FileReader(file);
            PemReader pemReader = new PemReader(keyReader)) {
+
          PemObject pemObject = pemReader.readPemObject();
          byte[] content = pemObject.getContent();
          PKCS8EncodedKeySpec privKeySpec = new PKCS8EncodedKeySpec(content);

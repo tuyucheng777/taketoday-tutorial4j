@@ -1,6 +1,9 @@
 package cn.tuyucheng.taketoday.bouncycastle.pgp;
 
-import static org.junit.Assert.assertTrue;
+import org.bouncycastle.cms.CMSException;
+import org.bouncycastle.openpgp.PGPException;
+import org.bouncycastle.operator.OperatorCreationException;
+import org.junit.jupiter.api.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,18 +16,8 @@ import java.security.NoSuchProviderException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
 
-import org.bouncycastle.cms.CMSException;
-import org.bouncycastle.openpgp.PGPException;
-import org.bouncycastle.operator.OperatorCreationException;
-
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BouncyCastlePGPUnitTest {
-
 
    @Test
    @Order(1)
@@ -39,7 +32,7 @@ public class BouncyCastlePGPUnitTest {
       String plainTextInputFileName = pgpresource + "/PlainTextInputFile.txt";
       BouncyCastlePGPDemoApplication.encryptFile(encryptedFileName, plainTextInputFileName, pubKeyFileName, true);
       Path path = Paths.get(encryptedFileName);
-      assertTrue(Files.exists(path));
+      Assertions.assertTrue(Files.exists(path));
    }
 
    @Test
@@ -53,8 +46,8 @@ public class BouncyCastlePGPUnitTest {
       String encryptedFileName = pgpresource + "/EncryptedOutputFile.pgp";
       String privKeyFileName = pgpresource + "/private_key.asc";
 
-      BouncyCastlePGPDemoApplication.decryptFile(encryptedFileName, privKeyFileName, "taketoday".toCharArray(), "decryptedFile", true);
+      BouncyCastlePGPDemoApplication.decryptFile(encryptedFileName, privKeyFileName, "tuyucheng".toCharArray(), "decryptedFile", true);
       File file = new File("decryptedFile");
-      assertTrue(file.exists());
+      Assertions.assertTrue(file.exists());
    }
 }

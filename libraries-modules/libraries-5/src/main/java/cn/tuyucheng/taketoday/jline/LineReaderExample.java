@@ -8,7 +8,6 @@ import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 
 public class LineReaderExample {
-
    public static void main(String[] args) throws Exception {
       try (Terminal terminal = TerminalBuilder.builder().system(true).build()) {
          LineReader lineReader = LineReaderBuilder.builder()

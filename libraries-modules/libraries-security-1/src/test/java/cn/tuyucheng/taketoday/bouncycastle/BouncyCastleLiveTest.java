@@ -17,8 +17,8 @@ import static org.junit.Assert.assertTrue;
 
 public class BouncyCastleLiveTest {
 
-   String certificatePath = "src/main/resources/Taketoday.cer";
-   String privateKeyPath = "src/main/resources/Taketoday.p12";
+   String certificatePath = "src/main/resources/Tuyucheng.cer";
+   String privateKeyPath = "src/main/resources/Tuyucheng.p12";
    char[] p12Password = "password".toCharArray();
    char[] keyPassword = "password".toCharArray();
 
@@ -30,7 +30,7 @@ public class BouncyCastleLiveTest {
       X509Certificate certificate = (X509Certificate) certFactory.generateCertificate(new FileInputStream(certificatePath));
       KeyStore keystore = KeyStore.getInstance("PKCS12");
       keystore.load(new FileInputStream(privateKeyPath), p12Password);
-      PrivateKey privateKey = (PrivateKey) keystore.getKey("taketoday", keyPassword);
+      PrivateKey privateKey = (PrivateKey) keystore.getKey("tuyucheng", keyPassword);
       String secretMessage = "My password is 123456Seven";
       System.out.println("Original Message : " + secretMessage);
       byte[] stringToEncrypt = secretMessage.getBytes();
@@ -39,7 +39,7 @@ public class BouncyCastleLiveTest {
       String decryptedMessage = new String(rawData);
       assertEquals(secretMessage, decryptedMessage);
       byte[] signedData = BouncyCastleCrypto.signData(rawData, certificate, privateKey);
-      boolean check = BouncyCastleCrypto.verifSignData(signedData);
+      Boolean check = BouncyCastleCrypto.verifSignData(signedData);
       assertTrue(check);
    }
 }

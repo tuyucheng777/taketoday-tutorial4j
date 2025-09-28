@@ -17,10 +17,10 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 public class CollectionsUnitTest {
-   private final static BidiMap<Integer, String> daysOfWeek = new TreeBidiMap<Integer, String>();
+   private final static BidiMap<Integer, String> daysOfWeek = new TreeBidiMap<>();
    private final static MultiValuedMap<String, String> groceryCart = new ArrayListValuedHashMap<>();
-   private final static MultiKeyMap<String, String> days = new MultiKeyMap<String, String>();
-   private final static MultiKeyMap<String, String> cityCoordinates = new MultiKeyMap<String, String>();
+   private final static MultiKeyMap<String, String> days = new MultiKeyMap<>();
+   private final static MultiKeyMap<String, String> cityCoordinates = new MultiKeyMap<>();
    private long start;
 
    static {
@@ -59,7 +59,6 @@ public class CollectionsUnitTest {
 
    @Test
    public void givenMultiValuedMap_whenFruitsFetched_thenFruitsReturned() {
-
       List<String> fruits = Arrays.asList("Apple", "Grapes", "Strawberries");
       assertEquals(fruits, groceryCart.get("Fruits"));
    }
@@ -72,7 +71,6 @@ public class CollectionsUnitTest {
 
    @Test
    public void givenMultiValuedMap_whenFuitsRemoved_thenVeggiesPreserved() {
-
       assertEquals(5, groceryCart.size());
 
       groceryCart.remove("Fruits");
@@ -89,18 +87,14 @@ public class CollectionsUnitTest {
       List<String> expectedLongitudes = Arrays.asList("72.8777° E", "2.3522° E", "74.0060° W");
       List<String> longitudes = new ArrayList<>();
 
-      cityCoordinates.forEach((key, value) -> {
-         longitudes.add(key.getKey(1));
-      });
+      cityCoordinates.forEach((key, _) -> longitudes.add(key.getKey(1)));
 
       assertArrayEquals(expectedLongitudes.toArray(), longitudes.toArray());
 
       List<String> expectedCities = Arrays.asList("Mumbai", "Paris", "New York");
       List<String> cities = new ArrayList<>();
 
-      cityCoordinates.forEach((key, value) -> {
-         cities.add(value);
-      });
+      cityCoordinates.forEach((_, value) -> cities.add(value));
 
       assertArrayEquals(expectedCities.toArray(), cities.toArray());
    }
@@ -111,19 +105,19 @@ public class CollectionsUnitTest {
       BidiMap<Integer, Integer> map = new TreeBidiMap<>();
       start = System.nanoTime();
       for (int i = 0; i < 100000; i++) {
-         Integer key = new Integer(i);
-         Integer value = new Integer(i + 1);
+         Integer key = Integer.valueOf(i);
+         Integer value = Integer.valueOf(i + 1);
          map.put(key, value);
       }
       System.out.println("Insertion time:" + TimeUnit.MILLISECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
       start = System.nanoTime();
-      Integer value = (Integer) map.get(new Integer(500));
+      Integer value = map.get(Integer.valueOf(500));
       System.out.println("Value:" + value);
       System.out.println("Fetch time key:" + TimeUnit.MICROSECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
       start = System.nanoTime();
-      Integer key = (Integer) map.getKey(new Integer(501));
+      Integer key = map.getKey(Integer.valueOf(501));
       System.out.println("Key:" + key);
       System.out.println("Fetch time value:" + TimeUnit.MICROSECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
    }
@@ -134,19 +128,19 @@ public class CollectionsUnitTest {
       BidiMap<Integer, Integer> map = new DualTreeBidiMap<>();
       start = System.nanoTime();
       for (int i = 0; i < 100000; i++) {
-         Integer key = new Integer(i);
-         Integer value = new Integer(i + 1);
+         Integer key = Integer.valueOf(i);
+         Integer value = Integer.valueOf(i + 1);
          map.put(key, value);
       }
       System.out.println("Insertion time:" + TimeUnit.MILLISECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
       start = System.nanoTime();
-      Integer value = (Integer) map.get(new Integer(500));
+      Integer value = map.get(Integer.valueOf(500));
       System.out.println("Value:" + value);
       System.out.println("Fetch time key:" + TimeUnit.MICROSECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
       start = System.nanoTime();
-      Integer key = (Integer) map.getKey(new Integer(501));
+      Integer key = map.getKey(Integer.valueOf(501));
       System.out.println("Key:" + key);
       System.out.println("Fetch time value:" + TimeUnit.MICROSECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
    }
@@ -157,19 +151,19 @@ public class CollectionsUnitTest {
       BidiMap<Integer, Integer> map = new DualHashBidiMap<>();
       start = System.nanoTime();
       for (int i = 0; i < 100000; i++) {
-         Integer key = new Integer(i);
-         Integer value = new Integer(i + 1);
+         Integer key = Integer.valueOf(i);
+         Integer value = Integer.valueOf(i + 1);
          map.put(key, value);
       }
       System.out.println("Insertion time:" + TimeUnit.MILLISECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
       start = System.nanoTime();
-      Integer value = (Integer) map.get(new Integer(500));
+      Integer value = map.get(Integer.valueOf(500));
       System.out.println("Value:" + value);
       System.out.println("Fetch time key:" + TimeUnit.MICROSECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
 
       start = System.nanoTime();
-      Integer key = (Integer) map.getKey(new Integer(501));
+      Integer key = map.getKey(Integer.valueOf(501));
       System.out.println("Key:" + key);
       System.out.println("Fetch time value:" + TimeUnit.MICROSECONDS.convert(System.nanoTime() - start, TimeUnit.NANOSECONDS));
    }

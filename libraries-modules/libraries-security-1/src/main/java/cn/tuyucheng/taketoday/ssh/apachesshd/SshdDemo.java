@@ -18,7 +18,7 @@ public class SshdDemo {
       String password = "password";
       String host = "test.rebex.net";
       int port = 22;
-      long defaultTimeoutSeconds = 10L;
+      long defaultTimeoutSeconds = 10l;
       String command = "ls\n";
 
       listFolderStructure(username, password, host, port, defaultTimeoutSeconds, command);
