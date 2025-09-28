@@ -1,0 +1,8 @@
+package cn.tuyucheng.taketoday.microprofile;
+
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+
+@ApplicationPath("library")
+public class LibraryApplication extends Application {
+}

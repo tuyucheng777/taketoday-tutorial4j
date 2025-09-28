@@ -14,11 +14,13 @@
 	</parent>
 
 	<modules>
+      <module>dubbo</module>
       <module>event-driven-microservice</module>
 		<module>helidon</module>
-		<!--<module>msf4j</module>--> <!-- fails On CI -->
-		<module>open-liberty</module>
-		<module>rest-express</module>
-		<module>pulumi</module>
+		<module>microprofile</module>
+		<module>msf4j</module>
+      <module>pulumi</module>
+      <module>open-liberty</module>
+      <module>rest-express</module>
 	</modules>
 </project>
