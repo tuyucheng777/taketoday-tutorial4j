@@ -1,0 +1,21 @@
+package cn.tuyucheng.taketoday.pipeline;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+
+import cn.tuyucheng.taketoday.pipeline.pipes.Pipe;
+
+class PipeUnitTest {
+
+   @Test
+   void whenCombiningThreePipes_andInitializingPipeline_thenResultIsCorrect() {
+      Pipe<Integer, Integer> square = s -> s * s;
+      Pipe<Integer, Integer> half = s -> s / 2;
+      Pipe<Integer, String> toString = Object::toString;
+      Pipe<Integer, String> pipeline = square.add(half).add(toString);
+      String result = pipeline.process(5);
+      String expected = "12";
+      assertThat(result).isEqualTo(expected);
+   }
+}

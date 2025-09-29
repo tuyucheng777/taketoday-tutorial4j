@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>design-pattern-modules</artifactId>
+   <name>design-pattern-modules</name>
+   <packaging>pom</packaging>
+
+   <parent>
+      <groupId>cn.tuyucheng.taketoday</groupId>
+      <artifactId>taketoday-tutorial4j</artifactId>
+      <version>1.0.0</version>
+   </parent>
+
+   <modules>
+      <module>axon</module>
+      <module>clean-architecture</module>
+      <module>coupling</module>
+      <module>cqrs-es</module>
+      <module>data-oriented-programming</module>
+      <module>ddd</module>
+      <module>ddd-contexts</module>
+      <module>dependency-inversion</module>
+      <module>design-patterns-architectural</module>
+      <module>design-patterns-behavioral-1</module>
+      <module>design-patterns-behavioral-2</module>
+      <module>design-patterns-cloud</module>
+      <module>design-patterns-creational-1</module>
+      <module>design-patterns-creational-2</module>
+      <module>design-patterns-functional</module>
+      <module>design-patterns-singleton</module>
+      <module>design-patterns-structural-1</module>
+      <module>design-patterns-structural-2</module>
+      <module>enterprise-patterns</module>
+      <module>front-controller</module>
+      <module>idd</module>
+      <module>intercepting-filter</module>
+      <module>monkey-patching</module>
+      <module>solid</module>
+      <module>vertical-slice-architecture</module>
+   </modules>
+</project>

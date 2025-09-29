@@ -331,15 +331,12 @@
             <!-- <module>annotations</module> -->
             <!-- <module>apache-modules</module> -->
             <!-- <module>choco-solver</module> -->
-            <!-- <module>ddd</module> -->
-            <!-- <module>ddd-contexts</module> -->
             <!-- <module>deeplearning4j</module> -->
             <!-- <module>di-modules</module> -->
             <!-- <module>disruptor</module> -->
             <!-- <module>docker-modules</module> -->
-            <!-- <module>dubbo</module> -->
             <!-- <module>google-protocol-buffer</module> -->
-            <!-- <module>design-patterns-modules</module> -->
+            <!-- <module>design-pattern-modules</module> -->
             <!-- <module>docker-modules</module> -->
             <!-- <module>graphql-modules</module> -->
             <!-- <module>grpc</module> -->
@@ -429,15 +426,12 @@
             <!-- <module>annotations</module> -->
             <!-- <module>apache-modules</module> -->
             <!-- <module>choco-solver</module> -->
-            <!-- <module>ddd</module> -->
-            <!-- <module>ddd-contexts</module> -->
             <!-- <module>deeplearning4j</module> -->
             <!-- <module>di-modules</module> -->
             <!-- <module>disruptor</module> -->
             <!-- <module>docker-modules</module> -->
-            <!-- <module>dubbo</module> -->
             <!-- <module>google-protocol-buffer</module> -->
-            <!-- <module>design-patterns-modules</module> -->
+            <!-- <module>design-pattern-modules</module> -->
             <!-- <module>docker-modules</module> -->
             <!-- <module>graphql-modules</module> -->
             <!-- <module>grpc</module> -->
@@ -504,15 +498,12 @@
             <!-- <module>annotations</module> -->
             <!-- <module>apache-modules</module> -->
             <!-- <module>choco-solver</module> -->
-            <!-- <module>ddd</module> -->
-            <!-- <module>ddd-contexts</module> -->
             <!-- <module>deeplearning4j</module> -->
             <!-- <module>di-modules</module> -->
             <!-- <module>disruptor</module> -->
             <!-- <module>docker-modules</module> -->
-            <!-- <module>dubbo</module> -->
             <!-- <module>google-protocol-buffer</module> -->
-            <!-- <module>design-patterns-modules</module> -->
+            <module>design-pattern-modules</module>
             <!-- <module>docker-modules</module> -->
             <!-- <module>graphql-modules</module> -->
             <!-- <module>grpc</module> -->
