@@ -9,8 +9,9 @@
 
    <parent>
       <groupId>cn.tuyucheng.taketoday</groupId>
-      <artifactId>taketoday-tutorial4j</artifactId>
+      <artifactId>parent-spring-6</artifactId>
       <version>1.0.0</version>
+      <relativePath>../parent-spring-6/pom.xml</relativePath>
    </parent>
 
    <modules>
@@ -29,14 +30,20 @@
       <module>spring-di-3</module>
       <module>spring-di-4</module>
       <module>spring-drools</module>
+      <module>spring-exceptions</module>
       <module>spring-grpc</module>
+      <module>spring-integration</module>
+      <module>spring-jersey</module>
       <module>spring-jinq</module>
+      <module>spring-mobile</module>
+      <module>spring-native</module>
       <module>spring-protobuf</module>
       <module>spring-shell</module>
       <module>spring-spel</module>
       <module>spring-state-machine</module>
       <module>spring-static-resources</module>
       <module>spring-structurizr</module>
+      <module>spring-swagger-codegen-modules</module>
       <module>spring-vault</module>
    </modules>
 </project>
