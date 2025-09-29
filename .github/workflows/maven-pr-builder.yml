@@ -12,7 +12,7 @@ jobs:
    build-and-analyze:
       runs-on: ubuntu-latest
 
-      name: Build and Run Sonar analysis on JDK 21
+      name: Build and Run Sonar analysis on JDK 25
       steps:
          -  name: Checkout sourcecode
             uses: actions/checkout@v3
@@ -64,9 +64,9 @@ jobs:
             uses: actions/setup-java@v3
             with:
                distribution: 'adopt'
-               java-version: 21
-         -  name: Setup Java 21 (2/2)
-            run: echo "JAVA_21=$JAVA_HOME" >> $GITHUB_ENV
+               java-version: 25
+         -  name: Setup Java 25 (2/2)
+            run: echo "JAVA_25=$JAVA_HOME" >> $GITHUB_ENV
 
          -  name: Create toolchains.xml
             shell: bash
@@ -114,10 +114,10 @@ jobs:
                    <toolchain>
                        <type>jdk</type>
                        <provides>
-                           <version>21</version>
+                           <version>25</version>
                        </provides>
                        <configuration>
-                           <jdkHome>${{ env.JAVA_21 }}</jdkHome>
+                           <jdkHome>${{ env.JAVA_25 }}</jdkHome>
                        </configuration>
                    </toolchain>
                </toolchains>
@@ -149,9 +149,9 @@ jobs:
                ${{ env.JAVA_20 }}/bin/java -version ; \
                ${{ env.JAVA_20 }}/bin/javac -version ; \
                echo "======================================";\
-               echo "Java 21"; \
-               ${{ env.JAVA_21 }}/bin/java -version ; \
-               ${{ env.JAVA_21 }}/bin/javac -version ; \
+               echo "Java 25"; \
+               ${{ env.JAVA_25 }}/bin/java -version ; \
+               ${{ env.JAVA_25 }}/bin/javac -version ; \
                echo "======================================";\
                cat $HOME/.m2/toolchains.xml; \
                echo "======================================";
