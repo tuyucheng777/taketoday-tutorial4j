@@ -77,6 +77,7 @@
       <module>spring-data-rest-querydsl</module>
       <module>spring-data-shardingsphere</module>
       <module>spring-data-solr</module>
+      <module>spring-data-vector</module>
       <!-- <module>spring-data-yugabytedb</module> -->
    </modules>
 
