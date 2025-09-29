@@ -5,7 +5,7 @@ import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 
 /**
- * Simple Publisher to provide async data to Flux stream
+ * Simple PUblisher to provide async data to Flux stream
  */
 public class DataPublisher implements Publisher<Payload> {
 

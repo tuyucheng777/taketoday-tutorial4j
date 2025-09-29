@@ -1,13 +1,12 @@
 package cn.tuyucheng.taketoday.rsocket;
 
+import static cn.tuyucheng.taketoday.rsocket.support.Constants.*;
+
 import io.rsocket.Payload;
 import io.rsocket.RSocket;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.client.TcpClientTransport;
 import io.rsocket.util.DefaultPayload;
-
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.ERROR_MSG;
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.TCP_PORT;
 
 public class ReqResClient {
 

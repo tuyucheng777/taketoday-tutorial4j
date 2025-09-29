@@ -1,16 +1,17 @@
 package cn.tuyucheng.taketoday.rsocket.support;
 
+import static cn.tuyucheng.taketoday.rsocket.support.Constants.*;
+
 import io.rsocket.Payload;
 import io.rsocket.util.DefaultPayload;
+
+import java.util.List;
+
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
-
-import java.util.List;
-
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.SHOT_COUNT;
 
 public class GameController implements Publisher<Payload> {
 
@@ -52,7 +53,7 @@ public class GameController implements Publisher<Payload> {
          for (Long shotDelay : shots) {
             try {
                Thread.sleep(shotDelay);
-            } catch (Exception _) {
+            } catch (Exception x) {
             }
             if (truce) {
                break;

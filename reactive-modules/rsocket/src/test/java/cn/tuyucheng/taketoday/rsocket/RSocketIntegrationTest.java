@@ -1,16 +1,17 @@
 package cn.tuyucheng.taketoday.rsocket;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import reactor.core.Disposable;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.Disposable;
 
 public class RSocketIntegrationTest {
 
@@ -70,7 +71,7 @@ public class RSocketIntegrationTest {
       // wait a short time for the data to complete then dispose everything
       try {
          Thread.sleep(500);
-      } catch (Exception _) {
+      } catch (Exception x) {
       }
       subscription.dispose();
       fnfClient.dispose();

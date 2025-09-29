@@ -1,13 +1,12 @@
 package cn.tuyucheng.taketoday.rsocket;
 
+import static cn.tuyucheng.taketoday.rsocket.support.Constants.*;
+
 import io.rsocket.Payload;
 import io.rsocket.RSocket;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.client.TcpClientTransport;
 import io.rsocket.util.DefaultPayload;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import reactor.core.publisher.Flux;
 
 import java.nio.ByteBuffer;
 import java.time.Duration;
@@ -15,8 +14,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.DATA_LENGTH;
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.TCP_PORT;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Flux;
 
 public class FireNForgetClient {
 

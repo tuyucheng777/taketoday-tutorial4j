@@ -1,6 +1,9 @@
 package cn.tuyucheng.taketoday.rsocket;
 
 import cn.tuyucheng.taketoday.rsocket.support.DataPublisher;
+
+import static cn.tuyucheng.taketoday.rsocket.support.Constants.*;
+
 import cn.tuyucheng.taketoday.rsocket.support.GameController;
 import io.rsocket.AbstractRSocket;
 import io.rsocket.Payload;
@@ -13,9 +16,6 @@ import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.DATA_STREAM_NAME;
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.TCP_PORT;
-
 public class Server {
 
    private static final Logger LOG = LoggerFactory.getLogger(Server.class);
@@ -26,10 +26,10 @@ public class Server {
 
    public Server() {
       this.server = RSocketFactory.receive()
-            .acceptor((_, _) -> Mono.just(new RSocketImpl()))
+            .acceptor((setupPayload, reactiveSocket) -> Mono.just(new RSocketImpl()))
             .transport(TcpServerTransport.create("localhost", TCP_PORT))
             .start()
-            .doOnNext(_ -> LOG.info("Server started"))
+            .doOnNext(x -> LOG.info("Server started"))
             .subscribe();
 
       this.gameController = new GameController("Server Player");

@@ -363,7 +363,6 @@
             <!-- <module>quarkus-modules</module> -->
             <!-- <module>reactive-modules</module> -->
             <!-- <module>reactive-systems</module> -->
-            <!-- <module>rsocket</module> -->
             <!-- <module>rule-engines-modules</module> -->
             <!-- <module>security-modules</module> -->
             <!-- <module>server-modules</module> -->
@@ -458,7 +457,6 @@
             <!-- <module>quarkus-modules</module> -->
             <!-- <module>reactive-modules</module> -->
             <!-- <module>reactive-systems</module> -->
-            <!-- <module>rsocket</module> -->
             <!-- <module>rule-engines-modules</module> -->
             <!-- <module>security-modules</module> -->
             <!-- <module>server-modules</module> -->
@@ -530,7 +528,6 @@
             <!-- <module>quarkus-modules</module> -->
             <!-- <module>reactive-modules</module> -->
             <!-- <module>reactive-systems</module> -->
-            <!-- <module>rsocket</module> -->
             <!-- <module>rule-engines-modules</module> -->
             <!-- <module>security-modules</module> -->
             <!-- <module>server-modules</module> -->

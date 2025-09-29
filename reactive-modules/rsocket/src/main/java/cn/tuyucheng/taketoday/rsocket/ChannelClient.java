@@ -1,12 +1,12 @@
 package cn.tuyucheng.taketoday.rsocket;
 
+import static cn.tuyucheng.taketoday.rsocket.support.Constants.*;
+
 import cn.tuyucheng.taketoday.rsocket.support.GameController;
 import io.rsocket.RSocket;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.client.TcpClientTransport;
 import reactor.core.publisher.Flux;
-
-import static cn.tuyucheng.taketoday.rsocket.support.Constants.TCP_PORT;
 
 public class ChannelClient {
 
