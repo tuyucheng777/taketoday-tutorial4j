@@ -79,8 +79,9 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>${maven-surefire-plugin.version}</version>
             <configuration>
-               <source>11</source>
-               <target>11</target>
+               <source>25</source>
+               <target>25</target>
+               <release>25</release>
             </configuration>
          </plugin>
          <plugin>
@@ -108,6 +109,6 @@
       <httpcore5.version>5.2.5</httpcore5.version>
       <httpclient5.version>5.3.1</httpclient5.version>
       <httpclient5-fluent.version>5.3.1</httpclient5-fluent.version>
-      <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

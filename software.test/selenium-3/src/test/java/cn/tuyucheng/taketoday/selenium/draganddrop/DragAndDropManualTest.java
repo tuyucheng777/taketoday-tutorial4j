@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.selenium.drag_and_drop;
+package cn.tuyucheng.taketoday.selenium.draganddrop;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

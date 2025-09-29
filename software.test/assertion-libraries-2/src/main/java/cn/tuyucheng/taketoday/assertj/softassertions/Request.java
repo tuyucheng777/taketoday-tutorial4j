@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.assertj.soft_assertions;
+package cn.tuyucheng.taketoday.assertj.softassertions;
 
 public class Request {
    private String type;

@@ -1,4 +1,4 @@
-package cn.tuyucheng.taketoday.assertj.soft_assertions;
+package cn.tuyucheng.taketoday.assertj.softassertions;
 
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
