@@ -264,7 +264,7 @@
       <meecrowave-maven-plugin.version>1.2.15</meecrowave-maven-plugin.version>
       <xbean.version>4.24</xbean.version>
       <geode.core>1.15.1</geode.core>
-      <maven.compiler.source>17</maven.compiler.source>
-      <maven.compiler.target>17</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
    </properties>
 </project>

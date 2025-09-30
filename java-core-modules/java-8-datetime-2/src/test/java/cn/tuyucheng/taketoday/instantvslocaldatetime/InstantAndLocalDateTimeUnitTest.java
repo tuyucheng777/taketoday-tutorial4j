@@ -1,13 +1,13 @@
 package cn.tuyucheng.taketoday.instantvslocaldatetime;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class InstantAndLocalDateTimeUnitTest {
 

@@ -13,36 +13,36 @@ import static junit.framework.Assert.assertEquals;
 
 public class FactorialTaskManualTest {
 
-    private ExecutorService executorService;
+   private ExecutorService executorService;
 
-    @Before
-    public void setup(){
-        executorService = Executors.newSingleThreadExecutor();
-    }
+   @Before
+   public void setup() {
+      executorService = Executors.newSingleThreadExecutor();
+   }
 
-    @Test
-    public void whenTaskSubmitted_ThenFutureResultObtained() throws ExecutionException, InterruptedException {
-        FactorialTask task = new FactorialTask(5);
-        Future<Integer> future= executorService.submit(task);
-        assertEquals(120,future.get().intValue());
-    }
+   @Test
+   public void whenTaskSubmitted_ThenFutureResultObtained() throws ExecutionException, InterruptedException {
+      FactorialTask task = new FactorialTask(5);
+      Future<Integer> future = executorService.submit(task);
+      assertEquals(120, future.get().intValue());
+   }
 
-    @Test(expected = ExecutionException.class)
-    public void whenException_ThenCallableThrowsIt() throws ExecutionException, InterruptedException {
-        FactorialTask task = new FactorialTask(-5);
-        Future<Integer> future= executorService.submit(task);
-        Integer result=future.get().intValue();
-    }
+   @Test(expected = ExecutionException.class)
+   public void whenException_ThenCallableThrowsIt() throws ExecutionException, InterruptedException {
+      FactorialTask task = new FactorialTask(-5);
+      Future<Integer> future = executorService.submit(task);
+      Integer result = future.get().intValue();
+   }
 
-    @Test
-    public void whenException_ThenCallableDoesntThrowsItIfGetIsNotCalled(){
-        FactorialTask task = new FactorialTask(-5);
-        Future<Integer> future= executorService.submit(task);
-        assertEquals(false,future.isDone());
-    }
+   @Test
+   public void whenException_ThenCallableDoesntThrowsItIfGetIsNotCalled() {
+      FactorialTask task = new FactorialTask(-5);
+      Future<Integer> future = executorService.submit(task);
+      assertEquals(false, future.isDone());
+   }
 
-    @After
-    public void cleanup(){
-        executorService.shutdown();
-    }
+   @After
+   public void cleanup() {
+      executorService.shutdown();
+   }
 }

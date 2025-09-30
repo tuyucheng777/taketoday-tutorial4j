@@ -1,7 +1,10 @@
 package cn.tuyucheng.taketoday.java8;
 
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,23 +14,13 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.function.Consumer;
 
-import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class Java8ForEachUnitTest {
 
    private static final Logger LOG = LoggerFactory.getLogger(Java8ForEachUnitTest.class);
 
    @Test
    public void compareForEachMethods_thenPrintResults() {
-
-      List<String> names = new ArrayList<>();
-      names.add("Larry");
-      names.add("Steve");
-      names.add("James");
-      names.add("Conan");
-      names.add("Ellen");
+      List<String> names = List.of("Larry", "Steve", "James", "Conan", "Ellen");
 
       // Java 5 - for-loop
       LOG.debug("--- Enhanced for-loop ---");
@@ -45,7 +38,6 @@ public class Java8ForEachUnitTest {
          public void accept(String name) {
             LOG.info(name);
          }
-         ;
       };
 
       names.forEach(printConsumer);
@@ -69,7 +61,7 @@ public class Java8ForEachUnitTest {
 
    @Test
    public void givenList_thenIterateAndPrintResults() {
-      List<String> names = Arrays.asList("Larry", "Steve", "James");
+      List<String> names = List.of("Larry", "Steve", "James", "Conan", "Ellen");
 
       names.forEach(LOG::info);
    }
@@ -112,12 +104,14 @@ public class Java8ForEachUnitTest {
    @Test
    public void givenArray_whenIteratingWithForEachMethod_thenLogResult() {
       String[] foodItems = {"rice", "beans", "egg"};
-      Arrays.stream(foodItems).forEach(LOG::info);
+      Arrays.stream(foodItems)
+            .forEach(LOG::info);
    }
 
    @Test
    public void givenACollection_whenIteratingWithForEachInParallel_thenLogResult() {
-      List<String> names = new ArrayList<>(List.of("Larry", "Steve", "James"));
-      names.parallelStream().forEach(LOG::info);
+      List<String> names = List.of("Larry", "Steve", "James", "Conan", "Ellen");
+      names.parallelStream()
+            .forEach(LOG::info);
    }
 }

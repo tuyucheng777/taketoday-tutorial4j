@@ -1,14 +1,14 @@
 package cn.tuyucheng.taketoday.parsingDates;
 
-import org.joda.time.LocalDate;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.joda.time.LocalDate;
+import org.junit.jupiter.api.Test;
 
 class SimpleParseDateUnitTest {
 

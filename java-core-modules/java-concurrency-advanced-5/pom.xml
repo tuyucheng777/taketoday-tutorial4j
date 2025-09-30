@@ -36,7 +36,7 @@
    </build>
 
    <properties>
-      <maven.compiler.source>9</maven.compiler.source>
-      <maven.compiler.target>9</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
    </properties>
 </project>

@@ -31,7 +31,6 @@ public class EmailServiceLiveTest {
 
    @Test
    public void givenEmailMessageWithAttachment_whenEmailIsSent_MessageIsReceived() throws Exception {
-
       emailService.sendMail();
 
       MimeMessage[] receivedMessages = greenMail.getReceivedMessages();
@@ -82,5 +81,4 @@ public class EmailServiceLiveTest {
             .getContent()
             .toString();
    }
-
 }

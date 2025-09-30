@@ -149,8 +149,8 @@
    </build>
 
    <properties>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>1.8</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
       <deploy-path>enter-location-of-server</deploy-path>
       <org.thymeleaf-version>3.1.2.RELEASE</org.thymeleaf-version>

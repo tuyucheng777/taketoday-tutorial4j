@@ -23,8 +23,8 @@
 
    <properties>
       <toolchains.java.version>8</toolchains.java.version>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>1.8</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <maven-toolchains-plugin-version>3.1.0</maven-toolchains-plugin-version>
       <mockito.version>3.11.2</mockito.version>
       <spring-boot-maven-plugin.version>2.0.1.RELEASE</spring-boot-maven-plugin.version>

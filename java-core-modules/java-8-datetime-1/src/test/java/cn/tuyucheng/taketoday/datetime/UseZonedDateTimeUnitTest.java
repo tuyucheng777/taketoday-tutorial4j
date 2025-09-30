@@ -1,7 +1,6 @@
 package cn.tuyucheng.taketoday.datetime;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,7 +9,8 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class UseZonedDateTimeUnitTest {
 
@@ -20,7 +20,7 @@ public class UseZonedDateTimeUnitTest {
    public void givenZoneId_thenZonedDateTime() {
       ZoneId zoneId = ZoneId.of("Europe/Paris");
       ZonedDateTime zonedDatetime = zonedDateTime.getZonedDateTime(LocalDateTime.parse("2016-05-20T06:30"), zoneId);
-      Assertions.assertEquals(zoneId, ZoneId.from(zonedDatetime));
+      Assert.assertEquals(zoneId, ZoneId.from(zonedDatetime));
    }
 
    @Test

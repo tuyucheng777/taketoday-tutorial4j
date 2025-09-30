@@ -6,8 +6,13 @@ import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
 
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import java.io.File;
 import java.net.URI;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.X509Certificate;
 import java.util.Properties;
 
 public class EmailService {
@@ -39,6 +44,39 @@ public class EmailService {
       prop.put("mail.smtp.port", port);
    }
 
+   public EmailService(String host, int port, boolean bypassServerCertError) throws NoSuchAlgorithmException, KeyManagementException {
+      prop = new Properties();
+      prop.put("mail.smtp.host", host);
+      prop.put("mail.smtp.port", port);
+      if (bypassServerCertError) {
+
+         prop.put("mail.smtp.ssl.trust", "*");
+         prop.put("mail.smtp.ssl.checkserveridentity", false);
+
+         // use this when SMTPS protocol
+         // SSLContext sslContext = SSLContext.getInstance("TLS");
+         // sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+         // SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
+         // prop.put("mail.smtp.ssl.enable", "true");
+         // prop.put("mail.smtp.ssl.socketFactory", sslSocketFactory);
+         // prop.put("mail.smtp.ssl.trust", "*");
+      }
+   }
+
+   TrustManager[] trustAllCerts = new TrustManager[]{
+         new X509TrustManager() {
+            public void checkClientTrusted(X509Certificate[] certs, String authType) {
+            }
+
+            public void checkServerTrusted(X509Certificate[] certs, String authType) {
+            }
+
+            public X509Certificate[] getAcceptedIssuers() {
+               return new X509Certificate[0];
+            }
+         }
+   };
+
    public static void main(String... args) {
       try {
          new EmailService("smtp.mailtrap.io", 25, "87ba3d9555fae8", "91cb4379af43ed").sendMail();
@@ -48,7 +86,6 @@ public class EmailService {
    }
 
    public void sendMail() throws Exception {
-
       Session session = getSession();
 
       Message message = new MimeMessage(session);
@@ -95,13 +132,12 @@ public class EmailService {
    }
 
    private Session getSession() {
-      Session session = Session.getInstance(prop, new Authenticator() {
+      return Session.getInstance(prop, new Authenticator() {
          @Override
          protected PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication(username, password);
          }
       });
-      return session;
    }
 
    private File getFile() throws Exception {
@@ -111,5 +147,4 @@ public class EmailService {
             .toURI();
       return new File(uri);
    }
-
 }

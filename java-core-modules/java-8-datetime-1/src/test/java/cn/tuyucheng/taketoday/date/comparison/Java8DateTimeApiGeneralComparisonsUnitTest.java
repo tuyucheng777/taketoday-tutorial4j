@@ -1,6 +1,7 @@
 package cn.tuyucheng.taketoday.date.comparison;
 
-import org.junit.jupiter.api.Test;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,8 +9,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import org.junit.Test;
 
 public class Java8DateTimeApiGeneralComparisonsUnitTest {
 

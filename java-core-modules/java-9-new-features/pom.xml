@@ -149,8 +149,8 @@
    <properties>
       <rxjava.version>3.0.0</rxjava.version>
       <awaitility.version>4.0.2</awaitility.version>
-      <maven.compiler.source>1.9</maven.compiler.source>
-      <maven.compiler.target>1.9</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
    </properties>
 
 </project>

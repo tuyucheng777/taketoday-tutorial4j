@@ -136,8 +136,8 @@
 
    <properties>
       <toolchains.java.version>8</toolchains.java.version>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>1.8</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
       <maven-toolchains-plugin-version>3.1.0</maven-toolchains-plugin-version>
       <encoding>UTF-8</encoding>
       <scala.version>2.12.6</scala.version>

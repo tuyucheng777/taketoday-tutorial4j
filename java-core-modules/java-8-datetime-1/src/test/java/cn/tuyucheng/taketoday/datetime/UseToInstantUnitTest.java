@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.datetime;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -8,7 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
 
 public class UseToInstantUnitTest {
 

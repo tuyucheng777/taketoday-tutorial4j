@@ -61,8 +61,8 @@
 
    <properties>
       <awaitility.version>1.7.0</awaitility.version>
-      <maven.compiler.source>1.9</maven.compiler.source>
-      <maven.compiler.target>1.9</maven.compiler.target>
+      <maven.compiler.source>25</maven.compiler.source>
+      <maven.compiler.target>25</maven.compiler.target>
    </properties>
 
 </project>

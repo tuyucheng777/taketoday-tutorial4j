@@ -1,6 +1,6 @@
 package cn.tuyucheng.taketoday.rounddate;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -8,7 +8,7 @@ import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 public class DateRoundingUnitTest {
 

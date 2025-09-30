@@ -12,37 +12,4 @@
       <artifactId>java-core-modules</artifactId>
       <version>1.0.0</version>
    </parent>
-
-   <dependencies>
-      <dependency>
-         <groupId>org.apache.commons</groupId>
-         <artifactId>commons-lang3</artifactId>
-         <version>${commons-lang3.version}</version>
-      </dependency>
-      <dependency>
-         <groupId>com.jayway.awaitility</groupId>
-         <artifactId>awaitility</artifactId>
-         <version>${avaitility.version}</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <groupId>io.reactivex.rxjava3</groupId>
-         <artifactId>rxjava</artifactId>
-         <version>3.1.6</version>
-      </dependency>
-   </dependencies>
-
-   <build>
-      <finalName>java-concurrency-basic-1</finalName>
-      <resources>
-         <resource>
-            <directory>src/main/resources</directory>
-            <filtering>true</filtering>
-         </resource>
-      </resources>
-   </build>
-
-   <properties>
-      <avaitility.version>1.7.0</avaitility.version>
-   </properties>
 </project>
