@@ -59,6 +59,6 @@
 		<spring.version>6.2.2</spring.version>
 		<freemarker.version>2.3.28</freemarker.version>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
-		<spring-boot.version>1.5.10.RELEASE</spring-boot.version>
+		<spring-boot.version>3.5.4</spring-boot.version>
 	</properties>
 </project>

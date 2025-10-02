@@ -43,7 +43,7 @@
 
    <properties>
       <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
-      <logback.version>1.5.4</logback.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
+      <logback.version>1.5.12</logback.version>
    </properties>
 </project>

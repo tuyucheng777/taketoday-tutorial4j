@@ -80,7 +80,7 @@
 
    <properties>
       <!-- downgrading the version as twitterstream and hdfs starter apps does not support later versions -->
-      <spring-boot.version>2.1.13.RELEASE</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <!-- downgrading the version as twitterstream and hdfs starter apps does not support later versions -->
       <spring-cloud-dependencies.version>Greenwich.SR6</spring-cloud-dependencies.version>
       <spring-cloud-starter-stream.version>2.1.2.RELEASE</spring-cloud-starter-stream.version>

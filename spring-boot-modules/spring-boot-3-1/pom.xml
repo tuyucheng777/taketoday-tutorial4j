@@ -178,7 +178,7 @@
       <start-class>cn.tuyucheng.taketoday.sample.TodoApplication</start-class>
       <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
       <springdoc-openapi-webmvc-ui.version>2.5.0</springdoc-openapi-webmvc-ui.version>
-      <logback.version>1.5.16</logback.version>
+      <logback.version>1.5.12</logback.version>
       <org.slf4j.version>2.0.16</org.slf4j.version>
    </properties>
 </project>

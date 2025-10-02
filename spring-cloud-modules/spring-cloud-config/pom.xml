@@ -36,6 +36,6 @@
 
    <properties>
       <spring-cloud-dependencies.version>2023.0.1</spring-cloud-dependencies.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

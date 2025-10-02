@@ -62,6 +62,6 @@
    <properties>
       <spring.boot.dependencies>3.4.2</spring.boot.dependencies>
       <org.slf4j.version>2.0.9</org.slf4j.version>
-      <logback.version>1.4.14</logback.version>
+      <logback.version>1.5.12</logback.version>
    </properties>
 </project>

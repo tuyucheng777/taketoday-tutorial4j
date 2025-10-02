@@ -84,6 +84,6 @@
       <maven.compiler.release>25</maven.compiler.release>
       <xstream.version>1.4.11.1</xstream.version>
       <rest-assured.version>5.5.0</rest-assured.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

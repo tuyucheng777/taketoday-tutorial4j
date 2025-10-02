@@ -83,7 +83,7 @@
       <validation-api.version>2.0.1.Final</validation-api.version>
       <mysql-connector-java.version>8.2.0</mysql-connector-java.version>
       <start-class>cn.tuyucheng.taketoday.boot.Application</start-class>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <oracle-spring-boot-starter-ucp.version>24.2.0</oracle-spring-boot-starter-ucp.version>
       <hikari.version>6.2.1</hikari.version>
    </properties>

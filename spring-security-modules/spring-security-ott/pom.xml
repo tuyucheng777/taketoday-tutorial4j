@@ -58,7 +58,7 @@
    </dependencies>
 
    <properties>
-      <spring-boot.version>3.4.0</spring-boot.version>
-      <logback.version>1.5.7</logback.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
+      <logback.version>1.5.12</logback.version>
    </properties>
 </project>

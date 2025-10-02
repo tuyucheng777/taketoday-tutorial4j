@@ -79,7 +79,7 @@
    <properties>
       <mysql-connector-java.version>8.2.0</mysql-connector-java.version>
       <liquibase-maven-plugin.version>4.25.0</liquibase-maven-plugin.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <liquibase.version>4.26.0</liquibase.version>
       <postgresql.version>42.7.2</postgresql.version>
       <preliquibase.version>1.5.0</preliquibase.version>

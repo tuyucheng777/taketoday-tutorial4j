@@ -81,7 +81,7 @@
    <properties>
       <lz4.version>1.8.0</lz4.version>
       <clickhouse.version>0.7.1</clickhouse.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <flyway-clickhouse.version>10.16.3</flyway-clickhouse.version>
    </properties>
 </project>

@@ -81,7 +81,7 @@
    </dependencies>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <maven.deploy.skip>true</maven.deploy.skip>
       <tomcat-dbcp.version>9.0.0.M26</tomcat-dbcp.version>
       <lombok.version>1.18.30</lombok.version>

@@ -105,6 +105,6 @@
       <spring-oxm.version>6.1.4</spring-oxm.version>
       <spring-batch-core.version>5.1.1</spring-batch-core.version>
       <start-class>cn.tuyucheng.taketoday.batchtesting.SpringBatchApplication</start-class>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

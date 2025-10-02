@@ -54,7 +54,7 @@
    </build>
 
    <properties>
-      <spring-boot.version>3.4.0</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <logback.version>1.5.12</logback.version>
       <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
    </properties>

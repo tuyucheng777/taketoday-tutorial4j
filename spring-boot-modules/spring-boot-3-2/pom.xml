@@ -276,8 +276,8 @@
       <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
       <jedis.version>5.0.2</jedis.version>
       <spring-kafka.version>3.1.2</spring-kafka.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
-      <logback.version>1.5.16</logback.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
+      <logback.version>1.5.12</logback.version>
       <org.slf4j.version>2.0.16</org.slf4j.version>
       <springdoc-openapi-webmvc-ui.version>2.5.0</springdoc-openapi-webmvc-ui.version>
    </properties>

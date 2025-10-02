@@ -127,7 +127,7 @@
    <properties>
       <!-- Spring -->
       <org.springframework.version>5.0.2.RELEASE</org.springframework.version>
-      <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <!-- persistence -->
       <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
       <!-- http -->

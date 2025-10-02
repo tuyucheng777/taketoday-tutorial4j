@@ -174,7 +174,7 @@
       <rest-assured.version>5.5.0</rest-assured.version>
       <spring-oxm.version>6.2.3</spring-oxm.version>
       <!-- https://github.com/qos-ch/logback/issues/853 -->
-      <logback.version>1.5.17</logback.version>
+      <logback.version>1.5.12</logback.version>
       <!-- not managed by Spring anymore -->
       <htmlunit.version>2.70.0</htmlunit.version>
    </properties>

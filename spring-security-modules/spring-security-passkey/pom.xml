@@ -76,8 +76,8 @@
    </dependencies>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
-      <logback.version>1.5.7</logback.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
+      <logback.version>1.5.12</logback.version>
       <webauthn4j.version>0.28.4.RELEASE</webauthn4j.version>
       <selenium.version>4.29.0</selenium.version>
    </properties>

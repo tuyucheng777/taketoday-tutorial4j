@@ -156,6 +156,6 @@
       <maven.compiler.version>3.8.1</maven.compiler.version>
       <maven.version>3.8.1</maven.version>
       <mysql.version>8.2.0</mysql.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

@@ -34,9 +34,9 @@
    </dependencies>
 
    <properties>
-      <spring-boot.version>2.7.14</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <neo4j-harness.version>5.10.0</neo4j-harness.version>
       <org.slf4j.version>1.7.32</org.slf4j.version> <!-- Multiple clashing versions cannot remove -->
-      <logback.version>1.2.7</logback.version> <!-- Multiple clashing versions cannot remove -->
+      <logback.version>1.5.12</logback.version> <!-- Multiple clashing versions cannot remove -->
    </properties>
 </project>

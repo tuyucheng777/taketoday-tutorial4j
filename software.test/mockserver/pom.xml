@@ -96,7 +96,7 @@
       <mock-sever-netty-version>5.15.0</mock-sever-netty-version>
       <apche-http-version>4.4.1</apche-http-version>
       <apche-http-version>4.4.1</apche-http-version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <spring.webflux.version>6.1.13</spring.webflux.version>
       <jackson.version>2.18.0</jackson.version>
       <org.json.version>20240303</org.json.version>

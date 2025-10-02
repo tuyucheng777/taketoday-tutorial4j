@@ -84,7 +84,7 @@
    </build>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <logback.version>1.5.12</logback.version>
    </properties>
 </project>

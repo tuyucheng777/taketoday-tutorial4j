@@ -80,7 +80,7 @@
       <lombok.version>1.18.36</lombok.version>
       <hikari.version>6.2.1</hikari.version>
       <instancio.version>5.2.1</instancio.version>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <db2.version>12.1.0.0</db2.version>
    </properties>
 </project>

@@ -79,7 +79,7 @@
    </dependencies>
 
    <properties>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
       <springcloud.version>4.1.2</springcloud.version>
       <start-class>cn.tuyucheng.taketoday.shutdown.Application</start-class>
    </properties>

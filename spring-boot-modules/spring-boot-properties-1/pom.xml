@@ -127,6 +127,6 @@
       <commons-configuration.version>1.10</commons-configuration.version>
       <resource.delimiter>@</resource.delimiter>
       <start-class>cn.tuyucheng.taketoday.yaml.MyApplication</start-class>
-      <spring-boot.version>3.4.2</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

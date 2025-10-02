@@ -118,6 +118,6 @@
       <testcontainers-mongodb.version>1.16.2</testcontainers-mongodb.version>
       <mockwebserver.version>5.0.0-alpha.12</mockwebserver.version>
       <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
-      <spring-boot.version>3.4.0</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

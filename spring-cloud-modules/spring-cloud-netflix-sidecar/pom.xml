@@ -40,6 +40,6 @@
       <maven.compiler.target>25</maven.compiler.target>
       <mockito.version>3.11.2</mockito.version>
       <netflix.cloud.version>2.2.10.RELEASE</netflix.cloud.version>
-      <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>

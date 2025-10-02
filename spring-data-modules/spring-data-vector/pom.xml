@@ -86,6 +86,6 @@
 
    <properties>
       <java.version>25</java.version>
-      <spring-boot.version>4.0.0-M4</spring-boot.version>
+      <spring-boot.version>3.5.4</spring-boot.version>
    </properties>
 </project>
