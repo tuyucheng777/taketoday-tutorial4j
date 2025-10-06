@@ -2,3 +2,7 @@ logging:
    level:
       root: INFO
       org.springframework: INFO
+
+openapi:
+   currentWeather:
+      base-path: https://localhost:8080
